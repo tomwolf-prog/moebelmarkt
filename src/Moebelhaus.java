@@ -1,5 +1,6 @@
-import Kategorie.Sitzmoebel;
+import Kategorie.*;
 import Moebelstueck.Moebelstueck;
+
 
 class Lager{
     Sitzmoebel[] sitzmoebel = new Sitzmoebel[1000];
@@ -14,7 +15,7 @@ public class Moebelhaus {
         a.setBereich(Moebelstueck.Bereich.Kueche);
         a.setSitzplaetze(Sitzmoebel.Sitzplaetze.eins);
 
-
-
+        Tische b = new Tische();
+        b.setHoehe(Tische.Hoehe.A);
     }
 }

@@ -1,6 +1,8 @@
 package Kategorie;
 
-public class Liegemoebel {
+import Moebelstueck.Moebelstueck;
+
+public class Liegemoebel extends Moebelstueck {
 
     public enum Laenge{
         A(160), B(180), C(220);
