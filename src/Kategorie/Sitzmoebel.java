@@ -1,24 +1,40 @@
 package Kategorie;
 
 
-import Moebstueck.Moebelstueck;
-enum Moebelart{
+import Moebelstueck.Moebelstueck;
 
-}
 
 public class Sitzmoebel extends Moebelstueck {
 
+    public Sitzmoebel(Sitzplaetze sitzplaetze) {
+        super();
+        this.sitzplaetze = sitzplaetze;
+    }
+
     public enum Moebelart{Kuechenstuhl,Ohrensessel,Fernsehcouch}
 
-    public int getPlaetze() {
-        return plaetze;
+    public enum Sitzplaetze{eins,zwei,drei,vier}
+
+    public Sitzplaetze getSitzplaetze() {
+        return sitzplaetze;
     }
 
-    public void setPlaetze(int plaetze) {
-        this.plaetze = plaetze;
+    public void setSitzplaetze(Sitzplaetze sitzplaetze) {
+        this.sitzplaetze = sitzplaetze;
     }
 
-    private int plaetze;
+    private Sitzplaetze sitzplaetze;
+
+
+    public Moebelart getMoebelart() {
+        return moebelart;
+    }
+
+    public void setMoebelart(Moebelart moebelart) {
+        this.moebelart = moebelart;
+    }
+
+    private Moebelart moebelart;
 
 
 

@@ -1,4 +1,4 @@
-package Moebstueck;
+package Moebelstueck;
 
 
 public abstract class Moebelstueck {
@@ -29,11 +29,11 @@ public abstract class Moebelstueck {
         this.verkauspreis = verkauspreis;
     }
 
-    public Bereich getMoebelart() {
+    public Bereich getBereich() {
         return bereich;
     }
 
-    public void setMoebelart(Bereich bereich) {
+    public void setBereich(Bereich bereich) {
         this.bereich = bereich;
     }
 }
