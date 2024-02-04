@@ -85,8 +85,8 @@ class Lager{
         }
         lagerungArrayList.remove(lagerung);
     }
-    
-    public void removeLagerung(Lagerung lagerung, Flaeche flaeche){
+
+    public boolean removeLagerung(Lagerung lagerung, Flaeche flaeche){
         switch(lagerung.getMoebelart().toString()){
             case "Kuechenregal":
                 this.anzahlKuechenregal--;
@@ -101,9 +101,10 @@ class Lager{
         for (Lagerung l : lagerungArrayList){
             if (l.getFlaeche().equals(flaeche)){
                 lagerungArrayList.remove(l);
-                break;
+                return true;
             }
         }
+        return false;
     }
 
     //Liegemoebel
@@ -138,7 +139,7 @@ class Lager{
         liegemoebelArrayList.remove(liegemoebel);
     }
 
-    public void removeLiegemoebel(Liegemoebel liegemoebel, Laenge laenge){
+    public boolean removeLiegemoebel(Liegemoebel liegemoebel, Laenge laenge){
         switch(liegemoebel.getMoebelart().toString()){
             case "Doppelbett":
                 this.anzahlDoppelbett--;
@@ -150,9 +151,10 @@ class Lager{
         for (Liegemoebel l : liegemoebelArrayList){
             if (l.getLaenge().equals(laenge)){
                 liegemoebelArrayList.remove(l);
-                break;
+                return true;
             }
         }
+        return false;
     }
 
     // Sitzmoebel
@@ -197,7 +199,7 @@ class Lager{
         sitzmoebelArrayList.remove(sitzmoebel);
     }
 
-    public void removeSitzmoebel(Sitzmoebel sitzmoebel, Sitzmoebel.Sitzplaetze sitzplaetze){
+    public boolean removeSitzmoebel(Sitzmoebel sitzmoebel, Sitzmoebel.Sitzplaetze sitzplaetze){
         switch(sitzmoebel.getMoebelart().toString()){
             case "Kuechenstuhl":
                 this.anzahlKuechenstuhl--;
@@ -212,9 +214,10 @@ class Lager{
         for (Sitzmoebel s : sitzmoebelArrayList){
             if (s.getSitzplaetze().equals(sitzplaetze)){
                 sitzmoebelArrayList.remove(s);
-                break;
+                return true;
             }
         }
+        return false;
     }
 
     // Tische
@@ -267,7 +270,7 @@ class Lager{
         tischeArrayList.remove(tische);
     }
 
-    public void removeTische(Tische tische, Tische.Hoehe hoehe){
+    public boolean removeTische(Tische tische, Tische.Hoehe hoehe){
         switch(tische.getMoebelart().toString()){
             case "Kuechentisch":
                 this.anzahlKuechentisch--;
@@ -285,9 +288,10 @@ class Lager{
         for (Tische t : tischeArrayList){
             if (t.getHoehe().equals(hoehe)){
                 tischeArrayList.remove(t);
-                break;
+                return true;
             }
         }
+        return false;
     }
 
 }
