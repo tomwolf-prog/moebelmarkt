@@ -85,6 +85,26 @@ class Lager{
         }
         lagerungArrayList.remove(lagerung);
     }
+    
+    public void removeLagerung(Lagerung lagerung, Flaeche flaeche){
+        switch(lagerung.getMoebelart().toString()){
+            case "Kuechenregal":
+                this.anzahlKuechenregal--;
+                break;
+            case "Beistelltisch":
+                this.anzahlBeistelltisch--;
+                break;
+            case "Kleiderschrank":
+                this.anzahlKleiderschrank--;
+                break;
+        }
+        for (Lagerung l : lagerungArrayList){
+            if (l.getFlaeche().equals(flaeche)){
+                lagerungArrayList.remove(l);
+                break;
+            }
+        }
+    }
 
     //Liegemoebel
     public int getAnzahlDoppelbett() {
@@ -116,6 +136,23 @@ class Lager{
                 break;
         }
         liegemoebelArrayList.remove(liegemoebel);
+    }
+
+    public void removeLiegemoebel(Liegemoebel liegemoebel, Laenge laenge){
+        switch(liegemoebel.getMoebelart().toString()){
+            case "Doppelbett":
+                this.anzahlDoppelbett--;
+                break;
+            case "Balkonliege":
+                this.anzahlBalkonliege--;
+                break;
+        }
+        for (Liegemoebel l : liegemoebelArrayList){
+            if (l.getLaenge().equals(laenge)){
+                liegemoebelArrayList.remove(l);
+                break;
+            }
+        }
     }
 
     // Sitzmoebel
@@ -158,6 +195,26 @@ class Lager{
                 break;
         }
         sitzmoebelArrayList.remove(sitzmoebel);
+    }
+
+    public void removeSitzmoebel(Sitzmoebel sitzmoebel, Sitzmoebel.Sitzplaetze sitzplaetze){
+        switch(sitzmoebel.getMoebelart().toString()){
+            case "Kuechenstuhl":
+                this.anzahlKuechenstuhl--;
+                break;
+            case "Ohrensessel":
+                this.anzahlOhrensessel--;
+                break;
+            case "Fernsehcouch":
+                this.anzahlFernsehcouch--;
+                break;
+        }
+        for (Sitzmoebel s : sitzmoebelArrayList){
+            if (s.getSitzplaetze().equals(sitzplaetze)){
+                sitzmoebelArrayList.remove(s);
+                break;
+            }
+        }
     }
 
     // Tische
@@ -210,6 +267,29 @@ class Lager{
         tischeArrayList.remove(tische);
     }
 
+    public void removeTische(Tische tische, Tische.Hoehe hoehe){
+        switch(tische.getMoebelart().toString()){
+            case "Kuechentisch":
+                this.anzahlKuechentisch--;
+                break;
+            case "Couchtisch":
+                this.anzahlCouchtisch--;
+                break;
+            case "Buerotisch":
+                this.anzahlBuerotisch--;
+                break;
+            case "Esstisch":
+                this.anzahlEsstisch--;
+                break;
+        }
+        for (Tische t : tischeArrayList){
+            if (t.getHoehe().equals(hoehe)){
+                tischeArrayList.remove(t);
+                break;
+            }
+        }
+    }
+
 }
 
 public class Moebelhaus {
@@ -223,14 +303,34 @@ public class Moebelhaus {
         a.setSitzplaetze(Sitzmoebel.Sitzplaetze.eins);
         a.setMoebelart(Sitzmoebel.Moebelart.Kuechenstuhl);
 
-        Tische b = new Tische();
-        b.setHoehe(Tische.Hoehe.A);
+
+        Sitzmoebel b = new Sitzmoebel(Sitzmoebel.Sitzplaetze.eins);
+        b.setVerkauspreis(100);
+        b.setBereich(Moebelstueck.Bereich.Kueche);
+        b.setSitzplaetze(Sitzmoebel.Sitzplaetze.eins);
+        b.setMoebelart(Sitzmoebel.Moebelart.Kuechenstuhl);
+
+        Sitzmoebel c = new Sitzmoebel(Sitzmoebel.Sitzplaetze.eins);
+        c.setBereich(Moebelstueck.Bereich.Kueche);
+        c.setSitzplaetze(Sitzmoebel.Sitzplaetze.eins);
+        c.setMoebelart(Sitzmoebel.Moebelart.Kuechenstuhl);
+        c.setVerkauspreis(100);
+
+        // Tische d = new Tische();
+        // b.setHoehe(Tische.Hoehe.A);
 
 
         
 
         lager.addSitzmoebel(a);
+        lager.addSitzmoebel(b);
+        lager.addSitzmoebel(c);
+        // lager.addTische(d);
+
+        lager.removeSitzmoebel(c);
         lager.removeSitzmoebel(a);
+        lager.removeSitzmoebel(b);
+
 
 
 
