@@ -304,40 +304,29 @@ public class Moebelhaus {
         Sitzmoebel a = new Sitzmoebel(Sitzmoebel.Sitzplaetze.eins);
         a.setVerkauspreis(100);
         a.setBereich(Moebelstueck.Bereich.Kueche);
-        a.setSitzplaetze(Sitzmoebel.Sitzplaetze.eins);
         a.setMoebelart(Sitzmoebel.Moebelart.Kuechenstuhl);
 
-
-        Sitzmoebel b = new Sitzmoebel(Sitzmoebel.Sitzplaetze.eins);
+        Sitzmoebel b = new Sitzmoebel(Sitzmoebel.Sitzplaetze.zwei);
         b.setVerkauspreis(100);
         b.setBereich(Moebelstueck.Bereich.Kueche);
-        b.setSitzplaetze(Sitzmoebel.Sitzplaetze.eins);
         b.setMoebelart(Sitzmoebel.Moebelart.Kuechenstuhl);
 
-        Sitzmoebel c = new Sitzmoebel(Sitzmoebel.Sitzplaetze.eins);
+        Sitzmoebel c = new Sitzmoebel(Sitzmoebel.Sitzplaetze.drei);
         c.setBereich(Moebelstueck.Bereich.Kueche);
-        c.setSitzplaetze(Sitzmoebel.Sitzplaetze.eins);
         c.setMoebelart(Sitzmoebel.Moebelart.Kuechenstuhl);
         c.setVerkauspreis(100);
 
         // Tische d = new Tische();
-        // b.setHoehe(Tische.Hoehe.A);
-
-
-        
+        // b.setHoehe(Tische.Hoehe.A);    
 
         lager.addSitzmoebel(a);
         lager.addSitzmoebel(b);
         lager.addSitzmoebel(c);
-        // lager.addTische(d);
 
-        lager.removeSitzmoebel(c);
-        lager.removeSitzmoebel(a);
-        lager.removeSitzmoebel(b);
+        lager.removeSitzmoebel(b, Sitzmoebel.Sitzplaetze.eins);
 
-
-
-
-
+        // lager.removeSitzmoebel(c);
+        // lager.removeSitzmoebel(a);
+        // lager.removeSitzmoebel(b);
     }
 }
