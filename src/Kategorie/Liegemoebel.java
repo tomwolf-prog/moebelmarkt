@@ -5,7 +5,7 @@ import Moebelstueck.Moebelstueck;
 public class Liegemoebel extends Moebelstueck {
 
     public enum Laenge{
-        A(160), B(180), C(220);
+        s(160), m(180), l(220);
 
         private int numLaenge;
 

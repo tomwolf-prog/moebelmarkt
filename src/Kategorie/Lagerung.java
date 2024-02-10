@@ -5,7 +5,7 @@ import Moebelstueck.Moebelstueck;
 public class Lagerung extends Moebelstueck {
 
     public enum Flaeche{
-        A(025), B(050), C(100), D(200);
+        s(025), m(050), l(100), xl(200);
 
         private int numFlaeche;
 
