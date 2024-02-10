@@ -23,6 +23,13 @@ public class Moebelhaus {
         System.out.println(couchtischlager.getMoebel());
         System.out.println(buerotischlager.getMoebel());
 
+        couchtischlager.removeTisch(Tische.Hoehe.m);
+        System.out.println(couchtischlager.getMoebel());
+        System.out.println(buerotischlager.getMoebel());
+
+        couchtischlager.removeTisch(Tische.Hoehe.s);
+        System.out.println(couchtischlager.getMoebel());
+        System.out.println(buerotischlager.getMoebel());
 
     }
 }
