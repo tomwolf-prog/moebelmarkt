@@ -3,4 +3,4 @@ import Kategorie.Tische;
 import Moebelstueck.Moebelstueck;
 import java.util.ArrayList;
 
-public class Couchtischlager extends Tischlager{}
+public class Buerotischlager extends Tischlager{ }
