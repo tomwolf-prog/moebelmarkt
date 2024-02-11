@@ -76,24 +76,12 @@ public class Lagersystem {
 
 
     //Lagerung
-    public Kuechenregallager getKuechenregallager() {
-        return kuechenregallager;
-    }
-    public void setKuechenregallager(Kuechenregallager kuechenregallager) {
-        this.kuechenregallager = kuechenregallager;
-    }
-    public Beistelltischlager getBeistelltischlager() {
-        return beistelltischlager;
-    }
-    public void setBeistelltischlager(Beistelltischlager beistelltischlager) {
-        this.beistelltischlager = beistelltischlager;
-    }
-    public Kleiderschranklager getKleiderschranklager() {
-        return kleiderschranklager;
-    }
-    public void setKleiderschranklager(Kleiderschranklager kleiderschranklager) {
-        this.kleiderschranklager = kleiderschranklager;
-    }
+    public Kuechenregallager getKuechenregallager() {return kuechenregallager;}
+    public void setKuechenregallager(Kuechenregallager kuechenregallager) {this.kuechenregallager = kuechenregallager;}
+    public Beistelltischlager getBeistelltischlager() {return beistelltischlager;}
+    public void setBeistelltischlager(Beistelltischlager beistelltischlager) {this.beistelltischlager = beistelltischlager;}
+    public Kleiderschranklager getKleiderschranklager() {return kleiderschranklager;}
+    public void setKleiderschranklager(Kleiderschranklager kleiderschranklager) {this.kleiderschranklager = kleiderschranklager;}
 
     public void addLagerung(Lagerung lagerung) {
         switch (lagerung.getMoebelart()) {
@@ -121,18 +109,10 @@ public class Lagersystem {
     }
 
     //Liegemoebel
-    public Doppelbettlager getDoppelbettlager() {
-        return doppelbettlager;
-    }
-    public void setDoppelbettlager(Doppelbettlager doppelbettlager) {
-        this.doppelbettlager = doppelbettlager;
-    }
-    public Balkonliegelager getBalkonliegelager() {
-        return balkonliegelager;
-    }
-    public void setBalkonliegelager(Balkonliegelager balkonliegelager) {
-        this.balkonliegelager = balkonliegelager;
-    }
+    public Doppelbettlager getDoppelbettlager() {return doppelbettlager;}
+    public void setDoppelbettlager(Doppelbettlager doppelbettlager) {this.doppelbettlager = doppelbettlager;}
+    public Balkonliegelager getBalkonliegelager() {return balkonliegelager;}
+    public void setBalkonliegelager(Balkonliegelager balkonliegelager) {this.balkonliegelager = balkonliegelager;}
 
     public void addLiegemoebel(Liegemoebel liegemoebel) {
         switch (liegemoebel.getMoebelart()) {
