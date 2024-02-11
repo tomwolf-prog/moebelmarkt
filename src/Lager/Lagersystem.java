@@ -25,6 +25,13 @@ public class Lagersystem {
         couchtischlager = new Couchtischlager();
         esstischlager = new Esstischlager();
         kuechentischlager = new Kuechentischlager();
+
+        kuechenregallager = new Kuechenregallager();
+        beistelltischlager = new Beistelltischlager();
+        kleiderschranklager = new Kleiderschranklager();
+
+        doppelbettlager = new Doppelbettlager();
+        balkonliegelager = new Balkonliegelager();
     }
 
     public Buerotischlager getBuerotischlager() {
@@ -100,6 +107,18 @@ public class Lagersystem {
                 break;
         }
     }
+    public void removeLagerung(Lagerung.Moebelart moebelart, Lagerung.Flaeche flaeche) {
+        switch (moebelart) {
+            case Kuechenregal:
+                kuechenregallager.removeLagerung(flaeche);
+                break;
+            case Kleiderschrank:
+                kleiderschranklager.removeLagerung(flaeche);
+                break;
+            default:
+                break;
+        }
+    }
 
     //Liegemoebel
     public Doppelbettlager getDoppelbettlager() {
@@ -127,5 +146,17 @@ public class Lagersystem {
                 break;
         }
     }
-    
+    public void removeLiegemoebel(Liegemoebel.Moebelart moebelart, Liegemoebel.Laenge laenge) {
+        switch (moebelart) {
+            case Doppelbett:
+                doppelbettlager.removeLiegemoebel(laenge);
+                break;
+            case Balkonliege:
+                balkonliegelager.removeLiegemoebel(laenge);
+                break;
+            default:
+                break;
+        }
+    }
+
 }
