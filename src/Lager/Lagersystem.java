@@ -32,6 +32,13 @@ public class Lagersystem {
         couchtischlager = new Couchtischlager();
         esstischlager = new Esstischlager();
         kuechentischlager = new Kuechentischlager();
+
+        kuechenregallager = new Kuechenregallager();
+        beistelltischlager = new Beistelltischlager();
+        kleiderschranklager = new Kleiderschranklager();
+
+        doppelbettlager = new Doppelbettlager();
+        balkonliegelager = new Balkonliegelager();
     }
 
     public Buerotischlager getBuerotischlager() {
@@ -116,24 +123,12 @@ public class Lagersystem {
 
 
     //Lagerung
-    public Kuechenregallager getKuechenregallager() {
-        return kuechenregallager;
-    }
-    public void setKuechenregallager(Kuechenregallager kuechenregallager) {
-        this.kuechenregallager = kuechenregallager;
-    }
-    public Beistelltischlager getBeistelltischlager() {
-        return beistelltischlager;
-    }
-    public void setBeistelltischlager(Beistelltischlager beistelltischlager) {
-        this.beistelltischlager = beistelltischlager;
-    }
-    public Kleiderschranklager getKleiderschranklager() {
-        return kleiderschranklager;
-    }
-    public void setKleiderschranklager(Kleiderschranklager kleiderschranklager) {
-        this.kleiderschranklager = kleiderschranklager;
-    }
+    public Kuechenregallager getKuechenregallager() {return kuechenregallager;}
+    public void setKuechenregallager(Kuechenregallager kuechenregallager) {this.kuechenregallager = kuechenregallager;}
+    public Beistelltischlager getBeistelltischlager() {return beistelltischlager;}
+    public void setBeistelltischlager(Beistelltischlager beistelltischlager) {this.beistelltischlager = beistelltischlager;}
+    public Kleiderschranklager getKleiderschranklager() {return kleiderschranklager;}
+    public void setKleiderschranklager(Kleiderschranklager kleiderschranklager) {this.kleiderschranklager = kleiderschranklager;}
 
     public void addLagerung(Lagerung lagerung) {
         switch (lagerung.getMoebelart()) {
@@ -147,20 +142,24 @@ public class Lagersystem {
                 break;
         }
     }
+    public void removeLagerung(Lagerung.Moebelart moebelart, Lagerung.Flaeche flaeche) {
+        switch (moebelart) {
+            case Kuechenregal:
+                kuechenregallager.removeLagerung(flaeche);
+                break;
+            case Kleiderschrank:
+                kleiderschranklager.removeLagerung(flaeche);
+                break;
+            default:
+                break;
+        }
+    }
 
     //Liegemoebel
-    public Doppelbettlager getDoppelbettlager() {
-        return doppelbettlager;
-    }
-    public void setDoppelbettlager(Doppelbettlager doppelbettlager) {
-        this.doppelbettlager = doppelbettlager;
-    }
-    public Balkonliegelager getBalkonliegelager() {
-        return balkonliegelager;
-    }
-    public void setBalkonliegelager(Balkonliegelager balkonliegelager) {
-        this.balkonliegelager = balkonliegelager;
-    }
+    public Doppelbettlager getDoppelbettlager() {return doppelbettlager;}
+    public void setDoppelbettlager(Doppelbettlager doppelbettlager) {this.doppelbettlager = doppelbettlager;}
+    public Balkonliegelager getBalkonliegelager() {return balkonliegelager;}
+    public void setBalkonliegelager(Balkonliegelager balkonliegelager) {this.balkonliegelager = balkonliegelager;}
 
     public void addLiegemoebel(Liegemoebel liegemoebel) {
         switch (liegemoebel.getMoebelart()) {
@@ -174,5 +173,17 @@ public class Lagersystem {
                 break;
         }
     }
-    
+    public void removeLiegemoebel(Liegemoebel.Moebelart moebelart, Liegemoebel.Laenge laenge) {
+        switch (moebelart) {
+            case Doppelbett:
+                doppelbettlager.removeLiegemoebel(laenge);
+                break;
+            case Balkonliege:
+                balkonliegelager.removeLiegemoebel(laenge);
+                break;
+            default:
+                break;
+        }
+    }
+
 }
