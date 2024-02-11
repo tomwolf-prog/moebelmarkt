@@ -1,14 +1,21 @@
 package Lager;
 
+import Kategorie.Sitzmoebel;
 import Kategorie.Tische;
 import Kategorie.Lagerung;
 import Kategorie.Liegemoebel;
 
 public class Lagersystem {
+    //Tische
     private Buerotischlager buerotischlager;
     private Couchtischlager couchtischlager;
     private Esstischlager esstischlager;
     private Kuechentischlager kuechentischlager;
+
+    //Sitzmoebel
+    private Kuechenstuhllager kuechenstuhllager;
+    private Ohrensessellager ohrensessellager;
+    private Fernsehcouchlager fernsehcouchlager;
 
     //Lagerung
     private Kuechenregallager kuechenregallager;
@@ -52,6 +59,7 @@ public class Lagersystem {
     public void setKuechentischlager(Kuechentischlager kuechentischlager) {this.kuechentischlager = kuechentischlager;}
 
 
+
     public void addTisch(Tische tisch) {
         switch (tisch.getMoebelart()) {
             case Buerotisch:
@@ -62,6 +70,45 @@ public class Lagersystem {
                 break;
             case Esstisch:
                 esstischlager.addTisch(tisch);
+            default:
+                break;
+        }
+    }
+
+    public Kuechenstuhllager getKuechenstuhllager() {
+        return kuechenstuhllager;
+    }
+
+    public void setKuechenstuhllager(Kuechenstuhllager kuechenstuhllager) {
+        this.kuechenstuhllager = kuechenstuhllager;
+    }
+
+    public Ohrensessellager getOhrensessel() {
+        return ohrensessellager;
+    }
+
+    public void setOhrensessel(Ohrensessellager ohrensessellager) {
+        this.ohrensessellager = ohrensessellager;
+    }
+
+    public Fernsehcouchlager getFernsehcouch() {
+        return fernsehcouchlager;
+    }
+
+    public void setFernsehcouch(Fernsehcouchlager fernsehcouchlager) {
+        this.fernsehcouchlager = fernsehcouchlager;
+    }
+
+    public void addSitzmoebel(Sitzmoebel sitzmoebel) {
+        switch (sitzmoebel.getMoebelart()) {
+            case Kuechenstuhl:
+                kuechenstuhllager.addSitzmoebel(sitzmoebel);
+                break;
+            case Ohrensessel:
+                ohrensessellager.addSitzmoebel(sitzmoebel);
+                break;
+            case Fernsehcouch:
+                fernsehcouchlager.addSitzmoebel(sitzmoebel);
             default:
                 break;
         }
