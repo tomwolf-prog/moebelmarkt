@@ -17,5 +17,4 @@ class Tischlager extends Lager<Tische> {
         return moebelstueckArrayList.add(tisch);
     }
 
-
 }

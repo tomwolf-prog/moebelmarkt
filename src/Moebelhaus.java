@@ -25,7 +25,7 @@ public class Moebelhaus {
         sitzmoebel.setSitzplaetze(Sitzmoebel.Sitzplaetze.eins);
         sitzmoebel.setMoebelart(Sitzmoebel.Moebelart.Fernsehcouch);
 
-        Lagersystem lagersystem = Lagersystem.getInstance();
+        Lagersystem lagersystem = new Lagersystem();
         lagersystem.addTisch(tisch);
         lagersystem.addTisch(tisch2);
         lagersystem.addTisch(tisch3);

@@ -3,21 +3,14 @@ package Lager;
 import Kategorie.Tische;
 
 public class Lagersystem {
-    private static Lagersystem instance;
     private Buerotischlager buerotischlager;
     private Couchtischlager couchtischlager;
 
-    private Lagersystem(){
+    public Lagersystem(){
         buerotischlager = new Buerotischlager();
         couchtischlager = new Couchtischlager();
     }
 
-    public static Lagersystem getInstance(){
-        if(instance == null){
-            instance = new Lagersystem();
-        }
-        return instance;
-    }
 
     public Buerotischlager getBuerotischlager() {
         return buerotischlager;
