@@ -2,7 +2,7 @@ package Lager;
 
 import java.util.ArrayList;
 
-public class Lager<Moebelstueck> {
+class Lager<Moebelstueck> {
     private int preis;
 
     public ArrayList<Moebelstueck> moebelstueckArrayList = new ArrayList<Moebelstueck>();

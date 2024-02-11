@@ -1,11 +1,8 @@
 package Lager;
 
 import Kategorie.Tische;
-import Moebelstueck.Moebelstueck;
 
-import java.util.ArrayList;
-
-public class Tischlager extends Lager {
+class Tischlager extends Lager<Tische> {
 
     public void removeTisch(Tische.Hoehe hoehe){
         for (Object moebelstueck : moebelstueckArrayList){
@@ -16,8 +13,8 @@ public class Tischlager extends Lager {
         }
     }
 
-    public void addTisch(Moebelstueck moebelstuecks) {
-        moebelstueckArrayList.add(moebelstuecks);
+    public boolean addTisch(Tische tisch) {
+        return moebelstueckArrayList.add(tisch);
     }
 
 

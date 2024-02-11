@@ -6,6 +6,10 @@ import Moebelstueck.Moebelstueck;
 
 public class Sitzmoebel extends Moebelstueck {
 
+    public Sitzmoebel() {
+        super();
+    }
+
     public Sitzmoebel(Sitzplaetze sitzplaetze) {
         super();
         this.sitzplaetze = sitzplaetze;
