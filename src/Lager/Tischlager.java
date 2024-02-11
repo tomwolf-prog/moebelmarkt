@@ -2,7 +2,7 @@ package Lager;
 
 import Kategorie.Tische;
 
-class Tischlager extends Lager<Tische> {
+public class Tischlager extends Lager<Tische> {
 
     public void removeTisch(Tische.Hoehe hoehe){
         for (Object moebelstueck : moebelstueckArrayList){

@@ -26,12 +26,21 @@ public class Lagerung extends Moebelstueck {
     }
 
     private Flaeche flaeche;
+    private Moebelart moebelart;
 
     public Flaeche getFlaeche() {
         return flaeche;
     }
+    
 
     public void setFlaeche(Flaeche flaeche) {
         this.flaeche = flaeche;
+    }
+
+    public Moebelart getMoebelart() {
+        return this.moebelart;
+    }
+    public void setMoebelart(Moebelart moebelart) {
+        this.moebelart = moebelart;
     }
 }
