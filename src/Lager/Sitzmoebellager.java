@@ -1,11 +1,10 @@
 package Lager;
 
 import Kategorie.Sitzmoebel;
-import Kategorie.Tische;
 
 public class Sitzmoebellager extends Lager<Sitzmoebel> {
 
-    public void removeTisch(Sitzmoebel.Sitzplaetze sitzplaetze){
+    public void removeSitzmoebel(Sitzmoebel.Sitzplaetze sitzplaetze){
         for (Object moebelstueck : moebelstueckArrayList){
             if (((Sitzmoebel) moebelstueck).getSitzplaetze() == sitzplaetze){
                 moebelstueckArrayList.remove(moebelstueck);
@@ -14,7 +13,7 @@ public class Sitzmoebellager extends Lager<Sitzmoebel> {
         }
     }
 
-    public boolean addTisch(Sitzmoebel sitzmoebel) {
+    public boolean addSitzmoebel(Sitzmoebel sitzmoebel) {
         return moebelstueckArrayList.add(sitzmoebel);
     }
 
