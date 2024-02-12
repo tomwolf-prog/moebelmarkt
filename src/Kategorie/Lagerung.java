@@ -5,7 +5,7 @@ import Moebelstueck.Moebelstueck;
 public class Lagerung extends Moebelstueck {
 
     public enum Flaeche{
-        A(025), B(050), C(100), D(200);
+        s(025), m(050), l(100), xl(200);
 
         private int numFlaeche;
 
@@ -26,12 +26,21 @@ public class Lagerung extends Moebelstueck {
     }
 
     private Flaeche flaeche;
+    private Moebelart moebelart;
 
     public Flaeche getFlaeche() {
         return flaeche;
     }
+    
 
     public void setFlaeche(Flaeche flaeche) {
         this.flaeche = flaeche;
+    }
+
+    public Moebelart getMoebelart() {
+        return this.moebelart;
+    }
+    public void setMoebelart(Moebelart moebelart) {
+        this.moebelart = moebelart;
     }
 }

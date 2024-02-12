@@ -7,7 +7,7 @@ public class Tische extends Moebelstueck {
     public enum Moebelart{Kuechentisch, Couchtisch, Buerotisch, Esstisch}
 
     public enum Hoehe{
-        A(50), B(76), C(80);
+        s(50), m(76), l(80);
 
          private int numHoehe;
 
