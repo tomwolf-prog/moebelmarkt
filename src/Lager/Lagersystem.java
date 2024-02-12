@@ -4,6 +4,7 @@ import Kategorie.Sitzmoebel;
 import Kategorie.Tische;
 import Kategorie.Lagerung;
 import Kategorie.Liegemoebel;
+import Moebelstueck.Moebelstueck;
 
 public class Lagersystem {
     //Tische
@@ -181,6 +182,24 @@ public class Lagersystem {
             case Balkonliege:
                 balkonliegelager.removeLiegemoebel(laenge);
                 break;
+            default:
+                break;
+        }
+    }
+
+    public void addMoebelstueck(Moebelstueck moebelstueck) {
+        switch (moebelstueck.getKategorie()) {
+            case Lagerung:
+                addLagerung((Lagerung) moebelstueck);
+                break;
+            case Liegemoebel:
+                addLiegemoebel((Liegemoebel) moebelstueck);
+                break;
+            case Tische:
+                addTisch((Tische) moebelstueck);
+                break;
+            case Sitzmoebel:
+                addSitzmoebel((Sitzmoebel) moebelstueck);
             default:
                 break;
         }
