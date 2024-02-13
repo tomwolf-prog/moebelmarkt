@@ -24,22 +24,6 @@ public class LagersystemTest {
 
     public void konstellationenBisBetragTest(){
         Lagersystem lagersystem = new Lagersystem();
-        // buerotischlager = new Buerotischlager();
-        // couchtischlager = new Couchtischlager();
-        // esstischlager = new Esstischlager();
-        // kuechentischlager = new Kuechentischlager();
-
-        // kuechenstuhllager = new Kuechenstuhllager();
-        // ohrensessellager = new Ohrensessellager();
-        // fernsehcouchlager = new Fernsehcouchlager();
-
-        // kuechenregallager = new Kuechenregallager();
-        // beistelltischlager = new Beistelltischlager();
-        // kleiderschranklager = new Kleiderschranklager();
-
-
-        // doppelbettlager = new Doppelbettlager();
-        // balkonliegelager = new Balkonliegelager();
 
         lagersystem.getBuerotischlager().setPreis(19999);
         lagersystem.getCouchtischlager().setPreis(9999);
@@ -57,16 +41,8 @@ public class LagersystemTest {
         lagersystem.getDoppelbettlager().setPreis(31999);
         lagersystem.getBalkonliegelager().setPreis(8999);
         
-
-        for (ArrayList<Lager<? extends Moebelstueck>> konstelation: lagersystem.MoebelauswahlBisBetrag(20000)){
-
-            // if (konstelation.size() == 2){
-                System.out.println(konstelation);
-            // }
-           
-        }
-
-        // System.out.println(lagersystem.MoebelauswahlBisBetrag(20000));
+        
+        System.out.println(lagersystem.MoebelauswahlBisBetrag(20000));
 
     }
     public static void main(String[] args) {
