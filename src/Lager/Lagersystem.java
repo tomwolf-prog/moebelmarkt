@@ -6,6 +6,10 @@ import Kategorie.Lagerung;
 import Kategorie.Liegemoebel;
 import Moebelstueck.Moebelstueck;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 public class Lagersystem {
     //Tische
     private Buerotischlager buerotischlager;
@@ -204,5 +208,33 @@ public class Lagersystem {
                 break;
         }
     }
+
+    public List<Lagerung> searchLagerungMitEigenschaft(Lagerung.Flaeche flaeche) {
+        List<Lagerung> lagerungList = kleiderschranklager.listMitEigenschaft(flaeche);
+        lagerungList.add((Lagerung) kuechenregallager.listMitEigenschaft(flaeche));
+        return lagerungList;
+    }
+
+    public List<Liegemoebel> searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge laenge) {
+        List<Liegemoebel> liegemoebelList = doppelbettlager.listMitEigenschaft(laenge);
+        liegemoebelList.add((Liegemoebel) balkonliegelager.listMitEigenschaft(laenge));
+        return liegemoebelList;
+    }
+
+    public List<Tische> searchTischMitEigenschaft(Tische.Hoehe hoehe) {
+        List tischeList = new ArrayList<>();
+        tischeList.add(buerotischlager.listTischeMitEigenschaft(hoehe));
+        tischeList.add(couchtischlager.listTischeMitEigenschaft(hoehe));
+        tischeList.add(esstischlager.listTischeMitEigenschaft(hoehe));
+        return tischeList;
+    }
+
+    public List<Sitzmoebel> searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze sitzplaetze) {
+        List<Sitzmoebel> sitzmoebelList = kuechenstuhllager.listMitEigenschaft(sitzplaetze);
+        sitzmoebelList.add((Sitzmoebel) ohrensessellager.listMitEigenschaft(sitzplaetze));
+        sitzmoebelList.add((Sitzmoebel) fernsehcouchlager.listMitEigenschaft(sitzplaetze));
+        return sitzmoebelList;
+    }
+
 
 }

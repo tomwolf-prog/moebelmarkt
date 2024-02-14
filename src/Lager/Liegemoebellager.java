@@ -1,15 +1,29 @@
 package Lager;
 import Kategorie.Liegemoebel;
+import Kategorie.Sitzmoebel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Liegemoebellager extends Lager<Liegemoebel> {
 
     public void removeLiegemoebel(Liegemoebel.Laenge laenge){
-        for (Object moebelstueck : moebelstueckArrayList){
-            if (((Liegemoebel) moebelstueck).getLaenge() == laenge){
+        for (Liegemoebel moebelstueck : moebelstueckArrayList){
+            if (moebelstueck.getLaenge() == laenge){
                 moebelstueckArrayList.remove(moebelstueck);
                 break;
             };
         }
+    }
+
+    public List<Liegemoebel> listMitEigenschaft(Liegemoebel.Laenge laenge){
+        List<Liegemoebel> liegemoebelList = new ArrayList<Liegemoebel>();
+        for (Liegemoebel moebelstueck : moebelstueckArrayList){
+            if (moebelstueck.getLaenge() == laenge){
+                liegemoebelList.add(moebelstueck);
+            };
+        }
+        return liegemoebelList;
     }
 
     public boolean addLiegemoebel(Liegemoebel liegemoebel) {
