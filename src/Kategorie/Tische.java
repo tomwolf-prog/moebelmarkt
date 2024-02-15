@@ -20,12 +20,17 @@ public class Tische extends Moebelstueck {
          }
     }
 
-    public Tische() {super();}
+    // public Tische() {super();}
 
-    public Tische(Moebelart moebelart) {
-        super();
-        this.moebelart = moebelart;
-    }
+    // public Tische(Moebelart moebelart) {
+    //     super();
+    //     this.moebelart = moebelart;
+    // }
+
+    // public Tische(Hoehe hoehe) {
+    //     super();
+    //     this.hoehe = hoehe;
+    // }
 
     public Tische(Moebelart moebelart, Hoehe hoehe) {
         super();

@@ -6,12 +6,23 @@ import Moebelstueck.Moebelstueck;
 
 public class Sitzmoebel extends Moebelstueck {
 
-    public Sitzmoebel() {
-        super();
-    }
+    // public Sitzmoebel() {
+    //     super();
+    // }
 
-    public Sitzmoebel(Sitzplaetze sitzplaetze) {
+    // public Sitzmoebel(Moebelart moebelart) {
+    //     super();
+    //     this.moebelart = moebelart;
+    // }
+
+    // public Sitzmoebel(Sitzplaetze sitzplaetze) {
+    //     super();
+    //     this.sitzplaetze = sitzplaetze;
+    // }
+
+    public Sitzmoebel(Moebelart moebelart, Sitzplaetze sitzplaetze) {
         super();
+        this.moebelart = moebelart;
         this.sitzplaetze = sitzplaetze;
     }
 
@@ -28,6 +39,7 @@ public class Sitzmoebel extends Moebelstueck {
     }
 
     private Sitzplaetze sitzplaetze;
+    private Moebelart moebelart;
 
 
     public Moebelart getMoebelart() {
@@ -38,7 +50,7 @@ public class Sitzmoebel extends Moebelstueck {
         this.moebelart = moebelart;
     }
 
-    private Moebelart moebelart;
+    
 
 
 

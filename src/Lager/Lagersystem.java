@@ -2,14 +2,17 @@ package Lager;
 
 import Kategorie.Sitzmoebel;
 import Kategorie.Tische;
+import Kategorie.Tische.Moebelart;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import Kategorie.Lagerung;
 import Kategorie.Liegemoebel;
 import Moebelstueck.Moebelstueck;
+import Moebelstueck.Moebelstueck.Bereich;
 
 public class Lagersystem {
     //Tische
@@ -47,26 +50,111 @@ public class Lagersystem {
         beistelltischlager = new Beistelltischlager();
         kleiderschranklager = new Kleiderschranklager();
 
-
         doppelbettlager = new Doppelbettlager();
         balkonliegelager = new Balkonliegelager();
     }
 
+    public ArrayList<Lager<? extends Moebelstueck>> getLager(){
+        ArrayList<Lager<? extends Moebelstueck>> lager = new ArrayList<>();
+        lager.add(buerotischlager);
+        lager.add(couchtischlager);
+        lager.add(esstischlager);
+        lager.add(kuechentischlager);
+        lager.add(kuechenstuhllager);
+        lager.add(ohrensessellager);
+        lager.add(fernsehcouchlager);
+        lager.add(kuechenregallager);
+        lager.add(beistelltischlager);
+        lager.add(kleiderschranklager);
+        lager.add(doppelbettlager);
+        lager.add(balkonliegelager);
+        return lager;
+    }
+
+    public int berechenVerkaufspreisAllerMoebelImLager(){
+        ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
+        int summe = 0;
+        for (Lager<? extends Moebelstueck> l: lager){
+            summe+= l.getPreis()*l.getMoebel().size();
+        }
+        return summe;
+    }
+
+    public int berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich bereich){
+        ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
+        int summe = 0;
+
+        for (Lager<? extends Moebelstueck> l: lager){
+            try {
+                if (l.getMoebel().get(0).getBereich() == bereich){
+                    summe+= l.getPreis()*l.getMoebel().size();
+                }
+            } catch (IndexOutOfBoundsException e){
+                continue;
+            }
+        }
+        return summe;
+    }
+
+    public int berechenVerkaufspreisAllerMoebelEinerKategorie(Moebelstueck.Kategorie kategorie){
+        ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
+        int summe = 0;
+
+        for (Lager<? extends Moebelstueck> l: lager){
+            try {
+                if (l.getMoebel().get(0).getKategorie() == kategorie){
+                    summe+= l.getPreis()*l.getMoebel().size();
+                }
+            } catch (IndexOutOfBoundsException e){
+                continue;
+            }
+        }
+        return summe;
+    }
+    public Bereich getBereichMitGroesstemGesamtwert (){
+        int kueche = berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich.Kueche);
+        int wohnen = berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich.Wohnen);
+        int schlafen = berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich.Schlafen);
+        int andere = berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich.Andere);
+        int max = Math.max(kueche, Math.max(wohnen, Math.max(schlafen, andere)));
+
+        if (max == kueche){
+            return Bereich.Kueche;
+        } else if (max == wohnen){
+            return Bereich.Wohnen;
+        } else if (max == schlafen){
+            return Bereich.Schlafen;
+        } else {
+            return Bereich.Andere;
+        }
+    }
+
+
+
+
     public Buerotischlager getBuerotischlager() {return buerotischlager;}
     public void setBuerotischlager(Buerotischlager buerotischlager) {this.buerotischlager = buerotischlager;}
     public void aendereBuerotischlagerPreis(int neuerPreisInCent){this.buerotischlager.setPreis(neuerPreisInCent);}
+    public void erhoeheBuerotischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe){IntStream.range(0, quantitativerBetrag).forEach(i -> buerotischlager.addTisch(new Tische(Moebelart.Buerotisch, hoehe)));}
+    public void mindereBuerotischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe){IntStream.range(0, quantitativerBetrag).forEach(i -> buerotischlager.removeTisch(hoehe));}
     
     public Couchtischlager getCouchtischlager() {return couchtischlager;}
     public void setCouchtischlager(Couchtischlager couchtischlager) {this.couchtischlager = couchtischlager;}
     public void aendereCouchtischlagerPreis(int neuerPreisInCent){this.couchtischlager.setPreis(neuerPreisInCent);}
+    public void erhoeheCouchtischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe){IntStream.range(0, quantitativerBetrag).forEach(i -> couchtischlager.addTisch(new Tische(Moebelart.Couchtisch, hoehe)));}
+    public void mindereCouchtischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe){IntStream.range(0, quantitativerBetrag).forEach(i -> couchtischlager.removeTisch(hoehe));}
 
     public Esstischlager getEsstischlager() {return esstischlager;}
     public void setEsstischlager(Esstischlager esstischlager) {this.esstischlager = esstischlager;}
     public void aendereEsstischlagerPreis(int neuerPreisInCent){this.esstischlager.setPreis(neuerPreisInCent);}
+    public void erhoeheEsstischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe){IntStream.range(0, quantitativerBetrag).forEach(i -> esstischlager.addTisch(new Tische(Moebelart.Esstisch, hoehe)));}
+    public void mindereEsstischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe){IntStream.range(0, quantitativerBetrag).forEach(i -> esstischlager.removeTisch(hoehe));}
 
     public Kuechentischlager getKuechentischlager() {return kuechentischlager;}
     public void setKuechentischlager(Kuechentischlager kuechentischlager) {this.kuechentischlager = kuechentischlager;}
     public void aendereKuechentischlagerPreis(int neuerPreisInCent){this.kuechentischlager.setPreis(neuerPreisInCent);}
+    public void erhoeheKuechentischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe){IntStream.range(0, quantitativerBetrag).forEach(i -> kuechentischlager.addTisch(new Tische(Moebelart.Kuechentisch, hoehe)));}
+    public void mindereKuechentischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe){IntStream.range(0, quantitativerBetrag).forEach(i -> kuechentischlager.removeTisch(hoehe));}
 
 
 
@@ -85,17 +173,24 @@ public class Lagersystem {
         }
     }
 
+    //Sitzmoebel
     public Kuechenstuhllager getKuechenstuhllager() {return kuechenstuhllager;}
     public void setKuechenstuhllager(Kuechenstuhllager kuechenstuhllager) {this.kuechenstuhllager = kuechenstuhllager;}
     public void aendereKuechenstuhllagerPreis(int neuerPreisInCent){this.kuechenstuhllager.setPreis(neuerPreisInCent);}
+    public void erhoeheKuechenstuhllagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze){IntStream.range(0, quantitativerBetrag).forEach(i -> kuechenstuhllager.addSitzmoebel(new Sitzmoebel(Sitzmoebel.Moebelart.Kuechenstuhl, sitzplaetze)));}
+    public void mindereKuechenstuhllagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze){IntStream.range(0, quantitativerBetrag).forEach(i -> kuechenstuhllager.removeSitzmoebel(sitzplaetze));}
 
     public Ohrensessellager getOhrensessellager() {return ohrensessellager;}
     public void setOhrensessellager(Ohrensessellager ohrensessellager) {this.ohrensessellager = ohrensessellager;}
     public void aendereOhrensessellagerPreis(int neuerPreisInCent){this.ohrensessellager.setPreis(neuerPreisInCent);}
+    public void erhoeheOhrensessellagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze){IntStream.range(0, quantitativerBetrag).forEach(i -> ohrensessellager.addSitzmoebel(new Sitzmoebel(Sitzmoebel.Moebelart.Ohrensessel, sitzplaetze)));}
+    public void mindereOhrensessellagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze){IntStream.range(0, quantitativerBetrag).forEach(i -> ohrensessellager.removeSitzmoebel(sitzplaetze));}
 
     public Fernsehcouchlager getFernsehcouchlager() {return fernsehcouchlager;}
     public void setFernsehcouchlager(Fernsehcouchlager fernsehcouchlager) {this.fernsehcouchlager = fernsehcouchlager;}
     public void aendereFernsehcouchlagerPreis(int neuerPreisInCent){this.fernsehcouchlager.setPreis(neuerPreisInCent);}
+    public void erhoeheFernsehcouchlagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze){IntStream.range(0, quantitativerBetrag).forEach(i -> fernsehcouchlager.addSitzmoebel(new Sitzmoebel(Sitzmoebel.Moebelart.Fernsehcouch, sitzplaetze)));}
+    public void mindereFernsehcouchlagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze){IntStream.range(0, quantitativerBetrag).forEach(i -> fernsehcouchlager.removeSitzmoebel(sitzplaetze));}
 
     public void addSitzmoebel(Sitzmoebel sitzmoebel) {
         switch (sitzmoebel.getMoebelart()) {
@@ -117,14 +212,20 @@ public class Lagersystem {
     public Kuechenregallager getKuechenregallager() {return kuechenregallager;}
     public void setKuechenregallager(Kuechenregallager kuechenregallager) {this.kuechenregallager = kuechenregallager;}
     public void aendereKuechenregallagerPreis(int neuerPreisInCent){this.kuechenregallager.setPreis(neuerPreisInCent);}
+    public void erhoeheKuechenregallagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche){IntStream.range(0, quantitativerBetrag).forEach(i -> kuechenregallager.addLagerung(new Lagerung(Lagerung.Moebelart.Kuechenregal, flaeche)));}
+    public void mindereKuechenregallagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche){IntStream.range(0, quantitativerBetrag).forEach(i -> kuechenregallager.removeLagerung(flaeche));}
 
     public Beistelltischlager getBeistelltischlager() {return beistelltischlager;}
     public void setBeistelltischlager(Beistelltischlager beistelltischlager) {this.beistelltischlager = beistelltischlager;}
     public void aendereBeistelltischlagerPreis(int neuerPreisInCent){this.beistelltischlager.setPreis(neuerPreisInCent);}
+    public void erhoeheBeistelltischlagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche){IntStream.range(0, quantitativerBetrag).forEach(i -> beistelltischlager.addLagerung(new Lagerung(Lagerung.Moebelart.Beistelltisch, flaeche)));}
+    public void mindereBeistelltischlagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche){IntStream.range(0, quantitativerBetrag).forEach(i -> beistelltischlager.removeLagerung(flaeche));}
 
     public Kleiderschranklager getKleiderschranklager() {return kleiderschranklager;}
     public void setKleiderschranklager(Kleiderschranklager kleiderschranklager) {this.kleiderschranklager = kleiderschranklager;}
     public void aendereKleiderschranklagerPreis(int neuerPreisInCent){this.kleiderschranklager.setPreis(neuerPreisInCent);}
+    public void erhoeheKleiderschranklagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche){IntStream.range(0, quantitativerBetrag).forEach(i -> kleiderschranklager.addLagerung(new Lagerung(Lagerung.Moebelart.Kleiderschrank, flaeche)));}
+    public void mindereKleiderschranklagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche){IntStream.range(0, quantitativerBetrag).forEach(i -> kleiderschranklager.removeLagerung(flaeche));}
 
     public void addLagerung(Lagerung lagerung) {
         switch (lagerung.getMoebelart()) {
@@ -155,10 +256,15 @@ public class Lagersystem {
     public Doppelbettlager getDoppelbettlager() {return doppelbettlager;}
     public void setDoppelbettlager(Doppelbettlager doppelbettlager) {this.doppelbettlager = doppelbettlager;}
     public void aendereDoppelbettlagerPreis(int neuerPreisInCent){this.doppelbettlager.setPreis(neuerPreisInCent);}
+    public void erhoeheDoppelbettlagerLagerbestand(int quantitativerBetrag, Liegemoebel.Laenge laenge){IntStream.range(0, quantitativerBetrag).forEach(i -> doppelbettlager.addLiegemoebel(new Liegemoebel(Liegemoebel.Moebelart.Doppelbett, laenge)));}
+    public void mindereDoppelbettlagerLagerbestand(int quantitativerBetrag, Liegemoebel.Laenge laenge){IntStream.range(0, quantitativerBetrag).forEach(i -> doppelbettlager.removeLiegemoebel(laenge));}
+    
 
     public Balkonliegelager getBalkonliegelager() {return balkonliegelager;}
     public void setBalkonliegelager(Balkonliegelager balkonliegelager) {this.balkonliegelager = balkonliegelager;}
     public void aendereBalkonliegelagerPreis(int neuerPreisInCent){this.balkonliegelager.setPreis(neuerPreisInCent);}
+    public void erhoeheBalkonliegelagerLagerbestand(int quantitativerBetrag, Liegemoebel.Laenge laenge){IntStream.range(0, quantitativerBetrag).forEach(i -> balkonliegelager.addLiegemoebel(new Liegemoebel(Liegemoebel.Moebelart.Balkonliege, laenge)));}
+    public void mindereBalkonliegelagerLagerbestand(int quantitativerBetrag, Liegemoebel.Laenge laenge){IntStream.range(0, quantitativerBetrag).forEach(i -> balkonliegelager.removeLiegemoebel(laenge));}
 
     public void addLiegemoebel(Liegemoebel liegemoebel) {
         switch (liegemoebel.getMoebelart()) {
@@ -275,32 +381,19 @@ public class Lagersystem {
         if (betragInCent < 0 || betragInCent >60000){
             return null; //raise some Error?
         }
-        ArrayList<Lager<? extends Moebelstueck>> moebelstueckeLagerArrayList = new ArrayList<>();
+        ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
 
-        moebelstueckeLagerArrayList.add(buerotischlager);
-        moebelstueckeLagerArrayList.add(couchtischlager);
-        moebelstueckeLagerArrayList.add(esstischlager);
-        moebelstueckeLagerArrayList.add(kuechentischlager);
-        moebelstueckeLagerArrayList.add(kuechenstuhllager);
-        moebelstueckeLagerArrayList.add(ohrensessellager);
-        moebelstueckeLagerArrayList.add(fernsehcouchlager);
-        moebelstueckeLagerArrayList.add(kuechenregallager);
-        moebelstueckeLagerArrayList.add(beistelltischlager);
-        moebelstueckeLagerArrayList.add(kleiderschranklager);
-        moebelstueckeLagerArrayList.add(doppelbettlager);
-        moebelstueckeLagerArrayList.add(balkonliegelager);
-
-        ArrayList<Lager<? extends Moebelstueck>> copyMoebelstueckeLagerArrayList = moebelstueckeLagerArrayList.stream()
+        ArrayList<Lager<? extends Moebelstueck>> copyLager = lager.stream()
         .collect(Collectors.toCollection(ArrayList::new));
 
-        for(Lager<? extends Moebelstueck> l: moebelstueckeLagerArrayList){
+        for(Lager<? extends Moebelstueck> l: lager){
             if (l.getPreis() > betragInCent){
-                copyMoebelstueckeLagerArrayList.remove(l);
+                copyLager.remove(l);
             }
         }
         ArrayList<Integer> konstellationIndex = new ArrayList<>();
 
-        return besteKonstellation(konstellationenBisBetrag(copyMoebelstueckeLagerArrayList, betragInCent, 0, 0, konstellationIndex));
+        return besteKonstellation(konstellationenBisBetrag(copyLager, betragInCent, 0, 0, konstellationIndex));
 
     }
 
