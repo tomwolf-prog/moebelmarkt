@@ -42,7 +42,7 @@ public class LagersystemTest {
         lagersystem.getBalkonliegelager().setPreis(8999);
         
         
-        System.out.println(lagersystem.MoebelauswahlBisBetrag(20000));
+        System.out.println(lagersystem.moebelauswahlBisBetrag(20000));
 
     }
     public static void main(String[] args) {

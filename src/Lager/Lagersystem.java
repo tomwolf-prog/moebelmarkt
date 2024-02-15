@@ -5,7 +5,6 @@ import Kategorie.Tische;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import Kategorie.Lagerung;
@@ -53,29 +52,21 @@ public class Lagersystem {
         balkonliegelager = new Balkonliegelager();
     }
 
-    public Buerotischlager getBuerotischlager() {
-        return buerotischlager;
-    }
-
-    public void setBuerotischlager(Buerotischlager buerotischlager) {
-        this.buerotischlager = buerotischlager;
-    }
+    public Buerotischlager getBuerotischlager() {return buerotischlager;}
+    public void setBuerotischlager(Buerotischlager buerotischlager) {this.buerotischlager = buerotischlager;}
+    public void aendereBuerotischlagerPreis(int neuerPreisInCent){this.buerotischlager.setPreis(neuerPreisInCent);}
     
-    public Couchtischlager getCouchtischlager() {
-        return couchtischlager;
-    }
-
-    public void setCouchtischlager(Couchtischlager couchtischlager) {
-        this.couchtischlager = couchtischlager;
-    }
+    public Couchtischlager getCouchtischlager() {return couchtischlager;}
+    public void setCouchtischlager(Couchtischlager couchtischlager) {this.couchtischlager = couchtischlager;}
+    public void aendereCouchtischlagerPreis(int neuerPreisInCent){this.couchtischlager.setPreis(neuerPreisInCent);}
 
     public Esstischlager getEsstischlager() {return esstischlager;}
-
     public void setEsstischlager(Esstischlager esstischlager) {this.esstischlager = esstischlager;}
+    public void aendereEsstischlagerPreis(int neuerPreisInCent){this.esstischlager.setPreis(neuerPreisInCent);}
 
     public Kuechentischlager getKuechentischlager() {return kuechentischlager;}
-
     public void setKuechentischlager(Kuechentischlager kuechentischlager) {this.kuechentischlager = kuechentischlager;}
+    public void aendereKuechentischlagerPreis(int neuerPreisInCent){this.kuechentischlager.setPreis(neuerPreisInCent);}
 
 
 
@@ -94,29 +85,17 @@ public class Lagersystem {
         }
     }
 
-    public Kuechenstuhllager getKuechenstuhllager() {
-        return kuechenstuhllager;
-    }
+    public Kuechenstuhllager getKuechenstuhllager() {return kuechenstuhllager;}
+    public void setKuechenstuhllager(Kuechenstuhllager kuechenstuhllager) {this.kuechenstuhllager = kuechenstuhllager;}
+    public void aendereKuechenstuhllagerPreis(int neuerPreisInCent){this.kuechenstuhllager.setPreis(neuerPreisInCent);}
 
-    public void setKuechenstuhllager(Kuechenstuhllager kuechenstuhllager) {
-        this.kuechenstuhllager = kuechenstuhllager;
-    }
+    public Ohrensessellager getOhrensessellager() {return ohrensessellager;}
+    public void setOhrensessellager(Ohrensessellager ohrensessellager) {this.ohrensessellager = ohrensessellager;}
+    public void aendereOhrensessellagerPreis(int neuerPreisInCent){this.ohrensessellager.setPreis(neuerPreisInCent);}
 
-    public Ohrensessellager getOhrensessellager() {
-        return ohrensessellager;
-    }
-
-    public void setOhrensessellager(Ohrensessellager ohrensessellager) {
-        this.ohrensessellager = ohrensessellager;
-    }
-
-    public Fernsehcouchlager getFernsehcouchlager() {
-        return fernsehcouchlager;
-    }
-
-    public void setFernsehcouchlager(Fernsehcouchlager fernsehcouchlager) {
-        this.fernsehcouchlager = fernsehcouchlager;
-    }
+    public Fernsehcouchlager getFernsehcouchlager() {return fernsehcouchlager;}
+    public void setFernsehcouchlager(Fernsehcouchlager fernsehcouchlager) {this.fernsehcouchlager = fernsehcouchlager;}
+    public void aendereFernsehcouchlagerPreis(int neuerPreisInCent){this.fernsehcouchlager.setPreis(neuerPreisInCent);}
 
     public void addSitzmoebel(Sitzmoebel sitzmoebel) {
         switch (sitzmoebel.getMoebelart()) {
@@ -137,10 +116,15 @@ public class Lagersystem {
     //Lagerung
     public Kuechenregallager getKuechenregallager() {return kuechenregallager;}
     public void setKuechenregallager(Kuechenregallager kuechenregallager) {this.kuechenregallager = kuechenregallager;}
+    public void aendereKuechenregallagerPreis(int neuerPreisInCent){this.kuechenregallager.setPreis(neuerPreisInCent);}
+
     public Beistelltischlager getBeistelltischlager() {return beistelltischlager;}
     public void setBeistelltischlager(Beistelltischlager beistelltischlager) {this.beistelltischlager = beistelltischlager;}
+    public void aendereBeistelltischlagerPreis(int neuerPreisInCent){this.beistelltischlager.setPreis(neuerPreisInCent);}
+
     public Kleiderschranklager getKleiderschranklager() {return kleiderschranklager;}
     public void setKleiderschranklager(Kleiderschranklager kleiderschranklager) {this.kleiderschranklager = kleiderschranklager;}
+    public void aendereKleiderschranklagerPreis(int neuerPreisInCent){this.kleiderschranklager.setPreis(neuerPreisInCent);}
 
     public void addLagerung(Lagerung lagerung) {
         switch (lagerung.getMoebelart()) {
@@ -170,8 +154,11 @@ public class Lagersystem {
     //Liegemoebel
     public Doppelbettlager getDoppelbettlager() {return doppelbettlager;}
     public void setDoppelbettlager(Doppelbettlager doppelbettlager) {this.doppelbettlager = doppelbettlager;}
+    public void aendereDoppelbettlagerPreis(int neuerPreisInCent){this.doppelbettlager.setPreis(neuerPreisInCent);}
+
     public Balkonliegelager getBalkonliegelager() {return balkonliegelager;}
     public void setBalkonliegelager(Balkonliegelager balkonliegelager) {this.balkonliegelager = balkonliegelager;}
+    public void aendereBalkonliegelagerPreis(int neuerPreisInCent){this.balkonliegelager.setPreis(neuerPreisInCent);}
 
     public void addLiegemoebel(Liegemoebel liegemoebel) {
         switch (liegemoebel.getMoebelart()) {
@@ -218,42 +205,40 @@ public class Lagersystem {
 
      
     /**
-     * Calculates all possible combinations of furniture storage configurations
-     * that have a total price less than or equal to the specified amount.
-     * Only furniture storage configurations with different furniture are created.
+     * Berechnet alle möglichen Kombinationen von Möbellager-Konfigurationen,
+     * deren Gesamtpreis kleiner oder gleich dem angegebenen Betrag ist.
+     * Es werden nur Möbellager-Konfigurationen mit unterschiedlichen Möbeln erstellt.
      * 
-     * @param moebelstueckeLagerArrayList The list of furniture storage areas.
-     * @param betragInCent The maximum total price in cents.
-     * @param anfang The starting index for calculating combinations.
-     * @param summe The current total price.
-     * @param konstellationIndex The list of indices representing the current combination.
-     * @return A list of lists, where each inner list represents a valid combination of furniture storage areas.
-     *         Returns null if no valid combinations are found.
+     * @param moebelstueckeLagerArrayList Die Liste der Möbellagerbereiche.
+     * @param betragInCent Der maximale Gesamtpreis in Cent.
+     * @param rekursionsIndex Der Startindex für die Berechnung der Kombinationen.
+     * @param aktuelleSumme Der aktuelle Gesamtpreis.
+     * @param konstellationIndex Die Liste der Indizes, die die aktuelle Kombination repräsentieren.
+     * @return Eine Liste von Listen, wobei jede innere Liste eine gültige Kombination von Möbellagerbereichen darstellt.
+     *         Gibt null zurück, wenn keine gültigen Kombinationen gefunden werden.
      */
     public ArrayList<ArrayList<Lager<? extends Moebelstueck>>> konstellationenBisBetrag(ArrayList<Lager<? extends Moebelstueck>> moebelstueckeLagerArrayList,
-     int betragInCent, int anfang, int summe, ArrayList<Integer> konstellationIndex){      
-        // All possible combinations of furniture storage configurations that have a total price less than or equal to the specified amount. 
+     int maximalBetragInCent, int rekursionsIndex, int aktuelleSumme, ArrayList<Integer> konstellationIndex){      
+        // Alle möglichen Kombinationen von Möbellager-Konfigurationen, deren Gesamtpreis kleiner oder gleich dem angegebenen Betrag ist.
         ArrayList<ArrayList<Lager<? extends Moebelstueck>>> konstellationen = new ArrayList<ArrayList<Lager<? extends Moebelstueck>>>();
         
         for(int i = 0; i < moebelstueckeLagerArrayList.size(); i++){
 
         ArrayList<Integer> copyKonstellationIndex = new ArrayList<>();
-        ArrayList<Integer> unchangedCopyKonstellationIndex = new ArrayList<>();
         for (Integer j: konstellationIndex){
             copyKonstellationIndex.add(j);
-            unchangedCopyKonstellationIndex.add(j);
         }
-            int tmpSumme = summe + moebelstueckeLagerArrayList.get(anfang).getPreis();
-            if (tmpSumme <= betragInCent){
-                copyKonstellationIndex.add(anfang); 
+            int tmpaktuelleSumme = aktuelleSumme + moebelstueckeLagerArrayList.get(rekursionsIndex).getPreis();
+            if (tmpaktuelleSumme <= maximalBetragInCent){
+                copyKonstellationIndex.add(rekursionsIndex); 
                 ArrayList<Lager<? extends Moebelstueck>> konstellation = new ArrayList<>();
                 for (Integer k: copyKonstellationIndex){
                     konstellation.add(moebelstueckeLagerArrayList.get(k));
                 }
                 konstellationen.add(konstellation);
-                if (!(anfang+1 == moebelstueckeLagerArrayList.size())){
-                    for (int k = anfang+1; k < moebelstueckeLagerArrayList.size(); k++){
-                        ArrayList<ArrayList<Lager<? extends Moebelstueck>>> weitereKonstellationen = konstellationenBisBetrag(moebelstueckeLagerArrayList, betragInCent, k, tmpSumme, copyKonstellationIndex);
+                if (!(rekursionsIndex+1 == moebelstueckeLagerArrayList.size())){
+                    for (int k = rekursionsIndex+1; k < moebelstueckeLagerArrayList.size(); k++){
+                        ArrayList<ArrayList<Lager<? extends Moebelstueck>>> weitereKonstellationen = konstellationenBisBetrag(moebelstueckeLagerArrayList, maximalBetragInCent, k, tmpaktuelleSumme, copyKonstellationIndex);
                         if (weitereKonstellationen != null){
                             konstellationen.addAll(weitereKonstellationen);
                         }
@@ -262,10 +247,10 @@ public class Lagersystem {
             } else{
                 return null;
             }
-            if(!(anfang == i)){
+            if(!(rekursionsIndex == i)){
                 return konstellationen;  
             } else {
-                    anfang++;
+                    rekursionsIndex++;
                     konstellationIndex.clear();
                 }
         }
@@ -286,7 +271,7 @@ public class Lagersystem {
     }
 
 
-    public ArrayList<Lager<? extends Moebelstueck>> MoebelauswahlBisBetrag(int betragInCent){
+    public ArrayList<Lager<? extends Moebelstueck>> moebelauswahlBisBetrag(int betragInCent){
         if (betragInCent < 0 || betragInCent >60000){
             return null; //raise some Error?
         }
@@ -318,5 +303,7 @@ public class Lagersystem {
         return besteKonstellation(konstellationenBisBetrag(copyMoebelstueckeLagerArrayList, betragInCent, 0, 0, konstellationIndex));
 
     }
+
+    
 
 }
