@@ -36,4 +36,12 @@ public abstract class Moebelstueck {
     public void setBereich(Bereich bereich) {
         this.bereich = bereich;
     }
+
+    public String toString() {
+        return "Moebelstueck{" +
+                "verkauspreis=" + verkauspreis +
+                ", kategorie=" + kategorie +
+                ", bereich=" + bereich +
+                '}';
+    }
 }

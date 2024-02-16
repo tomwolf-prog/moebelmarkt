@@ -319,7 +319,7 @@ public class Lagersystem {
      * Es werden nur Möbellager-Konfigurationen mit unterschiedlichen Möbeln erstellt.
      * 
      * @param moebelstueckeLagerArrayList Die Liste der Möbellagerbereiche.
-     * @param betragInCent Der maximale Gesamtpreis in Cent.
+     * @param maximalBetragInCent Der maximale Gesamtpreis in Cent.
      * @param rekursionsIndex Der Startindex für die Berechnung der Kombinationen.
      * @param aktuelleSumme Der aktuelle Gesamtpreis.
      * @param konstellationIndex Die Liste der Indizes, die die aktuelle Kombination repräsentieren.
@@ -400,7 +400,15 @@ public class Lagersystem {
 
     }
 
-  
+public void displayMoebelMitEigenschaft(){
+    ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
+    for (Lager<? extends Moebelstueck> l: lager){
+        for (Moebelstueck m: l.getMoebel()){
+            System.out.println(m.toString());
+        }
+
+    }
+}
     public List<Lagerung> searchLagerungMitEigenschaft(Lagerung.Flaeche flaeche) {
         List<Lagerung> lagerungList = kleiderschranklager.listMitEigenschaft(flaeche);
         lagerungList.add((Lagerung) kuechenregallager.listMitEigenschaft(flaeche));

@@ -51,4 +51,12 @@ public class Lagerung extends Moebelstueck {
     public void setMoebelart(Moebelart moebelart) {
         this.moebelart = moebelart;
     }
+
+    @Override
+    public String toString() {
+        return "Lagerung{" +
+                "flaeche=" + flaeche +
+                ", moebelart=" + moebelart +
+                '}';
+    }
 }

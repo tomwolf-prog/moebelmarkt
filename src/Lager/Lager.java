@@ -38,4 +38,12 @@ public class Lager<Moebelstueck> {
     public void setRabatt10(boolean rabatt10) {
         this.rabatt10 = rabatt10;
     }
+
+    @Override
+    public String toString() {
+        return "Lager{" +
+                "preis=" + preis +
+                ", rabatt10=" + rabatt10 +
+                '}';
+    }
 }

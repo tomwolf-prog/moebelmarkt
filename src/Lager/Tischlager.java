@@ -12,7 +12,7 @@ public class Tischlager extends Lager<Tische> {
             if (moebelstueck.getHoehe() == hoehe){
                 moebelstueckArrayList.remove(moebelstueck);
                 break;
-            };
+            }
         }
     }
 
@@ -29,5 +29,6 @@ public class Tischlager extends Lager<Tische> {
     public boolean addTisch(Tische tisch) {
         return moebelstueckArrayList.add(tisch);
     }
+
 
 }
