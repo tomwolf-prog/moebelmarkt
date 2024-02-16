@@ -40,6 +40,7 @@ public class Moebelhaus {
         System.out.println(lagersystem.getCouchtischlager());
         System.out.println(lagersystem.getCouchtischlager().getMoebel());
         System.out.println(lagersystem.getCouchtischlager().getPreis());
+        System.out.println(lagersystem.searchTischMitEigenschaft(Tische.Hoehe.s));
         // Couchtischlager couchtischlager = lagersystem.getCouchtischlager();
         // couchtischlager.setPreis(100);
         // System.out.println(couchtischlager.getPreis());
