@@ -20,10 +20,20 @@ public class Liegemoebel extends Moebelstueck {
 
     public enum Moebelart{Doppelbett, Balkonliege}
 
-    public Liegemoebel(Laenge laenge, Moebelart moebelart) {
+    // public Liegemoebel(Moebelart moebelart) {
+    //     super();
+    //     this.moebelart = moebelart;
+    // }
+
+    // public Liegemoebel(Laenge laenge) {
+    //     super();
+    //     this.laenge = laenge;
+    // }
+
+    public Liegemoebel(Moebelart moebelart, Laenge laenge) {
         super();
-        this.laenge = laenge;
         this.moebelart = moebelart;
+        this.laenge = laenge;
     }
 
     private Laenge laenge;

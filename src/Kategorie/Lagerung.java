@@ -20,8 +20,17 @@ public class Lagerung extends Moebelstueck {
 
     public enum Moebelart{Kuechenregal,Beistelltisch,Kleiderschrank}
 
-    public Lagerung(Flaeche flaeche) {
+    // public Lagerung(Moebelart moebelart) {
+    //     super();
+    //     this.moebelart = moebelart;
+    // }
+    // public Lagerung(Flaeche flaeche) {
+    //     super();
+    //     this.flaeche = flaeche;
+    // }
+    public Lagerung(Moebelart moebelart, Flaeche flaeche) {
         super();
+        this.moebelart = moebelart;
         this.flaeche = flaeche;
     }
 
@@ -31,7 +40,6 @@ public class Lagerung extends Moebelstueck {
     public Flaeche getFlaeche() {
         return flaeche;
     }
-    
 
     public void setFlaeche(Flaeche flaeche) {
         this.flaeche = flaeche;
