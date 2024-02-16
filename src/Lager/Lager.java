@@ -1,5 +1,4 @@
 package Lager;
-
 import java.util.ArrayList;
 
 public class Lager<Moebelstueck> {
