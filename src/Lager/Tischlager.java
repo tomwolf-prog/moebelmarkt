@@ -30,5 +30,15 @@ public class Tischlager extends Lager<Tische> {
         return moebelstueckArrayList.add(tisch);
     }
 
+    public int getTischlagerBestand(Tische.Hoehe hoehe){
+        int bestand = 0;
+        for (Tische moebelstueck : moebelstueckArrayList){
+            if (moebelstueck.getHoehe() == hoehe){
+                bestand++;
+            }
+        }
+        return bestand;
+    }
+
 
 }

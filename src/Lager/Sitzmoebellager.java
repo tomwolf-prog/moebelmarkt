@@ -31,4 +31,14 @@ public class Sitzmoebellager extends Lager<Sitzmoebel> {
         return moebelstueckArrayList.add(sitzmoebel);
     }
 
+    public int getSitzmoebellagerBestand(Sitzmoebel.Sitzplaetze sitzplaetze){
+        int bestand = 0;
+        for (Sitzmoebel moebelstueck : moebelstueckArrayList){
+            if (moebelstueck.getSitzplaetze() == sitzplaetze){
+                bestand++;
+            }
+        }
+        return bestand;
+    }
+
 }

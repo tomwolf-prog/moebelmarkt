@@ -30,4 +30,14 @@ public class Lagerunglager extends Lager<Lagerung> {
         return moebelstueckArrayList.add(lagerung);
     }
 
+    public int getLagerunglagerBestand(Lagerung.Flaeche flaeche){
+        int bestand = 0;
+        for (Lagerung moebelstueck : moebelstueckArrayList){
+            if (moebelstueck.getFlaeche() == flaeche){
+                bestand++;
+            }
+        }
+        return bestand;
+    }
+
 }

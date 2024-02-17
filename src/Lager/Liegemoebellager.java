@@ -30,4 +30,13 @@ public class Liegemoebellager extends Lager<Liegemoebel> {
         return moebelstueckArrayList.add(liegemoebel);
     }
 
+    public int getLiegemoebellagerBestand(Liegemoebel.Laenge laenge){
+        int bestand = 0;
+        for (Liegemoebel moebelstueck : moebelstueckArrayList){
+            if (moebelstueck.getLaenge() == laenge){
+                bestand++;
+            }
+        }
+        return bestand;
+    }
 }
