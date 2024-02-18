@@ -1,7 +1,9 @@
 package Moebelstueck;
 
 
-public abstract class Moebelstueck {
+import java.io.Serializable;
+
+public abstract class Moebelstueck implements Serializable {
 
 
     public enum Kategorie{Sitzmoebel, Tische, Lagerung, Liegemoebel}
