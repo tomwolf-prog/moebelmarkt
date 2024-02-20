@@ -5,8 +5,6 @@ import Moebelstueck.Moebelstueck;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 // import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -92,15 +90,15 @@ public class LagersystemTest {
 
     @Test
     public void teste_erhoeheBuerotischlagerLagerbestand(){        
-        int alterBestandS = lagersystem.getBuerotischlagerBestand(Tische.Hoehe.s);
+        int alterBestandS = 0;
         lagersystem.erhoeheBuerotischlagerLagerbestand(5, Tische.Hoehe.s);
         int neuerBestandS = lagersystem.getBuerotischlagerBestand(Tische.Hoehe.s);
 
-        int alterBestandM = lagersystem.getBuerotischlagerBestand(Tische.Hoehe.m);
+        int alterBestandM = 0;
         lagersystem.erhoeheBuerotischlagerLagerbestand(10, Tische.Hoehe.m);
         int neuerBestandM = lagersystem.getBuerotischlagerBestand(Tische.Hoehe.m);
 
-        int alterBestandL = lagersystem.getBuerotischlagerBestand(Tische.Hoehe.l);
+        int alterBestandL = 0;
         lagersystem.erhoeheBuerotischlagerLagerbestand(15, Tische.Hoehe.l);
         int neuerBestandL = lagersystem.getBuerotischlagerBestand(Tische.Hoehe.l);
 
@@ -109,17 +107,40 @@ public class LagersystemTest {
         Assert.assertEquals(alterBestandL + 15, neuerBestandL);
     }
 
+    @Test 
+    public void teste_mindereBuerotischlagerLagerbestand(){
+        lagersystem.erhoeheBuerotischlagerLagerbestand(20, Tische.Hoehe.s);
+        lagersystem.erhoeheBuerotischlagerLagerbestand(20, Tische.Hoehe.m);
+        lagersystem.erhoeheBuerotischlagerLagerbestand(20, Tische.Hoehe.l);
+
+        int alterBestandS = 20;
+        lagersystem.mindereBuerotischlagerLagerbestand(5, Tische.Hoehe.s);
+        int neuerBestandS = lagersystem.getCouchtischlagerBestand(Tische.Hoehe.s);
+
+        int alterBestandM = 20;
+        lagersystem.mindereBuerotischlagerLagerbestand(10, Tische.Hoehe.m);
+        int neuerBestandM = lagersystem.getCouchtischlagerBestand(Tische.Hoehe.m);
+
+        int alterBestandL = 20;
+        lagersystem.mindereBuerotischlagerLagerbestand(15, Tische.Hoehe.l);
+        int neuerBestandL = lagersystem.getCouchtischlagerBestand(Tische.Hoehe.l);
+
+        Assert.assertEquals(alterBestandS - 5, neuerBestandS);
+        Assert.assertEquals(alterBestandM - 10, neuerBestandM);
+        Assert.assertEquals(alterBestandL - 15, neuerBestandL);
+    }
+
     @Test
     public void teste_erhoeheCouchtischlagerLagerbestand(){        
-        int alterBestandS = lagersystem.getCouchtischlagerBestand(Tische.Hoehe.s);
+        int alterBestandS = 0;
         lagersystem.erhoeheCouchtischlagerLagerbestand(5, Tische.Hoehe.s);
         int neuerBestandS = lagersystem.getCouchtischlagerBestand(Tische.Hoehe.s);
 
-        int alterBestandM = lagersystem.getCouchtischlagerBestand(Tische.Hoehe.m);
+        int alterBestandM = 0;
         lagersystem.erhoeheCouchtischlagerLagerbestand(10, Tische.Hoehe.m);
         int neuerBestandM = lagersystem.getCouchtischlagerBestand(Tische.Hoehe.m);
 
-        int alterBestandL = lagersystem.getCouchtischlagerBestand(Tische.Hoehe.l);
+        int alterBestandL = 0;
         lagersystem.erhoeheCouchtischlagerLagerbestand(15, Tische.Hoehe.l);
         int neuerBestandL = lagersystem.getCouchtischlagerBestand(Tische.Hoehe.l);
 
@@ -128,17 +149,40 @@ public class LagersystemTest {
         Assert.assertEquals(alterBestandL + 15, neuerBestandL);
     }
 
+    @Test 
+    public void teste_mindereCouchtischlagerLagerbestand(){
+        lagersystem.erhoeheCouchtischlagerLagerbestand(20, Tische.Hoehe.s);
+        lagersystem.erhoeheCouchtischlagerLagerbestand(20, Tische.Hoehe.m);
+        lagersystem.erhoeheCouchtischlagerLagerbestand(20, Tische.Hoehe.l);
+
+        int alterBestandS = 20;
+        lagersystem.mindereCouchtischlagerLagerbestand(5, Tische.Hoehe.s);
+        int neuerBestandS = lagersystem.getCouchtischlagerBestand(Tische.Hoehe.s);
+
+        int alterBestandM = 20;
+        lagersystem.mindereCouchtischlagerLagerbestand(10, Tische.Hoehe.m);
+        int neuerBestandM = lagersystem.getCouchtischlagerBestand(Tische.Hoehe.m);
+
+        int alterBestandL = 20;
+        lagersystem.mindereCouchtischlagerLagerbestand(15, Tische.Hoehe.l);
+        int neuerBestandL = lagersystem.getCouchtischlagerBestand(Tische.Hoehe.l);
+
+        Assert.assertEquals(alterBestandS - 5, neuerBestandS);
+        Assert.assertEquals(alterBestandM - 10, neuerBestandM);
+        Assert.assertEquals(alterBestandL - 15, neuerBestandL);
+    }
+
     @Test
     public void teste_erhoeheEsstischlagerLagerbestand(){        
-        int alterBestandS = lagersystem.getEsstischlagerBestand(Tische.Hoehe.s);
+        int alterBestandS = 0;
         lagersystem.erhoeheEsstischlagerLagerbestand(5, Tische.Hoehe.s);
         int neuerBestandS = lagersystem.getEsstischlagerBestand(Tische.Hoehe.s);
 
-        int alterBestandM = lagersystem.getEsstischlagerBestand(Tische.Hoehe.m);
+        int alterBestandM = 0;
         lagersystem.erhoeheEsstischlagerLagerbestand(10, Tische.Hoehe.m);
         int neuerBestandM = lagersystem.getEsstischlagerBestand(Tische.Hoehe.m);
 
-        int alterBestandL = lagersystem.getEsstischlagerBestand(Tische.Hoehe.l);
+        int alterBestandL = 0;
         lagersystem.erhoeheEsstischlagerLagerbestand(15, Tische.Hoehe.l);
         int neuerBestandL = lagersystem.getEsstischlagerBestand(Tische.Hoehe.l);
 
@@ -148,16 +192,39 @@ public class LagersystemTest {
     }
 
     @Test
+    public void teste_mindereEsstischlagerLagerbestand(){
+        lagersystem.erhoeheEsstischlagerLagerbestand(20, Tische.Hoehe.s);
+        lagersystem.erhoeheEsstischlagerLagerbestand(20, Tische.Hoehe.m);
+        lagersystem.erhoeheEsstischlagerLagerbestand(20, Tische.Hoehe.l);
+
+        int alterBestandS = 20;
+        lagersystem.mindereEsstischlagerLagerbestand(5, Tische.Hoehe.s);
+        int neuerBestandS = lagersystem.getEsstischlagerBestand(Tische.Hoehe.s);
+
+        int alterBestandM = 20;
+        lagersystem.mindereEsstischlagerLagerbestand(10, Tische.Hoehe.m);
+        int neuerBestandM = lagersystem.getEsstischlagerBestand(Tische.Hoehe.m);
+
+        int alterBestandL = 20;
+        lagersystem.mindereEsstischlagerLagerbestand(15, Tische.Hoehe.l);
+        int neuerBestandL = lagersystem.getEsstischlagerBestand(Tische.Hoehe.l);
+
+        Assert.assertEquals(alterBestandS - 5, neuerBestandS);
+        Assert.assertEquals(alterBestandM - 10, neuerBestandM);
+        Assert.assertEquals(alterBestandL - 15, neuerBestandL);
+    }
+
+    @Test
     public void teste_erhoeheKuechentischlagerLagerbestand(){        
-        int alterBestandS = lagersystem.getKuechentischlagerBestand(Tische.Hoehe.s);
+        int alterBestandS = 0;
         lagersystem.erhoeheKuechentischlagerLagerbestand(5, Tische.Hoehe.s);
         int neuerBestandS = lagersystem.getKuechentischlagerBestand(Tische.Hoehe.s);
 
-        int alterBestandM = lagersystem.getKuechentischlagerBestand(Tische.Hoehe.m);
+        int alterBestandM = 0;
         lagersystem.erhoeheKuechentischlagerLagerbestand(10, Tische.Hoehe.m);
         int neuerBestandM = lagersystem.getKuechentischlagerBestand(Tische.Hoehe.m);
 
-        int alterBestandL = lagersystem.getKuechentischlagerBestand(Tische.Hoehe.l);
+        int alterBestandL = 0;
         lagersystem.erhoeheKuechentischlagerLagerbestand(15, Tische.Hoehe.l);
         int neuerBestandL = lagersystem.getKuechentischlagerBestand(Tische.Hoehe.l);
 
@@ -166,21 +233,44 @@ public class LagersystemTest {
         Assert.assertEquals(alterBestandL + 15, neuerBestandL);
     }
 
+    @Test   
+    public void teste_mindereKuechentischlagerLagerbestand(){
+        lagersystem.erhoeheKuechentischlagerLagerbestand(20, Tische.Hoehe.s);
+        lagersystem.erhoeheKuechentischlagerLagerbestand(20, Tische.Hoehe.m);
+        lagersystem.erhoeheKuechentischlagerLagerbestand(20, Tische.Hoehe.l);
+
+        int alterBestandS = 20;
+        lagersystem.mindereKuechentischlagerLagerbestand(5, Tische.Hoehe.s);
+        int neuerBestandS = lagersystem.getKuechentischlagerBestand(Tische.Hoehe.s);
+
+        int alterBestandM = 20;
+        lagersystem.mindereKuechentischlagerLagerbestand(10, Tische.Hoehe.m);
+        int neuerBestandM = lagersystem.getKuechentischlagerBestand(Tische.Hoehe.m);
+
+        int alterBestandL = 20;
+        lagersystem.mindereKuechentischlagerLagerbestand(15, Tische.Hoehe.l);
+        int neuerBestandL = lagersystem.getKuechentischlagerBestand(Tische.Hoehe.l);
+
+        Assert.assertEquals(alterBestandS - 5, neuerBestandS);
+        Assert.assertEquals(alterBestandM - 10, neuerBestandM);
+        Assert.assertEquals(alterBestandL - 15, neuerBestandL);
+    }
+
     @Test
     public void teste_erhoeheKuechenstuhllagerLagerbestand(){        
-        int alterBestandS = lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.eins);
+        int alterBestandS = 0;
         lagersystem.erhoeheKuechenstuhllagerLagerbestand(5, Sitzmoebel.Sitzplaetze.eins);
         int neuerBestandS = lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.eins);
 
-        int alterBestandM = lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.zwei);
+        int alterBestandM = 0;
         lagersystem.erhoeheKuechenstuhllagerLagerbestand(10, Sitzmoebel.Sitzplaetze.zwei);
         int neuerBestandM = lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.zwei);
 
-        int alterBestandL = lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.drei);
+        int alterBestandL = 0;
         lagersystem.erhoeheKuechenstuhllagerLagerbestand(15, Sitzmoebel.Sitzplaetze.drei);
         int neuerBestandL = lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.drei);
 
-        int alterBestandXL = lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.vier);
+        int alterBestandXL = 0;
         lagersystem.erhoeheKuechenstuhllagerLagerbestand(20, Sitzmoebel.Sitzplaetze.vier);
         int neuerBestandXL = lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.vier);
 
@@ -190,6 +280,335 @@ public class LagersystemTest {
         Assert.assertEquals(alterBestandXL + 20, neuerBestandXL);
     }
 
+    @Test
+    public void teste_mindereKuechenstuhllagerLagerbestand(){
+        lagersystem.erhoeheKuechenstuhllagerLagerbestand(20, Sitzmoebel.Sitzplaetze.eins);
+        lagersystem.erhoeheKuechenstuhllagerLagerbestand(20, Sitzmoebel.Sitzplaetze.zwei);
+        lagersystem.erhoeheKuechenstuhllagerLagerbestand(20, Sitzmoebel.Sitzplaetze.drei);
+        lagersystem.erhoeheKuechenstuhllagerLagerbestand(20, Sitzmoebel.Sitzplaetze.vier);
+
+        int alterBestand1 = 20;
+        lagersystem.mindereKuechenstuhllagerLagerbestand(5, Sitzmoebel.Sitzplaetze.eins);
+        int neuerBestand1 = lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.eins);
+
+        int alterBestand2 = 20;
+        lagersystem.mindereKuechenstuhllagerLagerbestand(10, Sitzmoebel.Sitzplaetze.zwei);
+        int neuerBestand2 = lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.zwei);
+
+        int alterBestand3 = 20;
+        lagersystem.mindereKuechenstuhllagerLagerbestand(15, Sitzmoebel.Sitzplaetze.drei);
+        int neuerBestand3 = lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.drei);
+
+        int alterBestand4 = 20;
+        lagersystem.mindereKuechenstuhllagerLagerbestand(20, Sitzmoebel.Sitzplaetze.vier);
+        int neuerBestand4 = lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.vier);
+        
+        Assert.assertEquals(alterBestand1 - 5, neuerBestand1);
+        Assert.assertEquals(alterBestand2 - 10, neuerBestand2);
+        Assert.assertEquals(alterBestand3 - 15, neuerBestand3);
+        Assert.assertEquals(alterBestand4 - 20, neuerBestand4);
+    }
+
+    @Test
+    public void teste_erhoeheOhrensessellagerLagerbestand(){        
+        int alterBestandS = 0;
+        lagersystem.erhoeheOhrensessellagerLagerbestand(5, Sitzmoebel.Sitzplaetze.eins);
+        int neuerBestandS = lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.eins);
+
+        int alterBestandM = 0;
+        lagersystem.erhoeheOhrensessellagerLagerbestand(10, Sitzmoebel.Sitzplaetze.zwei);
+        int neuerBestandM = lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.zwei);
+
+        int alterBestandL = 0;
+        lagersystem.erhoeheOhrensessellagerLagerbestand(15, Sitzmoebel.Sitzplaetze.drei);
+        int neuerBestandL = lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.drei);
+
+        int alterBestandXL = 0;
+        lagersystem.erhoeheOhrensessellagerLagerbestand(20, Sitzmoebel.Sitzplaetze.vier);
+        int neuerBestandXL = lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.vier);
+
+        Assert.assertEquals(alterBestandS + 5, neuerBestandS);
+        Assert.assertEquals(alterBestandM + 10, neuerBestandM);
+        Assert.assertEquals(alterBestandL + 15, neuerBestandL);
+        Assert.assertEquals(alterBestandXL + 20, neuerBestandXL);
+    }
+
+    @Test
+    public void teste_mindereOhrensessellagerLagerbestand(){
+        lagersystem.erhoeheOhrensessellagerLagerbestand(20, Sitzmoebel.Sitzplaetze.eins);
+        lagersystem.erhoeheOhrensessellagerLagerbestand(20, Sitzmoebel.Sitzplaetze.zwei);
+        lagersystem.erhoeheOhrensessellagerLagerbestand(20, Sitzmoebel.Sitzplaetze.drei);
+        lagersystem.erhoeheOhrensessellagerLagerbestand(20, Sitzmoebel.Sitzplaetze.vier);
+
+        int alterBestand1 = 20;
+        lagersystem.mindereOhrensessellagerLagerbestand(5, Sitzmoebel.Sitzplaetze.eins);
+        int neuerBestand1 = lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.eins);
+
+        int alterBestand2 = 20;
+        lagersystem.mindereOhrensessellagerLagerbestand(10, Sitzmoebel.Sitzplaetze.zwei);
+        int neuerBestand2 = lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.zwei);
+
+        int alterBestand3 = 20;
+        lagersystem.mindereOhrensessellagerLagerbestand(15, Sitzmoebel.Sitzplaetze.drei);
+        int neuerBestand3 = lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.drei);
+
+        int alterBestand4 = 20;
+        lagersystem.mindereOhrensessellagerLagerbestand(20, Sitzmoebel.Sitzplaetze.vier);
+        int neuerBestand4 = lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.vier);
+
+        Assert.assertEquals(alterBestand1 - 5, neuerBestand1);
+        Assert.assertEquals(alterBestand2 - 10, neuerBestand2);
+        Assert.assertEquals(alterBestand3 - 15, neuerBestand3);
+        Assert.assertEquals(alterBestand4 - 20, neuerBestand4);
+    }
+
+    @Test
+    public void teste_erhoeheFernsehcouchlagerLagerbestand(){        
+        int alterBestandS = 0;
+        lagersystem.erhoeheFernsehcouchlagerLagerbestand(5, Sitzmoebel.Sitzplaetze.eins);
+        int neuerBestandS = lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.eins);
+
+        int alterBestandM = 0;
+        lagersystem.erhoeheFernsehcouchlagerLagerbestand(10, Sitzmoebel.Sitzplaetze.zwei);
+        int neuerBestandM = lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.zwei);
+
+        int alterBestandL = 0;
+        lagersystem.erhoeheFernsehcouchlagerLagerbestand(15, Sitzmoebel.Sitzplaetze.drei);
+        int neuerBestandL = lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.drei);
+
+        int alterBestandXL = 0;
+        lagersystem.erhoeheFernsehcouchlagerLagerbestand(20, Sitzmoebel.Sitzplaetze.vier);
+        int neuerBestandXL = lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.vier);
+
+        Assert.assertEquals(alterBestandS + 5, neuerBestandS);
+        Assert.assertEquals(alterBestandM + 10, neuerBestandM);
+        Assert.assertEquals(alterBestandL + 15, neuerBestandL);
+        Assert.assertEquals(alterBestandXL + 20, neuerBestandXL);
+    }
+
+    @Test
+    public void teste_mindereFernsehcouchlagerLagerbestand(){
+        lagersystem.erhoeheFernsehcouchlagerLagerbestand(20, Sitzmoebel.Sitzplaetze.eins);
+        lagersystem.erhoeheFernsehcouchlagerLagerbestand(20, Sitzmoebel.Sitzplaetze.zwei);
+        lagersystem.erhoeheFernsehcouchlagerLagerbestand(20, Sitzmoebel.Sitzplaetze.drei);
+        lagersystem.erhoeheFernsehcouchlagerLagerbestand(20, Sitzmoebel.Sitzplaetze.vier);
+
+        int alterBestand1 = 20;
+        lagersystem.mindereFernsehcouchlagerLagerbestand(5, Sitzmoebel.Sitzplaetze.eins);
+        int neuerBestand1 = lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.eins);
+
+        int alterBestand2 = 20;
+        lagersystem.mindereFernsehcouchlagerLagerbestand(10, Sitzmoebel.Sitzplaetze.zwei);
+        int neuerBestand2 = lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.zwei);
+
+        int alterBestand3 = 20;
+        lagersystem.mindereFernsehcouchlagerLagerbestand(15, Sitzmoebel.Sitzplaetze.drei);
+        int neuerBestand3 = lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.drei);
+
+        int alterBestand4 = 20;
+        lagersystem.mindereFernsehcouchlagerLagerbestand(20, Sitzmoebel.Sitzplaetze.vier);
+        int neuerBestand4 = lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.vier);
+
+        Assert.assertEquals(alterBestand1 - 5, neuerBestand1);
+        Assert.assertEquals(alterBestand2 - 10, neuerBestand2);
+        Assert.assertEquals(alterBestand3 - 15, neuerBestand3);
+        Assert.assertEquals(alterBestand4 - 20, neuerBestand4);
+    }
+
+    @Test
+    public void teste_erhoeheKuechenregallagerLagerbestand(){        
+        int alterBestandS = 0;
+        lagersystem.erhoeheKuechenregallagerLagerbestand(5, Lagerung.Flaeche.s);
+        int neuerBestandS = lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.s);
+
+        int alterBestandM = 0;
+        lagersystem.erhoeheKuechenregallagerLagerbestand(10, Lagerung.Flaeche.m);
+        int neuerBestandM = lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.m);
+
+        int alterBestandL = 0;
+        lagersystem.erhoeheKuechenregallagerLagerbestand(15, Lagerung.Flaeche.l);
+        int neuerBestandL = lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.l);
+
+        int alterBestandXL = 0;
+        lagersystem.erhoeheKuechenregallagerLagerbestand(20, Lagerung.Flaeche.xl);
+        int neuerBestandXL = lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.xl);
+
+        Assert.assertEquals(alterBestandS + 5, neuerBestandS);
+        Assert.assertEquals(alterBestandM + 10, neuerBestandM);
+        Assert.assertEquals(alterBestandL + 15, neuerBestandL);
+        Assert.assertEquals(alterBestandXL + 20, neuerBestandXL);
+    }
+
+    @Test
+    public void teste_mindereKuechenregallagerLagerbestand(){
+        lagersystem.erhoeheKuechenregallagerLagerbestand(20, Lagerung.Flaeche.s);
+        lagersystem.erhoeheKuechenregallagerLagerbestand(20, Lagerung.Flaeche.m);
+        lagersystem.erhoeheKuechenregallagerLagerbestand(20, Lagerung.Flaeche.l);
+        lagersystem.erhoeheKuechenregallagerLagerbestand(20, Lagerung.Flaeche.xl);
+
+        int alterBestandS = 20;
+        lagersystem.mindereKuechenregallagerLagerbestand(5, Lagerung.Flaeche.s);
+        int neuerBestandS = lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.s);
+
+        int alterBestandM = 20;
+        lagersystem.mindereKuechenregallagerLagerbestand(10, Lagerung.Flaeche.m);
+        int neuerBestandM = lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.m);
+
+        int alterBestandL = 20;
+        lagersystem.mindereKuechenregallagerLagerbestand(15, Lagerung.Flaeche.l);
+        int neuerBestandL = lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.l);
+
+        int alterBestandXL = 20;
+        lagersystem.mindereKuechenregallagerLagerbestand(20, Lagerung.Flaeche.xl);
+        int neuerBestandXL = lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.xl);
+
+
+        Assert.assertEquals(alterBestandS - 5, neuerBestandS);
+        Assert.assertEquals(alterBestandM - 10, neuerBestandM);
+        Assert.assertEquals(alterBestandL - 15, neuerBestandL);
+        Assert.assertEquals(alterBestandXL - 20, neuerBestandXL);
+    }
+
+    @Test
+    public void teste_erhoeheBeistelltischlagerLagerbestand(){        
+        int alterBestandS = 0;
+        lagersystem.erhoeheBeistelltischlagerLagerbestand(5, Lagerung.Flaeche.s);
+        int neuerBestandS = lagersystem.getBeistelltischlagerBestand(Lagerung.Flaeche.s);
+
+        int alterBestandM = 0;
+        lagersystem.erhoeheBeistelltischlagerLagerbestand(10, Lagerung.Flaeche.m);
+        int neuerBestandM = lagersystem.getBeistelltischlagerBestand(Lagerung.Flaeche.m);
+
+        int alterBestandL = 0;
+        lagersystem.erhoeheBeistelltischlagerLagerbestand(15, Lagerung.Flaeche.l);
+        int neuerBestandL = lagersystem.getBeistelltischlagerBestand(Lagerung.Flaeche.l);
+
+        int alterBestandXL = 0;
+        lagersystem.erhoeheBeistelltischlagerLagerbestand(20, Lagerung.Flaeche.xl);
+        int neuerBestandXL = lagersystem.getBeistelltischlagerBestand(Lagerung.Flaeche.xl);
+
+        Assert.assertEquals(alterBestandS + 5, neuerBestandS);
+        Assert.assertEquals(alterBestandM + 10, neuerBestandM);
+        Assert.assertEquals(alterBestandL + 15, neuerBestandL);
+        Assert.assertEquals(alterBestandXL + 20, neuerBestandXL);
+    }
+
+    @Test
+    public void teste_mindereBeistelltischlagerLagerbestand(){
+        lagersystem.erhoeheBeistelltischlagerLagerbestand(20, Lagerung.Flaeche.s);
+        lagersystem.erhoeheBeistelltischlagerLagerbestand(20, Lagerung.Flaeche.m);
+        lagersystem.erhoeheBeistelltischlagerLagerbestand(20, Lagerung.Flaeche.l);
+        lagersystem.erhoeheBeistelltischlagerLagerbestand(20, Lagerung.Flaeche.xl);
+
+        int alterBestandS = 20;
+        lagersystem.mindereBeistelltischlagerLagerbestand(5, Lagerung.Flaeche.s);
+        int neuerBestandS = lagersystem.getBeistelltischlagerBestand(Lagerung.Flaeche.s);
+
+        int alterBestandM = 20;
+        lagersystem.mindereBeistelltischlagerLagerbestand(10, Lagerung.Flaeche.m);
+        int neuerBestandM = lagersystem.getBeistelltischlagerBestand(Lagerung.Flaeche.m);
+
+        int alterBestandL = 20;
+        lagersystem.mindereBeistelltischlagerLagerbestand(15, Lagerung.Flaeche.l);
+        int neuerBestandL = lagersystem.getBeistelltischlagerBestand(Lagerung.Flaeche.l);
+
+        int alterBestandXL = 20;
+        lagersystem.mindereBeistelltischlagerLagerbestand(20, Lagerung.Flaeche.xl);
+        int neuerBestandXL = lagersystem.getBeistelltischlagerBestand(Lagerung.Flaeche.xl);
+
+        Assert.assertEquals(alterBestandS - 5, neuerBestandS);
+        Assert.assertEquals(alterBestandM - 10, neuerBestandM);
+        Assert.assertEquals(alterBestandL - 15, neuerBestandL);
+        Assert.assertEquals(alterBestandXL - 20, neuerBestandXL);
+    }
+
+    @Test
+    public void teste_erhoeheDoppelbettlager(){
+        int alterBestandS = 0;
+        lagersystem.erhoeheDoppelbettlagerLagerbestand(5, Liegemoebel.Laenge.s);
+        int neuerBestandS = lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.s);
+
+        int alterBestandM = 0;
+        lagersystem.erhoeheDoppelbettlagerLagerbestand(10, Liegemoebel.Laenge.m);
+        int neuerBestandM = lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.m);
+
+        int alterBestandL = 0;
+        lagersystem.erhoeheDoppelbettlagerLagerbestand(15, Liegemoebel.Laenge.l);
+        int neuerBestandL = lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.l);
+
+        Assert.assertEquals(alterBestandS + 5, neuerBestandS);
+        Assert.assertEquals(alterBestandM + 10, neuerBestandM);
+        Assert.assertEquals(alterBestandL + 15, neuerBestandL);
+    }
+
+    @Test
+    public void teste_mindereDoppelbettlager(){
+        lagersystem.erhoeheDoppelbettlagerLagerbestand(20, Liegemoebel.Laenge.s);
+        lagersystem.erhoeheDoppelbettlagerLagerbestand(20, Liegemoebel.Laenge.m);
+        lagersystem.erhoeheDoppelbettlagerLagerbestand(20, Liegemoebel.Laenge.l);
+
+        int alterBestandS = 20;
+        lagersystem.mindereDoppelbettlagerLagerbestand(5, Liegemoebel.Laenge.s);
+        int neuerBestandS = lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.s);
+
+        int alterBestandM = 20;
+        lagersystem.mindereDoppelbettlagerLagerbestand(10, Liegemoebel.Laenge.m);
+        int neuerBestandM = lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.m);
+
+        int alterBestandL = 20;
+        lagersystem.mindereDoppelbettlagerLagerbestand(15, Liegemoebel.Laenge.l);
+        int neuerBestandL = lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.l);
+
+        Assert.assertEquals(alterBestandS - 5, neuerBestandS);
+        Assert.assertEquals(alterBestandM - 10, neuerBestandM);
+        Assert.assertEquals(alterBestandL - 15, neuerBestandL);
+    }
+
+    @Test
+    public void teste_erhoeheBalkonliegelager(){
+        int alterBestandS = 0;
+        lagersystem.erhoeheBalkonliegelagerLagerbestand(5, Liegemoebel.Laenge.s);
+        int neuerBestandS = lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.s);
+
+        int alterBestandM = 0;
+        lagersystem.erhoeheBalkonliegelagerLagerbestand(10, Liegemoebel.Laenge.m);
+        int neuerBestandM = lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.m);
+
+        int alterBestandL = 0;
+        lagersystem.erhoeheBalkonliegelagerLagerbestand(15, Liegemoebel.Laenge.l);
+        int neuerBestandL = lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.l);
+
+        Assert.assertEquals(alterBestandS + 5, neuerBestandS);
+        Assert.assertEquals(alterBestandM + 10, neuerBestandM);
+        Assert.assertEquals(alterBestandL + 15, neuerBestandL);
+    }
+
+    @Test
+    public void teste_mindereBalkonliegelager(){
+        lagersystem.erhoeheBalkonliegelagerLagerbestand(20, Liegemoebel.Laenge.s);
+        lagersystem.erhoeheBalkonliegelagerLagerbestand(20, Liegemoebel.Laenge.m);
+        lagersystem.erhoeheBalkonliegelagerLagerbestand(20, Liegemoebel.Laenge.l);
+
+        int alterBestandS = 20;
+        lagersystem.mindereBalkonliegelagerLagerbestand(5, Liegemoebel.Laenge.s);
+        int neuerBestandS = lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.s);
+
+        int alterBestandM = 20;
+        lagersystem.mindereBalkonliegelagerLagerbestand(10, Liegemoebel.Laenge.m);
+        int neuerBestandM = lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.m);
+
+        int alterBestandL = 20;
+        lagersystem.mindereBalkonliegelagerLagerbestand(15, Liegemoebel.Laenge.l);
+        int neuerBestandL = lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.l);
+
+        Assert.assertEquals(alterBestandS - 5, neuerBestandS);
+        Assert.assertEquals(alterBestandM - 10, neuerBestandM);
+        Assert.assertEquals(alterBestandL - 15, neuerBestandL);
+    }
+
+
+
+    
 
 
 
