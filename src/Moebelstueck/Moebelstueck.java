@@ -1,6 +1,9 @@
 package Moebelstueck;
 
-
+/**
+ * Die abstrakte Klasse Moebelstueck repräsentiert ein Möbelstück.
+ * Sie enthält Informationen wie den Verkaufspreis, die Kategorie und den Bereich des Möbelstücks.
+ */
 public abstract class Moebelstueck {
 
 

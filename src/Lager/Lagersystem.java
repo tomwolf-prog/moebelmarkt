@@ -18,6 +18,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Das Lagersystem verwaltet verschiedene Lager für Möbelstücke.
+ * Jedes Lager enthält eine bestimmte Kategorie von Möbeln, wie Tische, Sitzmöbel, Lagerung und Liegemöbel.
+ * Das Lagersystem ermöglicht das Hinzufügen, Entfernen und Verwalten von Möbeln in den einzelnen Lagern.
+ * Es bietet auch Funktionen zur Berechnung des Verkaufspreises aller Möbel im Lager, des Verkaufspreises aller Möbel in einem bestimmten Bereich und des Verkaufspreises aller Möbel einer bestimmten Kategorie.
+ * Darüber hinaus kann das Lagersystem den Bereich mit dem höchsten Gesamtwert ermitteln.
+ */
 public class Lagersystem {
     //Tische
     private Buerotischlager buerotischlager;
@@ -58,6 +65,12 @@ public class Lagersystem {
         balkonliegelager = new Balkonliegelager();
     }
 
+    /**
+     * Gibt eine ArrayList mit den Lagern zurück, die Möbelstücke enthalten.
+     * Jedes Lager kann verschiedene Arten von Möbelstücken aufnehmen.
+     * 
+     * @return Eine ArrayList mit den Lagern, die Möbelstücke enthalten.
+     */
     public ArrayList<Lager<? extends Moebelstueck>> getLager(){
         ArrayList<Lager<? extends Moebelstueck>> lager = new ArrayList<>();
         lager.add(buerotischlager);
@@ -75,6 +88,11 @@ public class Lagersystem {
         return lager;
     }
 
+    /**
+     * Berechnet den Gesamtverkaufspreis aller Möbelstücke im Lager.
+     * 
+     * @return Der Gesamtverkaufspreis aller Möbelstücke im Lager.
+     */
     public int berechenVerkaufspreisAllerMoebelImLager(){
         ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
         int summe = 0;
@@ -84,6 +102,12 @@ public class Lagersystem {
         return summe;
     }
 
+    /**
+     * Berechnet den Gesamtverkaufspreis aller Möbelstücke in einem bestimmten Bereich.
+     * 
+     * @param bereich Der Bereich, für den der Verkaufspreis berechnet werden soll.
+     * @return Der Gesamtverkaufspreis aller Möbelstücke in dem angegebenen Bereich.
+     */
     public int berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich bereich){
         ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
         int summe = 0;
@@ -100,6 +124,12 @@ public class Lagersystem {
         return summe;
     }
 
+    /**
+     * Berechnet den Gesamtverkaufspreis aller Möbelstücke einer bestimmten Kategorie im Lagersystem.
+     *
+     * @param kategorie Die Kategorie der Möbelstücke, für die der Verkaufspreis berechnet werden soll.
+     * @return Der Gesamtverkaufspreis aller Möbelstücke der angegebenen Kategorie.
+     */
     public int berechenVerkaufspreisAllerMoebelEinerKategorie(Moebelstueck.Kategorie kategorie){
         ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
         int summe = 0;
@@ -115,6 +145,12 @@ public class Lagersystem {
         }
         return summe;
     }
+
+    /**
+     * Gibt den Bereich mit dem größten Gesamtwert zurück.
+     * 
+     * @return Der Bereich mit dem größten Gesamtwert.
+     */
     public Bereich getBereichMitGroesstemGesamtwert (){
         int kueche = berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich.Kueche);
         int wohnen = berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich.Wohnen);
@@ -376,7 +412,13 @@ public class Lagersystem {
         return konstellationen;
     }
 
-
+    
+    /**
+     * Ermittelt die beste Konstellation von Lagern basierend auf dem Gesamtpreis.
+     * 
+     * @param konstellationen Eine Liste von Listen von Lagern, die verschiedene Konstellationen darstellen.
+     * @return Die beste Konstellation von Lagern basierend auf dem Gesamtpreis.
+     */
     private ArrayList<Lager<? extends Moebelstueck>> besteKonstellation(ArrayList<ArrayList<Lager<? extends Moebelstueck>>> konstellationen){
         if (konstellationen.size() == 0){
             return null;
@@ -417,27 +459,50 @@ public class Lagersystem {
 
     }
 
-public void displayMoebelMitEigenschaft(){
-    ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
-    for (Lager<? extends Moebelstueck> l: lager){
-        for (Moebelstueck m: l.getMoebel()){
-            System.out.println(m.toString());
-        }
+    
+    /**
+     * Zeigt alle Möbelstücke mit ihren Eigenschaften an.
+     */
+    public void displayMoebelMitEigenschaft(){
+        ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
+        for (Lager<? extends Moebelstueck> l: lager){
+            for (Moebelstueck m: l.getMoebel()){
+                System.out.println(m.toString());
+            }
 
+        }
     }
-}
+
+    /**
+     * Sucht nach Lagerungen mit einer bestimmten Fläche.
+     *
+     * @param flaeche Die Fläche, nach der gesucht werden soll.
+     * @return Eine Liste von Lagerungen, die die angegebene Fläche haben.
+     */
     public List<Lagerung> searchLagerungMitEigenschaft(Lagerung.Flaeche flaeche) {
         List<Lagerung> lagerungList = kleiderschranklager.listMitEigenschaft(flaeche);
         lagerungList.add((Lagerung) kuechenregallager.listMitEigenschaft(flaeche));
         return lagerungList;
     }
 
+    /**
+     * Sucht nach Liegemoebeln mit einer bestimmten Laenge im Lagersystem.
+     * 
+     * @param laenge Die Laenge der gesuchten Liegemoebel.
+     * @return Eine Liste von Liegemoebeln mit der angegebenen Laenge.
+     */
     public List<Liegemoebel> searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge laenge) {
         List<Liegemoebel> liegemoebelList = doppelbettlager.listMitEigenschaft(laenge);
         liegemoebelList.add((Liegemoebel) balkonliegelager.listMitEigenschaft(laenge));
         return liegemoebelList;
     }
-
+    
+    /**
+     * Sucht nach Tischen mit einer bestimmten Höhe im Lagersystem.
+     * 
+     * @param hoehe Die Höhe der gesuchten Tische.
+     * @return Eine Liste von Tischen, die die angegebene Höhe haben.
+     */
     public List<Tische> searchTischMitEigenschaft(Tische.Hoehe hoehe) {
         List tischeList = new ArrayList<>();
         tischeList.add(buerotischlager.listTischeMitEigenschaft(hoehe));
@@ -446,6 +511,12 @@ public void displayMoebelMitEigenschaft(){
         return tischeList;
     }
 
+    /**
+     * Sucht nach Sitzmöbeln mit einer bestimmten Eigenschaft.
+     * 
+     * @param eigenschaft Die Eigenschaft, nach der gesucht werden soll.
+     * @return Eine Liste von Sitzmöbeln, die die angegebene Eigenschaft haben.
+     */
     public List<Sitzmoebel> searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze sitzplaetze) {
         List<Sitzmoebel> sitzmoebelList = kuechenstuhllager.listMitEigenschaft(sitzplaetze);
         sitzmoebelList.add((Sitzmoebel) ohrensessellager.listMitEigenschaft(sitzplaetze));
