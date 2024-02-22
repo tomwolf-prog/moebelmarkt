@@ -1,6 +1,5 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.security.PublicKey;
 
 import javax.swing.*;
 
@@ -9,7 +8,7 @@ import Kategorie.Lagerung.Flaeche;
 import Kategorie.Lagerung.Moebelart;
 import Lager.*;
 
-public class Moebelhaus extends JFrame implements ActionListener {
+public class Moebelhaus extends JFrame{
 
     public Moebelhaus(Lagersystem lagersystem) {
         //Erstellen des Frame
@@ -146,7 +145,7 @@ public class Moebelhaus extends JFrame implements ActionListener {
         cancel.setBounds(150,250,150,30);  
         cancel.addActionListener(new ActionListener() { 
             public void actionPerformed(ActionEvent e) { 
-            	new Moebelhaus();
+            	new Moebelhaus(lagersystem);
             	addItemScreen.dispose();
             } 
         });
@@ -229,7 +228,7 @@ public class Moebelhaus extends JFrame implements ActionListener {
         cancel.setBounds(150,250,150,30);  
         cancel.addActionListener(new ActionListener() { 
             public void actionPerformed(ActionEvent e) { 
-            	new Moebelhaus();
+            	new Moebelhaus(lagersystem);
             	addKleiderschank.dispose();
             } 
         });

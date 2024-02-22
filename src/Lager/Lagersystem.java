@@ -4,6 +4,13 @@ import Kategorie.Sitzmoebel;
 import Kategorie.Tische;
 import Kategorie.Tische.Moebelart;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.stream.Collectors;
@@ -25,7 +32,7 @@ import java.util.Objects;
  * Es bietet auch Funktionen zur Berechnung des Verkaufspreises aller Möbel im Lager, des Verkaufspreises aller Möbel in einem bestimmten Bereich und des Verkaufspreises aller Möbel einer bestimmten Kategorie.
  * Darüber hinaus kann das Lagersystem den Bereich mit dem höchsten Gesamtwert ermitteln.
  */
-public class Lagersystem {
+public class Lagersystem implements Serializable {
     //Tische
     private Buerotischlager buerotischlager;
     private Couchtischlager couchtischlager;
@@ -522,6 +529,24 @@ public class Lagersystem {
         sitzmoebelList.add((Sitzmoebel) ohrensessellager.listMitEigenschaft(sitzplaetze));
         sitzmoebelList.add((Sitzmoebel) fernsehcouchlager.listMitEigenschaft(sitzplaetze));
         return sitzmoebelList;
+    }
+    
+    public void writeToFile(Lagersystem lagersystem, String file) throws IOException {
+        FileOutputStream f = new FileOutputStream(new File(file));
+        ObjectOutputStream o = new ObjectOutputStream(f);
+
+        o.writeObject(lagersystem);
+        o.close();
+        f.close();
+    }
+
+    public Lagersystem readFromFile(String file) throws IOException, ClassNotFoundException {
+        FileInputStream fi = new FileInputStream(new File(file));
+        ObjectInputStream oi = new ObjectInputStream(fi);
+
+        // Read objects
+        return (Lagersystem) oi.readObject();
+
     }
 
 }
