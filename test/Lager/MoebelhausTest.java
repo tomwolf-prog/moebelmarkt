@@ -2,10 +2,15 @@ package test.Lager;
 
 import java.io.IOException;
 
+import Kategorie.Lagerung;
 import Kategorie.Sitzmoebel;
 import Kategorie.Tische;
+import Kategorie.Lagerung.Flaeche;
+import Kategorie.Lagerung.Moebelart;
 import Lager.Buerotischlager;
+import Lager.Kleiderschranklager;
 import Lager.Lagersystem;
+import Lager.Lagerunglager;
 
 public class MoebelhausTest {
 	 public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -29,6 +34,8 @@ public class MoebelhausTest {
 	        Sitzmoebel sitzmoebel = new Sitzmoebel(Sitzmoebel.Moebelart.Fernsehcouch, Sitzmoebel.Sitzplaetze.eins);
 	        sitzmoebel.setSitzplaetze(Sitzmoebel.Sitzplaetze.eins);
 	        sitzmoebel.setMoebelart(Sitzmoebel.Moebelart.Fernsehcouch);
+	        
+	        Lagerung kleiderschrank = new Lagerung(Moebelart.Kleiderschrank, Flaeche.s);
 
 	        Lagersystem lagersystem = new Lagersystem();
 

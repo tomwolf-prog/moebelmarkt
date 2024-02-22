@@ -1,10 +1,17 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.security.PublicKey;
+
 import javax.swing.*;
+
+import Kategorie.*;
+import Kategorie.Lagerung.Flaeche;
+import Kategorie.Lagerung.Moebelart;
+import Lager.*;
 
 public class Moebelhaus extends JFrame implements ActionListener {
 
-    public Moebelhaus() {
+    public Moebelhaus(Lagersystem lagersystem) {
         //Erstellen des Frame
     	JFrame f = new JFrame("Button Example");  
     	
@@ -13,7 +20,7 @@ public class Moebelhaus extends JFrame implements ActionListener {
         addItem.setBounds(150,200,95,30);  
         addItem.addActionListener(new ActionListener() { 
             public void actionPerformed(ActionEvent e) { 
-            	addItemScreen();
+            	addItemScreen(lagersystem);
             	f.dispose();
             } 
         });
@@ -36,7 +43,7 @@ public class Moebelhaus extends JFrame implements ActionListener {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
     }
     
-    public void addItemScreen() {
+    public void addItemScreen(Lagersystem lagersystem) {
     	//Erstellen des Frame
     	JFrame addItemScreen = new JFrame("Button Example");  
     	
@@ -45,7 +52,7 @@ public class Moebelhaus extends JFrame implements ActionListener {
         addLagerung.setBounds(150,50,150,30);  
         addLagerung.addActionListener(new ActionListener() { 
             public void actionPerformed(ActionEvent e) {
-            	addLagerungScreen();
+            	addLagerungScreen(lagersystem);
             	addItemScreen.dispose();
             } 
         });
@@ -86,7 +93,7 @@ public class Moebelhaus extends JFrame implements ActionListener {
         cancel.setBounds(150,250,150,30);  
         cancel.addActionListener(new ActionListener() { 
             public void actionPerformed(ActionEvent e) { 
-            	new Moebelhaus();
+            	new Moebelhaus(lagersystem);
             	addItemScreen.dispose();
             } 
         });
@@ -109,7 +116,7 @@ public class Moebelhaus extends JFrame implements ActionListener {
         addItemScreen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
  }
     
-    public void addLagerungScreen(){
+    public void addLagerungScreen(Lagersystem lagersystem){
     	//Erstellen des Frame
     	JFrame addItemScreen = new JFrame("Button Example");  
     	
@@ -118,7 +125,7 @@ public class Moebelhaus extends JFrame implements ActionListener {
         addKleiderschrank.setBounds(150,50,150,30);  
         addKleiderschrank.addActionListener(new ActionListener() { 
             public void actionPerformed(ActionEvent e) {
-            	addLagerungScreen();
+            	addKleiderschrankScreen(lagersystem);
             	addItemScreen.dispose();
             } 
         });
@@ -165,10 +172,94 @@ public class Moebelhaus extends JFrame implements ActionListener {
     	
     }
     
+    public void addKleiderschrankScreen(Lagersystem lagersystem){
+    	//Erstellen des Frame
+    	JFrame addKleiderschank = new JFrame("Button Example");  
+    	
+        //Erstellen von AddItem Button
+        JButton addKleiderschrankS=new JButton("Add Kleiderschrank S");  
+        addKleiderschrankS.setBounds(150,50,150,30);  
+        addKleiderschrankS.addActionListener(new ActionListener() { 
+            public void actionPerformed(ActionEvent e) {
+            	lagersystem.addLagerung(new Lagerung(Moebelart.Kleiderschrank, Flaeche.s));
+            	new Moebelhaus(lagersystem);
+            	addKleiderschank.dispose();
+            } 
+        });
+        addKleiderschank.add(addKleiderschrankS);  
+        
+        //Erstellen von AddItem Button
+        JButton addKleiderschrankM=new JButton("Add Kuechenregallager M");  
+        addKleiderschrankM.setBounds(150,100,150,30);  
+        addKleiderschrankM.addActionListener(new ActionListener() { 
+            public void actionPerformed(ActionEvent e) { 
+            	lagersystem.addLagerung(new Lagerung(Moebelart.Kleiderschrank, Flaeche.m));
+            	new Moebelhaus(lagersystem);
+            	addKleiderschank.dispose();
+            } 
+        });
+        addKleiderschank.add(addKleiderschrankM); 
+        
+        //Erstellen von AddItem Button
+        JButton addKleiderschrankL=new JButton("Add Kuechenregallager L");  
+        addKleiderschrankL.setBounds(150,150,150,30);  
+        addKleiderschrankL.addActionListener(new ActionListener() { 
+            public void actionPerformed(ActionEvent e) { 
+            	lagersystem.addLagerung(new Lagerung(Moebelart.Kleiderschrank, Flaeche.l));
+            	new Moebelhaus(lagersystem);
+            	addKleiderschank.dispose();
+            } 
+        });
+        addKleiderschank.add(addKleiderschrankL); 
+        
+        //Erstellen von AddItem Button
+        JButton addKleiderschrankXL=new JButton("Add Kuechenregallager XL");  
+        addKleiderschrankXL.setBounds(150,200,150,30);  
+        addKleiderschrankXL.addActionListener(new ActionListener() { 
+            public void actionPerformed(ActionEvent e) { 
+            	lagersystem.addLagerung(new Lagerung(Moebelart.Kleiderschrank, Flaeche.xl));
+            	new Moebelhaus(lagersystem);
+            	addKleiderschank.dispose();
+            } 
+        });
+        addKleiderschank.add(addKleiderschrankXL); 
+        
+        //Erstellen von AddItem Button
+        JButton cancel=new JButton("Cancel");  
+        cancel.setBounds(150,250,150,30);  
+        cancel.addActionListener(new ActionListener() { 
+            public void actionPerformed(ActionEvent e) { 
+            	new Moebelhaus();
+            	addKleiderschank.dispose();
+            } 
+        });
+        addKleiderschank.add(cancel); 
+    	
+        
+        
+        //Erstellen von Exit Button
+        JButton exit=new JButton("Exit");  
+        exit.setBounds(150,300,150,30);  
+        exit.addActionListener(new ActionListener() { 
+            public void actionPerformed(ActionEvent e) { 
+            	myMethod();
+            	addKleiderschank.dispose();
+            } 
+        });
+        addKleiderschank.add(exit);  
+        
+        addKleiderschank.setSize(1600,900);  
+        addKleiderschank.setLayout(null);  
+        addKleiderschank.setVisible(true);   
+        addKleiderschank.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+    	
+    }
+    
     
     	
 	public static void main(String[] args) {
-        new Moebelhaus();
+		Lagersystem lagersystem = new Lagersystem();
+        new Moebelhaus(lagersystem);
         
     }
 
