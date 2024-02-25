@@ -55,4 +55,12 @@ public class Liegemoebel extends Moebelstueck {
     public void setMoebelart(Moebelart moebelart) {
         this.moebelart = moebelart;
     }
+
+    @Override
+    public String toString() {
+        return "Liegemoebel{" +
+                "laenge=" + laenge +
+                ", moebelart=" + moebelart +
+                '}';
+    }
 }

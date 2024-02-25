@@ -50,10 +50,11 @@ public class Sitzmoebel extends Moebelstueck {
         this.moebelart = moebelart;
     }
 
-    
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Sitzmoebel{" +
+                "sitzplaetze=" + sitzplaetze +
+                ", moebelart=" + moebelart +
+                '}';
+    }
 }

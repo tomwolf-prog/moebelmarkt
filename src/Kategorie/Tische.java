@@ -56,4 +56,12 @@ public class Tische extends Moebelstueck {
     public void setHoehe(Hoehe hoehe) {
         this.hoehe = hoehe;
     }
+
+    @Override
+    public String toString() {
+        return "Tische{" +
+                "moebelart=" + moebelart +
+                ", hoehe=" + hoehe +
+                '}';
+    }
 }
