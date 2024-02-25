@@ -68,6 +68,7 @@ public class Sitzmoebellager extends Lager<Sitzmoebel> {
             }
         }
         return bestand;
+    }
 
     public void writeToFile(Sitzmoebellager sitzmoebellager, String file) throws IOException {
         FileOutputStream f = new FileOutputStream(new File(file));

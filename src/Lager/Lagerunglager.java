@@ -69,6 +69,7 @@ public class Lagerunglager extends Lager<Lagerung> {
             }
         }
         return bestand;
+    }
 
     public void writeToFile(Lagerunglager lagerunglager, String file) throws IOException {
         FileOutputStream f = new FileOutputStream(new File(file));
