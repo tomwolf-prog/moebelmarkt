@@ -482,6 +482,7 @@ public class Lagersystem {
     public List<Lagerung> searchLagerungMitEigenschaft(Lagerung.Flaeche flaeche) {
         List<Lagerung> lagerungList = kleiderschranklager.listMitEigenschaft(flaeche);
         lagerungList.add((Lagerung) kuechenregallager.listMitEigenschaft(flaeche));
+        lagerungList.add((Lagerung) beistelltischlager.listMitEigenschaft(flaeche));
         return lagerungList;
     }
 
@@ -496,7 +497,7 @@ public class Lagersystem {
         liegemoebelList.add((Liegemoebel) balkonliegelager.listMitEigenschaft(laenge));
         return liegemoebelList;
     }
-    
+
     /**
      * Sucht nach Tischen mit einer bestimmten Höhe im Lagersystem.
      * 
@@ -504,10 +505,10 @@ public class Lagersystem {
      * @return Eine Liste von Tischen, die die angegebene Höhe haben.
      */
     public List<Tische> searchTischMitEigenschaft(Tische.Hoehe hoehe) {
-        List tischeList = new ArrayList<>();
-        tischeList.add(buerotischlager.listTischeMitEigenschaft(hoehe));
-        tischeList.add(couchtischlager.listTischeMitEigenschaft(hoehe));
-        tischeList.add(esstischlager.listTischeMitEigenschaft(hoehe));
+        List<Tische> tischeList = kuechentischlager.listTischeMitEigenschaft(hoehe);
+        tischeList.add((Tische) buerotischlager.listTischeMitEigenschaft(hoehe));
+        tischeList.add((Tische) couchtischlager.listTischeMitEigenschaft(hoehe));
+        tischeList.add((Tische) esstischlager.listTischeMitEigenschaft(hoehe));
         return tischeList;
     }
 
