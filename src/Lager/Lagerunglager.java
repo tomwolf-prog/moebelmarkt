@@ -50,8 +50,8 @@ public class Lagerunglager extends Lager<Lagerung> {
      * @param lagerung Die hinzuzufügende Lagerung.
      * @return true, wenn die Lagerung erfolgreich hinzugefügt wurde, ansonsten false.
      */
-    public boolean addLagerung(Lagerung lagerung) {
-        return moebelstueckArrayList.add(lagerung);
+    public void addLagerung(Lagerung lagerung) {
+        moebelstueckArrayList.add(lagerung);
     }
 
 

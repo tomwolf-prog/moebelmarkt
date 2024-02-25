@@ -49,8 +49,8 @@ public class Tischlager extends Lager<Tische> {
      * @param tisch Der hinzuzufügende Tisch.
      * @return true, wenn der Tisch erfolgreich hinzugefügt wurde, ansonsten false.
      */
-    public boolean addTisch(Tische tisch) {
-        return moebelstueckArrayList.add(tisch);
+    public void addTisch(Tische tisch) {
+        moebelstueckArrayList.add(tisch);
     }
 
     /**

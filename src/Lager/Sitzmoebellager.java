@@ -50,8 +50,8 @@ public class Sitzmoebellager extends Lager<Sitzmoebel> {
      * @param sitzmoebel Das hinzuzufügende Sitzmöbelstück.
      * @return true, wenn das Sitzmöbelstück erfolgreich hinzugefügt wurde, ansonsten false.
      */
-    public boolean addSitzmoebel(Sitzmoebel sitzmoebel) {
-        return moebelstueckArrayList.add(sitzmoebel);
+    public void addSitzmoebel(Sitzmoebel sitzmoebel) {
+        moebelstueckArrayList.add(sitzmoebel);
     }
 
     /**

@@ -46,8 +46,8 @@ public class Liegemoebellager extends Lager<Liegemoebel> {
      * @param liegemoebel Das Liegemoebel-Objekt, das zum Lager hinzugefügt werden soll.
      * @return true, wenn das Liegemoebel-Objekt erfolgreich hinzugefügt wurde, ansonsten false.
      */
-    public boolean addLiegemoebel(Liegemoebel liegemoebel) {
-        return moebelstueckArrayList.add(liegemoebel);
+    public void addLiegemoebel(Liegemoebel liegemoebel) {
+        moebelstueckArrayList.add(liegemoebel);
     }
     /**
      * Gibt den Bestand an Liegemoebel-Objekten mit der angegebenen Länge im Lager zurück.
