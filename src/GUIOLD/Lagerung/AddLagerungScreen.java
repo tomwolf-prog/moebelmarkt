@@ -1,7 +1,7 @@
-package GUI.Lagerung;
+package GUIOLD.Lagerung;
 
-import GUI.AddItemScreen;
-import GUI.Frame;
+import GUIOLD.AddItemScreen;
+import GUIOLD.Frame;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
 

@@ -1,17 +1,18 @@
-package GUI;
+package GUIOLD;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class Frame {
+    private static JFrame frame;
 
     public static JFrame baseFrame() {
-        JFrame frame = new JFrame("Möbelhaus");
+        frame = new JFrame("Möbelhaus");
 
         frame.setSize(1600, 900);
         frame.setLayout(null);
         frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 
         //Erstellen von AddItem Button
         JButton addItem = new JButton("Add Item");
@@ -48,7 +49,7 @@ public class Frame {
         frame.setSize(1600, 900);
         frame.setLayout(null);
         frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel();
         panel.setBounds(0, 0, 105, 1500);

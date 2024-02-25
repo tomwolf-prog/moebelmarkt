@@ -1,6 +1,6 @@
-package GUI.Lagerung;
+package GUIOLD.Lagerung;
 
-import GUI.Frame;
+import GUIOLD.Frame;
 import Kategorie.Lagerung;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
