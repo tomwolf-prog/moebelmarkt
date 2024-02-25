@@ -440,8 +440,8 @@ public class Lagersystem {
      *         Gibt null zurück, wenn keine gültigen Kombinationen gefunden werden.
      */
     public ArrayList<Lager<? extends Moebelstueck>> moebelauswahlBisBetrag(int betragInCent){
-        if (betragInCent < 10000 || betragInCent >60000){
-            return null; //raise some Error?
+        if (betragInCent < 100_00 || betragInCent > 600_00){
+            return null; //raise some Exception?
         }
         ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
 

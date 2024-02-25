@@ -115,15 +115,15 @@ public class LagersystemTest {
 
         int alterBestandS = 20;
         lagersystem.mindereBuerotischlagerLagerbestand(5, Tische.Hoehe.s);
-        int neuerBestandS = lagersystem.getCouchtischlagerBestand(Tische.Hoehe.s);
+        int neuerBestandS = lagersystem.getBuerotischlagerBestand(Tische.Hoehe.s);
 
         int alterBestandM = 20;
         lagersystem.mindereBuerotischlagerLagerbestand(10, Tische.Hoehe.m);
-        int neuerBestandM = lagersystem.getCouchtischlagerBestand(Tische.Hoehe.m);
+        int neuerBestandM = lagersystem.getBuerotischlagerBestand(Tische.Hoehe.m);
 
         int alterBestandL = 20;
         lagersystem.mindereBuerotischlagerLagerbestand(15, Tische.Hoehe.l);
-        int neuerBestandL = lagersystem.getCouchtischlagerBestand(Tische.Hoehe.l);
+        int neuerBestandL = lagersystem.getBuerotischlagerBestand(Tische.Hoehe.l);
 
         Assert.assertEquals(alterBestandS - 5, neuerBestandS);
         Assert.assertEquals(alterBestandM - 10, neuerBestandM);
