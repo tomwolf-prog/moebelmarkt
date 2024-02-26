@@ -26,9 +26,21 @@ public class Sitzmoebel extends Moebelstueck {
         this.sitzplaetze = sitzplaetze;
     }
 
-    public enum Moebelart{Kuechenstuhl,Ohrensessel,Fernsehcouch}
+    public enum Moebelart {Kuechenstuhl, Ohrensessel, Fernsehcouch}
 
-    public enum Sitzplaetze{eins,zwei,drei,vier}
+    public enum Sitzplaetze {
+        eins(1), zwei(2), drei(3), vier(4);
+
+        private int numSitzplaetze;
+
+        Sitzplaetze(int numSitzplaetze) {
+            this.numSitzplaetze = numSitzplaetze;
+        }
+
+        public int getNumHoehe() {
+            return numSitzplaetze;
+        }
+    }
 
     public Sitzplaetze getSitzplaetze() {
         return sitzplaetze;

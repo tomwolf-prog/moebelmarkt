@@ -4,21 +4,21 @@ import Moebelstueck.Moebelstueck;
 
 public class Lagerung extends Moebelstueck {
 
-    public enum Flaeche{
-        s(025), m(050), l(100), xl(200);
+    public enum Flaeche {
+        s(25), m(50), l(100), xl(200);
 
         private int numFlaeche;
 
-        Flaeche(int Flaeche){
+        Flaeche(int Flaeche) {
             this.numFlaeche = Flaeche;
         }
 
-        public  int getNumFlaeche(){
+        public int getNumFlaeche() {
             return numFlaeche;
         }
     }
 
-    public enum Moebelart{Kuechenregal,Beistelltisch,Kleiderschrank}
+    public enum Moebelart {Kuechenregal, Beistelltisch, Kleiderschrank}
 
     // public Lagerung(Moebelart moebelart) {
     //     super();
@@ -48,6 +48,7 @@ public class Lagerung extends Moebelstueck {
     public Moebelart getMoebelart() {
         return this.moebelart;
     }
+
     public void setMoebelart(Moebelart moebelart) {
         this.moebelart = moebelart;
     }
