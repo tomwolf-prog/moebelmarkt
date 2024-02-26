@@ -1,7 +1,8 @@
-package Lager;
+package Lager.Tischlager;
 
 /**
  * Das Esstischlager ist eine Unterklasse von Tischlager.
  * Es repräsentiert ein Lager für Esstische.
  */
-public class Esstischlager extends Tischlager {}
+public class Esstischlager extends Tischlager {
+}

@@ -1,0 +1,172 @@
+package GUI;
+
+import GUI.Lagerung.AddBeistelltischePanel;
+import GUI.Lagerung.AddKleiderschrankregalPanel;
+import GUI.Lagerung.AddKuechenregalPanel;
+import GUI.Lagerung.AddLagerungPanel;
+import GUI.Liegemoebel.AddBalkonliegePanel;
+import GUI.Liegemoebel.AddDoppelbettPanel;
+import GUI.Liegemoebel.AddLiegemoebel;
+import GUI.Sitzmoebel.AddFernsehcouchPanel;
+import GUI.Sitzmoebel.AddKuechenstuhlPanel;
+import GUI.Sitzmoebel.AddOhrensesselPanel;
+import GUI.Sitzmoebel.AddSitzmoebelPanel;
+import GUI.Tische.*;
+import Lager.Lagersystem;
+import Moebelhaus.Moebelhaus;
+
+import javax.swing.*;
+import java.awt.*;
+
+
+public class MyFrame {
+
+    static Lagersystem lagersystem = Moebelhaus.getLagersystem();
+    static JFrame frame;
+
+    public static JPanel addItemPanel = AddItemPanel.Panel();
+    //Lagerung
+    public static JPanel addLagerungPanel = AddLagerungPanel.Panel();
+    public static JPanel addKuechenregalPanel = AddKuechenregalPanel.Panel();
+    public static JPanel addKleiderschrankregalPanel = AddKleiderschrankregalPanel.Panel();
+    public static JPanel addBeistelltischePanel = AddBeistelltischePanel.Panel();
+    public static JPanel lagerbestandPanel = LagerbestandPanel.Panel();
+
+    //Sitzmoebel
+    public static JPanel addFernsehcouchPanel = AddFernsehcouchPanel.Panel();
+    public static JPanel addKuechenstuhlPanel = AddKuechenstuhlPanel.Panel();
+    public static JPanel addOhrensesselPanel = AddOhrensesselPanel.Panel();
+    public static JPanel addSitzmoebelPanel = AddSitzmoebelPanel.Panel();
+
+    //Tische
+    public static JPanel addBuerotischPanel = AddBuerotischPanel.Panel();
+    public static JPanel addCouchtischPanel = AddCouchtischPanel.Panel();
+    public static JPanel addEsstischPanel = AddEsstischPanel.Panel();
+    public static JPanel addKuechentischPanel = AddKuechentischPanel.Panel();
+    public static JPanel addTischePanel = AddTischePanel.Panel();
+
+    //Liegemoebel
+    public static JPanel addBalkonliegePanel = AddBalkonliegePanel.Panel();
+    public static JPanel addDoppelbettPanel = AddDoppelbettPanel.Panel();
+    public static JPanel addLiegemoebelPanel = AddLiegemoebel.Panel();
+
+    private static void addPanels() {
+        frame.add(addLagerungPanel);
+        frame.add(addItemPanel);
+        frame.add(lagerbestandPanel);
+        //Lagerung
+        frame.add(addLagerungPanel);
+        frame.add(addKuechenregalPanel);
+        frame.add(addKleiderschrankregalPanel);
+        frame.add(addBeistelltischePanel);
+        //Sitzmoebel
+        frame.add(addFernsehcouchPanel);
+        frame.add(addKuechenstuhlPanel);
+        frame.add(addOhrensesselPanel);
+        frame.add(addSitzmoebelPanel);
+        //Tische
+        frame.add(addBuerotischPanel);
+        frame.add(addCouchtischPanel);
+        frame.add(addEsstischPanel);
+        frame.add(addKuechentischPanel);
+        frame.add(addTischePanel);
+        //Liegemoebel
+        frame.add(addBalkonliegePanel);
+        frame.add(addDoppelbettPanel);
+        frame.add(addLiegemoebelPanel);
+
+    }
+
+    private static void setAllPanelsInvisible() {
+        addLagerungPanel.setVisible(false);
+        addItemPanel.setVisible(false);
+        lagerbestandPanel.setVisible(false);
+        //Lagerung
+        addLagerungPanel.setVisible(false);
+        addKuechenregalPanel.setVisible(false);
+        addKleiderschrankregalPanel.setVisible(false);
+        addBeistelltischePanel.setVisible(false);
+        //Sitzmoebel
+        addFernsehcouchPanel.setVisible(false);
+        addKuechenstuhlPanel.setVisible(false);
+        addOhrensesselPanel.setVisible(false);
+        addSitzmoebelPanel.setVisible(false);
+        //Tische
+        addBuerotischPanel.setVisible(false);
+        addCouchtischPanel.setVisible(false);
+        addEsstischPanel.setVisible(false);
+        addKuechentischPanel.setVisible(false);
+        addTischePanel.setVisible(false);
+        //Liegemoebel
+        addBalkonliegePanel.setVisible(false);
+        addDoppelbettPanel.setVisible(false);
+        addLiegemoebelPanel.setVisible(false);
+
+    }
+
+
+    public static JFrame baseFrame() {
+        frame = new JFrame("Möbelhaus");
+        addPanels();
+
+        frame.setSize(1600, 900);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+
+        //Erstellen von Lager Button
+        JButton LagerBestand = new JButton("Bestand");
+        LagerBestand.setBounds(5, 720, 95, 30);
+        LagerBestand.addActionListener(e -> {
+            setAllPanelsInvisible();
+            LagerbestandPanel.updateLabels();
+            lagerbestandPanel.setVisible(true);
+        });
+        frame.add(LagerBestand);
+
+        //Erstellen von AddItem Button
+        JButton addItem = new JButton("Add Item Panel");
+        addItem.setBounds(5, 755, 95, 30);
+        addItem.addActionListener(e -> {
+            setAllPanelsInvisible();
+            addItemPanel.setVisible(true);
+        });
+        frame.add(addItem);
+
+        //Erstellen von Home Button
+        JButton home = new JButton("Home");
+        home.setBounds(5, 790, 95, 30);
+        home.addActionListener(e -> {
+            setAllPanelsInvisible();
+        });
+        frame.add(home);
+
+        //Erstellen von Exit Button
+        JButton exit = new JButton("Exit");
+        exit.setBounds(5, 825, 95, 30);
+        exit.addActionListener(e -> {
+            int confirmed = JOptionPane.showConfirmDialog(frame,
+                    "Are you sure you want to quit?", "Confirm quit",
+                    JOptionPane.YES_NO_OPTION);
+            if (confirmed == JOptionPane.YES_OPTION) {
+                // clean up code
+                System.exit(0);
+            }
+        });
+        frame.add(exit);
+
+        frame.setSize(1600, 900);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+        panel.setBounds(0, 0, 105, 1500);
+        panel.setBackground(Color.lightGray);
+        frame.add(panel);
+
+        return frame;
+
+    }
+
+}
