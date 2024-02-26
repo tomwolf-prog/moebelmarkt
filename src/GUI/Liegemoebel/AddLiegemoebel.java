@@ -22,8 +22,8 @@ public class AddLiegemoebel {
         addBalkonliege.setBounds(150, 50, 175, 30);
         addBalkonliege.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.addLiegemoebelPanel.setVisible(false);
-                MyFrame.addBalkonliegePanel.setVisible(true);
+                MyFrame.changeLiegemoebelPanel.setVisible(false);
+                MyFrame.changeBalkonliegePanel.setVisible(true);
             }
         });
         addLiegemoebelPanel.add(addBalkonliege);
@@ -33,8 +33,8 @@ public class AddLiegemoebel {
         addDoppelbett.setBounds(150, 100, 175, 30);
         addDoppelbett.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.addLiegemoebelPanel.setVisible(false);
-                MyFrame.addDoppelbettPanel.setVisible(true);
+                MyFrame.changeLiegemoebelPanel.setVisible(false);
+                MyFrame.changeDoppelbettPanel.setVisible(true);
             }
         });
         addLiegemoebelPanel.add(addDoppelbett);
@@ -44,8 +44,8 @@ public class AddLiegemoebel {
         JButton back = new JButton("Back");
         back.setBounds(150, 150, 175, 30);
         back.addActionListener(e -> {
-            MyFrame.addLiegemoebelPanel.setVisible(false);
-            MyFrame.addItemPanel.setVisible(true);
+            MyFrame.changeLiegemoebelPanel.setVisible(false);
+            MyFrame.changeItemPanel.setVisible(true);
         });
         addLiegemoebelPanel.add(back);
 

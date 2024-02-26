@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Diese Klasse repräsentiert ein Lagerungslager, das Möbelstücke der Kategorie Lagerung verwaltet.
  */
-public class Lagerunglager extends Lager<Lagerung> {
+public abstract class Lagerunglager extends Lager<Lagerung> {
 
     /**
      * Entfernt eine Lagerung mit der angegebenen Fläche aus dem Lagerungslager.

@@ -5,6 +5,7 @@ import Kategorie.Liegemoebel;
 import Kategorie.Sitzmoebel;
 import Kategorie.Tische;
 import Kategorie.Tische.Moebelart;
+import Lager.Lagerungslager.Beistelltischlager;
 import Lager.Lagerungslager.Kleiderschranklager;
 import Lager.Lagerungslager.Kuechenregallager;
 import Lager.Liegemoebellager.Balkonliegelager;
@@ -12,7 +13,10 @@ import Lager.Liegemoebellager.Doppelbettlager;
 import Lager.Sitzmoebellager.Fernsehcouchlager;
 import Lager.Sitzmoebellager.Kuechenstuhllager;
 import Lager.Sitzmoebellager.Ohrensessellager;
-import Lager.Tischlager.*;
+import Lager.Tischlager.Buerotischlager;
+import Lager.Tischlager.Couchtischlager;
+import Lager.Tischlager.Esstischlager;
+import Lager.Tischlager.Kuechentischlager;
 import Moebelstueck.Moebelstueck;
 import Moebelstueck.Moebelstueck.Bereich;
 
@@ -22,6 +26,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
+import static Kategorie.Lagerung.Moebelart.Beistelltisch;
 
 /**
  * Das Lagersystem verwaltet verschiedene Lager für Möbelstücke.
@@ -414,7 +420,7 @@ public class Lagersystem implements Serializable {
     }
 
     public void erhoeheBeistelltischlagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> beistelltischlager.addLagerung(new Lagerung(Lagerung.Moebelart.Beistelltisch, flaeche)));
+        IntStream.range(0, quantitativerBetrag).forEach(i -> beistelltischlager.addLagerung(new Lagerung(Beistelltisch, flaeche)));
     }
 
     public void mindereBeistelltischlagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
@@ -457,6 +463,8 @@ public class Lagersystem implements Serializable {
             case Kleiderschrank:
                 kleiderschranklager.addLagerung(lagerung);
                 break;
+            case Beistelltisch:
+                beistelltischlager.addLagerung(lagerung);
             default:
                 break;
         }

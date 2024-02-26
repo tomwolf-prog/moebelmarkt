@@ -11,7 +11,7 @@ import java.util.List;
  * Das Tischlager ist eine spezielle Art von Lager, das Tische verwaltet.
  * Es erbt von der generischen Klasse Lager<Tische>.
  */
-public class Tischlager extends Lager<Tische> {
+public abstract class Tischlager extends Lager<Tische> {
 
     /**
      * Entfernt einen Tisch aus dem Lager basierend auf der angegebenen Höhe.

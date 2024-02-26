@@ -1,9 +1,9 @@
 package GUI;
 
-import GUI.Lagerung.AddBeistelltischePanel;
-import GUI.Lagerung.AddKleiderschrankregalPanel;
-import GUI.Lagerung.AddKuechenregalPanel;
-import GUI.Lagerung.AddLagerungPanel;
+import GUI.Lagerung.ChangeBeistelltischePanel;
+import GUI.Lagerung.ChangeKleiderschrankregalPanel;
+import GUI.Lagerung.ChangeKuechenregalPanel;
+import GUI.Lagerung.ChangeLagerungPanel;
 import GUI.Liegemoebel.AddBalkonliegePanel;
 import GUI.Liegemoebel.AddDoppelbettPanel;
 import GUI.Liegemoebel.AddLiegemoebel;
@@ -17,102 +17,156 @@ import Moebelhaus.Moebelhaus;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 
 public class MyFrame {
 
     static Lagersystem lagersystem = Moebelhaus.getLagersystem();
     static JFrame frame;
-
-    public static JPanel addItemPanel = AddItemPanel.Panel();
-    //Lagerung
-    public static JPanel addLagerungPanel = AddLagerungPanel.Panel();
-    public static JPanel addKuechenregalPanel = AddKuechenregalPanel.Panel();
-    public static JPanel addKleiderschrankregalPanel = AddKleiderschrankregalPanel.Panel();
-    public static JPanel addBeistelltischePanel = AddBeistelltischePanel.Panel();
+    public static JPanel changeItemPanel = AddItemPanel.Panel();
     public static JPanel lagerbestandPanel = LagerbestandPanel.Panel();
+    public static JPanel verkaufspreisPanel = VerkaufspreisPanel.Panel();
+    public static JPanel rabattPanel = Rabatt.Panel();
+    public static JPanel setPreisPanel = SetPreis.Panel();
+
+    public static JPanel kombiPanel = Kombi.Panel();
+    //Lagerung
+    public static JPanel changeLagerungPanel = ChangeLagerungPanel.Panel();
+    public static JPanel changeKuechenregalPanel = ChangeKuechenregalPanel.Panel();
+    public static JPanel changeKleiderschrankregalPanel = ChangeKleiderschrankregalPanel.Panel();
+    public static JPanel changeBeistelltischePanel = ChangeBeistelltischePanel.Panel();
 
     //Sitzmoebel
-    public static JPanel addFernsehcouchPanel = AddFernsehcouchPanel.Panel();
-    public static JPanel addKuechenstuhlPanel = AddKuechenstuhlPanel.Panel();
-    public static JPanel addOhrensesselPanel = AddOhrensesselPanel.Panel();
-    public static JPanel addSitzmoebelPanel = AddSitzmoebelPanel.Panel();
+    public static JPanel changeFernsehcouchPanel = AddFernsehcouchPanel.Panel();
+    public static JPanel changeKuechenstuhlPanel = AddKuechenstuhlPanel.Panel();
+    public static JPanel changeOhrensesselPanel = AddOhrensesselPanel.Panel();
+    public static JPanel changeSitzmoebelPanel = AddSitzmoebelPanel.Panel();
 
     //Tische
-    public static JPanel addBuerotischPanel = AddBuerotischPanel.Panel();
-    public static JPanel addCouchtischPanel = AddCouchtischPanel.Panel();
-    public static JPanel addEsstischPanel = AddEsstischPanel.Panel();
-    public static JPanel addKuechentischPanel = AddKuechentischPanel.Panel();
-    public static JPanel addTischePanel = AddTischePanel.Panel();
+    public static JPanel changeBuerotischPanel = AddBuerotischPanel.Panel();
+    public static JPanel changeCouchtischPanel = AddCouchtischPanel.Panel();
+    public static JPanel changeEsstischPanel = AddEsstischPanel.Panel();
+    public static JPanel changeKuechentischPanel = AddKuechentischPanel.Panel();
+    public static JPanel changeTischePanel = AddTischePanel.Panel();
 
     //Liegemoebel
-    public static JPanel addBalkonliegePanel = AddBalkonliegePanel.Panel();
-    public static JPanel addDoppelbettPanel = AddDoppelbettPanel.Panel();
-    public static JPanel addLiegemoebelPanel = AddLiegemoebel.Panel();
+    public static JPanel changeBalkonliegePanel = AddBalkonliegePanel.Panel();
+    public static JPanel changeDoppelbettPanel = AddDoppelbettPanel.Panel();
+    public static JPanel changeLiegemoebelPanel = AddLiegemoebel.Panel();
 
     private static void addPanels() {
-        frame.add(addLagerungPanel);
-        frame.add(addItemPanel);
+        frame.add(changeLagerungPanel);
+        frame.add(changeItemPanel);
         frame.add(lagerbestandPanel);
+        frame.add(verkaufspreisPanel);
+        frame.add(setPreisPanel);
+        frame.add(rabattPanel);
+        frame.add(kombiPanel);
         //Lagerung
-        frame.add(addLagerungPanel);
-        frame.add(addKuechenregalPanel);
-        frame.add(addKleiderschrankregalPanel);
-        frame.add(addBeistelltischePanel);
+        frame.add(changeLagerungPanel);
+        frame.add(changeKuechenregalPanel);
+        frame.add(changeKleiderschrankregalPanel);
+        frame.add(changeBeistelltischePanel);
         //Sitzmoebel
-        frame.add(addFernsehcouchPanel);
-        frame.add(addKuechenstuhlPanel);
-        frame.add(addOhrensesselPanel);
-        frame.add(addSitzmoebelPanel);
+        frame.add(changeFernsehcouchPanel);
+        frame.add(changeKuechenstuhlPanel);
+        frame.add(changeOhrensesselPanel);
+        frame.add(changeSitzmoebelPanel);
         //Tische
-        frame.add(addBuerotischPanel);
-        frame.add(addCouchtischPanel);
-        frame.add(addEsstischPanel);
-        frame.add(addKuechentischPanel);
-        frame.add(addTischePanel);
+        frame.add(changeBuerotischPanel);
+        frame.add(changeCouchtischPanel);
+        frame.add(changeEsstischPanel);
+        frame.add(changeKuechentischPanel);
+        frame.add(changeTischePanel);
         //Liegemoebel
-        frame.add(addBalkonliegePanel);
-        frame.add(addDoppelbettPanel);
-        frame.add(addLiegemoebelPanel);
+        frame.add(changeBalkonliegePanel);
+        frame.add(changeDoppelbettPanel);
+        frame.add(changeLiegemoebelPanel);
 
     }
 
     private static void setAllPanelsInvisible() {
-        addLagerungPanel.setVisible(false);
-        addItemPanel.setVisible(false);
+        changeLagerungPanel.setVisible(false);
+        changeItemPanel.setVisible(false);
         lagerbestandPanel.setVisible(false);
+        verkaufspreisPanel.setVisible(false);
+        setPreisPanel.setVisible(false);
+        rabattPanel.setVisible(false);
+        kombiPanel.setVisible(false);
         //Lagerung
-        addLagerungPanel.setVisible(false);
-        addKuechenregalPanel.setVisible(false);
-        addKleiderschrankregalPanel.setVisible(false);
-        addBeistelltischePanel.setVisible(false);
+        changeLagerungPanel.setVisible(false);
+        changeKuechenregalPanel.setVisible(false);
+        changeKleiderschrankregalPanel.setVisible(false);
+        changeBeistelltischePanel.setVisible(false);
         //Sitzmoebel
-        addFernsehcouchPanel.setVisible(false);
-        addKuechenstuhlPanel.setVisible(false);
-        addOhrensesselPanel.setVisible(false);
-        addSitzmoebelPanel.setVisible(false);
+        changeFernsehcouchPanel.setVisible(false);
+        changeKuechenstuhlPanel.setVisible(false);
+        changeOhrensesselPanel.setVisible(false);
+        changeSitzmoebelPanel.setVisible(false);
         //Tische
-        addBuerotischPanel.setVisible(false);
-        addCouchtischPanel.setVisible(false);
-        addEsstischPanel.setVisible(false);
-        addKuechentischPanel.setVisible(false);
-        addTischePanel.setVisible(false);
+        changeBuerotischPanel.setVisible(false);
+        changeCouchtischPanel.setVisible(false);
+        changeEsstischPanel.setVisible(false);
+        changeKuechentischPanel.setVisible(false);
+        changeTischePanel.setVisible(false);
         //Liegemoebel
-        addBalkonliegePanel.setVisible(false);
-        addDoppelbettPanel.setVisible(false);
-        addLiegemoebelPanel.setVisible(false);
+        changeBalkonliegePanel.setVisible(false);
+        changeDoppelbettPanel.setVisible(false);
+        changeLiegemoebelPanel.setVisible(false);
 
     }
-
 
     public static JFrame baseFrame() {
         frame = new JFrame("Möbelhaus");
         addPanels();
 
+
         frame.setSize(1600, 900);
         frame.setLayout(null);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+
+        //Erstellen von Lager Button
+        JButton geKombi = new JButton("Kombi");
+        geKombi.setBounds(5, 580, 95, 30);
+        geKombi.addActionListener(e -> {
+            setAllPanelsInvisible();
+            Rabatt.updateLabels();
+            kombiPanel.setVisible(true);
+        });
+        frame.add(geKombi);
+
+        //Erstellen von Lager Button
+        JButton setRabatt = new JButton("Rabatt");
+        setRabatt.setBounds(5, 615, 95, 30);
+        setRabatt.addActionListener(e -> {
+            setAllPanelsInvisible();
+            Rabatt.updateLabels();
+            rabattPanel.setVisible(true);
+        });
+        frame.add(setRabatt);
+
+        //Erstellen von Lager Button
+        JButton setPreis = new JButton("SetPreis");
+        setPreis.setBounds(5, 650, 95, 30);
+        setPreis.addActionListener(e -> {
+            setAllPanelsInvisible();
+            SetPreis.updateLabels();
+            setPreisPanel.setVisible(true);
+        });
+        frame.add(setPreis);
+
+
+        //Erstellen von Lager Button
+        JButton Verkaufspreis = new JButton("Verkaufspreis");
+        Verkaufspreis.setBounds(5, 685, 95, 30);
+        Verkaufspreis.addActionListener(e -> {
+            setAllPanelsInvisible();
+            VerkaufspreisPanel.updateLabels();
+            verkaufspreisPanel.setVisible(true);
+        });
+        frame.add(Verkaufspreis);
 
         //Erstellen von Lager Button
         JButton LagerBestand = new JButton("Bestand");
@@ -129,7 +183,7 @@ public class MyFrame {
         addItem.setBounds(5, 755, 95, 30);
         addItem.addActionListener(e -> {
             setAllPanelsInvisible();
-            addItemPanel.setVisible(true);
+            changeItemPanel.setVisible(true);
         });
         frame.add(addItem);
 
@@ -149,7 +203,11 @@ public class MyFrame {
                     "Are you sure you want to quit?", "Confirm quit",
                     JOptionPane.YES_NO_OPTION);
             if (confirmed == JOptionPane.YES_OPTION) {
-                // clean up code
+                try {
+                    lagersystem.writeToFile(lagersystem, "Moebelhaus.txt");
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
                 System.exit(0);
             }
         });

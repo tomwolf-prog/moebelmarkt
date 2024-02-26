@@ -1,6 +1,4 @@
-package Lager.Tischlager;
-
-import Lager.Lagerungslager.Lagerunglager;
+package Lager.Lagerungslager;
 
 /**
  * Das Beistelltischlager ist eine Unterklasse von Lagerunglager.

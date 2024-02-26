@@ -22,8 +22,8 @@ public class AddTischePanel {
         addBuerotisch.setBounds(150, 50, 175, 30);
         addBuerotisch.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.addTischePanel.setVisible(false);
-                MyFrame.addBuerotischPanel.setVisible(true);
+                MyFrame.changeTischePanel.setVisible(false);
+                MyFrame.changeBuerotischPanel.setVisible(true);
             }
         });
         addTischePanel.add(addBuerotisch);
@@ -33,8 +33,8 @@ public class AddTischePanel {
         addCouchtisch.setBounds(150, 100, 175, 30);
         addCouchtisch.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.addTischePanel.setVisible(false);
-                MyFrame.addCouchtischPanel.setVisible(true);
+                MyFrame.changeTischePanel.setVisible(false);
+                MyFrame.changeCouchtischPanel.setVisible(true);
             }
         });
         addTischePanel.add(addCouchtisch);
@@ -45,8 +45,8 @@ public class AddTischePanel {
         addEsstisch.setBounds(150, 150, 175, 30);
         addEsstisch.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.addTischePanel.setVisible(false);
-                MyFrame.addEsstischPanel.setVisible(true);
+                MyFrame.changeTischePanel.setVisible(false);
+                MyFrame.changeEsstischPanel.setVisible(true);
             }
         });
         addTischePanel.add(addEsstisch);
@@ -56,8 +56,8 @@ public class AddTischePanel {
         addKuechentisch.setBounds(150, 200, 175, 30);
         addKuechentisch.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.addTischePanel.setVisible(false);
-                MyFrame.addKuechentischPanel.setVisible(true);
+                MyFrame.changeTischePanel.setVisible(false);
+                MyFrame.changeKuechentischPanel.setVisible(true);
             }
         });
         addTischePanel.add(addKuechentisch);
@@ -66,8 +66,8 @@ public class AddTischePanel {
         JButton back = new JButton("Back");
         back.setBounds(150, 250, 175, 30);
         back.addActionListener(e -> {
-            MyFrame.addTischePanel.setVisible(false);
-            MyFrame.addItemPanel.setVisible(true);
+            MyFrame.changeTischePanel.setVisible(false);
+            MyFrame.changeItemPanel.setVisible(true);
         });
         addTischePanel.add(back);
 

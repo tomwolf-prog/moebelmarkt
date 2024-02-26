@@ -4,7 +4,6 @@ import GUI.MyFrame;
 import Lager.Lagersystem;
 
 import javax.swing.*;
-import java.io.IOException;
 
 public class Moebelhaus extends JFrame {
     static Lagersystem lagersystem = new Lagersystem();
@@ -13,8 +12,14 @@ public class Moebelhaus extends JFrame {
         return lagersystem;
     }
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        //lagersystem = lagersystem.readFromFile("myObject.txt");
+    public static void main(String[] args) {
+
+        try {
+            lagersystem = lagersystem.readFromFile("Moebelhaus.txt");
+        } catch (Exception e) {
+            System.out.println("File wasn't loaded");
+        }
+
         MyFrame.baseFrame();
     }
 
