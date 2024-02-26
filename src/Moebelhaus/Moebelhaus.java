@@ -14,7 +14,7 @@ public class Moebelhaus extends JFrame {
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        lagersystem = lagersystem.readFromFile("myObject.txt");
+        //lagersystem = lagersystem.readFromFile("myObject.txt");
         MyFrame.baseFrame();
     }
 
