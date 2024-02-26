@@ -26,6 +26,10 @@ public class AddItemPanel {
         //Erstellen von AddItem Button
         JButton addSitzmoebel = new JButton("Add Sitzmoebel");
         addSitzmoebel.setBounds(150, 150, 150, 30);
+        addSitzmoebel.addActionListener(e -> {
+            MyFrame.addItemPanel.setVisible(false);
+            MyFrame.addSitzmoebelPanel.setVisible(true);
+        });
         addItemPanel.add(addSitzmoebel);
 
         //Erstellen von AddItem Button
