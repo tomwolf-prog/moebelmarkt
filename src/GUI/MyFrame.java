@@ -23,14 +23,16 @@ public class MyFrame {
 
     static Lagersystem lagersystem = Moebelhaus.getLagersystem();
     static JFrame frame;
-
     public static JPanel changeItemPanel = AddItemPanel.Panel();
+    public static JPanel lagerbestandPanel = LagerbestandPanel.Panel();
+    public static JPanel verkaufspreisPanel = VerkaufspreisPanel.Panel();
+
+    public static JPanel setPreisPanel = SetPreis.Panel();
     //Lagerung
     public static JPanel changeLagerungPanel = ChangeLagerungPanel.Panel();
     public static JPanel changeKuechenregalPanel = ChangeKuechenregalPanel.Panel();
     public static JPanel changeKleiderschrankregalPanel = ChangeKleiderschrankregalPanel.Panel();
     public static JPanel changeBeistelltischePanel = ChangeBeistelltischePanel.Panel();
-    public static JPanel lagerbestandPanel = LagerbestandPanel.Panel();
 
     //Sitzmoebel
     public static JPanel changeFernsehcouchPanel = AddFernsehcouchPanel.Panel();
@@ -54,6 +56,8 @@ public class MyFrame {
         frame.add(changeLagerungPanel);
         frame.add(changeItemPanel);
         frame.add(lagerbestandPanel);
+        frame.add(verkaufspreisPanel);
+        frame.add(setPreisPanel);
         //Lagerung
         frame.add(changeLagerungPanel);
         frame.add(changeKuechenregalPanel);
@@ -81,6 +85,8 @@ public class MyFrame {
         changeLagerungPanel.setVisible(false);
         changeItemPanel.setVisible(false);
         lagerbestandPanel.setVisible(false);
+        verkaufspreisPanel.setVisible(false);
+        setPreisPanel.setVisible(false);
         //Lagerung
         changeLagerungPanel.setVisible(false);
         changeKuechenregalPanel.setVisible(false);
@@ -104,15 +110,36 @@ public class MyFrame {
 
     }
 
-
     public static JFrame baseFrame() {
         frame = new JFrame("Möbelhaus");
         addPanels();
+
 
         frame.setSize(1600, 900);
         frame.setLayout(null);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+
+        //Erstellen von Lager Button
+        JButton setPreis = new JButton("SetPreis");
+        setPreis.setBounds(5, 650, 95, 30);
+        setPreis.addActionListener(e -> {
+            setAllPanelsInvisible();
+            SetPreis.updateLabels();
+            setPreisPanel.setVisible(true);
+        });
+        frame.add(setPreis);
+
+
+        //Erstellen von Lager Button
+        JButton Verkaufspreis = new JButton("Verkaufspreis");
+        Verkaufspreis.setBounds(5, 685, 95, 30);
+        Verkaufspreis.addActionListener(e -> {
+            setAllPanelsInvisible();
+            VerkaufspreisPanel.updateLabels();
+            verkaufspreisPanel.setVisible(true);
+        });
+        frame.add(Verkaufspreis);
 
         //Erstellen von Lager Button
         JButton LagerBestand = new JButton("Bestand");
