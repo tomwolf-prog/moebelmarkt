@@ -9,9 +9,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AddLagerungPanel {
+public class ChangeLagerungPanel {
 
-    private static final JPanel addLagerungPanel = new JPanel();
+    private static final JPanel changeLagerungPanel = new JPanel();
     private static final Lagersystem lagersystem = Moebelhaus.getLagersystem();
     //Erstellen des Frame
 
@@ -22,22 +22,22 @@ public class AddLagerungPanel {
         addKleiderschrank.setBounds(150, 50, 175, 30);
         addKleiderschrank.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.addLagerungPanel.setVisible(false);
-                MyFrame.addKleiderschrankregalPanel.setVisible(true);
+                MyFrame.changeLagerungPanel.setVisible(false);
+                MyFrame.changeKleiderschrankregalPanel.setVisible(true);
             }
         });
-        addLagerungPanel.add(addKleiderschrank);
+        changeLagerungPanel.add(addKleiderschrank);
 
         //Erstellen von AddItem Button
         JButton addBeistelltisch = new JButton("Add Beistelltisch");
         addBeistelltisch.setBounds(150, 100, 175, 30);
         addBeistelltisch.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.addLagerungPanel.setVisible(false);
-                MyFrame.addBeistelltischePanel.setVisible(true);
+                MyFrame.changeLagerungPanel.setVisible(false);
+                MyFrame.changeBeistelltischePanel.setVisible(true);
             }
         });
-        addLagerungPanel.add(addBeistelltisch);
+        changeLagerungPanel.add(addBeistelltisch);
 
 
         //Erstellen von AddItem Button
@@ -45,29 +45,29 @@ public class AddLagerungPanel {
         addKuechenregallager.setBounds(150, 150, 175, 30);
         addKuechenregallager.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.addLagerungPanel.setVisible(false);
-                MyFrame.addKuechenregalPanel.setVisible(true);
+                MyFrame.changeLagerungPanel.setVisible(false);
+                MyFrame.changeKuechenregalPanel.setVisible(true);
             }
         });
-        addLagerungPanel.add(addKuechenregallager);
+        changeLagerungPanel.add(addKuechenregallager);
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
         back.setBounds(150, 200, 175, 30);
         back.addActionListener(e -> {
-            MyFrame.addLagerungPanel.setVisible(false);
-            MyFrame.addItemPanel.setVisible(true);
+            MyFrame.changeLagerungPanel.setVisible(false);
+            MyFrame.changeItemPanel.setVisible(true);
         });
-        addLagerungPanel.add(back);
+        changeLagerungPanel.add(back);
 
-        addLagerungPanel.add(back);
-        addLagerungPanel.setLayout(null);
-        addLagerungPanel.setBackground(Color.GRAY);
-        addLagerungPanel.setBounds(100, 0, 1600, 900);
-        addLagerungPanel.setVisible(false);
+        changeLagerungPanel.add(back);
+        changeLagerungPanel.setLayout(null);
+        changeLagerungPanel.setBackground(Color.GRAY);
+        changeLagerungPanel.setBounds(100, 0, 1600, 900);
+        changeLagerungPanel.setVisible(false);
 
 
-        return addLagerungPanel;
+        return changeLagerungPanel;
 
     }
 }

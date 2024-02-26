@@ -222,6 +222,7 @@ public class LagerbestandPanel {
         //Lagerung
 
         Beistelltischlager.setText("Beistelltischlager: " + String.valueOf((lagersystem.getBeistelltischlager().getMoebel().size())));
+        Beistelltischlager.setText("Beistelltischlager: " + String.valueOf((lagersystem.getBeistelltischlager().getMoebel().size())));
         BeistelltischlagerS.setText("Beistelltischlager S: " + String.valueOf(lagersystem.getBeistelltischlagerBestand(Kategorie.Lagerung.Flaeche.s)));
         BeistelltischlagerM.setText("Beistelltischlager M: " + String.valueOf(lagersystem.getBeistelltischlagerBestand(Kategorie.Lagerung.Flaeche.m)));
         BeistelltischlagerL.setText("Beistelltischlager L: " + String.valueOf(lagersystem.getBeistelltischlagerBestand(Kategorie.Lagerung.Flaeche.l)));
@@ -234,20 +235,20 @@ public class LagerbestandPanel {
         KleiderschranklagerXL.setText("Kleiderschranklager XL: " + String.valueOf(lagersystem.getKleiderschranklagerBestand(Lagerung.Flaeche.xl)));
 
         Kuechenregallager.setText("Kuechenregallagerlager: " + String.valueOf(lagersystem.getKuechenregallager().getMoebel().size()));
-        KuechenregallagerS.setText("Kuechenregallagerlager: " + String.valueOf(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.s)));
-        KuechenregallagerM.setText("Kuechenregallagerlager: " + String.valueOf(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.m)));
-        KuechenregallagerL.setText("Kuechenregallagerlager: " + String.valueOf(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.l)));
-        KuechenregallagerXL.setText("Kuechenregallagerlager: " + String.valueOf(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.xl)));
+        KuechenregallagerS.setText("Kuechenregallagerlager S: " + String.valueOf(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.s)));
+        KuechenregallagerM.setText("Kuechenregallagerlager M: " + String.valueOf(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.m)));
+        KuechenregallagerL.setText("Kuechenregallagerlager L: " + String.valueOf(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.l)));
+        KuechenregallagerXL.setText("Kuechenregallagerlager XL: " + String.valueOf(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.xl)));
 
         Balkonliegelager.setText("Balkonliegelager: " + String.valueOf(lagersystem.getBalkonliegelager().getMoebel().size()));
-        BalkonliegelagerS.setText("Balkonliegelager: " + String.valueOf(lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.s)));
-        BalkonliegelagerM.setText("Balkonliegelager: " + String.valueOf(lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.m)));
-        BalkonliegelagerL.setText("Balkonliegelager: " + String.valueOf(lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.l)));
+        BalkonliegelagerS.setText("Balkonliegelager S: " + String.valueOf(lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.s)));
+        BalkonliegelagerM.setText("Balkonliegelager M: " + String.valueOf(lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.m)));
+        BalkonliegelagerL.setText("Balkonliegelager L: " + String.valueOf(lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.l)));
 
         Doppelbettlager.setText("Doppelbettlager: " + String.valueOf(lagersystem.getDoppelbettlager().getMoebel().size()));
-        DoppelbettlagerS.setText("Doppelbettlager: " + String.valueOf(lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.s)));
-        DoppelbettlagerM.setText("Doppelbettlager: " + String.valueOf(lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.m)));
-        DoppelbettlagerL.setText("Doppelbettlager: " + String.valueOf(lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.l)));
+        DoppelbettlagerS.setText("Doppelbettlager S: " + String.valueOf(lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.s)));
+        DoppelbettlagerM.setText("Doppelbettlager M: " + String.valueOf(lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.m)));
+        DoppelbettlagerL.setText("Doppelbettlager L: " + String.valueOf(lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.l)));
 
         Fernsehcouch.setText("Fernsehcouch: " + String.valueOf(lagersystem.getFernsehcouchlager().getMoebel().size()));
         FernsehcouchEins.setText("Fernsehcouch Eins: " + String.valueOf(lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.eins)));
@@ -268,24 +269,24 @@ public class LagerbestandPanel {
         OhrensesselVier.setText("Ohrensessel Vier: " + String.valueOf(lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.vier)));
 
         Buerotischlager.setText("Buerotischlager: " + String.valueOf(lagersystem.getBuerotischlager().getMoebel().size()));
-        BuerotischlagerS.setText("Buerotischlager: " + String.valueOf(lagersystem.getBuerotischlagerBestand(Tische.Hoehe.s)));
-        BuerotischlagerM.setText("Buerotischlager: " + String.valueOf(lagersystem.getBuerotischlagerBestand(Tische.Hoehe.m)));
-        BuerotischlagerL.setText("Buerotischlager: " + String.valueOf(lagersystem.getBuerotischlagerBestand(Tische.Hoehe.l)));
+        BuerotischlagerS.setText("Buerotischlager S: " + String.valueOf(lagersystem.getBuerotischlagerBestand(Tische.Hoehe.s)));
+        BuerotischlagerM.setText("Buerotischlager M: " + String.valueOf(lagersystem.getBuerotischlagerBestand(Tische.Hoehe.m)));
+        BuerotischlagerL.setText("Buerotischlager L: " + String.valueOf(lagersystem.getBuerotischlagerBestand(Tische.Hoehe.l)));
 
         Couchtischlager.setText("Couchtischlager: " + String.valueOf(lagersystem.getCouchtischlager().getMoebel().size()));
-        CouchtischlagerS.setText("Couchtischlager: " + String.valueOf(lagersystem.getCouchtischlagerBestand(Tische.Hoehe.s)));
-        CouchtischlagerM.setText("Couchtischlager: " + String.valueOf(lagersystem.getCouchtischlagerBestand(Tische.Hoehe.m)));
-        CouchtischlagerL.setText("Couchtischlager: " + String.valueOf(lagersystem.getCouchtischlagerBestand(Tische.Hoehe.l)));
+        CouchtischlagerS.setText("Couchtischlager S: " + String.valueOf(lagersystem.getCouchtischlagerBestand(Tische.Hoehe.s)));
+        CouchtischlagerM.setText("Couchtischlager M: " + String.valueOf(lagersystem.getCouchtischlagerBestand(Tische.Hoehe.m)));
+        CouchtischlagerL.setText("Couchtischlager L: " + String.valueOf(lagersystem.getCouchtischlagerBestand(Tische.Hoehe.l)));
 
         Esstischlager.setText("Esstischlager: " + String.valueOf(lagersystem.getEsstischlager().getMoebel().size()));
-        EsstischlagerS.setText("Esstischlager: " + String.valueOf(lagersystem.getEsstischlagerBestand(Tische.Hoehe.s)));
-        EsstischlagerM.setText("Esstischlager: " + String.valueOf(lagersystem.getEsstischlagerBestand(Tische.Hoehe.m)));
-        EsstischlagerL.setText("Esstischlager: " + String.valueOf(lagersystem.getEsstischlagerBestand(Tische.Hoehe.l)));
+        EsstischlagerS.setText("Esstischlager S: " + String.valueOf(lagersystem.getEsstischlagerBestand(Tische.Hoehe.s)));
+        EsstischlagerM.setText("Esstischlager M: " + String.valueOf(lagersystem.getEsstischlagerBestand(Tische.Hoehe.m)));
+        EsstischlagerL.setText("Esstischlager L: " + String.valueOf(lagersystem.getEsstischlagerBestand(Tische.Hoehe.l)));
 
         Kuechentischlager.setText("Kuechentischlager: " + String.valueOf(lagersystem.getKuechentischlager().getMoebel().size()));
-        KuechentischlagerS.setText("Kuechentischlager: " + String.valueOf(lagersystem.getKuechentischlagerBestand(Tische.Hoehe.s)));
-        KuechentischlagerM.setText("Kuechentischlager: " + String.valueOf(lagersystem.getKuechentischlagerBestand(Tische.Hoehe.m)));
-        KuechentischlagerL.setText("Kuechentischlager: " + String.valueOf(lagersystem.getKuechentischlagerBestand(Tische.Hoehe.l)));
+        KuechentischlagerS.setText("Kuechentischlager S: " + String.valueOf(lagersystem.getKuechentischlagerBestand(Tische.Hoehe.s)));
+        KuechentischlagerM.setText("Kuechentischlager M: " + String.valueOf(lagersystem.getKuechentischlagerBestand(Tische.Hoehe.m)));
+        KuechentischlagerL.setText("Kuechentischlager L: " + String.valueOf(lagersystem.getKuechentischlagerBestand(Tische.Hoehe.l)));
 
 
     }

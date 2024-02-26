@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 
 public class AddKuechenstuhlPanel {
 
-    private static final JPanel addKuechenstuhlPanel = new JPanel();
+    private static final JPanel changeKuechenstuhlPanel = new JPanel();
     private static final Lagersystem lagersystem = Moebelhaus.getLagersystem();
     //Erstellen des Frame
 
@@ -20,7 +20,7 @@ public class AddKuechenstuhlPanel {
 
         JTextField t1 = new JTextField("1");
         t1.setBounds(400, 50, 30, 30);
-        addKuechenstuhlPanel.add(t1);
+        changeKuechenstuhlPanel.add(t1);
         //Erstellen von AddItem Button
         JButton addKuechenstuhlEins = new JButton("Add Kuechenstuhl Eins");
         addKuechenstuhlEins.setBounds(150, 50, 175, 30);
@@ -33,15 +33,19 @@ public class AddKuechenstuhlPanel {
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
-                lagersystem.erhoeheKuechenstuhllagerLagerbestand(i1, Sitzmoebel.Sitzplaetze.eins);
+                if (i1 >= 0) {
+                    lagersystem.erhoeheKuechenstuhllagerLagerbestand(i1, Sitzmoebel.Sitzplaetze.eins);
+                } else {
+                    lagersystem.erhoeheKuechenstuhllagerLagerbestand(Math.abs(i1), Sitzmoebel.Sitzplaetze.eins);
+                }
 
             }
         });
-        addKuechenstuhlPanel.add(addKuechenstuhlEins);
+        changeKuechenstuhlPanel.add(addKuechenstuhlEins);
 
         JTextField t2 = new JTextField("1");
         t2.setBounds(400, 100, 30, 30);
-        addKuechenstuhlPanel.add(t2);
+        changeKuechenstuhlPanel.add(t2);
         //Erstellen von AddItem Button
         JButton addKuechenstuhlZwei = new JButton("Add Kuechenstuhl Zwei");
         addKuechenstuhlZwei.setBounds(150, 100, 175, 30);
@@ -54,14 +58,18 @@ public class AddKuechenstuhlPanel {
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
-                lagersystem.erhoeheKuechenstuhllagerLagerbestand(i1, Sitzmoebel.Sitzplaetze.zwei);
+                if (i1 >= 0) {
+                    lagersystem.erhoeheKuechenstuhllagerLagerbestand(i1, Sitzmoebel.Sitzplaetze.zwei);
+                } else {
+                    lagersystem.erhoeheKuechenstuhllagerLagerbestand(Math.abs(i1), Sitzmoebel.Sitzplaetze.zwei);
+                }
             }
         });
-        addKuechenstuhlPanel.add(addKuechenstuhlZwei);
+        changeKuechenstuhlPanel.add(addKuechenstuhlZwei);
 
         JTextField t3 = new JTextField("1");
         t3.setBounds(400, 150, 30, 30);
-        addKuechenstuhlPanel.add(t3);
+        changeKuechenstuhlPanel.add(t3);
         //Erstellen von AddItem Button
         JButton addKuechenstuhlDrei = new JButton("Add Kuechenstuhl Drei");
         addKuechenstuhlDrei.setBounds(150, 150, 175, 30);
@@ -74,15 +82,19 @@ public class AddKuechenstuhlPanel {
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
-                lagersystem.erhoeheKuechenstuhllagerLagerbestand(i1, Sitzmoebel.Sitzplaetze.drei);
+                if (i1 >= 0) {
+                    lagersystem.erhoeheKuechenstuhllagerLagerbestand(i1, Sitzmoebel.Sitzplaetze.drei);
+                } else {
+                    lagersystem.erhoeheKuechenstuhllagerLagerbestand(Math.abs(i1), Sitzmoebel.Sitzplaetze.drei);
+                }
 
             }
         });
-        addKuechenstuhlPanel.add(addKuechenstuhlDrei);
+        changeKuechenstuhlPanel.add(addKuechenstuhlDrei);
 
         JTextField t4 = new JTextField("1");
         t4.setBounds(400, 200, 30, 30);
-        addKuechenstuhlPanel.add(t4);
+        changeKuechenstuhlPanel.add(t4);
         //Erstellen von AddItem Button
         JButton addKuechenstuhlVier = new JButton("Add Kuechenstuhl Vier");
         addKuechenstuhlVier.setBounds(150, 200, 175, 30);
@@ -95,29 +107,33 @@ public class AddKuechenstuhlPanel {
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
-                lagersystem.erhoeheKuechenstuhllagerLagerbestand(i1, Sitzmoebel.Sitzplaetze.vier);
+                if (i1 >= 0) {
+                    lagersystem.erhoeheKuechenstuhllagerLagerbestand(i1, Sitzmoebel.Sitzplaetze.vier);
+                } else {
+                    lagersystem.erhoeheKuechenstuhllagerLagerbestand(Math.abs(i1), Sitzmoebel.Sitzplaetze.vier);
+                }
 
             }
         });
-        addKuechenstuhlPanel.add(addKuechenstuhlVier);
+        changeKuechenstuhlPanel.add(addKuechenstuhlVier);
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
         back.setBounds(150, 250, 175, 30);
         back.addActionListener(e -> {
-            MyFrame.addKuechenstuhlPanel.setVisible(false);
-            MyFrame.addSitzmoebelPanel.setVisible(true);
+            MyFrame.changeKuechenstuhlPanel.setVisible(false);
+            MyFrame.changeSitzmoebelPanel.setVisible(true);
         });
-        addKuechenstuhlPanel.add(back);
+        changeKuechenstuhlPanel.add(back);
 
-        addKuechenstuhlPanel.add(back);
-        addKuechenstuhlPanel.setLayout(null);
-        addKuechenstuhlPanel.setBackground(Color.GRAY);
-        addKuechenstuhlPanel.setBounds(100, 0, 1600, 900);
-        addKuechenstuhlPanel.setVisible(false);
+        changeKuechenstuhlPanel.add(back);
+        changeKuechenstuhlPanel.setLayout(null);
+        changeKuechenstuhlPanel.setBackground(Color.GRAY);
+        changeKuechenstuhlPanel.setBounds(100, 0, 1600, 900);
+        changeKuechenstuhlPanel.setVisible(false);
 
 
-        return addKuechenstuhlPanel;
+        return changeKuechenstuhlPanel;
 
     }
 }

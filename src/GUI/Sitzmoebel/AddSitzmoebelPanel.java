@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 
 public class AddSitzmoebelPanel {
 
-    private static final JPanel addSitzmoebelPanel = new JPanel();
+    private static final JPanel changeSitzmoebelPanel = new JPanel();
     private static final Lagersystem lagersystem = Moebelhaus.getLagersystem();
     //Erstellen des Frame
 
@@ -22,22 +22,22 @@ public class AddSitzmoebelPanel {
         addFernsehcouchPanel.setBounds(150, 50, 175, 30);
         addFernsehcouchPanel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.addSitzmoebelPanel.setVisible(false);
-                MyFrame.addFernsehcouchPanel.setVisible(true);
+                MyFrame.changeSitzmoebelPanel.setVisible(false);
+                MyFrame.changeFernsehcouchPanel.setVisible(true);
             }
         });
-        addSitzmoebelPanel.add(addFernsehcouchPanel);
+        changeSitzmoebelPanel.add(addFernsehcouchPanel);
 
         //Erstellen von AddItem Button
         JButton addKuechenstuhlPanel = new JButton("Add Kuechenstuhl");
         addKuechenstuhlPanel.setBounds(150, 100, 175, 30);
         addKuechenstuhlPanel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.addSitzmoebelPanel.setVisible(false);
-                MyFrame.addKuechenstuhlPanel.setVisible(true);
+                MyFrame.changeSitzmoebelPanel.setVisible(false);
+                MyFrame.changeKuechenstuhlPanel.setVisible(true);
             }
         });
-        addSitzmoebelPanel.add(addKuechenstuhlPanel);
+        changeSitzmoebelPanel.add(addKuechenstuhlPanel);
 
 
         //Erstellen von AddItem Button
@@ -45,29 +45,29 @@ public class AddSitzmoebelPanel {
         addKuechenregalPanel.setBounds(150, 150, 175, 30);
         addKuechenregalPanel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.addSitzmoebelPanel.setVisible(false);
-                MyFrame.addOhrensesselPanel.setVisible(true);
+                MyFrame.changeSitzmoebelPanel.setVisible(false);
+                MyFrame.changeOhrensesselPanel.setVisible(true);
             }
         });
-        addSitzmoebelPanel.add(addKuechenregalPanel);
+        changeSitzmoebelPanel.add(addKuechenregalPanel);
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
         back.setBounds(150, 200, 175, 30);
         back.addActionListener(e -> {
-            MyFrame.addSitzmoebelPanel.setVisible(false);
-            MyFrame.addItemPanel.setVisible(true);
+            MyFrame.changeSitzmoebelPanel.setVisible(false);
+            MyFrame.changeItemPanel.setVisible(true);
         });
-        addSitzmoebelPanel.add(back);
+        changeSitzmoebelPanel.add(back);
 
-        addSitzmoebelPanel.add(back);
-        addSitzmoebelPanel.setLayout(null);
-        addSitzmoebelPanel.setBackground(Color.GRAY);
-        addSitzmoebelPanel.setBounds(100, 0, 1600, 900);
-        addSitzmoebelPanel.setVisible(false);
+        changeSitzmoebelPanel.add(back);
+        changeSitzmoebelPanel.setLayout(null);
+        changeSitzmoebelPanel.setBackground(Color.GRAY);
+        changeSitzmoebelPanel.setBounds(100, 0, 1600, 900);
+        changeSitzmoebelPanel.setVisible(false);
 
 
-        return addSitzmoebelPanel;
+        return changeSitzmoebelPanel;
 
     }
 }
