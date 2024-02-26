@@ -41,15 +41,15 @@ public class AddSitzmoebelPanel {
 
 
         //Erstellen von AddItem Button
-        JButton addKuechenregallager = new JButton("Add Ohrensessel");
-        addKuechenregallager.setBounds(150, 150, 175, 30);
-        addKuechenregallager.addActionListener(new ActionListener() {
+        JButton addKuechenregalPanel = new JButton("Add Ohrensessel");
+        addKuechenregalPanel.setBounds(150, 150, 175, 30);
+        addKuechenregalPanel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 MyFrame.addSitzmoebelPanel.setVisible(false);
                 MyFrame.addOhrensesselPanel.setVisible(true);
             }
         });
-        addSitzmoebelPanel.add(addKuechenregallager);
+        addSitzmoebelPanel.add(addKuechenregalPanel);
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");

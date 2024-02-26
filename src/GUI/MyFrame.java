@@ -8,6 +8,7 @@ import GUI.Sitzmoebel.AddFernsehcouchPanel;
 import GUI.Sitzmoebel.AddKuechenstuhlPanel;
 import GUI.Sitzmoebel.AddOhrensesselPanel;
 import GUI.Sitzmoebel.AddSitzmoebelPanel;
+import GUI.Tische.*;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
 
@@ -34,9 +35,14 @@ public class MyFrame {
     public static JPanel addOhrensesselPanel = AddOhrensesselPanel.Panel();
     public static JPanel addSitzmoebelPanel = AddSitzmoebelPanel.Panel();
 
-    static
+    //Tische
+    public static JPanel addBuerotischPanel = AddBuerotischPanel.Panel();
+    public static JPanel addCouchtischPanel = AddCouchtischPanel.Panel();
+    public static JPanel addEsstischPanel = AddEsstischPanel.Panel();
+    public static JPanel addKuechentischPanel = AddKuechentischPanel.Panel();
+    public static JPanel addTischePanel = AddTischePanel.Panel();
 
-    private void addPanels() {
+    private static void addPanels() {
         frame.add(addLagerungPanel);
         frame.add(addItemPanel);
         frame.add(lagerbestandPanel);
@@ -50,6 +56,12 @@ public class MyFrame {
         frame.add(addKuechenstuhlPanel);
         frame.add(addOhrensesselPanel);
         frame.add(addSitzmoebelPanel);
+        //Tische
+        frame.add(addBuerotischPanel);
+        frame.add(addCouchtischPanel);
+        frame.add(addEsstischPanel);
+        frame.add(addKuechentischPanel);
+        frame.add(addTischePanel);
 
 
     }

@@ -35,6 +35,10 @@ public class AddItemPanel {
         //Erstellen von AddItem Button
         JButton addTische = new JButton("Add Tische");
         addTische.setBounds(150, 200, 150, 30);
+        addTische.addActionListener(e -> {
+            MyFrame.addItemPanel.setVisible(false);
+            MyFrame.addTischePanel.setVisible(true);
+        });
         addItemPanel.add(addTische);
 
         //Erstellen von Back Button
