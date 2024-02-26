@@ -17,7 +17,7 @@ public class Moebelhaus extends JFrame {
         try {
             lagersystem = lagersystem.readFromFile("Moebelhaus.txt");
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println("File wasn't loaded");
         }
 
         MyFrame.baseFrame();
