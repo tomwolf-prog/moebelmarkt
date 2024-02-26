@@ -17,13 +17,14 @@ public class AddBeistelltischePanel {
         Lagersystem lagersystem = Moebelhaus.getLagersystem();
 
 
-        //Erstellen von AddItem Button
         JButton addKleiderschrankS = new JButton("Add Beistelltisch S");
         addKleiderschrankS.setBounds(150, 50, 175, 30);
+
         addKleiderschrankS.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                lagersystem.addLagerung(new Lagerung(Lagerung.Moebelart.Beistelltisch, Lagerung.Flaeche.s));
 
+                lagersystem.addLagerung(new Lagerung(Lagerung.Moebelart.Beistelltisch, Lagerung.Flaeche.s));
+                
             }
         });
         addBeistelltischePanel.add(addKleiderschrankS);
