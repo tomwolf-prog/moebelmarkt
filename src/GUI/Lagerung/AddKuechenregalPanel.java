@@ -16,42 +16,82 @@ public class AddKuechenregalPanel {
     public static JPanel Panel() {
         Lagersystem lagersystem = Moebelhaus.getLagersystem();
 
+        JTextField t1 = new JTextField("1");
+        t1.setBounds(400, 50, 30, 30);
+        addKuechenregalPanel.add(t1);
         //Erstellen von AddItem Button
         JButton addKuechenregalS = new JButton("Add Kuechenregal S");
         addKuechenregalS.setBounds(150, 50, 175, 30);
         addKuechenregalS.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                lagersystem.addLagerung(new Lagerung(Lagerung.Moebelart.Kuechenregal, Lagerung.Flaeche.s));
+                String text = t1.getText();
+                int i1;
+                try {
+                    i1 = Integer.parseInt(String.valueOf(text));
+                } catch (NumberFormatException a) {
+                    i1 = 0;
+                }
+                lagersystem.erhoeheKuechenregallagerLagerbestand(i1, Lagerung.Flaeche.s);
             }
         });
         addKuechenregalPanel.add(addKuechenregalS);
 
+        JTextField t2 = new JTextField("1");
+        t2.setBounds(400, 100, 30, 30);
+        addKuechenregalPanel.add(t2);
         //Erstellen von AddItem Button
         JButton addKuechenregalM = new JButton("Add Kuechenregal M");
         addKuechenregalM.setBounds(150, 100, 175, 30);
         addKuechenregalM.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                lagersystem.addLagerung(new Lagerung(Lagerung.Moebelart.Kuechenregal, Lagerung.Flaeche.m));
+                String text = t2.getText();
+                int i1;
+                try {
+                    i1 = Integer.parseInt(String.valueOf(text));
+                } catch (NumberFormatException a) {
+                    i1 = 0;
+                }
+                lagersystem.erhoeheKuechenregallagerLagerbestand(i1, Lagerung.Flaeche.m);
             }
         });
         addKuechenregalPanel.add(addKuechenregalM);
 
+        JTextField t3 = new JTextField("1");
+        t3.setBounds(400, 150, 30, 30);
+        addKuechenregalPanel.add(t3);
         //Erstellen von AddItem Button
         JButton addKuechenregalL = new JButton("Add Kuechenregal L");
         addKuechenregalL.setBounds(150, 150, 175, 30);
         addKuechenregalL.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                lagersystem.addLagerung(new Lagerung(Lagerung.Moebelart.Kuechenregal, Lagerung.Flaeche.l));
+                String text = t3.getText();
+                int i1;
+                try {
+                    i1 = Integer.parseInt(String.valueOf(text));
+                } catch (NumberFormatException a) {
+                    i1 = 0;
+                }
+                lagersystem.erhoeheKuechenregallagerLagerbestand(i1, Lagerung.Flaeche.l);
             }
         });
         addKuechenregalPanel.add(addKuechenregalL);
 
+        JTextField t4 = new JTextField("1");
+        t4.setBounds(400, 200, 30, 30);
+        addKuechenregalPanel.add(t4);
         //Erstellen von AddItem Button
         JButton addKuechenregalXL = new JButton("Add Kuechenregal XL");
         addKuechenregalXL.setBounds(150, 200, 175, 30);
         addKuechenregalXL.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                lagersystem.addLagerung(new Lagerung(Lagerung.Moebelart.Kuechenregal, Lagerung.Flaeche.xl));
+                String text = t4.getText();
+                int i1;
+                try {
+                    i1 = Integer.parseInt(String.valueOf(text));
+                } catch (NumberFormatException a) {
+                    i1 = 0;
+                }
+                lagersystem.erhoeheKuechenregallagerLagerbestand(i1, Lagerung.Flaeche.xl);
 
             }
         });

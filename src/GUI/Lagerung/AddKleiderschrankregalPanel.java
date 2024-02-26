@@ -32,7 +32,6 @@ public class AddKleiderschrankregalPanel {
                     i1 = 0;
                 }
                 lagersystem.erhoeheKleiderschranklagerLagerbestand(i1, Lagerung.Flaeche.s);
-                ;
             }
         });
         addKleiderschrankregalPanel.add(addKleiderschrankS);

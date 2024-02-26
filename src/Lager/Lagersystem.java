@@ -27,6 +27,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static Kategorie.Lagerung.Moebelart.Beistelltisch;
+
 /**
  * Das Lagersystem verwaltet verschiedene Lager für Möbelstücke.
  * Jedes Lager enthält eine bestimmte Kategorie von Möbeln, wie Tische, Sitzmöbel, Lagerung und Liegemöbel.
@@ -418,7 +420,7 @@ public class Lagersystem implements Serializable {
     }
 
     public void erhoeheBeistelltischlagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> beistelltischlager.addLagerung(new Lagerung(Lagerung.Moebelart.Beistelltisch, flaeche)));
+        IntStream.range(0, quantitativerBetrag).forEach(i -> beistelltischlager.addLagerung(new Lagerung(Beistelltisch, flaeche)));
     }
 
     public void mindereBeistelltischlagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
@@ -461,6 +463,8 @@ public class Lagersystem implements Serializable {
             case Kleiderschrank:
                 kleiderschranklager.addLagerung(lagerung);
                 break;
+            case Beistelltisch:
+                beistelltischlager.addLagerung(lagerung);
             default:
                 break;
         }
