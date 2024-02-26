@@ -17,6 +17,7 @@ import Moebelhaus.Moebelhaus;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 
 public class MyFrame {
@@ -26,8 +27,10 @@ public class MyFrame {
     public static JPanel changeItemPanel = AddItemPanel.Panel();
     public static JPanel lagerbestandPanel = LagerbestandPanel.Panel();
     public static JPanel verkaufspreisPanel = VerkaufspreisPanel.Panel();
-
+    public static JPanel rabattPanel = Rabatt.Panel();
     public static JPanel setPreisPanel = SetPreis.Panel();
+
+    public static JPanel kombiPanel = Kombi.Panel();
     //Lagerung
     public static JPanel changeLagerungPanel = ChangeLagerungPanel.Panel();
     public static JPanel changeKuechenregalPanel = ChangeKuechenregalPanel.Panel();
@@ -58,6 +61,8 @@ public class MyFrame {
         frame.add(lagerbestandPanel);
         frame.add(verkaufspreisPanel);
         frame.add(setPreisPanel);
+        frame.add(rabattPanel);
+        frame.add(kombiPanel);
         //Lagerung
         frame.add(changeLagerungPanel);
         frame.add(changeKuechenregalPanel);
@@ -87,6 +92,8 @@ public class MyFrame {
         lagerbestandPanel.setVisible(false);
         verkaufspreisPanel.setVisible(false);
         setPreisPanel.setVisible(false);
+        rabattPanel.setVisible(false);
+        kombiPanel.setVisible(false);
         //Lagerung
         changeLagerungPanel.setVisible(false);
         changeKuechenregalPanel.setVisible(false);
@@ -119,6 +126,26 @@ public class MyFrame {
         frame.setLayout(null);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+
+        //Erstellen von Lager Button
+        JButton geKombi = new JButton("Kombi");
+        geKombi.setBounds(5, 580, 95, 30);
+        geKombi.addActionListener(e -> {
+            setAllPanelsInvisible();
+            Rabatt.updateLabels();
+            kombiPanel.setVisible(true);
+        });
+        frame.add(geKombi);
+
+        //Erstellen von Lager Button
+        JButton setRabatt = new JButton("Rabatt");
+        setRabatt.setBounds(5, 615, 95, 30);
+        setRabatt.addActionListener(e -> {
+            setAllPanelsInvisible();
+            Rabatt.updateLabels();
+            rabattPanel.setVisible(true);
+        });
+        frame.add(setRabatt);
 
         //Erstellen von Lager Button
         JButton setPreis = new JButton("SetPreis");
@@ -176,7 +203,11 @@ public class MyFrame {
                     "Are you sure you want to quit?", "Confirm quit",
                     JOptionPane.YES_NO_OPTION);
             if (confirmed == JOptionPane.YES_OPTION) {
-                // clean up code
+                try {
+                    lagersystem.writeToFile(lagersystem, "Moebelhaus.txt");
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
                 System.exit(0);
             }
         });
