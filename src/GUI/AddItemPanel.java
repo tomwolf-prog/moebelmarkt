@@ -19,8 +19,12 @@ public class AddItemPanel {
         addItemPanel.add(addLagerung);
 
         //Erstellen von AddItem Button
-        JButton addLiegemoebel = new JButton("Add Liefemoebel");
+        JButton addLiegemoebel = new JButton("Add Liegemoebel");
         addLiegemoebel.setBounds(150, 100, 150, 30);
+        addLiegemoebel.addActionListener(e -> {
+            MyFrame.addItemPanel.setVisible(false);
+            MyFrame.addLiegemoebelPanel.setVisible(true);
+        });
         addItemPanel.add(addLiegemoebel);
 
         //Erstellen von AddItem Button
