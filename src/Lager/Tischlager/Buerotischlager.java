@@ -1,7 +1,8 @@
-package Lager;
+package Lager.Tischlager;
 
 /**
  * Das Buerotischlager ist eine Unterklasse von Tischlager.
  * Es repräsentiert ein Lager für Buerotische.
  */
-public class Buerotischlager extends Tischlager{}
+public class Buerotischlager extends Tischlager {
+}

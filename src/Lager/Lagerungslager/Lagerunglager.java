@@ -1,6 +1,7 @@
-package Lager;
+package Lager.Lagerungslager;
 
 import Kategorie.Lagerung;
+import Lager.Lager;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -16,9 +17,9 @@ public class Lagerunglager extends Lager<Lagerung> {
      *
      * @param flaeche Die Fläche der zu entfernenden Lagerung.
      */
-    public void removeLagerung(Lagerung.Flaeche flaeche){
-        for (Lagerung moebelstueck : moebelstueckArrayList){
-            if (moebelstueck.getFlaeche() == flaeche){
+    public void removeLagerung(Lagerung.Flaeche flaeche) {
+        for (Lagerung moebelstueck : moebelstueckArrayList) {
+            if (moebelstueck.getFlaeche() == flaeche) {
                 moebelstueckArrayList.remove(moebelstueck);
                 break;
             }
@@ -33,7 +34,7 @@ public class Lagerunglager extends Lager<Lagerung> {
      * @param flaeche Die Fläche, nach der gesucht werden soll.
      * @return Eine Liste von Lagerungen mit der angegebenen Fläche.
      */
-    public List<Lagerung> listMitEigenschaft(Lagerung.Flaeche flaeche){
+    public List<Lagerung> listMitEigenschaft(Lagerung.Flaeche flaeche) {
         List<Lagerung> lagerungList = new ArrayList<Lagerung>();
         for (Lagerung moebelstueck : moebelstueckArrayList) {
             if (moebelstueck.getFlaeche() == flaeche) {
@@ -57,14 +58,14 @@ public class Lagerunglager extends Lager<Lagerung> {
 
     /**
      * Gibt den Bestand des Lagerungslagers für eine bestimmte Fläche zurück.
-     * 
+     *
      * @param flaeche Die Fläche, für die der Bestand abgerufen werden soll.
      * @return Der Bestand des Lagerungslagers für die angegebene Fläche.
      */
-    public int getLagerunglagerBestand(Lagerung.Flaeche flaeche){
+    public int getLagerunglagerBestand(Lagerung.Flaeche flaeche) {
         int bestand = 0;
-        for (Lagerung moebelstueck : moebelstueckArrayList){
-            if (moebelstueck.getFlaeche() == flaeche){
+        for (Lagerung moebelstueck : moebelstueckArrayList) {
+            if (moebelstueck.getFlaeche() == flaeche) {
                 bestand++;
             }
         }

@@ -10,7 +10,8 @@ public class LagerbestandPanel {
     private static final JPanel addLagerbestandPanel = new JPanel();
 
     private static final Lagersystem lagersystem = Moebelhaus.getLagersystem();
-    private static final JLabel Kleiderschrank = new JLabel(String.valueOf((lagersystem.getBeistelltischlager().getMoebel().size()) + lagersystem.getKleiderschranklager().getMoebel().size() + lagersystem.getKuechenregallager().getMoebel().size()));
+    private static final JLabel Lagerung = new JLabel();
+    private static final JLabel Kleiderschrank = new JLabel();
 
 
     public static JPanel Panel() {
@@ -36,6 +37,7 @@ public class LagerbestandPanel {
     }
 
     public static void updateLabels() {
+        Lagerung.setText("Lagerung: " + String.valueOf((lagersystem.getBeistelltischlager().getMoebel().size()) + lagersystem.getKleiderschranklager().getMoebel().size() + lagersystem.getKuechenregallager().getMoebel().size()));
         Kleiderschrank.setText("Lagerung: " + String.valueOf((lagersystem.getBeistelltischlager().getMoebel().size()) + lagersystem.getKleiderschranklager().getMoebel().size() + lagersystem.getKuechenregallager().getMoebel().size()));
     }
 }

@@ -1,6 +1,7 @@
-package Lager;
+package Lager.Sitzmoebellager;
 
 import Kategorie.Sitzmoebel;
+import Lager.Lager;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -17,9 +18,9 @@ public class Sitzmoebellager extends Lager<Sitzmoebel> {
      *
      * @param sitzplaetze Die Anzahl der Sitzplätze des zu entfernenden Sitzmöbelstücks.
      */
-    public void removeSitzmoebel(Sitzmoebel.Sitzplaetze sitzplaetze){
-        for (Sitzmoebel moebelstueck : moebelstueckArrayList){
-            if (moebelstueck.getSitzplaetze() == sitzplaetze){
+    public void removeSitzmoebel(Sitzmoebel.Sitzplaetze sitzplaetze) {
+        for (Sitzmoebel moebelstueck : moebelstueckArrayList) {
+            if (moebelstueck.getSitzplaetze() == sitzplaetze) {
                 moebelstueckArrayList.remove(moebelstueck);
                 break;
             }
@@ -33,7 +34,7 @@ public class Sitzmoebellager extends Lager<Sitzmoebel> {
      * @param sitzplaetze Die Anzahl der Sitzplätze, nach der die Sitzmöbel gefiltert werden sollen.
      * @return Eine Liste von Sitzmöbeln mit der angegebenen Anzahl von Sitzplätzen.
      */
-    public List<Sitzmoebel> listMitEigenschaft(Sitzmoebel.Sitzplaetze sitzplaetze){
+    public List<Sitzmoebel> listMitEigenschaft(Sitzmoebel.Sitzplaetze sitzplaetze) {
         List<Sitzmoebel> sitzmoebelList = new ArrayList<Sitzmoebel>();
         for (Sitzmoebel moebelstueck : moebelstueckArrayList) {
             if (moebelstueck.getSitzplaetze() == sitzplaetze) {
@@ -60,10 +61,10 @@ public class Sitzmoebellager extends Lager<Sitzmoebel> {
      * @param sitzplaetze Die Anzahl der Sitzplätze, nach der der Bestand abgerufen werden soll.
      * @return Die Anzahl der Sitzmöbel mit der angegebenen Anzahl von Sitzplätzen im Lager.
      */
-    public int getSitzmoebellagerBestand(Sitzmoebel.Sitzplaetze sitzplaetze){
+    public int getSitzmoebellagerBestand(Sitzmoebel.Sitzplaetze sitzplaetze) {
         int bestand = 0;
-        for (Sitzmoebel moebelstueck : moebelstueckArrayList){
-            if (moebelstueck.getSitzplaetze() == sitzplaetze){
+        for (Sitzmoebel moebelstueck : moebelstueckArrayList) {
+            if (moebelstueck.getSitzplaetze() == sitzplaetze) {
                 bestand++;
             }
         }

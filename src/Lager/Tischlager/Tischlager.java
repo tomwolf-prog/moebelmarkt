@@ -1,6 +1,7 @@
-package Lager;
+package Lager.Tischlager;
 
 import Kategorie.Tische;
+import Lager.Lager;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -17,9 +18,9 @@ public class Tischlager extends Lager<Tische> {
      *
      * @param hoehe Die Höhe des zu entfernenden Tisches.
      */
-    public void removeTisch(Tische.Hoehe hoehe){
-        for (Tische moebelstueck : moebelstueckArrayList){
-            if (moebelstueck.getHoehe() == hoehe){
+    public void removeTisch(Tische.Hoehe hoehe) {
+        for (Tische moebelstueck : moebelstueckArrayList) {
+            if (moebelstueck.getHoehe() == hoehe) {
                 moebelstueckArrayList.remove(moebelstueck);
                 break;
             }
@@ -32,7 +33,7 @@ public class Tischlager extends Lager<Tische> {
      * @param hoehe Die Höhe der gesuchten Tische.
      * @return Eine Liste von Tischen mit der angegebenen Höhe.
      */
-    public List<Tische> listTischeMitEigenschaft(Tische.Hoehe hoehe){
+    public List<Tische> listTischeMitEigenschaft(Tische.Hoehe hoehe) {
         List<Tische> tischeList = new ArrayList<Tische>();
         for (Tische moebelstueck : moebelstueckArrayList) {
             if (moebelstueck.getHoehe() == hoehe) {
@@ -59,10 +60,10 @@ public class Tischlager extends Lager<Tische> {
      * @param hoehe Die Höhe der gesuchten Tische.
      * @return Der Bestand an Tischen mit der angegebenen Höhe.
      */
-    public int getTischlagerBestand(Tische.Hoehe hoehe){
+    public int getTischlagerBestand(Tische.Hoehe hoehe) {
         int bestand = 0;
-        for (Tische moebelstueck : moebelstueckArrayList){
-            if (moebelstueck.getHoehe() == hoehe){
+        for (Tische moebelstueck : moebelstueckArrayList) {
+            if (moebelstueck.getHoehe() == hoehe) {
                 bestand++;
             }
         }
