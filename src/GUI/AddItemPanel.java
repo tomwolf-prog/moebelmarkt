@@ -1,9 +1,6 @@
 package GUI;
 
 
-import GUIOLD.Lagerung.AddLagerungScreen;
-import GUIOLD.StartScreen;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -16,7 +13,8 @@ public class AddItemPanel {
         JButton addLagerung = new JButton("Add Lagerung");
         addLagerung.setBounds(150, 50, 150, 30);
         addLagerung.addActionListener(e -> {
-            AddLagerungScreen.addLagerung();
+            MyFrame.addItemPanel.setVisible(false);
+            MyFrame.addLagerungPanel.setVisible(true);
         });
         addItemPanel.add(addLagerung);
 
@@ -39,12 +37,14 @@ public class AddItemPanel {
         JButton back = new JButton("Back");
         back.setBounds(150, 250, 150, 30);
         back.addActionListener(e -> {
-            StartScreen.start();
+            MyFrame.addItemPanel.setVisible(false);
 
         });
         addItemPanel.add(back);
         addItemPanel.setLayout(null);
         addItemPanel.setBackground(Color.GRAY);
+        addItemPanel.setBounds(100, 0, 1600, 900);
+        addItemPanel.setVisible(false);
 
         return addItemPanel;
 
