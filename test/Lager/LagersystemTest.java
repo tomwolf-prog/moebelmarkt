@@ -2,6 +2,12 @@ package test.Lager;
 
 import Lager.*;
 import Moebelstueck.Moebelstueck;
+import src.Kategorie.Lagerung;
+import src.Kategorie.Liegemoebel;
+import src.Kategorie.Sitzmoebel;
+import src.Kategorie.Tische;
+import src.Lager.Lager;
+import src.Lager.Lagersystem;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.*;
@@ -9,6 +15,7 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.beans.Transient;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
@@ -39,6 +46,22 @@ public class LagersystemTest {
 
         lagersystem.getDoppelbettlager().setPreis(31999);
         lagersystem.getBalkonliegelager().setPreis(8999);
+    }
+
+
+    @Test
+    public void teste_getPreis_mit_Rabatt_abrunden(){
+        lagersystem.getCouchtischlager().setPreis(99_99);
+        lagersystem.getCouchtischlager().setRabatt10(true);
+        int preis = lagersystem.getCouchtischlager().getPreis();
+        Assert.assertEquals(89_99, preis);
+    }
+    @Test
+    public void teste_getPreis_mit_Rabatt_aufrunden(){
+        lagersystem.getCouchtischlager().setPreis(99_95);
+        lagersystem.getCouchtischlager().setRabatt10(true);
+        int preis = lagersystem.getCouchtischlager().getPreis();
+        Assert.assertEquals(89_96, preis);
     }
 
 

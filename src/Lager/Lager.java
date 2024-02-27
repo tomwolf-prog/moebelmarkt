@@ -32,13 +32,14 @@ public class Lager<Moebelstueck> implements Serializable {
         return moebelstueckArrayList;
     }
 
-    /**
+        /**
      * Gibt den Preis des Möbelstücks zurück.
      * Wenn der Rabatt aktiviert ist, wird der rabattierte Preis zurückgegeben.
+     * Dabei wird der Preis um ein Cent erhöht (aufgerundet), wenn die Nachkommazahl über 5 ist.
      * @return Der Preis des Möbelstücks.
      */
     public int getPreis() {
-        return rabatt10 ? (preis * 90/100) : preis;
+        return rabatt10 ? (((preis * 9%10) >= 5) ? (preis*9/10)+1 : (preis*9/10) ) : preis;
     }
 
     /**
