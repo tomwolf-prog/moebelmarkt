@@ -28,8 +28,8 @@ public class Lagerung extends Moebelstueck {
     //     super();
     //     this.flaeche = flaeche;
     // }
-    public Lagerung(Moebelart moebelart, Flaeche flaeche) {
-        super();
+    public Lagerung(Moebelart moebelart, Flaeche flaeche, Kategorie kategorie, Bereich bereich) {
+        super(kategorie, bereich);
         this.moebelart = moebelart;
         this.flaeche = flaeche;
     }

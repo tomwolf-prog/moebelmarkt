@@ -18,6 +18,11 @@ public abstract class Moebelstueck implements Serializable {
 
     private Bereich bereich;
 
+    public Moebelstueck(Kategorie kategorie, Bereich bereich) {
+        this.kategorie = kategorie;
+        this.bereich = bereich;
+    }
+
     public Kategorie getKategorie() {
         return kategorie;
     }

@@ -194,7 +194,7 @@ public class Lagersystem implements Serializable {
     }
 
     public void erhoeheBuerotischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> buerotischlager.addTisch(new Tische(Moebelart.Buerotisch, hoehe)));
+        IntStream.range(0, quantitativerBetrag).forEach(i -> buerotischlager.addTisch(new Tische(Moebelart.Buerotisch, hoehe, Moebelstueck.Kategorie.Tische, Bereich.Andere)));
     }
 
     public void mindereBuerotischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
@@ -218,7 +218,7 @@ public class Lagersystem implements Serializable {
     }
 
     public void erhoeheCouchtischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> couchtischlager.addTisch(new Tische(Moebelart.Couchtisch, hoehe)));
+        IntStream.range(0, quantitativerBetrag).forEach(i -> couchtischlager.addTisch(new Tische(Moebelart.Couchtisch, hoehe, Moebelstueck.Kategorie.Tische, Bereich.Wohnen)));
     }
 
     public void mindereCouchtischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
@@ -242,7 +242,7 @@ public class Lagersystem implements Serializable {
     }
 
     public void erhoeheEsstischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> esstischlager.addTisch(new Tische(Moebelart.Esstisch, hoehe)));
+        IntStream.range(0, quantitativerBetrag).forEach(i -> esstischlager.addTisch(new Tische(Moebelart.Esstisch, hoehe, Moebelstueck.Kategorie.Tische, Bereich.Andere)));
     }
 
     public void mindereEsstischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
@@ -266,7 +266,7 @@ public class Lagersystem implements Serializable {
     }
 
     public void erhoeheKuechentischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> kuechentischlager.addTisch(new Tische(Moebelart.Kuechentisch, hoehe)));
+        IntStream.range(0, quantitativerBetrag).forEach(i -> kuechentischlager.addTisch(new Tische(Moebelart.Kuechentisch, hoehe, Moebelstueck.Kategorie.Tische, Bereich.Kueche)));
     }
 
     public void mindereKuechentischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
@@ -307,7 +307,7 @@ public class Lagersystem implements Serializable {
     }
 
     public void erhoeheKuechenstuhllagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> kuechenstuhllager.addSitzmoebel(new Sitzmoebel(Sitzmoebel.Moebelart.Kuechenstuhl, sitzplaetze)));
+        IntStream.range(0, quantitativerBetrag).forEach(i -> kuechenstuhllager.addSitzmoebel(new Sitzmoebel(Sitzmoebel.Moebelart.Kuechenstuhl, sitzplaetze, Moebelstueck.Kategorie.Sitzmoebel, Bereich.Kueche)));
     }
 
     public void mindereKuechenstuhllagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze) {
@@ -331,7 +331,7 @@ public class Lagersystem implements Serializable {
     }
 
     public void erhoeheOhrensessellagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> ohrensessellager.addSitzmoebel(new Sitzmoebel(Sitzmoebel.Moebelart.Ohrensessel, sitzplaetze)));
+        IntStream.range(0, quantitativerBetrag).forEach(i -> ohrensessellager.addSitzmoebel(new Sitzmoebel(Sitzmoebel.Moebelart.Ohrensessel, sitzplaetze, Moebelstueck.Kategorie.Sitzmoebel, Bereich.Wohnen)));
     }
 
     public void mindereOhrensessellagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze) {
@@ -355,7 +355,7 @@ public class Lagersystem implements Serializable {
     }
 
     public void erhoeheFernsehcouchlagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> fernsehcouchlager.addSitzmoebel(new Sitzmoebel(Sitzmoebel.Moebelart.Fernsehcouch, sitzplaetze)));
+        IntStream.range(0, quantitativerBetrag).forEach(i -> fernsehcouchlager.addSitzmoebel(new Sitzmoebel(Sitzmoebel.Moebelart.Fernsehcouch, sitzplaetze, Moebelstueck.Kategorie.Sitzmoebel, Bereich.Wohnen)));
     }
 
     public void mindereFernsehcouchlagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze) {
@@ -396,7 +396,7 @@ public class Lagersystem implements Serializable {
     }
 
     public void erhoeheKuechenregallagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> kuechenregallager.addLagerung(new Lagerung(Lagerung.Moebelart.Kuechenregal, flaeche)));
+        IntStream.range(0, quantitativerBetrag).forEach(i -> kuechenregallager.addLagerung(new Lagerung(Lagerung.Moebelart.Kuechenregal, flaeche, Moebelstueck.Kategorie.Lagerung, Bereich.Kueche)));
     }
 
     public void mindereKuechenregallagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
@@ -420,7 +420,7 @@ public class Lagersystem implements Serializable {
     }
 
     public void erhoeheBeistelltischlagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> beistelltischlager.addLagerung(new Lagerung(Beistelltisch, flaeche)));
+        IntStream.range(0, quantitativerBetrag).forEach(i -> beistelltischlager.addLagerung(new Lagerung(Beistelltisch, flaeche, Moebelstueck.Kategorie.Lagerung, Bereich.Schlafen)));
     }
 
     public void mindereBeistelltischlagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
@@ -444,7 +444,7 @@ public class Lagersystem implements Serializable {
     }
 
     public void erhoeheKleiderschranklagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> kleiderschranklager.addLagerung(new Lagerung(Lagerung.Moebelart.Kleiderschrank, flaeche)));
+        IntStream.range(0, quantitativerBetrag).forEach(i -> kleiderschranklager.addLagerung(new Lagerung(Lagerung.Moebelart.Kleiderschrank, flaeche, Moebelstueck.Kategorie.Lagerung, Bereich.Schlafen)));
     }
 
     public void mindereKleiderschranklagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
@@ -497,7 +497,7 @@ public class Lagersystem implements Serializable {
     }
 
     public void erhoeheDoppelbettlagerLagerbestand(int quantitativerBetrag, Liegemoebel.Laenge laenge) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> doppelbettlager.addLiegemoebel(new Liegemoebel(Liegemoebel.Moebelart.Doppelbett, laenge)));
+        IntStream.range(0, quantitativerBetrag).forEach(i -> doppelbettlager.addLiegemoebel(new Liegemoebel(Liegemoebel.Moebelart.Doppelbett, laenge, Moebelstueck.Kategorie.Liegemoebel, Bereich.Schlafen)));
     }
 
     public void mindereDoppelbettlagerLagerbestand(int quantitativerBetrag, Liegemoebel.Laenge laenge) {
@@ -521,7 +521,7 @@ public class Lagersystem implements Serializable {
     }
 
     public void erhoeheBalkonliegelagerLagerbestand(int quantitativerBetrag, Liegemoebel.Laenge laenge) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> balkonliegelager.addLiegemoebel(new Liegemoebel(Liegemoebel.Moebelart.Balkonliege, laenge)));
+        IntStream.range(0, quantitativerBetrag).forEach(i -> balkonliegelager.addLiegemoebel(new Liegemoebel(Liegemoebel.Moebelart.Balkonliege, laenge, Moebelstueck.Kategorie.Liegemoebel, Bereich.Andere)));
     }
 
     public void mindereBalkonliegelagerLagerbestand(int quantitativerBetrag, Liegemoebel.Laenge laenge) {
