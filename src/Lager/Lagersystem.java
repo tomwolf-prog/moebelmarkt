@@ -731,7 +731,7 @@ public class Lagersystem implements Serializable {
     /**
      * Sucht nach Sitzmöbeln mit einer bestimmten Eigenschaft.
      *
-     * @param eigenschaft Die Eigenschaft, nach der gesucht werden soll.
+     * @param sitzplaetze Die Anzahl an Sitzplätzen, nach der gesucht werden soll.
      * @return Eine Liste von Sitzmöbeln, die die angegebene Eigenschaft haben.
      */
     public List<Sitzmoebel> searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze sitzplaetze) {

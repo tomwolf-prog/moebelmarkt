@@ -39,7 +39,6 @@ public abstract class Tischlager extends Lager<Tische> {
             if (moebelstueck.getHoehe() == hoehe) {
                 tischeList.add(moebelstueck);
             }
-            ;
         }
         return tischeList;
     }
