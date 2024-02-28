@@ -106,7 +106,7 @@ public class AddCouchtischPanel {
         changeCouchtischPanel.add(back);
         changeCouchtischPanel.setLayout(null);
         changeCouchtischPanel.setBackground(Color.GRAY);
-        changeCouchtischPanel.setBounds(100, 0, 1600, 900);
+        changeCouchtischPanel.setBounds(105, 0, 1600, 900);
         changeCouchtischPanel.setVisible(false);
 
 

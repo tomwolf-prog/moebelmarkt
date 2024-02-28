@@ -104,7 +104,7 @@ public class AddDoppelbettPanel {
         changeDoppelbettPanel.add(back);
         changeDoppelbettPanel.setLayout(null);
         changeDoppelbettPanel.setBackground(Color.GRAY);
-        changeDoppelbettPanel.setBounds(100, 0, 1600, 900);
+        changeDoppelbettPanel.setBounds(105, 0, 1600, 900);
         changeDoppelbettPanel.setVisible(false);
 
 

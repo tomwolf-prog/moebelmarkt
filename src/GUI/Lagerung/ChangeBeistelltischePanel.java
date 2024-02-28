@@ -128,7 +128,7 @@ public class ChangeBeistelltischePanel {
 
         changeBeistelltischePanel.setLayout(null);
         changeBeistelltischePanel.setBackground(Color.GRAY);
-        changeBeistelltischePanel.setBounds(100, 0, 1600, 900);
+        changeBeistelltischePanel.setBounds(105, 0, 1600, 900);
         changeBeistelltischePanel.setVisible(false);
 
 

@@ -129,7 +129,7 @@ public class AddKuechenstuhlPanel {
         changeKuechenstuhlPanel.add(back);
         changeKuechenstuhlPanel.setLayout(null);
         changeKuechenstuhlPanel.setBackground(Color.GRAY);
-        changeKuechenstuhlPanel.setBounds(100, 0, 1600, 900);
+        changeKuechenstuhlPanel.setBounds(105, 0, 1600, 900);
         changeKuechenstuhlPanel.setVisible(false);
 
 

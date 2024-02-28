@@ -64,7 +64,7 @@ public class Kombi {
         kombiPanel.add(back);
         kombiPanel.setLayout(null);
         kombiPanel.setBackground(Color.WHITE);
-        kombiPanel.setBounds(100, 0, 1600, 900);
+        kombiPanel.setBounds(105, 0, 1600, 900);
         kombiPanel.setVisible(false);
 
         return kombiPanel;

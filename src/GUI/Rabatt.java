@@ -307,7 +307,7 @@ public class Rabatt {
         setRabattPanel.add(back);
         setRabattPanel.setLayout(null);
         setRabattPanel.setBackground(Color.WHITE);
-        setRabattPanel.setBounds(100, 0, 1600, 900);
+        setRabattPanel.setBounds(105, 0, 1600, 900);
         setRabattPanel.setVisible(false);
 
         return setRabattPanel;

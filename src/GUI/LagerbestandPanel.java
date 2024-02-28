@@ -304,7 +304,7 @@ public class LagerbestandPanel {
         addLagerbestandPanel.add(back);
         addLagerbestandPanel.setLayout(null);
         addLagerbestandPanel.setBackground(Color.WHITE);
-        addLagerbestandPanel.setBounds(100, 0, 1600, 900);
+        addLagerbestandPanel.setBounds(105, 0, 1600, 900);
         addLagerbestandPanel.setVisible(false);
 
         return addLagerbestandPanel;

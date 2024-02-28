@@ -63,7 +63,7 @@ public class ChangeLagerungPanel {
         changeLagerungPanel.add(back);
         changeLagerungPanel.setLayout(null);
         changeLagerungPanel.setBackground(Color.GRAY);
-        changeLagerungPanel.setBounds(100, 0, 1600, 900);
+        changeLagerungPanel.setBounds(105, 0, 1600, 900);
         changeLagerungPanel.setVisible(false);
 
 
