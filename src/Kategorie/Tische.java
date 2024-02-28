@@ -32,8 +32,8 @@ public class Tische extends Moebelstueck {
     //     this.hoehe = hoehe;
     // }
 
-    public Tische(Moebelart moebelart, Hoehe hoehe) {
-        super();
+    public Tische(Moebelart moebelart, Hoehe hoehe, Kategorie kategorie, Bereich bereich) {
+        super(kategorie, bereich);
         this.moebelart = moebelart;
         this.hoehe = hoehe;
     }
