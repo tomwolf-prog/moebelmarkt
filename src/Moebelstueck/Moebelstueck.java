@@ -13,7 +13,7 @@ public abstract class Moebelstueck implements Serializable {
 
     public enum Bereich {Kueche, Wohnen, Schlafen, Andere}
 
-    private int verkauspreis;
+    private int verkaufspreis;
     private Kategorie kategorie;
 
     private Bereich bereich;
@@ -26,12 +26,12 @@ public abstract class Moebelstueck implements Serializable {
         this.kategorie = kategorie;
     }
 
-    public int getVerkauspreis() {
-        return verkauspreis;
+    public int getVerkaufspreis() {
+        return verkaufspreis;
     }
 
-    public void setVerkauspreis(int verkauspreis) {
-        this.verkauspreis = verkauspreis;
+    public void setVerkaufspreis(int verkaufspreis) {
+        this.verkaufspreis = verkaufspreis;
     }
 
     public Bereich getBereich() {
@@ -44,7 +44,7 @@ public abstract class Moebelstueck implements Serializable {
 
     public String toString() {
         return "Moebelstueck{" +
-                "verkauspreis=" + verkauspreis +
+                "verkaufspreis=" + verkaufspreis +
                 ", kategorie=" + kategorie +
                 ", bereich=" + bereich +
                 '}';
