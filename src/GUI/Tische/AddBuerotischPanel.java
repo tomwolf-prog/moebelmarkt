@@ -106,7 +106,7 @@ public class AddBuerotischPanel {
         changeBuerotischPanel.add(back);
         changeBuerotischPanel.setLayout(null);
         changeBuerotischPanel.setBackground(Color.GRAY);
-        changeBuerotischPanel.setBounds(100, 0, 1600, 900);
+        changeBuerotischPanel.setBounds(105, 0, 1600, 900);
         changeBuerotischPanel.setVisible(false);
 
 

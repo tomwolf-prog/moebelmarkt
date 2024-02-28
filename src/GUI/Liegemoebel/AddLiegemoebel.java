@@ -52,7 +52,7 @@ public class AddLiegemoebel {
         addLiegemoebelPanel.add(back);
         addLiegemoebelPanel.setLayout(null);
         addLiegemoebelPanel.setBackground(Color.GRAY);
-        addLiegemoebelPanel.setBounds(100, 0, 1600, 900);
+        addLiegemoebelPanel.setBounds(105, 0, 1600, 900);
         addLiegemoebelPanel.setVisible(false);
 
 

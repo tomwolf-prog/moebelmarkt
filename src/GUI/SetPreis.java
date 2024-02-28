@@ -391,7 +391,7 @@ public class SetPreis {
         setPreisPanel.add(back);
         setPreisPanel.setLayout(null);
         setPreisPanel.setBackground(Color.WHITE);
-        setPreisPanel.setBounds(100, 0, 1600, 900);
+        setPreisPanel.setBounds(105, 0, 1600, 900);
         setPreisPanel.setVisible(false);
 
         return setPreisPanel;

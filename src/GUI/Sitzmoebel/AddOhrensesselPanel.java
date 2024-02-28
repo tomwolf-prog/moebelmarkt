@@ -129,7 +129,7 @@ public class AddOhrensesselPanel {
         changeOhrensesselPanel.add(back);
         changeOhrensesselPanel.setLayout(null);
         changeOhrensesselPanel.setBackground(Color.GRAY);
-        changeOhrensesselPanel.setBounds(100, 0, 1600, 900);
+        changeOhrensesselPanel.setBounds(105, 0, 1600, 900);
         changeOhrensesselPanel.setVisible(false);
 
 

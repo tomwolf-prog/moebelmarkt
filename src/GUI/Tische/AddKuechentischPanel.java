@@ -105,7 +105,7 @@ public class AddKuechentischPanel {
         changeKuechentischPanel.add(back);
         changeKuechentischPanel.setLayout(null);
         changeKuechentischPanel.setBackground(Color.GRAY);
-        changeKuechentischPanel.setBounds(100, 0, 1600, 900);
+        changeKuechentischPanel.setBounds(105, 0, 1600, 900);
         changeKuechentischPanel.setVisible(false);
 
 

@@ -29,8 +29,8 @@ public class MyFrame {
     public static JPanel verkaufspreisPanel = VerkaufspreisPanel.Panel();
     public static JPanel rabattPanel = Rabatt.Panel();
     public static JPanel setPreisPanel = SetPreis.Panel();
-
     public static JPanel kombiPanel = Kombi.Panel();
+    public static JPanel findEigenschaft = FindEigenschaft.Panel();
     //Lagerung
     public static JPanel changeLagerungPanel = ChangeLagerungPanel.Panel();
     public static JPanel changeKuechenregalPanel = ChangeKuechenregalPanel.Panel();
@@ -63,6 +63,7 @@ public class MyFrame {
         frame.add(setPreisPanel);
         frame.add(rabattPanel);
         frame.add(kombiPanel);
+        frame.add(findEigenschaft);
         //Lagerung
         frame.add(changeLagerungPanel);
         frame.add(changeKuechenregalPanel);
@@ -94,6 +95,7 @@ public class MyFrame {
         setPreisPanel.setVisible(false);
         rabattPanel.setVisible(false);
         kombiPanel.setVisible(false);
+        findEigenschaft.setVisible(false);
         //Lagerung
         changeLagerungPanel.setVisible(false);
         changeKuechenregalPanel.setVisible(false);
@@ -126,6 +128,15 @@ public class MyFrame {
         frame.setLayout(null);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+
+        //Erstellen von Lager Button
+        JButton findEigenschaftButton = new JButton("findEigenschaft");
+        findEigenschaftButton.setBounds(5, 545, 95, 30);
+        findEigenschaftButton.addActionListener(e -> {
+            setAllPanelsInvisible();
+            findEigenschaft.setVisible(true);
+        });
+        frame.add(findEigenschaftButton);
 
         //Erstellen von Lager Button
         JButton geKombi = new JButton("Kombi");
@@ -217,6 +228,7 @@ public class MyFrame {
         frame.setLayout(null);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
 
         JPanel panel = new JPanel();
         panel.setBounds(0, 0, 105, 1500);

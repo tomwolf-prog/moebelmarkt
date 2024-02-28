@@ -697,8 +697,10 @@ public class Lagersystem implements Serializable {
      * @return Eine Liste von Lagerungen, die die angegebene Fläche haben.
      */
     public List<Lagerung> searchLagerungMitEigenschaft(Lagerung.Flaeche flaeche) {
-        List<Lagerung> lagerungList = kleiderschranklager.listMitEigenschaft(flaeche);
-        lagerungList.add((Lagerung) kuechenregallager.listMitEigenschaft(flaeche));
+        List lagerungList = new ArrayList<>();
+        lagerungList.add(beistelltischlager.listMitEigenschaft(flaeche));
+        lagerungList.add(kleiderschranklager.listMitEigenschaft(flaeche));
+        lagerungList.add(kuechenregallager.listMitEigenschaft(flaeche));
         return lagerungList;
     }
 
@@ -709,8 +711,9 @@ public class Lagersystem implements Serializable {
      * @return Eine Liste von Liegemoebeln mit der angegebenen Laenge.
      */
     public List<Liegemoebel> searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge laenge) {
-        List<Liegemoebel> liegemoebelList = doppelbettlager.listMitEigenschaft(laenge);
-        liegemoebelList.add((Liegemoebel) balkonliegelager.listMitEigenschaft(laenge));
+        List liegemoebelList = new ArrayList<>();
+        liegemoebelList.add(doppelbettlager.listMitEigenschaft(laenge));
+        liegemoebelList.add(balkonliegelager.listMitEigenschaft(laenge));
         return liegemoebelList;
     }
 
@@ -725,6 +728,7 @@ public class Lagersystem implements Serializable {
         tischeList.add(buerotischlager.listTischeMitEigenschaft(hoehe));
         tischeList.add(couchtischlager.listTischeMitEigenschaft(hoehe));
         tischeList.add(esstischlager.listTischeMitEigenschaft(hoehe));
+        tischeList.add(kuechentischlager.listTischeMitEigenschaft(hoehe));
         return tischeList;
     }
 
@@ -735,9 +739,10 @@ public class Lagersystem implements Serializable {
      * @return Eine Liste von Sitzmöbeln, die die angegebene Eigenschaft haben.
      */
     public List<Sitzmoebel> searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze sitzplaetze) {
-        List<Sitzmoebel> sitzmoebelList = kuechenstuhllager.listMitEigenschaft(sitzplaetze);
-        sitzmoebelList.add((Sitzmoebel) ohrensessellager.listMitEigenschaft(sitzplaetze));
-        sitzmoebelList.add((Sitzmoebel) fernsehcouchlager.listMitEigenschaft(sitzplaetze));
+        List sitzmoebelList = new ArrayList<>();
+        sitzmoebelList.add(kuechenstuhllager.listMitEigenschaft(sitzplaetze));
+        sitzmoebelList.add(ohrensessellager.listMitEigenschaft(sitzplaetze));
+        sitzmoebelList.add(fernsehcouchlager.listMitEigenschaft(sitzplaetze));
         return sitzmoebelList;
     }
 

@@ -127,7 +127,7 @@ public class ChangeKleiderschrankregalPanel {
 
         changeKleiderschrankregalPanel.setLayout(null);
         changeKleiderschrankregalPanel.setBackground(Color.GRAY);
-        changeKleiderschrankregalPanel.setBounds(100, 0, 1600, 900);
+        changeKleiderschrankregalPanel.setBounds(105, 0, 1600, 900);
         changeKleiderschrankregalPanel.setVisible(false);
 
 

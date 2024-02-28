@@ -63,7 +63,7 @@ public class AddSitzmoebelPanel {
         changeSitzmoebelPanel.add(back);
         changeSitzmoebelPanel.setLayout(null);
         changeSitzmoebelPanel.setBackground(Color.GRAY);
-        changeSitzmoebelPanel.setBounds(100, 0, 1600, 900);
+        changeSitzmoebelPanel.setBounds(105, 0, 1600, 900);
         changeSitzmoebelPanel.setVisible(false);
 
 
