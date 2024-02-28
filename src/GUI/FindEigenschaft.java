@@ -13,7 +13,9 @@ import java.util.Objects;
 
 public class FindEigenschaft {
     static final JPanel findEigenschaftPanel = new JPanel();
-    private static final JTextArea Ausgabe = new JTextArea("Bitte geben Sie einen Betrage ein und drücken 'Kombi'");
+    private static JTextArea ta;
+    private static JScrollPane ausgabeScrollPane;
+    private static JTextArea Ausgabe = new JTextArea("Bitte geben Sie einen Betrage ein und drücken 'Kombi'");
     private static final Lagersystem lagersystem = Moebelhaus.getLagersystem();
     private static final String[] choicesMoebelkategorie = {"Sitzmoebel", "Tische", "Lagerung", "Liegemoebel"};
     private static final JComboBox<String> cbmk = new JComboBox<String>(choicesMoebelkategorie);
@@ -27,6 +29,26 @@ public class FindEigenschaft {
     private static final String[] choicesLiegemoebel = {"S", "M", "L"};
     private static final JComboBox<String> cbl = new JComboBox<String>(choicesLiegemoebel);
 
+    static String s = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \n" +
+            "\n" +
+            "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. \n" +
+            "\n" +
+            "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. \n" +
+            "\n" +
+            "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. \n" +
+            "\n" +
+            "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. \n" +
+            "\n" +
+            "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. \n" +
+            "\n" +
+            "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus. \n" +
+            "\n" +
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \n" +
+            "\n" +
+            "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. \n" +
+            "\n" +
+            "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. ";
+
 
     private static void updateLabels() {
         cbsm.setVisible(false);
@@ -37,9 +59,17 @@ public class FindEigenschaft {
     }
 
     public static JPanel Panel() {
-        //Erstellen von Find Eigenschaft Panel
 
-        Ausgabe.setBounds(50, 200, 500, 300);
+
+        ta = new JTextArea(s);
+        ta.setLineWrap(true);
+        ta.setWrapStyleWord(true);
+        ausgabeScrollPane = new JScrollPane(ta);
+        ausgabeScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        ausgabeScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        ausgabeScrollPane.setBounds(50, 100, 1400, 500);
+        findEigenschaftPanel.add(ausgabeScrollPane);
+
         findEigenschaftPanel.add(Ausgabe);
         cbmk.setBounds(50, 50, 175, 30);
         cbmk.addActionListener(e -> {
@@ -91,59 +121,59 @@ public class FindEigenschaft {
                 case "Sitzmoebel":
                     switch (Objects.requireNonNull(cbsm.getSelectedItem()).toString()) {
                         case "Eins":
-                            Ausgabe.setText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.eins).stream().toList().toString());
+                            ta.setText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.eins).stream().toList().toString());
                             break;
                         case "Zwei":
-                            Ausgabe.setText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.zwei).stream().toList().toString());
+                            ta.setText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.zwei).stream().toList().toString());
                             break;
                         case "Drei":
-                            Ausgabe.setText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.drei).stream().toList().toString());
+                            ta.setText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.drei).stream().toList().toString());
                             break;
                         case "Vier":
-                            Ausgabe.setText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.vier).stream().toList().toString());
+                            ta.setText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.vier).stream().toList().toString());
                             break;
                     }
                     break;
                 case "Tische":
                     switch (Objects.requireNonNull(cbt.getSelectedItem()).toString()) {
                         case "S":
-                            Ausgabe.setText(lagersystem.searchTischMitEigenschaft(Tische.Hoehe.s).stream().toList().toString());
+                            ta.setText(lagersystem.searchTischMitEigenschaft(Tische.Hoehe.s).stream().toList().toString());
                             break;
                         case "M":
-                            Ausgabe.setText(lagersystem.searchTischMitEigenschaft(Tische.Hoehe.m).stream().toList().toString());
+                            ta.setText(lagersystem.searchTischMitEigenschaft(Tische.Hoehe.m).stream().toList().toString());
                             break;
                         case "L":
-                            Ausgabe.setText(lagersystem.searchTischMitEigenschaft(Tische.Hoehe.l).stream().toList().toString());
+                            ta.setText(lagersystem.searchTischMitEigenschaft(Tische.Hoehe.l).stream().toList().toString());
                             break;
                     }
                     break;
                 case "Lagerung":
                     switch (Objects.requireNonNull(cbf.getSelectedItem()).toString()) {
                         case "S":
-                            Ausgabe.setText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.s).stream().toList().toString());
+                            ta.setText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.s).stream().toList().toString());
                             break;
                         case "M":
-                            Ausgabe.setText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.m).stream().toList().toString());
+                            ta.setText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.m).stream().toList().toString());
                             break;
                         case "L":
-                            Ausgabe.setText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.l).stream().toList().toString());
+                            ta.setText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.l).stream().toList().toString());
                             break;
                         case "XL":
-                            Ausgabe.setText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.xl).stream().toList().toString());
+                            ta.setText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.xl).stream().toList().toString());
                             break;
                     }
                     break;
                 case "Liegemoebel":
                     switch (Objects.requireNonNull(cbl.getSelectedItem()).toString()) {
                         case "S":
-                            Ausgabe.setText(lagersystem.searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge.s).stream().toList().toString());
+                            ta.setText(lagersystem.searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge.s).stream().toList().toString());
                             break;
                         case "M":
-                            Ausgabe.setText(lagersystem.searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge.m).stream().toList().toString());
+                            ta.setText(lagersystem.searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge.m).stream().toList().toString());
 
                             break;
                         case "L":
-                            Ausgabe.setText(lagersystem.searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge.l).stream().toList().toString());
+                            ta.setText(lagersystem.searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge.l).stream().toList().toString());
                             break;
                     }
                     break;
