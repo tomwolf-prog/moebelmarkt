@@ -5,6 +5,7 @@
  * sowie zum Abrufen der Liste der im Lager gespeicherten Möbelstücke.
  */
 package Lager;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -14,36 +15,49 @@ public class Lager<K> implements Serializable {
 
     public ArrayList<K> moebelstueckArrayList = new ArrayList<K>();
 
-    public Lager(){
+    public Lager() {
         this.preis = 0;
         this.rabatt10 = false;
     }
 
-    public Lager(int preis){
+    public Lager(int preis) {
         this.preis = preis;
         this.rabatt10 = false;
     }
 
     /**
      * Gibt die Liste der im Lager gespeicherten Möbelstücke zurück.
+     *
      * @return Die Liste der Möbelstücke im Lager.
      */
-    public ArrayList<K> getMoebel(){
+    public ArrayList<K> getMoebel() {
         return moebelstueckArrayList;
     }
 
-        /**
+    /**
      * Gibt den Preis des Möbelstücks zurück.
      * Wenn der Rabatt aktiviert ist, wird der rabattierte Preis zurückgegeben.
      * Dabei wird der Preis um ein Cent erhöht (aufgerundet), wenn die Nachkommazahl über 5 ist.
+     *
      * @return Der Preis des Möbelstücks.
      */
     public int getPreis() {
-        return rabatt10 ? (((preis * 9%10) >= 5) ? (preis*9/10)+1 : (preis*9/10) ) : preis;
+        return rabatt10 ? (((preis * 9 % 10) >= 5) ? (preis * 9 / 10) + 1 : (preis * 9 / 10)) : preis;
+    }
+
+    /**
+     * Gibt den Preis des Möbelstücks zurück ohne berücksichtigung des Rabatts.
+     * Dabei wird der Preis um ein Cent erhöht (aufgerundet), wenn die Nachkommazahl über 5 ist.
+     *
+     * @return Der Preis des Möbelstücks.
+     */
+    public int getPreisOhneRabatt() {
+        return preis;
     }
 
     /**
      * Legt den Preis des Möbelstücks fest.
+     *
      * @param preis Der Preis des Möbelstücks.
      */
     public void setPreis(int preis) {
@@ -52,6 +66,7 @@ public class Lager<K> implements Serializable {
 
     /**
      * Gibt den Rabattstatus des Möbelstücks zurück.
+     *
      * @return Der Rabattstatus des Möbelstücks.
      */
     public boolean getRabatt10() {
@@ -60,6 +75,7 @@ public class Lager<K> implements Serializable {
 
     /**
      * Legt den Rabattstatus des Möbelstücks fest.
+     *
      * @param rabatt10 Der Rabattstatus des Möbelstücks.
      */
     public void setRabatt10(boolean rabatt10) {

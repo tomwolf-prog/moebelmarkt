@@ -14,31 +14,31 @@ public class SetPreis {
     private static final Lagersystem lagersystem = Moebelhaus.getLagersystem();
 
     //Lagerung
-    private static final JLabel Beistelltischlager = new JLabel();
+    private static final JTextArea Beistelltischlager = new JTextArea();
     private static final JTextField BeistelltischlagerFeld = new JTextField("1");
-    private static final JLabel Kleiderschranklager = new JLabel();
+    private static final JTextArea Kleiderschranklager = new JTextArea();
     private static final JTextField KleiderschranklagerFeld = new JTextField("1");
-    private static final JLabel Kuechenregallager = new JLabel();
+    private static final JTextArea Kuechenregallager = new JTextArea();
     private static final JTextField KuechenregallagerFeld = new JTextField("1");
     //Liegemoebel
-    private static final JLabel Balkonliegelager = new JLabel();
+    private static final JTextArea Balkonliegelager = new JTextArea();
     private static final JTextField BalkonliegelagerFeld = new JTextField("1");
-    private static final JLabel Doppelbettlager = new JLabel();
+    private static final JTextArea Doppelbettlager = new JTextArea();
     private static final JTextField DoppelbettlagerFeld = new JTextField("1");    //Sitzmoebel
-    private static final JLabel Fernsehcouch = new JLabel();
+    private static final JTextArea Fernsehcouch = new JTextArea();
     private static final JTextField FernsehcouchFeld = new JTextField("1");
-    private static final JLabel Kuechenstuhl = new JLabel();
+    private static final JTextArea Kuechenstuhl = new JTextArea();
     private static final JTextField KuechenstuhlFeld = new JTextField("1");
-    private static final JLabel Ohrensessel = new JLabel();
+    private static final JTextArea Ohrensessel = new JTextArea();
     private static final JTextField OhrensesselFeld = new JTextField("1");
     //Tische
-    private static final JLabel Buerotischlager = new JLabel();
+    private static final JTextArea Buerotischlager = new JTextArea();
     private static final JTextField BuerotischlagerFeld = new JTextField("1");
-    private static final JLabel Couchtischlager = new JLabel();
+    private static final JTextArea Couchtischlager = new JTextArea();
     private static final JTextField CouchtischlagerFeld = new JTextField("1");
-    private static final JLabel Esstischlager = new JLabel();
+    private static final JTextArea Esstischlager = new JTextArea();
     private static final JTextField EsstischlagerFeld = new JTextField("1");
-    private static final JLabel Kuechentischlager = new JLabel();
+    private static final JTextArea Kuechentischlager = new JTextArea();
     private static final JTextField KuechentischlagerFeld = new JTextField("1");
 
 
@@ -46,71 +46,71 @@ public class SetPreis {
         //Lagerung
 
         setPreisPanel.add(Beistelltischlager);
-        Beistelltischlager.setBounds(50, 50, 175, 30);
+        Beistelltischlager.setBounds(50, 50, 175, 60);
         BeistelltischlagerFeld.setBounds(50, 100, 175, 30);
         setPreisPanel.add(BeistelltischlagerFeld);
 
         setPreisPanel.add(Kleiderschranklager);
-        Kleiderschranklager.setBounds(50, 200, 175, 30);
+        Kleiderschranklager.setBounds(50, 200, 175, 60);
         KleiderschranklagerFeld.setBounds(50, 250, 175, 30);
         setPreisPanel.add(KleiderschranklagerFeld);
 
         setPreisPanel.add(Kuechenregallager);
-        Kuechenregallager.setBounds(50, 350, 175, 30);
+        Kuechenregallager.setBounds(50, 350, 175, 60);
         KuechenregallagerFeld.setBounds(50, 400, 175, 30);
         setPreisPanel.add(KuechenregallagerFeld);
 
 
         setPreisPanel.add(Balkonliegelager);
-        Balkonliegelager.setBounds(300, 50, 175, 30);
+        Balkonliegelager.setBounds(300, 50, 175, 60);
         BalkonliegelagerFeld.setBounds(300, 100, 175, 30);
         setPreisPanel.add(BalkonliegelagerFeld);
 
 
         setPreisPanel.add(Doppelbettlager);
-        Doppelbettlager.setBounds(300, 200, 175, 30);
+        Doppelbettlager.setBounds(300, 200, 175, 60);
         DoppelbettlagerFeld.setBounds(300, 250, 175, 30);
         setPreisPanel.add(DoppelbettlagerFeld);
 
 
         setPreisPanel.add(Fernsehcouch);
-        Fernsehcouch.setBounds(500, 50, 175, 30);
+        Fernsehcouch.setBounds(500, 50, 175, 60);
         FernsehcouchFeld.setBounds(500, 100, 175, 30);
         setPreisPanel.add(FernsehcouchFeld);
 
 
         setPreisPanel.add(Kuechenstuhl);
-        Kuechenstuhl.setBounds(500, 200, 175, 30);
+        Kuechenstuhl.setBounds(500, 200, 175, 60);
         KuechenstuhlFeld.setBounds(500, 250, 175, 30);
         setPreisPanel.add(KuechenstuhlFeld);
 
 
         setPreisPanel.add(Ohrensessel);
-        Ohrensessel.setBounds(500, 350, 175, 30);
+        Ohrensessel.setBounds(500, 350, 175, 60);
         OhrensesselFeld.setBounds(500, 400, 175, 30);
         setPreisPanel.add(OhrensesselFeld);
 
 
         setPreisPanel.add(Buerotischlager);
-        Buerotischlager.setBounds(700, 50, 175, 30);
+        Buerotischlager.setBounds(700, 50, 175, 60);
         BuerotischlagerFeld.setBounds(700, 100, 175, 30);
         setPreisPanel.add(BuerotischlagerFeld);
 
 
         setPreisPanel.add(Couchtischlager);
-        Couchtischlager.setBounds(700, 200, 175, 30);
+        Couchtischlager.setBounds(700, 200, 175, 60);
         CouchtischlagerFeld.setBounds(700, 250, 175, 30);
         setPreisPanel.add(CouchtischlagerFeld);
 
 
         setPreisPanel.add(Esstischlager);
-        Esstischlager.setBounds(700, 350, 175, 30);
+        Esstischlager.setBounds(700, 350, 175, 60);
         EsstischlagerFeld.setBounds(700, 400, 175, 30);
         setPreisPanel.add(EsstischlagerFeld);
 
 
         setPreisPanel.add(Kuechentischlager);
-        Kuechentischlager.setBounds(700, 500, 175, 30);
+        Kuechentischlager.setBounds(700, 500, 175, 60);
         KuechentischlagerFeld.setBounds(700, 550, 175, 30);
         setPreisPanel.add(KuechentischlagerFeld);
 
@@ -120,29 +120,53 @@ public class SetPreis {
     public static void updateLabels() {
         //Lagerung
 
-        Beistelltischlager.setText("Beistelltischlager: " + String.valueOf((lagersystem.getBeistelltischlager().getPreis())));
+        Beistelltischlager.setText("Beistelltischlager: " + String.valueOf((float) lagersystem.getBeistelltischlager().getPreis() / 100) + "\n"
+                + "Rabatt: " + lagersystem.getBeistelltischlager().getRabatt10() + "\n" +
+                "ohne Rabatt: " + (float) lagersystem.getBeistelltischlager().getPreisOhneRabatt() / 100);
 
-        Kleiderschranklager.setText("Kleiderschranklager: " + String.valueOf(lagersystem.getKleiderschranklager().getPreis()));
+        Kleiderschranklager.setText("Kleiderschranklager: " + String.valueOf(lagersystem.getKleiderschranklager().getPreis() / 100) + "\n"
+                + "Rabatt: " + lagersystem.getKleiderschranklager().getRabatt10() + "\n" +
+                "ohne Rabatt: " + (float) lagersystem.getKleiderschranklager().getPreisOhneRabatt() / 100);
 
-        Kuechenregallager.setText("Kuechenregallagerlager: " + String.valueOf(lagersystem.getKuechenregallager().getPreis()));
+        Kuechenregallager.setText("Kuechenregallagerlager: " + String.valueOf(lagersystem.getKuechenregallager().getPreis() / 100) + "\n"
+                + "Rabatt: " + lagersystem.getKuechenregallager().getRabatt10() + "\n" +
+                "ohne Rabatt: " + (float) lagersystem.getKuechenregallager().getPreisOhneRabatt() / 100);
 
-        Balkonliegelager.setText("Balkonliegelager: " + String.valueOf(lagersystem.getBalkonliegelager().getPreis()));
+        Balkonliegelager.setText("Balkonliegelager: " + String.valueOf(lagersystem.getBalkonliegelager().getPreis() / 100) + "\n"
+                + "Rabatt: " + lagersystem.getBalkonliegelager().getRabatt10() + "\n" +
+                "ohne Rabatt: " + (float) lagersystem.getBalkonliegelager().getPreisOhneRabatt() / 100);
 
-        Doppelbettlager.setText("Doppelbettlager: " + String.valueOf(lagersystem.getDoppelbettlager().getPreis()));
+        Doppelbettlager.setText("Doppelbettlager: " + String.valueOf(lagersystem.getDoppelbettlager().getPreis() / 100) + "\n"
+                + "Rabatt: " + lagersystem.getDoppelbettlager().getRabatt10() + "\n" +
+                "ohne Rabatt: " + (float) lagersystem.getDoppelbettlager().getPreisOhneRabatt() / 100);
 
-        Fernsehcouch.setText("Fernsehcouch: " + String.valueOf(lagersystem.getFernsehcouchlager().getPreis()));
+        Fernsehcouch.setText("Fernsehcouch: " + String.valueOf(lagersystem.getFernsehcouchlager().getPreis() / 100) + "\n"
+                + "Rabatt: " + lagersystem.getFernsehcouchlager().getRabatt10() + "\n" +
+                "ohne Rabatt: " + (float) lagersystem.getFernsehcouchlager().getPreisOhneRabatt() / 100);
 
-        Kuechenstuhl.setText("Kuechenstuhl: " + String.valueOf(lagersystem.getKuechenstuhllager().getPreis()));
+        Kuechenstuhl.setText("Kuechenstuhl: " + String.valueOf(lagersystem.getKuechenstuhllager().getPreis() / 100) + "\n"
+                + "Rabatt: " + lagersystem.getKuechenstuhllager().getRabatt10() + "\n" +
+                "ohne Rabatt: " + (float) lagersystem.getKuechenstuhllager().getPreisOhneRabatt() / 100);
 
-        Ohrensessel.setText("Ohrensessel: " + String.valueOf(lagersystem.getOhrensessellager().getPreis()));
+        Ohrensessel.setText("Ohrensessel: " + String.valueOf(lagersystem.getOhrensessellager().getPreis() / 100) + "\n"
+                + "Rabatt: " + lagersystem.getOhrensessellager().getRabatt10() + "\n" +
+                "ohne Rabatt: " + (float) lagersystem.getOhrensessellager().getPreisOhneRabatt() / 100);
 
-        Buerotischlager.setText("Buerotischlager: " + String.valueOf(lagersystem.getBuerotischlager().getPreis()));
+        Buerotischlager.setText("Buerotischlager: " + String.valueOf(lagersystem.getBuerotischlager().getPreis() / 100) + "\n"
+                + "Rabatt: " + lagersystem.getBuerotischlager().getRabatt10() + "\n" +
+                "ohne Rabatt: " + (float) lagersystem.getBuerotischlager().getPreisOhneRabatt() / 100);
 
-        Couchtischlager.setText("Couchtischlager: " + String.valueOf(lagersystem.getCouchtischlager().getPreis()));
+        Couchtischlager.setText("Couchtischlager: " + String.valueOf(lagersystem.getCouchtischlager().getPreis() / 100) + "\n"
+                + "Rabatt: " + lagersystem.getCouchtischlager().getRabatt10() + "\n" +
+                "ohne Rabatt: " + (float) lagersystem.getCouchtischlager().getPreisOhneRabatt() / 100);
 
-        Esstischlager.setText("Esstischlager: " + String.valueOf(lagersystem.getEsstischlager().getPreis()));
+        Esstischlager.setText("Esstischlager: " + String.valueOf(lagersystem.getEsstischlager().getPreis() / 100) + "\n"
+                + "Rabatt: " + lagersystem.getEsstischlager().getRabatt10() + "\n" +
+                "ohne Rabatt: " + (float) lagersystem.getEsstischlager().getPreisOhneRabatt() / 100);
 
-        Kuechentischlager.setText("Kuechentischlager: " + String.valueOf(lagersystem.getKuechentischlager().getPreis()));
+        Kuechentischlager.setText("Kuechentischlager: " + String.valueOf(lagersystem.getKuechentischlager().getPreis() / 100) + "\n"
+                + "Rabatt: " + lagersystem.getKuechentischlager().getRabatt10() + "\n" +
+                "ohne Rabatt: " + (float) lagersystem.getKuechentischlager().getPreisOhneRabatt() / 100);
 
     }
 
@@ -160,7 +184,7 @@ public class SetPreis {
                 String text = BeistelltischlagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text));
+                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
@@ -177,7 +201,7 @@ public class SetPreis {
                 String text = KleiderschranklagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text));
+                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
@@ -194,7 +218,7 @@ public class SetPreis {
                 String text = KuechenregallagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text));
+                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
@@ -211,7 +235,7 @@ public class SetPreis {
                 String text = BalkonliegelagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text));
+                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
@@ -228,7 +252,7 @@ public class SetPreis {
                 String text = DoppelbettlagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text));
+                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
@@ -245,7 +269,7 @@ public class SetPreis {
                 String text = FernsehcouchFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text));
+                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
@@ -262,7 +286,7 @@ public class SetPreis {
                 String text = KuechenstuhlFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text));
+                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
@@ -279,7 +303,7 @@ public class SetPreis {
                 String text = OhrensesselFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text));
+                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
@@ -296,7 +320,7 @@ public class SetPreis {
                 String text = BuerotischlagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text));
+                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
@@ -313,7 +337,7 @@ public class SetPreis {
                 String text = CouchtischlagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text));
+                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
@@ -330,7 +354,7 @@ public class SetPreis {
                 String text = EsstischlagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text));
+                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
@@ -347,7 +371,7 @@ public class SetPreis {
                 String text = KuechentischlagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text));
+                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
