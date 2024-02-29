@@ -2,8 +2,16 @@ package Kategorie;
 
 import Moebelstueck.Moebelstueck;
 
+/**
+ * Die Klasse Liegemoebel repräsentiert ein Möbelstück der Kategorie "Liegemoebel".
+ * Sie erbt von der Klasse Moebelstueck und enthält Informationen über die Länge und Art des Möbelstücks.
+ */
 public class Liegemoebel extends Moebelstueck {
 
+    /**
+     * Die Enumeration Laenge definiert die verfügbaren Längen für das Liegemoebel.
+     * Jede Länge hat eine zugehörige numerische Länge.
+     */
     public enum Laenge{
         s(160), m(180), l(220);
 
@@ -13,49 +21,72 @@ public class Liegemoebel extends Moebelstueck {
             this.numLaenge = Laenge;
         }
 
+        /**
+         * Gibt die numerische Länge des Liegemoebels zurück.
+         * @return Die numerische Länge des Liegemoebels.
+         */
         public  int getNumLaenge(){
             return numLaenge;
         }
     }
 
+    /**
+     * Die Enumeration Moebelart definiert die verfügbaren Arten von Liegemoebeln.
+     */
     public enum Moebelart{Doppelbett, Balkonliege}
 
-    // public Liegemoebel(Moebelart moebelart) {
-    //     super();
-    //     this.moebelart = moebelart;
-    // }
+    private Laenge laenge;
+    private Moebelart moebelart;
 
-    // public Liegemoebel(Laenge laenge) {
-    //     super();
-    //     this.laenge = laenge;
-    // }
-
+    /**
+     * Erzeugt ein neues Liegemoebel-Objekt mit der angegebenen Möbelart, Länge, Kategorie und Bereich.
+     * @param moebelart Die Möbelart des Liegemoebels.
+     * @param laenge Die Länge des Liegemoebels.
+     * @param kategorie Die Kategorie des Liegemoebels.
+     * @param bereich Der Bereich, in dem sich das Liegemoebel befindet.
+     */
     public Liegemoebel(Moebelart moebelart, Laenge laenge, Kategorie kategorie, Bereich bereich) {
         super(kategorie, bereich);
         this.moebelart = moebelart;
         this.laenge = laenge;
     }
 
-    private Laenge laenge;
-
-    private Moebelart moebelart;
-
+    /**
+     * Gibt die Länge des Liegemoebels zurück.
+     * @return Die Länge des Liegemoebels.
+     */
     public Laenge getLaenge() {
         return laenge;
     }
 
+    /**
+     * Legt die Länge des Liegemoebels fest.
+     * @param laenge Die Länge des Liegemoebels.
+     */
     public void setLaenge(Laenge laenge) {
         this.laenge = laenge;
     }
 
+    /**
+     * Gibt die Möbelart des Liegemoebels zurück.
+     * @return Die Möbelart des Liegemoebels.
+     */
     public Moebelart getMoebelart() {
         return moebelart;
     }
 
+    /**
+     * Legt die Möbelart des Liegemoebels fest.
+     * @param moebelart Die Möbelart des Liegemoebels.
+     */
     public void setMoebelart(Moebelart moebelart) {
         this.moebelart = moebelart;
     }
 
+    /**
+     * Gibt eine String-Repräsentation des Liegemoebels zurück.
+     * @return Eine String-Repräsentation des Liegemoebels.
+     */
     @Override
     public String toString() {
         return "Liegemoebel{" +

@@ -49,10 +49,9 @@ public abstract class Lagerunglager extends Lager<Lagerung> {
      * Fügt eine Lagerung zum Lagerungslager hinzu.
      *
      * @param lagerung Die hinzuzufügende Lagerung.
-     * @return true, wenn die Lagerung erfolgreich hinzugefügt wurde, ansonsten false.
      */
-    public boolean addLagerung(Lagerung lagerung) {
-        return moebelstueckArrayList.add(lagerung);
+    public void addLagerung(Lagerung lagerung) {
+        moebelstueckArrayList.add(lagerung);
     }
 
 
@@ -72,6 +71,13 @@ public abstract class Lagerunglager extends Lager<Lagerung> {
         return bestand;
     }
 
+    /**
+     * Schreibt das Lagerungslager-Objekt in eine Datei.
+     * 
+     * @param lagerunglager Das Lagerungslager-Objekt, das geschrieben werden soll.
+     * @param file Der Dateipfad, in den das Objekt geschrieben werden soll.
+     * @throws IOException Wenn ein Fehler beim Schreiben der Datei auftritt.
+     */
     public void writeToFile(Lagerunglager lagerunglager, String file) throws IOException {
         FileOutputStream f = new FileOutputStream(new File(file));
         ObjectOutputStream o = new ObjectOutputStream(f);
@@ -81,14 +87,19 @@ public abstract class Lagerunglager extends Lager<Lagerung> {
         f.close();
     }
 
+    /**
+     * Liest das Lagerungslager-Objekt aus einer Datei.
+     * 
+     * @param file Der Dateipfad, aus dem das Objekt gelesen werden soll.
+     * @throws IOException Wenn ein Fehler beim Schreiben der Datei auftritt.
+     * @throws ClassNotFoundException Wenn die Klasse nicht gefunden wird.
+     */
     public Lagerunglager readFromFile(String file) throws IOException, ClassNotFoundException {
         FileInputStream fi = new FileInputStream(new File(file));
         ObjectInputStream oi = new ObjectInputStream(fi);
 
         // Read objects
         return (Lagerunglager) oi.readObject();
-
-
     }
 
 }

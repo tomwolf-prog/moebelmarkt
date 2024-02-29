@@ -1,25 +1,35 @@
+package Lager;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+
 /**
  * Die Lager-Klasse repräsentiert einen Speicher für Möbelstücke.
  * Sie speichert die Preis- und Rabattinformationen für die Möbelstücke.
  * Die Klasse bietet Methoden zum Abrufen und Festlegen des Preises und Rabatts,
  * sowie zum Abrufen der Liste der im Lager gespeicherten Möbelstücke.
  */
-package Lager;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-
 public abstract class Lager<K> implements Serializable {
     private int preis;
     private boolean rabatt10;
 
     public ArrayList<K> moebelstueckArrayList = new ArrayList<K>();
 
+    /**
+     * Konstruktor für die Klasse Lager.
+     * Setzt den Preis des Möbelstücks auf 0 und deaktiviert den Rabatt.
+     */
     public Lager() {
         this.preis = 0;
         this.rabatt10 = false;
     }
 
+    /**
+     * Konstruktor für die Klasse Lager.
+     * Setzt den Preis des Möbelstücks auf den angegebenen Wert und deaktiviert den Rabatt.
+     *
+     * @param preis Der Preis des Möbelstücks.
+     */
     public Lager(int preis) {
         this.preis = preis;
         this.rabatt10 = false;
@@ -46,7 +56,7 @@ public abstract class Lager<K> implements Serializable {
     }
 
     /**
-     * Gibt den Preis des Möbelstücks zurück ohne berücksichtigung des Rabatts.
+     * Gibt den Preis des Möbelstücks zurück ohne Berücksichtigung des Rabatts.
      * Dabei wird der Preis um ein Cent erhöht (aufgerundet), wenn die Nachkommazahl über 5 ist.
      *
      * @return Der Preis des Möbelstücks.
@@ -82,6 +92,11 @@ public abstract class Lager<K> implements Serializable {
         this.rabatt10 = rabatt10;
     }
 
+    /**
+     * Gibt eine Zeichenkette zurück, die das Lager-Objekt repräsentiert.
+     *
+     * @return Eine Zeichenkette, die das Lager-Objekt repräsentiert.
+     */
     @Override
     public String toString() {
         return "Lager{" +

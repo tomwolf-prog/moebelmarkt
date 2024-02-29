@@ -14,7 +14,7 @@ import java.util.List;
 public abstract class Sitzmoebellager extends Lager<Sitzmoebel> {
 
     /**
-     * Entfernt ein Sitzmöbelstück aus dem Lager basierend auf der Anzahl der Sitzplätze.
+     * Entfernt ein Sitzmöbelstück aus dem Lager basierend auf der Anzahl der Sitzplätze eines Sitzmöbelstücks.
      *
      * @param sitzplaetze Die Anzahl der Sitzplätze des zu entfernenden Sitzmöbelstücks.
      */
@@ -71,6 +71,13 @@ public abstract class Sitzmoebellager extends Lager<Sitzmoebel> {
         return bestand;
     }
 
+    /**
+     * Schreibt das Sitzmoebellager-Objekt in eine Datei.
+     * 
+     * @param sitzmoebellager Das Sitzmoebellager-Objekt, das geschrieben werden soll.
+     * @param file Der Dateipfad, in den das Objekt geschrieben werden soll.
+     * @throws IOException Wenn ein Fehler beim Schreiben in die Datei auftritt.
+     */
     public void writeToFile(Sitzmoebellager sitzmoebellager, String file) throws IOException {
         FileOutputStream f = new FileOutputStream(new File(file));
         ObjectOutputStream o = new ObjectOutputStream(f);
@@ -80,6 +87,13 @@ public abstract class Sitzmoebellager extends Lager<Sitzmoebel> {
         f.close();
     }
 
+    /**
+     * Liest das Sitzmoebellager-Objekt aus einer Datei.
+     * 
+     * @param file Der Dateipfad, aus dem das Objekt gelesen werden soll.
+     * @throws IOException Wenn ein Fehler beim Schreiben der Datei auftritt.
+     * @throws ClassNotFoundException Wenn die Klasse nicht gefunden wird.
+     */
     public Sitzmoebellager readFromFile(String file) throws IOException, ClassNotFoundException {
         FileInputStream fi = new FileInputStream(new File(file));
         ObjectInputStream oi = new ObjectInputStream(fi);

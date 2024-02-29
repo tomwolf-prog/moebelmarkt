@@ -48,10 +48,9 @@ public abstract class Liegemoebellager extends Lager<Liegemoebel> {
      * Fügt ein Liegemoebel-Objekt zum Lager hinzu.
      *
      * @param liegemoebel Das Liegemoebel-Objekt, das zum Lager hinzugefügt werden soll.
-     * @return true, wenn das Liegemoebel-Objekt erfolgreich hinzugefügt wurde, ansonsten false.
      */
-    public boolean addLiegemoebel(Liegemoebel liegemoebel) {
-        return moebelstueckArrayList.add(liegemoebel);
+    public void addLiegemoebel(Liegemoebel liegemoebel) {
+        moebelstueckArrayList.add(liegemoebel);
     }
 
     /**
@@ -70,6 +69,13 @@ public abstract class Liegemoebellager extends Lager<Liegemoebel> {
         return bestand;
     }
 
+    /**
+     * Schreibt das Liegemoebellager-Objekt in eine Datei.
+     * 
+     * @param liegemoebellager Das Liegemoebellager-Objekt, das geschrieben werden soll.
+     * @param file Der Dateipfad, in den das Liegemoebellager-Objekt geschrieben werden soll.
+     * @throws IOException Wenn ein Fehler beim Schreiben in die Datei auftritt.
+     */
     public void writeToFile(Liegemoebellager liegemoebellager, String file) throws IOException {
         FileOutputStream f = new FileOutputStream(new File(file));
         ObjectOutputStream o = new ObjectOutputStream(f);
@@ -79,12 +85,18 @@ public abstract class Liegemoebellager extends Lager<Liegemoebel> {
         f.close();
     }
 
+    /**
+     * Liest das Liegemoebellager-Objekt aus einer Datei.
+     * 
+     * @param file Der Dateipfad, aus dem das Objekt gelesen werden soll.
+     * @throws IOException Wenn ein Fehler beim Schreiben der Datei auftritt.
+     * @throws ClassNotFoundException Wenn die Klasse nicht gefunden wird.
+     */
     public Liegemoebellager readFromFile(String file) throws IOException, ClassNotFoundException {
         FileInputStream fi = new FileInputStream(new File(file));
         ObjectInputStream oi = new ObjectInputStream(fi);
 
         // Read objects
         return (Liegemoebellager) oi.readObject();
-
     }
 }
