@@ -1,6 +1,9 @@
 .classpath
 .project
 .idea/*
+src/.idea/*
+src/out/*
 out/*
 *.iml
 Moebelhaus.txt
+pom.xml
