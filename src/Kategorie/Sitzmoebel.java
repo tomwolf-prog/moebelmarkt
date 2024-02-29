@@ -20,8 +20,8 @@ public class Sitzmoebel extends Moebelstueck {
     //     this.sitzplaetze = sitzplaetze;
     // }
 
-    public Sitzmoebel(Moebelart moebelart, Sitzplaetze sitzplaetze) {
-        super();
+    public Sitzmoebel(Moebelart moebelart, Sitzplaetze sitzplaetze, Kategorie kategorie, Bereich bereich) {
+        super(kategorie, bereich);
         this.moebelart = moebelart;
         this.sitzplaetze = sitzplaetze;
     }

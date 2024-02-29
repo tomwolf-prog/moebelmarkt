@@ -30,8 +30,8 @@ public class Liegemoebel extends Moebelstueck {
     //     this.laenge = laenge;
     // }
 
-    public Liegemoebel(Moebelart moebelart, Laenge laenge) {
-        super();
+    public Liegemoebel(Moebelart moebelart, Laenge laenge, Kategorie kategorie, Bereich bereich) {
+        super(kategorie, bereich);
         this.moebelart = moebelart;
         this.laenge = laenge;
     }

@@ -127,7 +127,7 @@ public class ChangeKuechenregalPanel {
 
         changeKuechenregalPanel.setLayout(null);
         changeKuechenregalPanel.setBackground(Color.GRAY);
-        changeKuechenregalPanel.setBounds(100, 0, 1600, 900);
+        changeKuechenregalPanel.setBounds(105, 0, 1600, 900);
         changeKuechenregalPanel.setVisible(false);
 
 

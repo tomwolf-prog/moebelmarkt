@@ -13,9 +13,9 @@ public class Kombi {
     private static JPanel kombiPanel = new JPanel();
 
     private static final Lagersystem lagersystem = Moebelhaus.getLagersystem();
-    private static final JLabel Kombi = new JLabel("Betrag;");
+    private static final JTextArea Kombi = new JTextArea("Betrag;");
     private static final JTextField KombiFeld = new JTextField("100");
-    private static final JLabel Ausgabe = new JLabel("Bitte geben Sie einen Betrage ein und drücken 'Kombi'");
+    private static final JTextArea Ausgabe = new JTextArea("Bitte geben Sie einen Betrage ein und drücken 'Kombi'");
 
     private static void addLabels() {
         kombiPanel.add(Kombi);
@@ -43,7 +43,7 @@ public class Kombi {
                 String text = KombiFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text));
+                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
@@ -64,7 +64,7 @@ public class Kombi {
         kombiPanel.add(back);
         kombiPanel.setLayout(null);
         kombiPanel.setBackground(Color.WHITE);
-        kombiPanel.setBounds(100, 0, 1600, 900);
+        kombiPanel.setBounds(105, 0, 1600, 900);
         kombiPanel.setVisible(false);
 
         return kombiPanel;

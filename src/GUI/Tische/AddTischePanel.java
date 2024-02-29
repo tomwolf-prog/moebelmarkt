@@ -74,7 +74,7 @@ public class AddTischePanel {
         addTischePanel.add(back);
         addTischePanel.setLayout(null);
         addTischePanel.setBackground(Color.GRAY);
-        addTischePanel.setBounds(100, 0, 1600, 900);
+        addTischePanel.setBounds(105, 0, 1600, 900);
         addTischePanel.setVisible(false);
 
 

@@ -106,7 +106,7 @@ public class AddBalkonliegePanel {
         changeBalkonliegePanel.add(back);
         changeBalkonliegePanel.setLayout(null);
         changeBalkonliegePanel.setBackground(Color.GRAY);
-        changeBalkonliegePanel.setBounds(100, 0, 1600, 900);
+        changeBalkonliegePanel.setBounds(105, 0, 1600, 900);
         changeBalkonliegePanel.setVisible(false);
 
 

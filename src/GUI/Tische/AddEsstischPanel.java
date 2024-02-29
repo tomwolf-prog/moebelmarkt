@@ -106,7 +106,7 @@ public class AddEsstischPanel {
         changeEsstischPanel.add(back);
         changeEsstischPanel.setLayout(null);
         changeEsstischPanel.setBackground(Color.GRAY);
-        changeEsstischPanel.setBounds(100, 0, 1600, 900);
+        changeEsstischPanel.setBounds(105, 0, 1600, 900);
         changeEsstischPanel.setVisible(false);
 
 

@@ -55,7 +55,7 @@ public class AddItemPanel {
         addItemPanel.add(back);
         addItemPanel.setLayout(null);
         addItemPanel.setBackground(Color.GRAY);
-        addItemPanel.setBounds(100, 0, 1600, 900);
+        addItemPanel.setBounds(105, 0, 1600, 900);
         addItemPanel.setVisible(false);
 
         return addItemPanel;

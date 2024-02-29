@@ -131,7 +131,7 @@ public class AddFernsehcouchPanel {
         changeFernsehcouchPanel.add(back);
         changeFernsehcouchPanel.setLayout(null);
         changeFernsehcouchPanel.setBackground(Color.GRAY);
-        changeFernsehcouchPanel.setBounds(100, 0, 1600, 900);
+        changeFernsehcouchPanel.setBounds(105, 0, 1600, 900);
         changeFernsehcouchPanel.setVisible(false);
 
 

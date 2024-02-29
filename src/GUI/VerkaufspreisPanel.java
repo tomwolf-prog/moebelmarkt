@@ -140,7 +140,7 @@ public class VerkaufspreisPanel {
         verkaufspreisPanel.add(back);
         verkaufspreisPanel.setLayout(null);
         verkaufspreisPanel.setBackground(Color.WHITE);
-        verkaufspreisPanel.setBounds(100, 0, 1600, 900);
+        verkaufspreisPanel.setBounds(105, 0, 1600, 900);
         verkaufspreisPanel.setVisible(false);
 
         return verkaufspreisPanel;
