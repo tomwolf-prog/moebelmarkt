@@ -11,30 +11,39 @@ import java.awt.event.ActionListener;
 public class Kombi {
 
     private static JPanel kombiPanel = new JPanel();
-
+    private static JTextArea ta;
+    private static JScrollPane ausgabeScrollPane;
     private static final Lagersystem lagersystem = Moebelhaus.getLagersystem();
-    private static final JTextArea Kombi = new JTextArea("Betrag;");
+    private static final JTextArea Kombi = new JTextArea("Betrag:");
     private static final JTextField KombiFeld = new JTextField("100");
-    private static final JTextArea Ausgabe = new JTextArea("Bitte geben Sie einen Betrage ein und drücken 'Kombi'");
 
     private static void addLabels() {
         kombiPanel.add(Kombi);
         Kombi.setBounds(50, 50, 175, 30);
 
-
         kombiPanel.add(KombiFeld);
         KombiFeld.setBounds(50, 100, 175, 30);
-
-        kombiPanel.add(Ausgabe);
-        Ausgabe.setBounds(400, 50, 500, 300);
     }
 
     private static void updateLabels(String txt) {
-        Ausgabe.setText(txt);
+        ta.setText(txt);
     }
 
     public static JPanel Panel() {
         addLabels();
+
+
+
+        ta = new JTextArea("Bitte geben Sie einen Betrag ein und drücken auf 'Kombi'");
+
+
+        ta.setLineWrap(true);
+        ta.setWrapStyleWord(true);
+        ausgabeScrollPane = new JScrollPane(ta);
+        ausgabeScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        ausgabeScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        ausgabeScrollPane.setBounds(50, 200, 1400, 500);
+        kombiPanel.add(ausgabeScrollPane);
 
         JButton getKombiB = new JButton("Kombi");
         getKombiB.setBounds(50, 150, 175, 30);
