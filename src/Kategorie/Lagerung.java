@@ -5,6 +5,9 @@ import Moebelstueck.Moebelstueck;
 /**
  * Diese Klasse repräsentiert die Kategorie Lagerung eines Möbelstücks im Möbelmarkt.
  * Sie erbt von der Klasse Moebelstueck und erweitert sie um die Attribute Moebelart und Flaeche.
+ * 
+ * @see Moebelstueck
+ * @author Sidney Schmidt, Tom Wolf
  */
 public class Lagerung extends Moebelstueck {
 

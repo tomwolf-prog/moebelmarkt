@@ -8,6 +8,10 @@ import java.util.ArrayList;
  * Sie speichert die Preis- und Rabattinformationen für die Möbelstücke.
  * Die Klasse bietet Methoden zum Abrufen und Festlegen des Preises und Rabatts,
  * sowie zum Abrufen der Liste der im Lager gespeicherten Möbelstücke.
+ * 
+ * @param <K> Die Kategorie des Möbelstücks, das im Lager gespeichert wird.
+ * @see Serializable
+ * @author Sidney Schmidt, Tom Wolf
  */
 public abstract class Lager<K> implements Serializable {
     private int preis;

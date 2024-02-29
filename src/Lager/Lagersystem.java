@@ -35,6 +35,9 @@ import static Kategorie.Lagerung.Moebelart.Beistelltisch;
  * Das Lagersystem ermöglicht das Hinzufügen, Entfernen und Verwalten von Möbeln in den einzelnen Lagern.
  * Es bietet auch Funktionen zur Berechnung des Verkaufspreises aller Möbel im Lager, des Verkaufspreises aller Möbel in einem bestimmten Bereich und des Verkaufspreises aller Möbel einer bestimmten Kategorie.
  * Darüber hinaus kann das Lagersystem den Bereich mit dem höchsten Gesamtwert ermitteln.
+ * 
+ * @see Serializable
+ * @author Sidney Schmidt, Tom Wolf
  */
 public class Lagersystem implements Serializable {
     //Tische

@@ -5,6 +5,9 @@ import Moebelstueck.Moebelstueck;
 /**
  * Die Klasse Liegemoebel repräsentiert ein Möbelstück der Kategorie "Liegemoebel".
  * Sie erbt von der Klasse Moebelstueck und enthält Informationen über die Länge und Art des Möbelstücks.
+ * 
+ * @see Moebelstueck
+ * @author Sidney Schmidt, Tom Wolf
  */
 public class Liegemoebel extends Moebelstueck {
 

@@ -4,6 +4,9 @@ import java.io.Serializable;
 /**
  * Die abstrakte Klasse Moebelstueck repräsentiert ein Möbelstück.
  * Sie enthält Informationen wie den Verkaufspreis, die Kategorie und den Bereich des Möbelstücks.
+ * 
+ * @see Serializable
+ * @author Sidney Schmidt, Tom Wolf
  */
 public abstract class Moebelstueck implements Serializable {
 

@@ -9,6 +9,10 @@ import java.util.List;
 
 /**
  * Diese Klasse repräsentiert ein Lagerungslager, das Möbelstücke der Kategorie Lagerung verwaltet.
+ * Es erbt von der Klasse Lager und spezialisiert sich auf Lagerung-Objekte.
+ * 
+ * @see Lager
+ * @author Sidney Schmidt, Tom Wolf
  */
 public abstract class Lagerunglager extends Lager<Lagerung> {
 

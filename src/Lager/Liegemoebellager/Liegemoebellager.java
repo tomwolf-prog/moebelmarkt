@@ -10,6 +10,9 @@ import java.util.List;
 /**
  * Diese Klasse repräsentiert ein Lager für Liegemoebel.
  * Es erbt von der Klasse Lager und spezialisiert sich auf Liegemoebel-Objekte.
+ * 
+ * @see Lager
+ * @author Sidney Schmidt, Tom Wolf
  */
 public abstract class Liegemoebellager extends Lager<Liegemoebel> {
     /**

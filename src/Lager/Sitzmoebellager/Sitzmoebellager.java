@@ -10,6 +10,9 @@ import java.util.List;
 /**
  * Das Sitzmoebellager ist eine spezialisierte Klasse des allgemeinen Lagers für Sitzmöbel.
  * Es enthält Methoden zum Hinzufügen, Entfernen und Abrufen von Sitzmöbeln basierend auf der Anzahl der Sitzplätze.
+ * 
+ * @see Lager
+ * @author Sidney Schmidt, Tom Wolf
  */
 public abstract class Sitzmoebellager extends Lager<Sitzmoebel> {
 

@@ -7,6 +7,9 @@ import Moebelstueck.Moebelstueck;
 /**
  * Die Klasse Sitzmoebel repräsentiert ein Möbelstück der Kategorie "Sitzmoebel".
  * Sie erweitert die Klasse Moebelstueck.
+ * 
+ * @see Moebelstueck
+ * @author Sidney Schmidt, Tom Wolf
  */
 public class Sitzmoebel extends Moebelstueck {
 

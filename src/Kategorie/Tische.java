@@ -5,6 +5,9 @@ import Moebelstueck.Moebelstueck;
 /**
  * Die Klasse Tische repräsentiert ein Möbelstück der Kategorie "Tische".
  * Sie erbt von der Klasse Moebelstueck und enthält Informationen über die Höhe und Art des Möbelstücks.
+ * 
+ * @see Moebelstueck
+ * @author Sidney Schmidt, Tom Wolf
  */
 public class Tische extends Moebelstueck {
 
