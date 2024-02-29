@@ -8,7 +8,7 @@ package Lager;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Lager<K> implements Serializable {
+public abstract class Lager<K> implements Serializable {
     private int preis;
     private boolean rabatt10;
 

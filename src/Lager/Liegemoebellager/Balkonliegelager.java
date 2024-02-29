@@ -4,5 +4,5 @@ package Lager.Liegemoebellager;
  * Das Balkonliegelager ist eine Unterklasse des Liegemoebellagers.
  * Es repräsentiert ein Lager für Balkonliegen.
  */
-public class Balkonliegelager extends Liegemoebellager {
+public final class Balkonliegelager extends Liegemoebellager {
 }

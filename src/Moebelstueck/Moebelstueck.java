@@ -7,8 +7,6 @@ import java.io.Serializable;
  */
 public abstract class Moebelstueck implements Serializable {
 
-
-
     public enum Kategorie{Sitzmoebel, Tische, Lagerung, Liegemoebel}
 
     public enum Bereich {Kueche, Wohnen, Schlafen, Andere}
