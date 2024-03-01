@@ -28,31 +28,31 @@ public class VerkaufspreisPanel {
     private static void addLabels() {
 
         verkaufspreisPanel.add(Bereich);
-        Bereich.setBounds(50, 50, 175, 30);
+        Bereich.setBounds(50, 50, 275, 30);
         verkaufspreisPanel.add(Kueche);
-        Kueche.setBounds(50, 100, 175, 30);
+        Kueche.setBounds(50, 100, 275, 30);
         verkaufspreisPanel.add(Wohnen);
-        Wohnen.setBounds(50, 150, 175, 30);
+        Wohnen.setBounds(50, 150, 275, 30);
         verkaufspreisPanel.add(Schlafen);
-        Schlafen.setBounds(50, 200, 175, 30);
+        Schlafen.setBounds(50, 200, 275, 30);
         verkaufspreisPanel.add(Andere);
-        Andere.setBounds(50, 250, 175, 30);
+        Andere.setBounds(50, 250, 275, 30);
 
         verkaufspreisPanel.add(Kategorie);
-        Kategorie.setBounds(300, 50, 175, 30);
+        Kategorie.setBounds(800, 50, 275, 30);
         verkaufspreisPanel.add(Lagerung);
-        Lagerung.setBounds(300, 100, 175, 30);
+        Lagerung.setBounds(800, 100, 275, 30);
         verkaufspreisPanel.add(Liegemoebel);
-        Liegemoebel.setBounds(300, 150, 175, 30);
+        Liegemoebel.setBounds(800, 150, 275, 30);
         verkaufspreisPanel.add(Sitzmoebel);
-        Sitzmoebel.setBounds(300, 200, 175, 30);
+        Sitzmoebel.setBounds(800, 200, 275, 30);
         verkaufspreisPanel.add(Tische);
-        Tische.setBounds(300, 250, 175, 30);
+        Tische.setBounds(800, 250, 275, 30);
 
         verkaufspreisPanel.add(GesamtVerkaufspreis);
-        GesamtVerkaufspreis.setBounds(200, 350, 175, 30);
+        GesamtVerkaufspreis.setBounds(400, 350, 275, 30);
         verkaufspreisPanel.add(GroessterBereich);
-        GroessterBereich.setBounds(200, 400, 175, 30);
+        GroessterBereich.setBounds(400, 400, 275, 30);
 
     }
 
