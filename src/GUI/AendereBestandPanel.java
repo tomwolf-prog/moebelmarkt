@@ -13,8 +13,8 @@ public class AendereBestandPanel {
         JButton addLagerung = new JButton("Ändere Lagerung Bestand");
         addLagerung.setBounds(150, 50, 250, 30);
         addLagerung.addActionListener(e -> {
-            MyFrame.aendereBestandPanel.setVisible(false);
-            MyFrame.aendereLagerungBestandPanel.setVisible(true);
+            Frame.aendereBestandPanel.setVisible(false);
+            Frame.aendereLagerungBestandPanel.setVisible(true);
         });
         aendereBestandPanel.add(addLagerung);
 
@@ -22,8 +22,8 @@ public class AendereBestandPanel {
         JButton addLiegemoebel = new JButton("Ändere Liegemoebel Bestand");
         addLiegemoebel.setBounds(150, 100, 250, 30);
         addLiegemoebel.addActionListener(e -> {
-            MyFrame.aendereBestandPanel.setVisible(false);
-            MyFrame.aendereLiegemoebelBestandPanel.setVisible(true);
+            Frame.aendereBestandPanel.setVisible(false);
+            Frame.aendereLiegemoebelBestandPanel.setVisible(true);
         });
         aendereBestandPanel.add(addLiegemoebel);
 
@@ -31,8 +31,8 @@ public class AendereBestandPanel {
         JButton addSitzmoebel = new JButton("Ändere Sitzmoebel Bestand");
         addSitzmoebel.setBounds(150, 150, 250, 30);
         addSitzmoebel.addActionListener(e -> {
-            MyFrame.aendereBestandPanel.setVisible(false);
-            MyFrame.aendereSitzmoebelBestandPanel.setVisible(true);
+            Frame.aendereBestandPanel.setVisible(false);
+            Frame.aendereSitzmoebelBestandPanel.setVisible(true);
         });
         aendereBestandPanel.add(addSitzmoebel);
 
@@ -40,8 +40,8 @@ public class AendereBestandPanel {
         JButton addTische = new JButton("Ändere Tische Bestand");
         addTische.setBounds(150, 200, 250, 30);
         addTische.addActionListener(e -> {
-            MyFrame.aendereBestandPanel.setVisible(false);
-            MyFrame.aendereTischeBestandPanel.setVisible(true);
+            Frame.aendereBestandPanel.setVisible(false);
+            Frame.aendereTischeBestandPanel.setVisible(true);
         });
         aendereBestandPanel.add(addTische);
 
@@ -49,12 +49,13 @@ public class AendereBestandPanel {
         JButton back = new JButton("Back");
         back.setBounds(150, 250, 250, 30);
         back.addActionListener(e -> {
-            MyFrame.aendereBestandPanel.setVisible(false);
+            Frame.setAllPanelsInvisible();
+            Frame.setAllHomeButtonsVisible();
 
         });
         aendereBestandPanel.add(back);
         aendereBestandPanel.setLayout(null);
-        aendereBestandPanel.setBackground(Color.GRAY);
+        aendereBestandPanel.setBackground(Color.white);
         aendereBestandPanel.setBounds(105, 0, 1600, 900);
         aendereBestandPanel.setVisible(false);
 

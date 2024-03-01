@@ -1,6 +1,6 @@
 package GUI.Liegemoebel;
 
-import GUI.MyFrame;
+import GUI.Frame;
 import Kategorie.Liegemoebel;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
@@ -98,14 +98,14 @@ public class AendereBalkonliegeBestandPanel {
         JButton back = new JButton("Back");
         back.setBounds(150, 200, 250, 30);
         back.addActionListener(e -> {
-            MyFrame.aendereBalkonliegeBestandPanel.setVisible(false);
-            MyFrame.aendereLiegemoebelBestandPanel.setVisible(true);
+            Frame.aendereBalkonliegeBestandPanel.setVisible(false);
+            Frame.aendereLiegemoebelBestandPanel.setVisible(true);
         });
         aendereBalkonliegeBestandPanel.add(back);
 
         aendereBalkonliegeBestandPanel.add(back);
         aendereBalkonliegeBestandPanel.setLayout(null);
-        aendereBalkonliegeBestandPanel.setBackground(Color.GRAY);
+        aendereBalkonliegeBestandPanel.setBackground(Color.white);
         aendereBalkonliegeBestandPanel.setBounds(105, 0, 1600, 900);
         aendereBalkonliegeBestandPanel.setVisible(false);
 

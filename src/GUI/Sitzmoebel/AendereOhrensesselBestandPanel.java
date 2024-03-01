@@ -1,6 +1,6 @@
 package GUI.Sitzmoebel;
 
-import GUI.MyFrame;
+import GUI.Frame;
 import Kategorie.Sitzmoebel;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
@@ -121,14 +121,14 @@ public class AendereOhrensesselBestandPanel {
         JButton back = new JButton("Back");
         back.setBounds(150, 250, 250, 30);
         back.addActionListener(e -> {
-            MyFrame.aendereOhrensesselBestandPanel.setVisible(false);
-            MyFrame.aendereSitzmoebelBestandPanel.setVisible(true);
+            Frame.aendereOhrensesselBestandPanel.setVisible(false);
+            Frame.aendereSitzmoebelBestandPanel.setVisible(true);
         });
         AendereOhrensesselBestandPanel.add(back);
 
         AendereOhrensesselBestandPanel.add(back);
         AendereOhrensesselBestandPanel.setLayout(null);
-        AendereOhrensesselBestandPanel.setBackground(Color.GRAY);
+        AendereOhrensesselBestandPanel.setBackground(Color.white);
         AendereOhrensesselBestandPanel.setBounds(105, 0, 1600, 900);
         AendereOhrensesselBestandPanel.setVisible(false);
 

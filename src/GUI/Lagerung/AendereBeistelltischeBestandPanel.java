@@ -1,6 +1,6 @@
 package GUI.Lagerung;
 
-import GUI.MyFrame;
+import GUI.Frame;
 import Kategorie.Lagerung;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
@@ -20,7 +20,7 @@ public class AendereBeistelltischeBestandPanel {
         t1.setBounds(500, 50, 215, 30);
         aendereBeistelltischeBestandPanel.add(t1);
         JButton addKleiderschrankS = new JButton("Ändere Beistelltisch Bestand S");
-        addKleiderschrankS.setBounds(150, 50, 300, 30);
+        addKleiderschrankS.setBounds(150, 50, 250, 30);
         addKleiderschrankS.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t1.getText();
@@ -45,7 +45,7 @@ public class AendereBeistelltischeBestandPanel {
         aendereBeistelltischeBestandPanel.add(t2);
         //Erstellen von AddItem Button
         JButton addKleiderschrankM = new JButton("Ändere Beistelltisch Bestand M");
-        addKleiderschrankM.setBounds(150, 100, 300, 30);
+        addKleiderschrankM.setBounds(150, 100, 250, 30);
         addKleiderschrankM.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t2.getText();
@@ -70,7 +70,7 @@ public class AendereBeistelltischeBestandPanel {
         aendereBeistelltischeBestandPanel.add(t3);
         //Erstellen von AddItem Button
         JButton addKleiderschrankL = new JButton("Ändere Beistelltisch Bestand L");
-        addKleiderschrankL.setBounds(150, 150, 300, 30);
+        addKleiderschrankL.setBounds(150, 150, 250, 30);
         addKleiderschrankL.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t3.getText();
@@ -95,7 +95,7 @@ public class AendereBeistelltischeBestandPanel {
         aendereBeistelltischeBestandPanel.add(t4);
         //Erstellen von AddItem Button
         JButton addKleiderschrankXL = new JButton("Ändere Beistelltisch Bestand XL");
-        addKleiderschrankXL.setBounds(150, 200, 300, 30);
+        addKleiderschrankXL.setBounds(150, 200, 250, 30);
         addKleiderschrankXL.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t4.getText();
@@ -116,18 +116,18 @@ public class AendereBeistelltischeBestandPanel {
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
-        back.setBounds(150, 250, 300, 30);
+        back.setBounds(150, 250, 250, 30);
         back.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.aendereBeistelltischeBestandPanel.setVisible(false);
-                MyFrame.aendereLagerungBestandPanel.setVisible(true);
+                Frame.aendereBeistelltischeBestandPanel.setVisible(false);
+                Frame.aendereLagerungBestandPanel.setVisible(true);
             }
         });
         aendereBeistelltischeBestandPanel.add(back);
 
 
         aendereBeistelltischeBestandPanel.setLayout(null);
-        aendereBeistelltischeBestandPanel.setBackground(Color.GRAY);
+        aendereBeistelltischeBestandPanel.setBackground(Color.WHITE);
         aendereBeistelltischeBestandPanel.setBounds(105, 0, 1600, 900);
         aendereBeistelltischeBestandPanel.setVisible(false);
 

@@ -1,6 +1,6 @@
 package GUI.Lagerung;
 
-import GUI.MyFrame;
+import GUI.Frame;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
 
@@ -22,8 +22,8 @@ public class AendereLagerungBestandPanel {
         addKleiderschrank.setBounds(150, 50, 250, 30);
         addKleiderschrank.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.aendereLagerungBestandPanel.setVisible(false);
-                MyFrame.aendereKleiderschrankregalBestandPanel.setVisible(true);
+                Frame.aendereLagerungBestandPanel.setVisible(false);
+                Frame.aendereKleiderschrankregalBestandPanel.setVisible(true);
             }
         });
         aendereLagerungBestandPanel.add(addKleiderschrank);
@@ -33,8 +33,8 @@ public class AendereLagerungBestandPanel {
         addBeistelltisch.setBounds(150, 100, 250, 30);
         addBeistelltisch.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.aendereLagerungBestandPanel.setVisible(false);
-                MyFrame.aendereBeistelltischeBestandPanel.setVisible(true);
+                Frame.aendereLagerungBestandPanel.setVisible(false);
+                Frame.aendereBeistelltischeBestandPanel.setVisible(true);
             }
         });
         aendereLagerungBestandPanel.add(addBeistelltisch);
@@ -45,8 +45,8 @@ public class AendereLagerungBestandPanel {
         addKuechenregallager.setBounds(150, 150, 250, 30);
         addKuechenregallager.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.aendereLagerungBestandPanel.setVisible(false);
-                MyFrame.aendereKuechenregalBestandPanel.setVisible(true);
+                Frame.aendereLagerungBestandPanel.setVisible(false);
+                Frame.aendereKuechenregalBestandPanel.setVisible(true);
             }
         });
         aendereLagerungBestandPanel.add(addKuechenregallager);
@@ -55,14 +55,14 @@ public class AendereLagerungBestandPanel {
         JButton back = new JButton("Back");
         back.setBounds(150, 200, 250, 30);
         back.addActionListener(e -> {
-            MyFrame.aendereLagerungBestandPanel.setVisible(false);
-            MyFrame.aendereBestandPanel.setVisible(true);
+            Frame.aendereLagerungBestandPanel.setVisible(false);
+            Frame.aendereBestandPanel.setVisible(true);
         });
         aendereLagerungBestandPanel.add(back);
 
         aendereLagerungBestandPanel.add(back);
         aendereLagerungBestandPanel.setLayout(null);
-        aendereLagerungBestandPanel.setBackground(Color.GRAY);
+        aendereLagerungBestandPanel.setBackground(Color.WHITE);
         aendereLagerungBestandPanel.setBounds(105, 0, 1600, 900);
         aendereLagerungBestandPanel.setVisible(false);
 

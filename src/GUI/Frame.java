@@ -22,17 +22,17 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 
 
-public class MyFrame {
+public class Frame {
 
     static Lagersystem lagersystem = Moebelhaus.getLagersystem();
     static JFrame frame;
     public static JPanel aendereBestandPanel = AendereBestandPanel.Panel();
     public static JPanel lagerbestandPanel = LagerbestandPanel.Panel();
-    public static JPanel verkaufspreisPanel = VerkaufspreisPanel.Panel();
-    public static JPanel rabattPanel = Rabatt.Panel();
-    public static JPanel setPreisPanel = SetPreis.Panel();
-    public static JPanel kombiPanel = Kombi.Panel();
-    public static JPanel findEigenschaft = FindEigenschaft.Panel();
+    public static JPanel verkaufspreisPanel = ShowVerkaufspreisPanel.Panel();
+    public static JPanel rabattPanel = RabattPanel.Panel();
+    public static JPanel setPreisPanel = SetVerkaufspreisPanel.Panel();
+    public static JPanel kombiPanel = KombinationsPanel.Panel();
+    public static JPanel findeKategorieMitEigenschaft = FindeKategorieMitEigenschaft.Panel();
     //Lagerung
     public static JPanel aendereLagerungBestandPanel = AendereLagerungBestandPanel.Panel();
     public static JPanel aendereKuechenregalBestandPanel = AendereKuechenregalBestandPanel.Panel();
@@ -56,6 +56,14 @@ public class MyFrame {
     public static JPanel aendereBalkonliegeBestandPanel = AendereBalkonliegeBestandPanel.Panel();
     public static JPanel aendereDoppelbettBestandPanel = AendereDoppelbettBestandPanel.Panel();
     public static JPanel aendereLiegemoebelBestandPanel = AendereLiegemoebelBestand.Panel();
+    //Home-Buttons
+    private static final JButton findEigenschaftButton = new JButton("findEigenschaft");
+    private static final JButton getKombiButton = new JButton("Kombi");
+    private static final JButton setRabattButton = new JButton("Rabatt");
+    private static final JButton setPreisButton = new JButton("SetPreis");
+    private static final JButton setVerkaufspreisButton = new JButton("Verkaufspreis");
+    private static final JButton aendereBestandButton = new JButton("AddItem");
+    private static final JButton showLagerBestandPanel = new JButton("Bestand");
 
     private static void addPanels() {
         frame.add(aendereLagerungBestandPanel);
@@ -65,7 +73,7 @@ public class MyFrame {
         frame.add(setPreisPanel);
         frame.add(rabattPanel);
         frame.add(kombiPanel);
-        frame.add(findEigenschaft);
+        frame.add(findeKategorieMitEigenschaft);
         //Lagerung
         frame.add(aendereLagerungBestandPanel);
         frame.add(aendereKuechenregalBestandPanel);
@@ -86,10 +94,10 @@ public class MyFrame {
         frame.add(aendereBalkonliegeBestandPanel);
         frame.add(aendereDoppelbettBestandPanel);
         frame.add(aendereLiegemoebelBestandPanel);
-
+        frame.add(showLagerBestandPanel);
     }
 
-    private static void setAllPanelsInvisible() {
+    public static void setAllPanelsInvisible() {
         aendereLagerungBestandPanel.setVisible(false);
         aendereBestandPanel.setVisible(false);
         lagerbestandPanel.setVisible(false);
@@ -97,7 +105,7 @@ public class MyFrame {
         setPreisPanel.setVisible(false);
         rabattPanel.setVisible(false);
         kombiPanel.setVisible(false);
-        findEigenschaft.setVisible(false);
+        findeKategorieMitEigenschaft.setVisible(false);
         //Lagerung
         aendereLagerungBestandPanel.setVisible(false);
         aendereKuechenregalBestandPanel.setVisible(false);
@@ -118,93 +126,104 @@ public class MyFrame {
         aendereBalkonliegeBestandPanel.setVisible(false);
         aendereDoppelbettBestandPanel.setVisible(false);
         aendereLiegemoebelBestandPanel.setVisible(false);
-
+        //Home-Buttons
+        findEigenschaftButton.setVisible(false);
+        getKombiButton.setVisible(false);
+        setRabattButton.setVisible(false);
+        setPreisButton.setVisible(false);
+        setVerkaufspreisButton.setVisible(false);
+        aendereBestandButton.setVisible(false);
+        showLagerBestandPanel.setVisible(false);
     }
 
-    public static JFrame baseFrame() {
+    public static void setAllHomeButtonsVisible() {
+        findEigenschaftButton.setVisible(true);
+        getKombiButton.setVisible(true);
+        setRabattButton.setVisible(true);
+        setPreisButton.setVisible(true);
+        setVerkaufspreisButton.setVisible(true);
+        aendereBestandButton.setVisible(true);
+        showLagerBestandPanel.setVisible(true);
+    }
+
+    public static void baseFrame() {
         frame = new JFrame("Möbelhaus");
         addPanels();
-
 
         frame.setSize(1600, 900);
         frame.setLayout(null);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 
+
         //Erstellen von Lager Button
-        JButton findEigenschaftButton = new JButton("findEigenschaft");
-        findEigenschaftButton.setBounds(5, 545, 95, 30);
+        findEigenschaftButton.setBounds(200, 50, 150, 30);
         findEigenschaftButton.addActionListener(e -> {
             setAllPanelsInvisible();
-            findEigenschaft.setVisible(true);
+            findeKategorieMitEigenschaft.setVisible(true);
         });
         frame.add(findEigenschaftButton);
 
-        //Erstellen von Lager Button
-        JButton geKombi = new JButton("Kombi");
-        geKombi.setBounds(5, 580, 95, 30);
-        geKombi.addActionListener(e -> {
+        //Erstellen von Kombi Button
+        getKombiButton.setBounds(200, 100, 150, 30);
+        getKombiButton.addActionListener(e -> {
             setAllPanelsInvisible();
-            Rabatt.updateLabels();
+            RabattPanel.updateLabels();
             kombiPanel.setVisible(true);
         });
-        frame.add(geKombi);
+        frame.add(getKombiButton);
 
         //Erstellen von Lager Button
-        JButton setRabatt = new JButton("Rabatt");
-        setRabatt.setBounds(5, 615, 95, 30);
-        setRabatt.addActionListener(e -> {
+        setRabattButton.setBounds(200, 150, 150, 30);
+        setRabattButton.addActionListener(e -> {
             setAllPanelsInvisible();
-            Rabatt.updateLabels();
+            RabattPanel.updateLabels();
             rabattPanel.setVisible(true);
         });
-        frame.add(setRabatt);
+        frame.add(setRabattButton);
 
         //Erstellen von Lager Button
-        JButton setPreis = new JButton("SetPreis");
-        setPreis.setBounds(5, 650, 95, 30);
-        setPreis.addActionListener(e -> {
+        setPreisButton.setBounds(200, 200, 150, 30);
+        setPreisButton.addActionListener(e -> {
             setAllPanelsInvisible();
-            SetPreis.updateLabels();
+            SetVerkaufspreisPanel.updateLabels();
             setPreisPanel.setVisible(true);
         });
-        frame.add(setPreis);
+        frame.add(setPreisButton);
 
 
         //Erstellen von Lager Button
-        JButton Verkaufspreis = new JButton("Verkaufspreis");
-        Verkaufspreis.setBounds(5, 685, 95, 30);
-        Verkaufspreis.addActionListener(e -> {
+        setVerkaufspreisButton.setBounds(200, 250, 150, 30);
+        setVerkaufspreisButton.addActionListener(e -> {
             setAllPanelsInvisible();
-            VerkaufspreisPanel.updateLabels();
+            ShowVerkaufspreisPanel.updateLabels();
             verkaufspreisPanel.setVisible(true);
         });
-        frame.add(Verkaufspreis);
+        frame.add(setVerkaufspreisButton);
 
         //Erstellen von Lager Button
-        JButton LagerBestand = new JButton("Bestand");
-        LagerBestand.setBounds(5, 720, 95, 30);
-        LagerBestand.addActionListener(e -> {
+        showLagerBestandPanel.setBounds(200, 300, 150, 30);
+        showLagerBestandPanel.addActionListener(e -> {
             setAllPanelsInvisible();
             LagerbestandPanel.updateLabels();
             lagerbestandPanel.setVisible(true);
         });
-        frame.add(LagerBestand);
+        frame.add(showLagerBestandPanel);
 
         //Erstellen von AddItem Button
-        JButton addItem = new JButton("Aendere Bestand Panel");
-        addItem.setBounds(5, 755, 95, 30);
-        addItem.addActionListener(e -> {
+        aendereBestandButton.setBounds(200, 350, 150, 30);
+        aendereBestandButton.addActionListener(e -> {
             setAllPanelsInvisible();
             aendereBestandPanel.setVisible(true);
         });
-        frame.add(addItem);
+        frame.add(aendereBestandButton);
 
         //Erstellen von Home Button
         JButton home = new JButton("Home");
         home.setBounds(5, 790, 95, 30);
         home.addActionListener(e -> {
             setAllPanelsInvisible();
+            setAllHomeButtonsVisible();
         });
         frame.add(home);
 
@@ -219,11 +238,9 @@ public class MyFrame {
         frame.setSize(1600, 900);
         frame.setLayout(null);
         frame.setVisible(true);
-        frame.addWindowListener(new WindowAdapter()
-        {
+        frame.addWindowListener(new WindowAdapter() {
             @Override
-            public void windowClosing(WindowEvent e)
-            {
+            public void windowClosing(WindowEvent e) {
                 exit();
             }
         });
@@ -234,11 +251,9 @@ public class MyFrame {
         panel.setBackground(Color.lightGray);
         frame.add(panel);
 
-        return frame;
-
     }
 
-    private static void exit(){
+    private static void exit() {
         int confirmed = JOptionPane.showConfirmDialog(frame,
                 "Are you sure you want to quit?", "Confirm quit",
                 JOptionPane.YES_NO_OPTION);

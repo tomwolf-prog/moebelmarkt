@@ -1,6 +1,6 @@
 package GUI.Tische;
 
-import GUI.MyFrame;
+import GUI.Frame;
 import Kategorie.Tische;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
@@ -98,14 +98,14 @@ public class AendereBuerotischBestandPanel {
         JButton back = new JButton("Back");
         back.setBounds(150, 200, 250, 30);
         back.addActionListener(e -> {
-            MyFrame.aendereBuerotischBestandPanel.setVisible(false);
-            MyFrame.aendereTischeBestandPanel.setVisible(true);
+            Frame.aendereBuerotischBestandPanel.setVisible(false);
+            Frame.aendereTischeBestandPanel.setVisible(true);
         });
         aendereBuerotischBestandPanel.add(back);
 
         aendereBuerotischBestandPanel.add(back);
         aendereBuerotischBestandPanel.setLayout(null);
-        aendereBuerotischBestandPanel.setBackground(Color.GRAY);
+        aendereBuerotischBestandPanel.setBackground(Color.white);
         aendereBuerotischBestandPanel.setBounds(105, 0, 1600, 900);
         aendereBuerotischBestandPanel.setVisible(false);
 

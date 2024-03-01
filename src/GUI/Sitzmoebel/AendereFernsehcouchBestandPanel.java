@@ -1,6 +1,6 @@
 package GUI.Sitzmoebel;
 
-import GUI.MyFrame;
+import GUI.Frame;
 import Kategorie.Sitzmoebel;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
@@ -123,14 +123,14 @@ public class AendereFernsehcouchBestandPanel {
         JButton back = new JButton("Back");
         back.setBounds(150, 250, 250, 30);
         back.addActionListener(e -> {
-            MyFrame.aendereFernsehcouchBestandPanel.setVisible(false);
-            MyFrame.aendereSitzmoebelBestandPanel.setVisible(true);
+            Frame.aendereFernsehcouchBestandPanel.setVisible(false);
+            Frame.aendereSitzmoebelBestandPanel.setVisible(true);
         });
         aendereFernsehcouchBestandPanel.add(back);
 
         aendereFernsehcouchBestandPanel.add(back);
         aendereFernsehcouchBestandPanel.setLayout(null);
-        aendereFernsehcouchBestandPanel.setBackground(Color.GRAY);
+        aendereFernsehcouchBestandPanel.setBackground(Color.white);
         aendereFernsehcouchBestandPanel.setBounds(105, 0, 1600, 900);
         aendereFernsehcouchBestandPanel.setVisible(false);
 

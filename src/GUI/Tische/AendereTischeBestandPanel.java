@@ -1,6 +1,6 @@
 package GUI.Tische;
 
-import GUI.MyFrame;
+import GUI.Frame;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
 
@@ -22,8 +22,8 @@ public class AendereTischeBestandPanel {
         addBuerotisch.setBounds(150, 50, 250, 30);
         addBuerotisch.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.aendereTischeBestandPanel.setVisible(false);
-                MyFrame.aendereBuerotischBestandPanel.setVisible(true);
+                Frame.aendereTischeBestandPanel.setVisible(false);
+                Frame.aendereBuerotischBestandPanel.setVisible(true);
             }
         });
         aendereTischePanel.add(addBuerotisch);
@@ -33,8 +33,8 @@ public class AendereTischeBestandPanel {
         addCouchtisch.setBounds(150, 100, 250, 30);
         addCouchtisch.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.aendereTischeBestandPanel.setVisible(false);
-                MyFrame.aendereCouchtischBestandPanel.setVisible(true);
+                Frame.aendereTischeBestandPanel.setVisible(false);
+                Frame.aendereCouchtischBestandPanel.setVisible(true);
             }
         });
         aendereTischePanel.add(addCouchtisch);
@@ -45,8 +45,8 @@ public class AendereTischeBestandPanel {
         addEsstisch.setBounds(150, 150, 250, 30);
         addEsstisch.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.aendereTischeBestandPanel.setVisible(false);
-                MyFrame.aendereEsstischBestandPanel.setVisible(true);
+                Frame.aendereTischeBestandPanel.setVisible(false);
+                Frame.aendereEsstischBestandPanel.setVisible(true);
             }
         });
         aendereTischePanel.add(addEsstisch);
@@ -56,8 +56,8 @@ public class AendereTischeBestandPanel {
         addKuechentisch.setBounds(150, 200, 250, 30);
         addKuechentisch.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.aendereTischeBestandPanel.setVisible(false);
-                MyFrame.aendereKuechentischBestandPanel.setVisible(true);
+                Frame.aendereTischeBestandPanel.setVisible(false);
+                Frame.aendereKuechentischBestandPanel.setVisible(true);
             }
         });
         aendereTischePanel.add(addKuechentisch);
@@ -66,14 +66,14 @@ public class AendereTischeBestandPanel {
         JButton back = new JButton("Back");
         back.setBounds(150, 250, 250, 30);
         back.addActionListener(e -> {
-            MyFrame.aendereTischeBestandPanel.setVisible(false);
-            MyFrame.aendereBestandPanel.setVisible(true);
+            Frame.aendereTischeBestandPanel.setVisible(false);
+            Frame.aendereBestandPanel.setVisible(true);
         });
         aendereTischePanel.add(back);
 
         aendereTischePanel.add(back);
         aendereTischePanel.setLayout(null);
-        aendereTischePanel.setBackground(Color.GRAY);
+        aendereTischePanel.setBackground(Color.white);
         aendereTischePanel.setBounds(105, 0, 1600, 900);
         aendereTischePanel.setVisible(false);
 

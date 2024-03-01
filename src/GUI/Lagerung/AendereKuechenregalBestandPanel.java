@@ -1,6 +1,6 @@
 package GUI.Lagerung;
 
-import GUI.MyFrame;
+import GUI.Frame;
 import Kategorie.Lagerung;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
@@ -118,15 +118,15 @@ public class AendereKuechenregalBestandPanel {
         back.setBounds(150, 250, 250, 30);
         back.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.aendereKuechenregalBestandPanel.setVisible(false);
-                MyFrame.aendereLagerungBestandPanel.setVisible(true);
+                Frame.aendereKuechenregalBestandPanel.setVisible(false);
+                Frame.aendereLagerungBestandPanel.setVisible(true);
             }
         });
         aendereKuechenregalBestandPanel.add(back);
 
 
         aendereKuechenregalBestandPanel.setLayout(null);
-        aendereKuechenregalBestandPanel.setBackground(Color.GRAY);
+        aendereKuechenregalBestandPanel.setBackground(Color.WHITE);
         aendereKuechenregalBestandPanel.setBounds(105, 0, 1600, 900);
         aendereKuechenregalBestandPanel.setVisible(false);
 

@@ -8,78 +8,78 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Rabatt {
+public class RabattPanel {
     private static final JPanel setRabattPanel = new JPanel();
 
     private static final Lagersystem lagersystem = Moebelhaus.getLagersystem();
 
     //Lagerung
-    private static final JLabel Beistelltischlager = new JLabel();
-    private static final JLabel Kleiderschranklager = new JLabel();
-    private static final JLabel Kuechenregallager = new JLabel();
+    private static final JLabel beistelltischlager = new JLabel();
+    private static final JLabel kleiderschranklager = new JLabel();
+    private static final JLabel kuechenregallager = new JLabel();
     //Liegemoebel
-    private static final JLabel Balkonliegelager = new JLabel();
-    private static final JLabel Doppelbettlager = new JLabel();
+    private static final JLabel balkonliegelager = new JLabel();
+    private static final JLabel doppelbettlager = new JLabel();
     //Sitzmoebel
-    private static final JLabel Fernsehcouch = new JLabel();
-    private static final JLabel Kuechenstuhl = new JLabel();
-    private static final JLabel Ohrensessel = new JLabel();
+    private static final JLabel fernsehcouch = new JLabel();
+    private static final JLabel kuechenstuhl = new JLabel();
+    private static final JLabel ohrensessel = new JLabel();
     //Tische
-    private static final JLabel Buerotischlager = new JLabel();
-    private static final JLabel Couchtischlager = new JLabel();
-    private static final JLabel Esstischlager = new JLabel();
-    private static final JLabel Kuechentischlager = new JLabel();
+    private static final JLabel buerotischlager = new JLabel();
+    private static final JLabel couchtischlager = new JLabel();
+    private static final JLabel esstischlager = new JLabel();
+    private static final JLabel kuechentischlager = new JLabel();
 
 
     private static void addLabels() {
         //Lagerung
 
-        setRabattPanel.add(Beistelltischlager);
-        Beistelltischlager.setBounds(50, 150, 175, 30);
+        setRabattPanel.add(beistelltischlager);
+        beistelltischlager.setBounds(50, 150, 215, 30);
 
 
-        setRabattPanel.add(Kleiderschranklager);
-        Kleiderschranklager.setBounds(50, 250, 175, 30);
+        setRabattPanel.add(kleiderschranklager);
+        kleiderschranklager.setBounds(50, 250, 215, 30);
 
 
-        setRabattPanel.add(Kuechenregallager);
-        Kuechenregallager.setBounds(50, 350, 175, 30);
+        setRabattPanel.add(kuechenregallager);
+        kuechenregallager.setBounds(50, 350, 215, 30);
 
 
-        setRabattPanel.add(Balkonliegelager);
-        Balkonliegelager.setBounds(300, 150, 175, 30);
+        setRabattPanel.add(balkonliegelager);
+        balkonliegelager.setBounds(400, 150, 215, 30);
 
 
-        setRabattPanel.add(Doppelbettlager);
-        Doppelbettlager.setBounds(300, 250, 175, 30);
+        setRabattPanel.add(doppelbettlager);
+        doppelbettlager.setBounds(400, 250, 215, 30);
 
 
-        setRabattPanel.add(Fernsehcouch);
-        Fernsehcouch.setBounds(500, 150, 175, 30);
+        setRabattPanel.add(fernsehcouch);
+        fernsehcouch.setBounds(750, 150, 215, 30);
 
 
-        setRabattPanel.add(Kuechenstuhl);
-        Kuechenstuhl.setBounds(500, 250, 175, 30);
+        setRabattPanel.add(kuechenstuhl);
+        kuechenstuhl.setBounds(750, 250, 215, 30);
 
 
-        setRabattPanel.add(Ohrensessel);
-        Ohrensessel.setBounds(500, 350, 175, 30);
+        setRabattPanel.add(ohrensessel);
+        ohrensessel.setBounds(750, 350, 215, 30);
 
 
-        setRabattPanel.add(Buerotischlager);
-        Buerotischlager.setBounds(700, 150, 175, 30);
+        setRabattPanel.add(buerotischlager);
+        buerotischlager.setBounds(1100, 150, 215, 30);
 
 
-        setRabattPanel.add(Couchtischlager);
-        Couchtischlager.setBounds(700, 250, 175, 30);
+        setRabattPanel.add(couchtischlager);
+        couchtischlager.setBounds(1100, 250, 215, 30);
 
 
-        setRabattPanel.add(Esstischlager);
-        Esstischlager.setBounds(700, 350, 175, 30);
+        setRabattPanel.add(esstischlager);
+        esstischlager.setBounds(1100, 350, 215, 30);
 
 
-        setRabattPanel.add(Kuechentischlager);
-        Kuechentischlager.setBounds(700, 450, 175, 30);
+        setRabattPanel.add(kuechentischlager);
+        kuechentischlager.setBounds(1100, 450, 215, 30);
 
 
     }
@@ -87,29 +87,29 @@ public class Rabatt {
     public static void updateLabels() {
         //Lagerung
 
-        Beistelltischlager.setText("Beistelltischlager: " + String.valueOf((lagersystem.getBeistelltischlager().getRabatt10())));
+        beistelltischlager.setText("Beistelltischlager: " + String.valueOf((lagersystem.getBeistelltischlager().getRabatt10())));
 
-        Kleiderschranklager.setText("Kleiderschranklager: " + String.valueOf(lagersystem.getKleiderschranklager().getRabatt10()));
+        kleiderschranklager.setText("Kleiderschranklager: " + String.valueOf(lagersystem.getKleiderschranklager().getRabatt10()));
 
-        Kuechenregallager.setText("Kuechenregallagerlager: " + String.valueOf(lagersystem.getKuechenregallager().getRabatt10()));
+        kuechenregallager.setText("Kuechenregallagerlager: " + String.valueOf(lagersystem.getKuechenregallager().getRabatt10()));
 
-        Balkonliegelager.setText("Balkonliegelager: " + String.valueOf(lagersystem.getBalkonliegelager().getRabatt10()));
+        balkonliegelager.setText("Balkonliegelager: " + String.valueOf(lagersystem.getBalkonliegelager().getRabatt10()));
 
-        Doppelbettlager.setText("Doppelbettlager: " + String.valueOf(lagersystem.getDoppelbettlager().getRabatt10()));
+        doppelbettlager.setText("Doppelbettlager: " + String.valueOf(lagersystem.getDoppelbettlager().getRabatt10()));
 
-        Fernsehcouch.setText("Fernsehcouch: " + String.valueOf(lagersystem.getFernsehcouchlager().getRabatt10()));
+        fernsehcouch.setText("Fernsehcouch: " + String.valueOf(lagersystem.getFernsehcouchlager().getRabatt10()));
 
-        Kuechenstuhl.setText("Kuechenstuhl: " + String.valueOf(lagersystem.getKuechenstuhllager().getRabatt10()));
+        kuechenstuhl.setText("Kuechenstuhl: " + String.valueOf(lagersystem.getKuechenstuhllager().getRabatt10()));
 
-        Ohrensessel.setText("Ohrensessel: " + String.valueOf(lagersystem.getOhrensessellager().getRabatt10()));
+        ohrensessel.setText("Ohrensessel: " + String.valueOf(lagersystem.getOhrensessellager().getRabatt10()));
 
-        Buerotischlager.setText("Buerotischlager: " + String.valueOf(lagersystem.getBuerotischlager().getRabatt10()));
+        buerotischlager.setText("Buerotischlager: " + String.valueOf(lagersystem.getBuerotischlager().getRabatt10()));
 
-        Couchtischlager.setText("Couchtischlager: " + String.valueOf(lagersystem.getCouchtischlager().getRabatt10()));
+        couchtischlager.setText("Couchtischlager: " + String.valueOf(lagersystem.getCouchtischlager().getRabatt10()));
 
-        Esstischlager.setText("Esstischlager: " + String.valueOf(lagersystem.getEsstischlager().getRabatt10()));
+        esstischlager.setText("Esstischlager: " + String.valueOf(lagersystem.getEsstischlager().getRabatt10()));
 
-        Kuechentischlager.setText("Kuechentischlager: " + String.valueOf(lagersystem.getKuechentischlager().getRabatt10()));
+        kuechentischlager.setText("Kuechentischlager: " + String.valueOf(lagersystem.getKuechentischlager().getRabatt10()));
 
     }
 
@@ -120,8 +120,8 @@ public class Rabatt {
     public static JPanel Panel() {
         addLabels();
 
-        JButton setLagerungPreis = new JButton("Set Lagerung Preis");
-        setLagerungPreis.setBounds(50, 100, 175, 30);
+        JButton setLagerungPreis = new JButton("Set Lagerung Rabatt");
+        setLagerungPreis.setBounds(50, 100, 215, 30);
         setLagerungPreis.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 boolean lagerung = lagersystem.getBeistelltischlager().getRabatt10() && lagersystem.getKleiderschranklager().getRabatt10() && lagersystem.getKuechenregallager().getRabatt10();
@@ -134,8 +134,8 @@ public class Rabatt {
         });
         setRabattPanel.add(setLagerungPreis);
 
-        JButton setBeistelltischPreis = new JButton("Set Beistelltisch Preis");
-        setBeistelltischPreis.setBounds(50, 200, 175, 30);
+        JButton setBeistelltischPreis = new JButton("Set Beistelltisch Rabatt");
+        setBeistelltischPreis.setBounds(50, 200, 215, 30);
         setBeistelltischPreis.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lagersystem.getBeistelltischlager().setRabatt10(!lagersystem.getBeistelltischlager().getRabatt10());
@@ -145,8 +145,8 @@ public class Rabatt {
         });
         setRabattPanel.add(setBeistelltischPreis);
 
-        JButton setKleiderschranklagerFeld = new JButton("Set Kleiderschranklager Preis");
-        setKleiderschranklagerFeld.setBounds(50, 300, 175, 30);
+        JButton setKleiderschranklagerFeld = new JButton("Set Kleiderschranklager Rabatt");
+        setKleiderschranklagerFeld.setBounds(50, 300, 215, 30);
         setKleiderschranklagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lagersystem.getKleiderschranklager().setRabatt10(!lagersystem.getKleiderschranklager().getRabatt10());
@@ -156,8 +156,8 @@ public class Rabatt {
         });
         setRabattPanel.add(setKleiderschranklagerFeld);
 
-        JButton setKuechenregallagerFeld = new JButton("Set Kuechenregallager Preis");
-        setKuechenregallagerFeld.setBounds(50, 400, 175, 30);
+        JButton setKuechenregallagerFeld = new JButton("Set Kuechenregallager Rabatt");
+        setKuechenregallagerFeld.setBounds(50, 400, 215, 30);
         setKuechenregallagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lagersystem.getKuechenregallager().setRabatt10(!lagersystem.getKuechenregallager().getRabatt10());
@@ -167,8 +167,8 @@ public class Rabatt {
         });
         setRabattPanel.add(setKuechenregallagerFeld);
 
-        JButton setLiegmoebellagerFeld = new JButton("Set Liegemoebellager Preis");
-        setLiegmoebellagerFeld.setBounds(300, 100, 175, 30);
+        JButton setLiegmoebellagerFeld = new JButton("Set Liegemoebellager Rabatt");
+        setLiegmoebellagerFeld.setBounds(400, 100, 215, 30);
         setLiegmoebellagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 boolean liegemoebellager = lagersystem.getBalkonliegelager().getRabatt10() && lagersystem.getDoppelbettlager().getRabatt10();
@@ -179,8 +179,8 @@ public class Rabatt {
         });
         setRabattPanel.add(setLiegmoebellagerFeld);
 
-        JButton setBalkonliegelagerFeld = new JButton("Set Balkonliegelager Preis");
-        setBalkonliegelagerFeld.setBounds(300, 200, 175, 30);
+        JButton setBalkonliegelagerFeld = new JButton("Set Balkonliegelager Rabatt");
+        setBalkonliegelagerFeld.setBounds(400, 200, 215, 30);
         setBalkonliegelagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lagersystem.getBalkonliegelager().setRabatt10(!lagersystem.getBalkonliegelager().getRabatt10());
@@ -189,8 +189,8 @@ public class Rabatt {
         });
         setRabattPanel.add(setBalkonliegelagerFeld);
 
-        JButton setDoppelbettlagerFeld = new JButton("Set Doppelbettlager Preis");
-        setDoppelbettlagerFeld.setBounds(300, 300, 175, 30);
+        JButton setDoppelbettlagerFeld = new JButton("Set Doppelbettlager Rabatt");
+        setDoppelbettlagerFeld.setBounds(400, 300, 215, 30);
         setDoppelbettlagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lagersystem.getDoppelbettlager().setRabatt10(!lagersystem.getDoppelbettlager().getRabatt10());
@@ -199,8 +199,8 @@ public class Rabatt {
         });
         setRabattPanel.add(setDoppelbettlagerFeld);
 
-        JButton setSitzmoebelFeld = new JButton("Set Sitzmoebel Preis");
-        setSitzmoebelFeld.setBounds(500, 100, 175, 30);
+        JButton setSitzmoebelFeld = new JButton("Set Sitzmoebel Rabatt");
+        setSitzmoebelFeld.setBounds(750, 100, 215, 30);
         setSitzmoebelFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 boolean sitzmoebel = lagersystem.getFernsehcouchlager().getRabatt10() && lagersystem.getKuechenstuhllager().getRabatt10() && lagersystem.getOhrensessellager().getRabatt10();
@@ -213,8 +213,8 @@ public class Rabatt {
         });
         setRabattPanel.add(setSitzmoebelFeld);
 
-        JButton setFernsehcouchFeld = new JButton("Set Fernsehcouch Preis");
-        setFernsehcouchFeld.setBounds(500, 200, 175, 30);
+        JButton setFernsehcouchFeld = new JButton("Set Fernsehcouch Rabatt");
+        setFernsehcouchFeld.setBounds(750, 200, 215, 30);
         setFernsehcouchFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lagersystem.getFernsehcouchlager().setRabatt10(!lagersystem.getFernsehcouchlager().getRabatt10());
@@ -223,8 +223,8 @@ public class Rabatt {
         });
         setRabattPanel.add(setFernsehcouchFeld);
 
-        JButton setKuechenstuhlFeld = new JButton("Set Kuechenstuhl Preis");
-        setKuechenstuhlFeld.setBounds(500, 300, 175, 30);
+        JButton setKuechenstuhlFeld = new JButton("Set Kuechenstuhl Rabatt");
+        setKuechenstuhlFeld.setBounds(750, 300, 215, 30);
         setKuechenstuhlFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lagersystem.getKuechenstuhllager().setRabatt10(!lagersystem.getKuechenstuhllager().getRabatt10());
@@ -233,8 +233,8 @@ public class Rabatt {
         });
         setRabattPanel.add(setKuechenstuhlFeld);
 
-        JButton setOhrensesselFeld = new JButton("Set Ohrensessel Preis");
-        setOhrensesselFeld.setBounds(500, 400, 175, 30);
+        JButton setOhrensesselFeld = new JButton("Set Ohrensessel Rabatt");
+        setOhrensesselFeld.setBounds(750, 400, 215, 30);
         setOhrensesselFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lagersystem.getOhrensessellager().setRabatt10(!lagersystem.getOhrensessellager().getRabatt10());
@@ -243,8 +243,8 @@ public class Rabatt {
         });
         setRabattPanel.add(setOhrensesselFeld);
 
-        JButton setTischeFeld = new JButton("Set Tische Preis");
-        setTischeFeld.setBounds(700, 100, 175, 30);
+        JButton setTischeFeld = new JButton("Set Tische Rabatt");
+        setTischeFeld.setBounds(1100, 100, 215, 30);
         setTischeFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 boolean tische = lagersystem.getBuerotischlager().getRabatt10() && lagersystem.getCouchtischlager().getRabatt10() && lagersystem.getEsstischlager().getRabatt10() && lagersystem.getKuechentischlager().getRabatt10();
@@ -257,8 +257,8 @@ public class Rabatt {
         });
         setRabattPanel.add(setTischeFeld);
 
-        JButton setBuerotischlagerFeld = new JButton("Set Buerotischlager Preis");
-        setBuerotischlagerFeld.setBounds(700, 200, 175, 30);
+        JButton setBuerotischlagerFeld = new JButton("Set Buerotischlager Rabatt");
+        setBuerotischlagerFeld.setBounds(1100, 200, 215, 30);
         setBuerotischlagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lagersystem.getBuerotischlager().setRabatt10(!lagersystem.getBuerotischlager().getRabatt10());
@@ -267,8 +267,8 @@ public class Rabatt {
         });
         setRabattPanel.add(setBuerotischlagerFeld);
 
-        JButton setCouchtischlagerFeld = new JButton("Set Couchtischlager Preis");
-        setCouchtischlagerFeld.setBounds(700, 300, 175, 30);
+        JButton setCouchtischlagerFeld = new JButton("Set Couchtischlager Rabatt");
+        setCouchtischlagerFeld.setBounds(1100, 300, 215, 30);
         setCouchtischlagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lagersystem.getCouchtischlager().setRabatt10(!lagersystem.getCouchtischlager().getRabatt10());
@@ -277,8 +277,8 @@ public class Rabatt {
         });
         setRabattPanel.add(setCouchtischlagerFeld);
 
-        JButton setEsstischlagerFeld = new JButton("Set Esstischlager Preis");
-        setEsstischlagerFeld.setBounds(700, 400, 175, 30);
+        JButton setEsstischlagerFeld = new JButton("Set Esstischlager Rabatt");
+        setEsstischlagerFeld.setBounds(1100, 400, 215, 30);
         setEsstischlagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lagersystem.getEsstischlager().setRabatt10(!lagersystem.getEsstischlager().getRabatt10());
@@ -287,8 +287,8 @@ public class Rabatt {
         });
         setRabattPanel.add(setEsstischlagerFeld);
 
-        JButton setKuechentischlagerFeld = new JButton("Set Kuechentischlager Preis");
-        setKuechentischlagerFeld.setBounds(700, 500, 175, 30);
+        JButton setKuechentischlagerFeld = new JButton("Set Kuechentischlager Rabatt");
+        setKuechentischlagerFeld.setBounds(1100, 500, 215, 30);
         setKuechentischlagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lagersystem.getKuechentischlager().setRabatt10(!lagersystem.getKuechentischlager().getRabatt10());
@@ -299,9 +299,10 @@ public class Rabatt {
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
-        back.setBounds(100, 700, 150, 30);
+        back.setBounds(100, 701, 150, 30);
         back.addActionListener(e -> {
-            MyFrame.rabattPanel.setVisible(false);
+            Frame.setAllPanelsInvisible();
+            Frame.setAllHomeButtonsVisible();
 
         });
         setRabattPanel.add(back);

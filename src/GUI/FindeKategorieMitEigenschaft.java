@@ -11,8 +11,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
-public class FindEigenschaft {
-    static final JPanel findEigenschaftPanel = new JPanel();
+public class FindeKategorieMitEigenschaft {
+    static final JPanel findeKategorieMitEigenschaft = new JPanel();
     private static JTextArea ta;
     private static JScrollPane ausgabeScrollPane;
     private static JTextArea Ausgabe = new JTextArea("Bitte geben Sie einen Betrage ein und drücken 'Kombi'");
@@ -29,27 +29,6 @@ public class FindEigenschaft {
     private static final String[] choicesLiegemoebel = {"S", "M", "L"};
     private static final JComboBox<String> cbl = new JComboBox<String>(choicesLiegemoebel);
 
-    static String s = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \n" +
-            "\n" +
-            "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. \n" +
-            "\n" +
-            "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. \n" +
-            "\n" +
-            "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. \n" +
-            "\n" +
-            "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. \n" +
-            "\n" +
-            "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. \n" +
-            "\n" +
-            "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus. \n" +
-            "\n" +
-            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \n" +
-            "\n" +
-            "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. \n" +
-            "\n" +
-            "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. ";
-
-
     private static void updateLabels() {
         cbsm.setVisible(false);
         cbf.setVisible(false);
@@ -61,16 +40,16 @@ public class FindEigenschaft {
     public static JPanel Panel() {
 
 
-        ta = new JTextArea(s);
+        ta = new JTextArea();
         ta.setLineWrap(true);
         ta.setWrapStyleWord(true);
         ausgabeScrollPane = new JScrollPane(ta);
         ausgabeScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         ausgabeScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         ausgabeScrollPane.setBounds(50, 100, 1400, 500);
-        findEigenschaftPanel.add(ausgabeScrollPane);
+        findeKategorieMitEigenschaft.add(ausgabeScrollPane);
 
-        findEigenschaftPanel.add(Ausgabe);
+        findeKategorieMitEigenschaft.add(Ausgabe);
         cbmk.setBounds(50, 50, 175, 30);
         cbmk.addActionListener(e -> {
             updateLabels();
@@ -92,26 +71,26 @@ public class FindEigenschaft {
             }
         });
         cbmk.setVisible(true);
-        findEigenschaftPanel.add(cbmk);
+        findeKategorieMitEigenschaft.add(cbmk);
 
 
         cbsm.setBounds(300, 50, 175, 30);
         cbsm.setVisible(true);
-        findEigenschaftPanel.add(cbsm);
+        findeKategorieMitEigenschaft.add(cbsm);
 
         cbt.setBounds(300, 50, 175, 30);
         cbt.setVisible(false);
-        findEigenschaftPanel.add(cbt);
+        findeKategorieMitEigenschaft.add(cbt);
 
 
         cbf.setBounds(300, 50, 175, 30);
         cbf.setVisible(false);
-        findEigenschaftPanel.add(cbf);
+        findeKategorieMitEigenschaft.add(cbf);
 
 
         cbl.setBounds(300, 50, 175, 30);
         cbl.setVisible(false);
-        findEigenschaftPanel.add(cbl);
+        findeKategorieMitEigenschaft.add(cbl);
 
         //Erstellen von Back Button
         JButton Go = new JButton("Go");
@@ -182,21 +161,21 @@ public class FindEigenschaft {
             }
 
         });
-        findEigenschaftPanel.add(Go);
+        findeKategorieMitEigenschaft.add(Go);
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
         back.setBounds(100, 700, 150, 30);
         back.addActionListener(e -> {
-            MyFrame.lagerbestandPanel.setVisible(false);
-
+            Frame.setAllPanelsInvisible();
+            Frame.setAllHomeButtonsVisible();
         });
-        findEigenschaftPanel.add(back);
-        findEigenschaftPanel.setLayout(null);
-        findEigenschaftPanel.setBackground(Color.white);
-        findEigenschaftPanel.setBounds(105, 0, 1600, 900);
-        findEigenschaftPanel.setVisible(false);
+        findeKategorieMitEigenschaft.add(back);
+        findeKategorieMitEigenschaft.setLayout(null);
+        findeKategorieMitEigenschaft.setBackground(Color.white);
+        findeKategorieMitEigenschaft.setBounds(105, 0, 1600, 900);
+        findeKategorieMitEigenschaft.setVisible(false);
 
-        return findEigenschaftPanel;
+        return findeKategorieMitEigenschaft;
     }
 }

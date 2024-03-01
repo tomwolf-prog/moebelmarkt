@@ -1,6 +1,6 @@
 package Moebelhaus;
 
-import GUI.MyFrame;
+import GUI.Frame;
 import Lager.Lagersystem;
 
 import javax.swing.*;
@@ -20,7 +20,7 @@ public class Moebelhaus extends JFrame {
             System.out.println("File wasn't loaded");
         }
 
-        MyFrame.baseFrame();
+        Frame.baseFrame();
     }
 
 }

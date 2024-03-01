@@ -1,6 +1,6 @@
 package GUI.Liegemoebel;
 
-import GUI.MyFrame;
+import GUI.Frame;
 import Kategorie.Liegemoebel;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
@@ -96,14 +96,14 @@ public class AendereDoppelbettBestandPanel {
         JButton back = new JButton("Back");
         back.setBounds(150, 200, 250, 30);
         back.addActionListener(e -> {
-            MyFrame.aendereDoppelbettBestandPanel.setVisible(false);
-            MyFrame.aendereLiegemoebelBestandPanel.setVisible(true);
+            Frame.aendereDoppelbettBestandPanel.setVisible(false);
+            Frame.aendereLiegemoebelBestandPanel.setVisible(true);
         });
         aendereDoppelbettBestandPanel.add(back);
 
         aendereDoppelbettBestandPanel.add(back);
         aendereDoppelbettBestandPanel.setLayout(null);
-        aendereDoppelbettBestandPanel.setBackground(Color.GRAY);
+        aendereDoppelbettBestandPanel.setBackground(Color.white);
         aendereDoppelbettBestandPanel.setBounds(105, 0, 1600, 900);
         aendereDoppelbettBestandPanel.setVisible(false);
 

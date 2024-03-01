@@ -1,6 +1,6 @@
 package GUI.Sitzmoebel;
 
-import GUI.MyFrame;
+import GUI.Frame;
 import Kategorie.Sitzmoebel;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
@@ -121,14 +121,14 @@ public class AendereKuechenstuhlBestandPanel {
         JButton back = new JButton("Back");
         back.setBounds(150, 250, 250, 30);
         back.addActionListener(e -> {
-            MyFrame.aendereKuechenstuhlBestandPanel.setVisible(false);
-            MyFrame.aendereSitzmoebelBestandPanel.setVisible(true);
+            Frame.aendereKuechenstuhlBestandPanel.setVisible(false);
+            Frame.aendereSitzmoebelBestandPanel.setVisible(true);
         });
         AendereKuechenstuhlBestandPanel.add(back);
 
         AendereKuechenstuhlBestandPanel.add(back);
         AendereKuechenstuhlBestandPanel.setLayout(null);
-        AendereKuechenstuhlBestandPanel.setBackground(Color.GRAY);
+        AendereKuechenstuhlBestandPanel.setBackground(Color.white);
         AendereKuechenstuhlBestandPanel.setBounds(105, 0, 1600, 900);
         AendereKuechenstuhlBestandPanel.setVisible(false);
 

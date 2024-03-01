@@ -1,6 +1,6 @@
 package GUI.Sitzmoebel;
 
-import GUI.MyFrame;
+import GUI.Frame;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
 
@@ -22,8 +22,8 @@ public class AendereSitzmoebelBestandPanel {
         addFernsehcouchPanel.setBounds(150, 50, 250, 30);
         addFernsehcouchPanel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.aendereSitzmoebelBestandPanel.setVisible(false);
-                MyFrame.aendereFernsehcouchBestandPanel.setVisible(true);
+                Frame.aendereSitzmoebelBestandPanel.setVisible(false);
+                Frame.aendereFernsehcouchBestandPanel.setVisible(true);
             }
         });
         aendereSitzmoebelBestandPanel.add(addFernsehcouchPanel);
@@ -33,8 +33,8 @@ public class AendereSitzmoebelBestandPanel {
         addKuechenstuhlPanel.setBounds(150, 100, 250, 30);
         addKuechenstuhlPanel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.aendereSitzmoebelBestandPanel.setVisible(false);
-                MyFrame.aendereKuechenstuhlBestandPanel.setVisible(true);
+                Frame.aendereSitzmoebelBestandPanel.setVisible(false);
+                Frame.aendereKuechenstuhlBestandPanel.setVisible(true);
             }
         });
         aendereSitzmoebelBestandPanel.add(addKuechenstuhlPanel);
@@ -45,8 +45,8 @@ public class AendereSitzmoebelBestandPanel {
         addKuechenregalPanel.setBounds(150, 150, 250, 30);
         addKuechenregalPanel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.aendereSitzmoebelBestandPanel.setVisible(false);
-                MyFrame.aendereOhrensesselBestandPanel.setVisible(true);
+                Frame.aendereSitzmoebelBestandPanel.setVisible(false);
+                Frame.aendereOhrensesselBestandPanel.setVisible(true);
             }
         });
         aendereSitzmoebelBestandPanel.add(addKuechenregalPanel);
@@ -55,14 +55,14 @@ public class AendereSitzmoebelBestandPanel {
         JButton back = new JButton("Back");
         back.setBounds(150, 200, 250, 30);
         back.addActionListener(e -> {
-            MyFrame.aendereSitzmoebelBestandPanel.setVisible(false);
-            MyFrame.aendereBestandPanel.setVisible(true);
+            Frame.aendereSitzmoebelBestandPanel.setVisible(false);
+            Frame.aendereBestandPanel.setVisible(true);
         });
         aendereSitzmoebelBestandPanel.add(back);
 
         aendereSitzmoebelBestandPanel.add(back);
         aendereSitzmoebelBestandPanel.setLayout(null);
-        aendereSitzmoebelBestandPanel.setBackground(Color.GRAY);
+        aendereSitzmoebelBestandPanel.setBackground(Color.white);
         aendereSitzmoebelBestandPanel.setBounds(105, 0, 1600, 900);
         aendereSitzmoebelBestandPanel.setVisible(false);
 

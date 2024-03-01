@@ -1,6 +1,6 @@
 package GUI.Lagerung;
 
-import GUI.MyFrame;
+import GUI.Frame;
 import Kategorie.Lagerung;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
@@ -118,15 +118,15 @@ public class AendereKleiderschrankregalBestandPanel {
         back.setBounds(150, 250, 250, 30);
         back.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.aendereKleiderschrankregalBestandPanel.setVisible(false);
-                MyFrame.aendereLagerungBestandPanel.setVisible(true);
+                Frame.aendereKleiderschrankregalBestandPanel.setVisible(false);
+                Frame.aendereLagerungBestandPanel.setVisible(true);
             }
         });
         aendereKleiderschrankregalBestandPanel.add(back);
 
 
         aendereKleiderschrankregalBestandPanel.setLayout(null);
-        aendereKleiderschrankregalBestandPanel.setBackground(Color.GRAY);
+        aendereKleiderschrankregalBestandPanel.setBackground(Color.WHITE);
         aendereKleiderschrankregalBestandPanel.setBounds(105, 0, 1600, 900);
         aendereKleiderschrankregalBestandPanel.setVisible(false);
 
