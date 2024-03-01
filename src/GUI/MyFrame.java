@@ -17,6 +17,8 @@ import Moebelhaus.Moebelhaus;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 
 
@@ -227,7 +229,14 @@ public class MyFrame {
         frame.setSize(1600, 900);
         frame.setLayout(null);
         frame.setVisible(true);
-        frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+        frame.addWindowListener(new WindowAdapter()
+        {
+            @Override
+            public void windowClosing(WindowEvent e)
+            {
+                exit();
+            }
+        });
         frame.setResizable(false);
 
         JPanel panel = new JPanel();
@@ -237,6 +246,19 @@ public class MyFrame {
 
         return frame;
 
+    }
+
+    private static void exit(){
+        int confirmed = JOptionPane.showConfirmDialog(frame,
+                "Are you sure you want to quit?", "Confirm quit",
+                JOptionPane.YES_NO_OPTION);
+        if (confirmed == JOptionPane.YES_OPTION) {
+            try {
+                lagersystem.writeToFile(lagersystem, "Moebelhaus.txt");
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
     }
 
 }
