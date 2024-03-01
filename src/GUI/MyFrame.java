@@ -212,17 +212,7 @@ public class MyFrame {
         JButton exit = new JButton("Exit");
         exit.setBounds(5, 825, 95, 30);
         exit.addActionListener(e -> {
-            int confirmed = JOptionPane.showConfirmDialog(frame,
-                    "Are you sure you want to quit?", "Confirm quit",
-                    JOptionPane.YES_NO_OPTION);
-            if (confirmed == JOptionPane.YES_OPTION) {
-                try {
-                    lagersystem.writeToFile(lagersystem, "Moebelhaus.txt");
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
-                System.exit(0);
-            }
+            exit();
         });
         frame.add(exit);
 
@@ -258,7 +248,7 @@ public class MyFrame {
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
+            System.exit(0);
         }
     }
-
 }
