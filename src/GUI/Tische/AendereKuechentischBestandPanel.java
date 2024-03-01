@@ -10,20 +10,20 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AddKuechentischPanel {
+public class AendereKuechentischBestandPanel {
 
-    private static final JPanel changeKuechentischPanel = new JPanel();
+    private static final JPanel aendereKuechentischBestandPanel = new JPanel();
     private static final Lagersystem lagersystem = Moebelhaus.getLagersystem();
     //Erstellen des Frame
 
     public static JPanel Panel() {
 
         JTextField t1 = new JTextField("1");
-        t1.setBounds(400, 50, 30, 30);
-        changeKuechentischPanel.add(t1);
+        t1.setBounds(500, 50, 215, 30);
+        aendereKuechentischBestandPanel.add(t1);
         //Erstellen von AddItem Button
-        JButton addKuechentischS = new JButton("Add Kuechentisch S");
-        addKuechentischS.setBounds(150, 50, 175, 30);
+        JButton addKuechentischS = new JButton("Ändere Kuechentisch Bestand S");
+        addKuechentischS.setBounds(150, 50, 250, 30);
         addKuechentischS.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t1.getText();
@@ -41,14 +41,14 @@ public class AddKuechentischPanel {
 
             }
         });
-        changeKuechentischPanel.add(addKuechentischS);
+        aendereKuechentischBestandPanel.add(addKuechentischS);
 
         JTextField t2 = new JTextField("1");
-        t2.setBounds(400, 100, 30, 30);
-        changeKuechentischPanel.add(t2);
+        t2.setBounds(500, 100, 215, 30);
+        aendereKuechentischBestandPanel.add(t2);
         //Erstellen von AddItem Button
-        JButton addKuechentischM = new JButton("Add Kuechentisch M");
-        addKuechentischM.setBounds(150, 100, 175, 30);
+        JButton addKuechentischM = new JButton("Ändere Kuechentisch Bestand M");
+        addKuechentischM.setBounds(150, 100, 250, 30);
         addKuechentischM.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t2.getText();
@@ -66,14 +66,14 @@ public class AddKuechentischPanel {
 
             }
         });
-        changeKuechentischPanel.add(addKuechentischM);
+        aendereKuechentischBestandPanel.add(addKuechentischM);
 
         JTextField t3 = new JTextField("1");
-        t3.setBounds(400, 150, 30, 30);
-        changeKuechentischPanel.add(t3);
+        t3.setBounds(500, 150, 215, 30);
+        aendereKuechentischBestandPanel.add(t3);
         //Erstellen von AddItem Button
-        JButton addKuechentischL = new JButton("Add Kuechentisch L");
-        addKuechentischL.setBounds(150, 150, 175, 30);
+        JButton addKuechentischL = new JButton("Ändere Kuechentisch Bestand L");
+        addKuechentischL.setBounds(150, 150, 250, 30);
         addKuechentischL.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t3.getText();
@@ -90,26 +90,26 @@ public class AddKuechentischPanel {
                 }
             }
         });
-        changeKuechentischPanel.add(addKuechentischL);
+        aendereKuechentischBestandPanel.add(addKuechentischL);
 
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
-        back.setBounds(150, 200, 175, 30);
+        back.setBounds(150, 200, 250, 30);
         back.addActionListener(e -> {
-            MyFrame.changeKuechentischPanel.setVisible(false);
-            MyFrame.changeTischePanel.setVisible(true);
+            MyFrame.aendereKuechentischBestandPanel.setVisible(false);
+            MyFrame.aendereTischeBestandPanel.setVisible(true);
         });
-        changeKuechentischPanel.add(back);
+        aendereKuechentischBestandPanel.add(back);
 
-        changeKuechentischPanel.add(back);
-        changeKuechentischPanel.setLayout(null);
-        changeKuechentischPanel.setBackground(Color.GRAY);
-        changeKuechentischPanel.setBounds(105, 0, 1600, 900);
-        changeKuechentischPanel.setVisible(false);
+        aendereKuechentischBestandPanel.add(back);
+        aendereKuechentischBestandPanel.setLayout(null);
+        aendereKuechentischBestandPanel.setBackground(Color.GRAY);
+        aendereKuechentischBestandPanel.setBounds(105, 0, 1600, 900);
+        aendereKuechentischBestandPanel.setVisible(false);
 
 
-        return changeKuechentischPanel;
+        return aendereKuechentischBestandPanel;
 
     }
 }

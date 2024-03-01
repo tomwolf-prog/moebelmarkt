@@ -10,20 +10,20 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AddOhrensesselPanel {
+public class AendereOhrensesselBestandPanel {
 
-    private static final JPanel changeOhrensesselPanel = new JPanel();
+    private static final JPanel AendereOhrensesselBestandPanel = new JPanel();
     private static final Lagersystem lagersystem = Moebelhaus.getLagersystem();
     //Erstellen des Frame
 
     public static JPanel Panel() {
 
         JTextField t1 = new JTextField("1");
-        t1.setBounds(400, 50, 30, 30);
-        changeOhrensesselPanel.add(t1);
+        t1.setBounds(500, 50, 215, 30);
+        AendereOhrensesselBestandPanel.add(t1);
         //Erstellen von AddItem Button
-        JButton addOhrensesselEins = new JButton("Add Ohrensessel Eins");
-        addOhrensesselEins.setBounds(150, 50, 175, 30);
+        JButton addOhrensesselEins = new JButton("Ändere Ohrensessel Bestand Eins");
+        addOhrensesselEins.setBounds(150, 50, 250, 30);
         addOhrensesselEins.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t1.getText();
@@ -41,14 +41,14 @@ public class AddOhrensesselPanel {
 
             }
         });
-        changeOhrensesselPanel.add(addOhrensesselEins);
+        AendereOhrensesselBestandPanel.add(addOhrensesselEins);
 
         JTextField t2 = new JTextField("1");
-        t2.setBounds(400, 100, 30, 30);
-        changeOhrensesselPanel.add(t2);
+        t2.setBounds(500, 100, 215, 30);
+        AendereOhrensesselBestandPanel.add(t2);
         //Erstellen von AddItem Button
-        JButton addOhrensesselZwei = new JButton("Add Ohrensessel Zwei");
-        addOhrensesselZwei.setBounds(150, 100, 175, 30);
+        JButton addOhrensesselZwei = new JButton("Ändere Ohrensessel Bestand Zwei");
+        addOhrensesselZwei.setBounds(150, 100, 250, 30);
         addOhrensesselZwei.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t2.getText();
@@ -65,14 +65,14 @@ public class AddOhrensesselPanel {
                 }
             }
         });
-        changeOhrensesselPanel.add(addOhrensesselZwei);
+        AendereOhrensesselBestandPanel.add(addOhrensesselZwei);
 
         JTextField t3 = new JTextField("1");
-        t3.setBounds(400, 150, 30, 30);
-        changeOhrensesselPanel.add(t3);
+        t3.setBounds(500, 150, 215, 30);
+        AendereOhrensesselBestandPanel.add(t3);
         //Erstellen von AddItem Button
-        JButton addOhrensesselDrei = new JButton("Add Ohrensessel Drei");
-        addOhrensesselDrei.setBounds(150, 150, 175, 30);
+        JButton addOhrensesselDrei = new JButton("Ändere Ohrensessel Bestand Drei");
+        addOhrensesselDrei.setBounds(150, 150, 250, 30);
         addOhrensesselDrei.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t3.getText();
@@ -90,14 +90,14 @@ public class AddOhrensesselPanel {
 
             }
         });
-        changeOhrensesselPanel.add(addOhrensesselDrei);
+        AendereOhrensesselBestandPanel.add(addOhrensesselDrei);
 
         JTextField t4 = new JTextField("1");
-        t4.setBounds(400, 200, 30, 30);
-        changeOhrensesselPanel.add(t4);
+        t4.setBounds(500, 200, 215, 30);
+        AendereOhrensesselBestandPanel.add(t4);
         //Erstellen von AddItem Button
-        JButton addOhrensesselVier = new JButton("Add Ohrensessel Vier");
-        addOhrensesselVier.setBounds(150, 200, 175, 30);
+        JButton addOhrensesselVier = new JButton("Ändere Ohrensessel Bestand Vier");
+        addOhrensesselVier.setBounds(150, 200, 250, 30);
         addOhrensesselVier.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t4.getText();
@@ -115,25 +115,25 @@ public class AddOhrensesselPanel {
 
             }
         });
-        changeOhrensesselPanel.add(addOhrensesselVier);
+        AendereOhrensesselBestandPanel.add(addOhrensesselVier);
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
-        back.setBounds(150, 250, 175, 30);
+        back.setBounds(150, 250, 250, 30);
         back.addActionListener(e -> {
-            MyFrame.changeOhrensesselPanel.setVisible(false);
-            MyFrame.changeSitzmoebelPanel.setVisible(true);
+            MyFrame.aendereOhrensesselBestandPanel.setVisible(false);
+            MyFrame.aendereSitzmoebelBestandPanel.setVisible(true);
         });
-        changeOhrensesselPanel.add(back);
+        AendereOhrensesselBestandPanel.add(back);
 
-        changeOhrensesselPanel.add(back);
-        changeOhrensesselPanel.setLayout(null);
-        changeOhrensesselPanel.setBackground(Color.GRAY);
-        changeOhrensesselPanel.setBounds(105, 0, 1600, 900);
-        changeOhrensesselPanel.setVisible(false);
+        AendereOhrensesselBestandPanel.add(back);
+        AendereOhrensesselBestandPanel.setLayout(null);
+        AendereOhrensesselBestandPanel.setBackground(Color.GRAY);
+        AendereOhrensesselBestandPanel.setBounds(105, 0, 1600, 900);
+        AendereOhrensesselBestandPanel.setVisible(false);
 
 
-        return changeOhrensesselPanel;
+        return AendereOhrensesselBestandPanel;
 
     }
 }

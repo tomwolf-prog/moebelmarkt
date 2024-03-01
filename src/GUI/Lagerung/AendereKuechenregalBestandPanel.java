@@ -10,18 +10,18 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ChangeKuechenregalPanel {
-    private static final JPanel changeKuechenregalPanel = new JPanel();
+public class AendereKuechenregalBestandPanel {
+    private static final JPanel aendereKuechenregalBestandPanel = new JPanel();
 
     public static JPanel Panel() {
         Lagersystem lagersystem = Moebelhaus.getLagersystem();
 
         JTextField t1 = new JTextField("1");
-        t1.setBounds(400, 50, 30, 30);
-        changeKuechenregalPanel.add(t1);
+        t1.setBounds(500, 50, 215, 30);
+        aendereKuechenregalBestandPanel.add(t1);
         //Erstellen von AddItem Button
-        JButton addKuechenregalS = new JButton("Add Kuechenregal S");
-        addKuechenregalS.setBounds(150, 50, 175, 30);
+        JButton addKuechenregalS = new JButton("Ändere Kuechenregal Bestand S");
+        addKuechenregalS.setBounds(150, 50, 250, 30);
         addKuechenregalS.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t1.getText();
@@ -38,14 +38,14 @@ public class ChangeKuechenregalPanel {
                 }
             }
         });
-        changeKuechenregalPanel.add(addKuechenregalS);
+        aendereKuechenregalBestandPanel.add(addKuechenregalS);
 
         JTextField t2 = new JTextField("1");
-        t2.setBounds(400, 100, 30, 30);
-        changeKuechenregalPanel.add(t2);
+        t2.setBounds(500, 100, 215, 30);
+        aendereKuechenregalBestandPanel.add(t2);
         //Erstellen von AddItem Button
-        JButton addKuechenregalM = new JButton("Add Kuechenregal M");
-        addKuechenregalM.setBounds(150, 100, 175, 30);
+        JButton addKuechenregalM = new JButton("Ändere Kuechenregal Bestand M");
+        addKuechenregalM.setBounds(150, 100, 250, 30);
         addKuechenregalM.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t2.getText();
@@ -62,14 +62,14 @@ public class ChangeKuechenregalPanel {
                 }
             }
         });
-        changeKuechenregalPanel.add(addKuechenregalM);
+        aendereKuechenregalBestandPanel.add(addKuechenregalM);
 
         JTextField t3 = new JTextField("1");
-        t3.setBounds(400, 150, 30, 30);
-        changeKuechenregalPanel.add(t3);
+        t3.setBounds(500, 150, 215, 30);
+        aendereKuechenregalBestandPanel.add(t3);
         //Erstellen von AddItem Button
-        JButton addKuechenregalL = new JButton("Add Kuechenregal L");
-        addKuechenregalL.setBounds(150, 150, 175, 30);
+        JButton addKuechenregalL = new JButton("Ändere Kuechenregal Bestand L");
+        addKuechenregalL.setBounds(150, 150, 250, 30);
         addKuechenregalL.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t3.getText();
@@ -86,14 +86,14 @@ public class ChangeKuechenregalPanel {
                 }
             }
         });
-        changeKuechenregalPanel.add(addKuechenregalL);
+        aendereKuechenregalBestandPanel.add(addKuechenregalL);
 
         JTextField t4 = new JTextField("1");
-        t4.setBounds(400, 200, 30, 30);
-        changeKuechenregalPanel.add(t4);
+        t4.setBounds(500, 200, 215, 30);
+        aendereKuechenregalBestandPanel.add(t4);
         //Erstellen von AddItem Button
-        JButton addKuechenregalXL = new JButton("Add Kuechenregal XL");
-        addKuechenregalXL.setBounds(150, 200, 175, 30);
+        JButton addKuechenregalXL = new JButton("Ändere Kuechenregal Bestand XL");
+        addKuechenregalXL.setBounds(150, 200, 250, 30);
         addKuechenregalXL.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t4.getText();
@@ -111,27 +111,27 @@ public class ChangeKuechenregalPanel {
 
             }
         });
-        changeKuechenregalPanel.add(addKuechenregalXL);
+        aendereKuechenregalBestandPanel.add(addKuechenregalXL);
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
-        back.setBounds(150, 250, 175, 30);
+        back.setBounds(150, 250, 250, 30);
         back.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.changeKuechenregalPanel.setVisible(false);
-                MyFrame.changeLagerungPanel.setVisible(true);
+                MyFrame.aendereKuechenregalBestandPanel.setVisible(false);
+                MyFrame.aendereLagerungBestandPanel.setVisible(true);
             }
         });
-        changeKuechenregalPanel.add(back);
+        aendereKuechenregalBestandPanel.add(back);
 
 
-        changeKuechenregalPanel.setLayout(null);
-        changeKuechenregalPanel.setBackground(Color.GRAY);
-        changeKuechenregalPanel.setBounds(105, 0, 1600, 900);
-        changeKuechenregalPanel.setVisible(false);
+        aendereKuechenregalBestandPanel.setLayout(null);
+        aendereKuechenregalBestandPanel.setBackground(Color.GRAY);
+        aendereKuechenregalBestandPanel.setBounds(105, 0, 1600, 900);
+        aendereKuechenregalBestandPanel.setVisible(false);
 
 
-        return changeKuechenregalPanel;
+        return aendereKuechenregalBestandPanel;
 
     }
 }

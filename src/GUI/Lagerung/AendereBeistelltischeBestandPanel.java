@@ -10,17 +10,17 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ChangeBeistelltischePanel {
-    private static final JPanel changeBeistelltischePanel = new JPanel();
+public class AendereBeistelltischeBestandPanel {
+    private static final JPanel aendereBeistelltischeBestandPanel = new JPanel();
 
     public static JPanel Panel() {
         Lagersystem lagersystem = Moebelhaus.getLagersystem();
 
         JTextField t1 = new JTextField("1");
-        t1.setBounds(400, 50, 30, 30);
-        changeBeistelltischePanel.add(t1);
-        JButton addKleiderschrankS = new JButton("Add Beistelltisch S");
-        addKleiderschrankS.setBounds(150, 50, 175, 30);
+        t1.setBounds(500, 50, 215, 30);
+        aendereBeistelltischeBestandPanel.add(t1);
+        JButton addKleiderschrankS = new JButton("Ändere Beistelltisch Bestand S");
+        addKleiderschrankS.setBounds(150, 50, 300, 30);
         addKleiderschrankS.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t1.getText();
@@ -38,14 +38,14 @@ public class ChangeBeistelltischePanel {
 
             }
         });
-        changeBeistelltischePanel.add(addKleiderschrankS);
+        aendereBeistelltischeBestandPanel.add(addKleiderschrankS);
 
         JTextField t2 = new JTextField("1");
-        t2.setBounds(400, 100, 30, 30);
-        changeBeistelltischePanel.add(t2);
+        t2.setBounds(500, 100, 215, 30);
+        aendereBeistelltischeBestandPanel.add(t2);
         //Erstellen von AddItem Button
-        JButton addKleiderschrankM = new JButton("Add Beistelltisch M");
-        addKleiderschrankM.setBounds(150, 100, 175, 30);
+        JButton addKleiderschrankM = new JButton("Ändere Beistelltisch Bestand M");
+        addKleiderschrankM.setBounds(150, 100, 300, 30);
         addKleiderschrankM.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t2.getText();
@@ -63,14 +63,14 @@ public class ChangeBeistelltischePanel {
 
             }
         });
-        changeBeistelltischePanel.add(addKleiderschrankM);
+        aendereBeistelltischeBestandPanel.add(addKleiderschrankM);
 
         JTextField t3 = new JTextField("1");
-        t3.setBounds(400, 150, 30, 30);
-        changeBeistelltischePanel.add(t3);
+        t3.setBounds(500, 150, 215, 30);
+        aendereBeistelltischeBestandPanel.add(t3);
         //Erstellen von AddItem Button
-        JButton addKleiderschrankL = new JButton("Add Beistelltisch L");
-        addKleiderschrankL.setBounds(150, 150, 175, 30);
+        JButton addKleiderschrankL = new JButton("Ändere Beistelltisch Bestand L");
+        addKleiderschrankL.setBounds(150, 150, 300, 30);
         addKleiderschrankL.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t3.getText();
@@ -88,14 +88,14 @@ public class ChangeBeistelltischePanel {
 
             }
         });
-        changeBeistelltischePanel.add(addKleiderschrankL);
+        aendereBeistelltischeBestandPanel.add(addKleiderschrankL);
 
         JTextField t4 = new JTextField("1");
-        t4.setBounds(400, 200, 30, 30);
-        changeBeistelltischePanel.add(t4);
+        t4.setBounds(500, 200, 215, 30);
+        aendereBeistelltischeBestandPanel.add(t4);
         //Erstellen von AddItem Button
-        JButton addKleiderschrankXL = new JButton("Add Beistelltisch XL");
-        addKleiderschrankXL.setBounds(150, 200, 175, 30);
+        JButton addKleiderschrankXL = new JButton("Ändere Beistelltisch Bestand XL");
+        addKleiderschrankXL.setBounds(150, 200, 300, 30);
         addKleiderschrankXL.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t4.getText();
@@ -112,27 +112,27 @@ public class ChangeBeistelltischePanel {
                 }
             }
         });
-        changeBeistelltischePanel.add(addKleiderschrankXL);
+        aendereBeistelltischeBestandPanel.add(addKleiderschrankXL);
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
-        back.setBounds(150, 250, 175, 30);
+        back.setBounds(150, 250, 300, 30);
         back.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MyFrame.changeBeistelltischePanel.setVisible(false);
-                MyFrame.changeLagerungPanel.setVisible(true);
+                MyFrame.aendereBeistelltischeBestandPanel.setVisible(false);
+                MyFrame.aendereLagerungBestandPanel.setVisible(true);
             }
         });
-        changeBeistelltischePanel.add(back);
+        aendereBeistelltischeBestandPanel.add(back);
 
 
-        changeBeistelltischePanel.setLayout(null);
-        changeBeistelltischePanel.setBackground(Color.GRAY);
-        changeBeistelltischePanel.setBounds(105, 0, 1600, 900);
-        changeBeistelltischePanel.setVisible(false);
+        aendereBeistelltischeBestandPanel.setLayout(null);
+        aendereBeistelltischeBestandPanel.setBackground(Color.GRAY);
+        aendereBeistelltischeBestandPanel.setBounds(105, 0, 1600, 900);
+        aendereBeistelltischeBestandPanel.setVisible(false);
 
 
-        return changeBeistelltischePanel;
+        return aendereBeistelltischeBestandPanel;
 
     }
 }

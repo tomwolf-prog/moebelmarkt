@@ -1,16 +1,16 @@
 package GUI;
 
-import GUI.Lagerung.ChangeBeistelltischePanel;
-import GUI.Lagerung.ChangeKleiderschrankregalPanel;
-import GUI.Lagerung.ChangeKuechenregalPanel;
-import GUI.Lagerung.ChangeLagerungPanel;
-import GUI.Liegemoebel.AddBalkonliegePanel;
-import GUI.Liegemoebel.AddDoppelbettPanel;
-import GUI.Liegemoebel.AddLiegemoebel;
-import GUI.Sitzmoebel.AddFernsehcouchPanel;
-import GUI.Sitzmoebel.AddKuechenstuhlPanel;
-import GUI.Sitzmoebel.AddOhrensesselPanel;
-import GUI.Sitzmoebel.AddSitzmoebelPanel;
+import GUI.Lagerung.AendereBeistelltischeBestandPanel;
+import GUI.Lagerung.AendereKleiderschrankregalBestandPanel;
+import GUI.Lagerung.AendereKuechenregalBestandPanel;
+import GUI.Lagerung.AendereLagerungBestandPanel;
+import GUI.Liegemoebel.AendereBalkonliegeBestandPanel;
+import GUI.Liegemoebel.AendereDoppelbettBestandPanel;
+import GUI.Liegemoebel.AendereLiegemoebelBestand;
+import GUI.Sitzmoebel.AendereFernsehcouchBestandPanel;
+import GUI.Sitzmoebel.AendereKuechenstuhlBestandPanel;
+import GUI.Sitzmoebel.AendereOhrensesselBestandPanel;
+import GUI.Sitzmoebel.AendereSitzmoebelBestandPanel;
 import GUI.Tische.*;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
@@ -24,7 +24,7 @@ public class MyFrame {
 
     static Lagersystem lagersystem = Moebelhaus.getLagersystem();
     static JFrame frame;
-    public static JPanel changeItemPanel = AddItemPanel.Panel();
+    public static JPanel aendereBestandPanel = AendereBestandPanel.Panel();
     public static JPanel lagerbestandPanel = LagerbestandPanel.Panel();
     public static JPanel verkaufspreisPanel = VerkaufspreisPanel.Panel();
     public static JPanel rabattPanel = Rabatt.Panel();
@@ -32,32 +32,32 @@ public class MyFrame {
     public static JPanel kombiPanel = Kombi.Panel();
     public static JPanel findEigenschaft = FindEigenschaft.Panel();
     //Lagerung
-    public static JPanel changeLagerungPanel = ChangeLagerungPanel.Panel();
-    public static JPanel changeKuechenregalPanel = ChangeKuechenregalPanel.Panel();
-    public static JPanel changeKleiderschrankregalPanel = ChangeKleiderschrankregalPanel.Panel();
-    public static JPanel changeBeistelltischePanel = ChangeBeistelltischePanel.Panel();
+    public static JPanel aendereLagerungBestandPanel = AendereLagerungBestandPanel.Panel();
+    public static JPanel aendereKuechenregalBestandPanel = AendereKuechenregalBestandPanel.Panel();
+    public static JPanel aendereKleiderschrankregalBestandPanel = AendereKleiderschrankregalBestandPanel.Panel();
+    public static JPanel aendereBeistelltischeBestandPanel = AendereBeistelltischeBestandPanel.Panel();
 
     //Sitzmoebel
-    public static JPanel changeFernsehcouchPanel = AddFernsehcouchPanel.Panel();
-    public static JPanel changeKuechenstuhlPanel = AddKuechenstuhlPanel.Panel();
-    public static JPanel changeOhrensesselPanel = AddOhrensesselPanel.Panel();
-    public static JPanel changeSitzmoebelPanel = AddSitzmoebelPanel.Panel();
+    public static JPanel aendereFernsehcouchBestandPanel = AendereFernsehcouchBestandPanel.Panel();
+    public static JPanel aendereKuechenstuhlBestandPanel = AendereKuechenstuhlBestandPanel.Panel();
+    public static JPanel aendereOhrensesselBestandPanel = AendereOhrensesselBestandPanel.Panel();
+    public static JPanel aendereSitzmoebelBestandPanel = AendereSitzmoebelBestandPanel.Panel();
 
     //Tische
-    public static JPanel changeBuerotischPanel = AddBuerotischPanel.Panel();
-    public static JPanel changeCouchtischPanel = AddCouchtischPanel.Panel();
-    public static JPanel changeEsstischPanel = AddEsstischPanel.Panel();
-    public static JPanel changeKuechentischPanel = AddKuechentischPanel.Panel();
-    public static JPanel changeTischePanel = AddTischePanel.Panel();
+    public static JPanel aendereBuerotischBestandPanel = AendereBuerotischBestandPanel.Panel();
+    public static JPanel aendereCouchtischBestandPanel = AendereCouchtischBestandPanel.Panel();
+    public static JPanel aendereEsstischBestandPanel = AendereEsstischBestandPanel.Panel();
+    public static JPanel aendereKuechentischBestandPanel = AendereKuechentischBestandPanel.Panel();
+    public static JPanel aendereTischeBestandPanel = AendereTischeBestandPanel.Panel();
 
     //Liegemoebel
-    public static JPanel changeBalkonliegePanel = AddBalkonliegePanel.Panel();
-    public static JPanel changeDoppelbettPanel = AddDoppelbettPanel.Panel();
-    public static JPanel changeLiegemoebelPanel = AddLiegemoebel.Panel();
+    public static JPanel aendereBalkonliegeBestandPanel = AendereBalkonliegeBestandPanel.Panel();
+    public static JPanel aendereDoppelbettBestandPanel = AendereDoppelbettBestandPanel.Panel();
+    public static JPanel aendereLiegemoebelBestandPanel = AendereLiegemoebelBestand.Panel();
 
     private static void addPanels() {
-        frame.add(changeLagerungPanel);
-        frame.add(changeItemPanel);
+        frame.add(aendereLagerungBestandPanel);
+        frame.add(aendereBestandPanel);
         frame.add(lagerbestandPanel);
         frame.add(verkaufspreisPanel);
         frame.add(setPreisPanel);
@@ -65,31 +65,31 @@ public class MyFrame {
         frame.add(kombiPanel);
         frame.add(findEigenschaft);
         //Lagerung
-        frame.add(changeLagerungPanel);
-        frame.add(changeKuechenregalPanel);
-        frame.add(changeKleiderschrankregalPanel);
-        frame.add(changeBeistelltischePanel);
+        frame.add(aendereLagerungBestandPanel);
+        frame.add(aendereKuechenregalBestandPanel);
+        frame.add(aendereKleiderschrankregalBestandPanel);
+        frame.add(aendereBeistelltischeBestandPanel);
         //Sitzmoebel
-        frame.add(changeFernsehcouchPanel);
-        frame.add(changeKuechenstuhlPanel);
-        frame.add(changeOhrensesselPanel);
-        frame.add(changeSitzmoebelPanel);
+        frame.add(aendereFernsehcouchBestandPanel);
+        frame.add(aendereKuechenstuhlBestandPanel);
+        frame.add(aendereOhrensesselBestandPanel);
+        frame.add(aendereSitzmoebelBestandPanel);
         //Tische
-        frame.add(changeBuerotischPanel);
-        frame.add(changeCouchtischPanel);
-        frame.add(changeEsstischPanel);
-        frame.add(changeKuechentischPanel);
-        frame.add(changeTischePanel);
+        frame.add(aendereBuerotischBestandPanel);
+        frame.add(aendereCouchtischBestandPanel);
+        frame.add(aendereEsstischBestandPanel);
+        frame.add(aendereKuechentischBestandPanel);
+        frame.add(aendereTischeBestandPanel);
         //Liegemoebel
-        frame.add(changeBalkonliegePanel);
-        frame.add(changeDoppelbettPanel);
-        frame.add(changeLiegemoebelPanel);
+        frame.add(aendereBalkonliegeBestandPanel);
+        frame.add(aendereDoppelbettBestandPanel);
+        frame.add(aendereLiegemoebelBestandPanel);
 
     }
 
     private static void setAllPanelsInvisible() {
-        changeLagerungPanel.setVisible(false);
-        changeItemPanel.setVisible(false);
+        aendereLagerungBestandPanel.setVisible(false);
+        aendereBestandPanel.setVisible(false);
         lagerbestandPanel.setVisible(false);
         verkaufspreisPanel.setVisible(false);
         setPreisPanel.setVisible(false);
@@ -97,25 +97,25 @@ public class MyFrame {
         kombiPanel.setVisible(false);
         findEigenschaft.setVisible(false);
         //Lagerung
-        changeLagerungPanel.setVisible(false);
-        changeKuechenregalPanel.setVisible(false);
-        changeKleiderschrankregalPanel.setVisible(false);
-        changeBeistelltischePanel.setVisible(false);
+        aendereLagerungBestandPanel.setVisible(false);
+        aendereKuechenregalBestandPanel.setVisible(false);
+        aendereKleiderschrankregalBestandPanel.setVisible(false);
+        aendereBeistelltischeBestandPanel.setVisible(false);
         //Sitzmoebel
-        changeFernsehcouchPanel.setVisible(false);
-        changeKuechenstuhlPanel.setVisible(false);
-        changeOhrensesselPanel.setVisible(false);
-        changeSitzmoebelPanel.setVisible(false);
+        aendereFernsehcouchBestandPanel.setVisible(false);
+        aendereKuechenstuhlBestandPanel.setVisible(false);
+        aendereOhrensesselBestandPanel.setVisible(false);
+        aendereSitzmoebelBestandPanel.setVisible(false);
         //Tische
-        changeBuerotischPanel.setVisible(false);
-        changeCouchtischPanel.setVisible(false);
-        changeEsstischPanel.setVisible(false);
-        changeKuechentischPanel.setVisible(false);
-        changeTischePanel.setVisible(false);
+        aendereBuerotischBestandPanel.setVisible(false);
+        aendereCouchtischBestandPanel.setVisible(false);
+        aendereEsstischBestandPanel.setVisible(false);
+        aendereKuechentischBestandPanel.setVisible(false);
+        aendereTischeBestandPanel.setVisible(false);
         //Liegemoebel
-        changeBalkonliegePanel.setVisible(false);
-        changeDoppelbettPanel.setVisible(false);
-        changeLiegemoebelPanel.setVisible(false);
+        aendereBalkonliegeBestandPanel.setVisible(false);
+        aendereDoppelbettBestandPanel.setVisible(false);
+        aendereLiegemoebelBestandPanel.setVisible(false);
 
     }
 
@@ -190,11 +190,11 @@ public class MyFrame {
         frame.add(LagerBestand);
 
         //Erstellen von AddItem Button
-        JButton addItem = new JButton("Add Item Panel");
+        JButton addItem = new JButton("Aendere Bestand Panel");
         addItem.setBounds(5, 755, 95, 30);
         addItem.addActionListener(e -> {
             setAllPanelsInvisible();
-            changeItemPanel.setVisible(true);
+            aendereBestandPanel.setVisible(true);
         });
         frame.add(addItem);
 
