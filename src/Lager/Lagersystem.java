@@ -83,110 +83,6 @@ public class Lagersystem implements Serializable {
         balkonliegelager = new Balkonliegelager();
     }
 
-    /**
-     * Gibt eine ArrayList mit den Lagern zurück, die Möbelstücke enthalten.
-     * Jedes Lager kann verschiedene Arten von Möbelstücken aufnehmen.
-     *
-     * @return Eine ArrayList mit den Lagern, die Möbelstücke enthalten.
-     */
-    public ArrayList<Lager<? extends Moebelstueck>> getLager() {
-        ArrayList<Lager<? extends Moebelstueck>> lager = new ArrayList<>();
-        lager.add(buerotischlager);
-        lager.add(couchtischlager);
-        lager.add(esstischlager);
-        lager.add(kuechentischlager);
-        lager.add(kuechenstuhllager);
-        lager.add(ohrensessellager);
-        lager.add(fernsehcouchlager);
-        lager.add(kuechenregallager);
-        lager.add(beistelltischlager);
-        lager.add(kleiderschranklager);
-        lager.add(doppelbettlager);
-        lager.add(balkonliegelager);
-        return lager;
-    }
-
-    /**
-     * Berechnet den Gesamtverkaufspreis aller Möbelstücke im Lager.
-     *
-     * @return Der Gesamtverkaufspreis aller Möbelstücke im Lager.
-     */
-    public int berechenVerkaufspreisAllerMoebelImLager() {
-        ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
-        int summe = 0;
-        for (Lager<? extends Moebelstueck> l : lager) {
-            summe += l.getPreis() * l.getMoebel().size();
-        }
-        return summe;
-    }
-
-    /**
-     * Berechnet den Gesamtverkaufspreis aller Möbelstücke in einem bestimmten Bereich.
-     *
-     * @param bereich Der Bereich, für den der Verkaufspreis berechnet werden soll.
-     * @return Der Gesamtverkaufspreis aller Möbelstücke in dem angegebenen Bereich.
-     */
-    public int berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich bereich) {
-        ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
-        int summe = 0;
-
-        for (Lager<? extends Moebelstueck> l : lager) {
-            try {
-                if (l.getMoebel().get(0).getBereich() == bereich) {
-                    summe += l.getPreis() * l.getMoebel().size();
-                }
-            } catch (IndexOutOfBoundsException e) {
-                continue;
-            }
-        }
-        return summe;
-    }
-
-    /**
-     * Berechnet den Gesamtverkaufspreis aller Möbelstücke einer bestimmten Kategorie im Lagersystem.
-     *
-     * @param kategorie Die Kategorie der Möbelstücke, für die der Verkaufspreis berechnet werden soll.
-     * @return Der Gesamtverkaufspreis aller Möbelstücke der angegebenen Kategorie.
-     */
-    public int berechenVerkaufspreisAllerMoebelEinerKategorie(Moebelstueck.Kategorie kategorie) {
-        ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
-        int summe = 0;
-
-        for (Lager<? extends Moebelstueck> l : lager) {
-            try {
-                if (l.getMoebel().get(0).getKategorie() == kategorie) {
-                    summe += l.getPreis() * l.getMoebel().size();
-                }
-            } catch (IndexOutOfBoundsException e) {
-                continue;
-            }
-        }
-        return summe;
-    }
-
-    /**
-     * Gibt den Bereich mit dem größten Gesamtwert zurück.
-     *
-     * @return Der Bereich mit dem größten Gesamtwert.
-     */
-    public Bereich getBereichMitGroesstemGesamtwert() {
-        int kueche = berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich.Kueche);
-        int wohnen = berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich.Wohnen);
-        int schlafen = berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich.Schlafen);
-        int andere = berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich.Andere);
-        int max = Math.max(kueche, Math.max(wohnen, Math.max(schlafen, andere)));
-
-        if (max == kueche) {
-            return Bereich.Kueche;
-        } else if (max == wohnen) {
-            return Bereich.Wohnen;
-        } else if (max == schlafen) {
-            return Bereich.Schlafen;
-        } else {
-            return Bereich.Andere;
-        }
-    }
-
     //Tische
     /**
      * Gibt das Lager für Buerotische zurück.
@@ -218,11 +114,13 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Buerotische um den angegebenen Betrag.
      *
+     * @see Stream<T> 
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param hoehe Die Höhe der Buerotische, die hinzugefügt werden sollen.
      */
     public void erhoeheBuerotischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> buerotischlager.addTisch(new Tische(Moebelart.Buerotisch, hoehe, Moebelstueck.Kategorie.Tische, Bereich.Andere)));
+        IntStream.range(0, quantitativerBetrag)
+        .forEach(i -> buerotischlager.addTisch(new Tische(Moebelart.Buerotisch, hoehe, Moebelstueck.Kategorie.Tische, Bereich.Andere)));
     }
 
     /**
@@ -497,11 +395,13 @@ public class Lagersystem implements Serializable {
     /**
      * Mindert den Lagerbestand für Kuechenstühle um den angegebenen Betrag.
      *
+     * @see Stream<T>
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param sitzplaetze Die Sitzplätze der Kuechenstühle, die entfernt werden sollen.
      */
     public void mindereKuechenstuhllagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> kuechenstuhllager.removeSitzmoebel(sitzplaetze));
+        IntStream.range(0, quantitativerBetrag)
+        .forEach(i -> kuechenstuhllager.removeSitzmoebel(sitzplaetze));
     }
 
     /**
@@ -1057,6 +957,110 @@ public class Lagersystem implements Serializable {
     }
 
     /**
+     * Gibt eine ArrayList mit den Lagern zurück, die Möbelstücke enthalten.
+     * Jedes Lager kann verschiedene Arten von Möbelstücken aufnehmen.
+     *
+     * @return Eine ArrayList mit den Lagern, die Möbelstücke enthalten.
+     */
+    public ArrayList<Lager<? extends Moebelstueck>> getLager() {
+        ArrayList<Lager<? extends Moebelstueck>> lager = new ArrayList<>();
+        lager.add(buerotischlager);
+        lager.add(couchtischlager);
+        lager.add(esstischlager);
+        lager.add(kuechentischlager);
+        lager.add(kuechenstuhllager);
+        lager.add(ohrensessellager);
+        lager.add(fernsehcouchlager);
+        lager.add(kuechenregallager);
+        lager.add(beistelltischlager);
+        lager.add(kleiderschranklager);
+        lager.add(doppelbettlager);
+        lager.add(balkonliegelager);
+        return lager;
+    }
+
+    /**
+     * Berechnet den Gesamtverkaufspreis aller Möbelstücke im Lager.
+     *
+     * @return Der Gesamtverkaufspreis aller Möbelstücke im Lager.
+     */
+    public int berechenVerkaufspreisAllerMoebelImLager() {
+        ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
+        int summe = 0;
+        for (Lager<? extends Moebelstueck> l : lager) {
+            summe += l.getPreis() * l.getMoebel().size();
+        }
+        return summe;
+    }
+
+    /**
+     * Berechnet den Gesamtverkaufspreis aller Möbelstücke in einem bestimmten Bereich.
+     *
+     * @param bereich Der Bereich, für den der Verkaufspreis berechnet werden soll.
+     * @return Der Gesamtverkaufspreis aller Möbelstücke in dem angegebenen Bereich.
+     */
+    public int berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich bereich) {
+        ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
+        int summe = 0;
+
+        for (Lager<? extends Moebelstueck> l : lager) {
+            try {
+                if (l.getMoebel().get(0).getBereich() == bereich) {
+                    summe += l.getPreis() * l.getMoebel().size();
+                }
+            } catch (IndexOutOfBoundsException e) {
+                continue;
+            }
+        }
+        return summe;
+    }
+
+    /**
+     * Berechnet den Gesamtverkaufspreis aller Möbelstücke einer bestimmten Kategorie im Lagersystem.
+     *
+     * @param kategorie Die Kategorie der Möbelstücke, für die der Verkaufspreis berechnet werden soll.
+     * @return Der Gesamtverkaufspreis aller Möbelstücke der angegebenen Kategorie.
+     */
+    public int berechenVerkaufspreisAllerMoebelEinerKategorie(Moebelstueck.Kategorie kategorie) {
+        ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
+        int summe = 0;
+
+        for (Lager<? extends Moebelstueck> l : lager) {
+            try {
+                if (l.getMoebel().get(0).getKategorie() == kategorie) {
+                    summe += l.getPreis() * l.getMoebel().size();
+                }
+            } catch (IndexOutOfBoundsException e) {
+                continue;
+            }
+        }
+        return summe;
+    }
+
+    /**
+     * Gibt den Bereich mit dem größten Gesamtwert zurück.
+     *
+     * @return Der Bereich mit dem größten Gesamtwert.
+     */
+    public Bereich getBereichMitGroesstemGesamtwert() {
+        int kueche = berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich.Kueche);
+        int wohnen = berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich.Wohnen);
+        int schlafen = berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich.Schlafen);
+        int andere = berechenVerkaufspreisAllerMoebelEinesBereichs(Bereich.Andere);
+        int max = Math.max(kueche, Math.max(wohnen, Math.max(schlafen, andere)));
+
+        if (max == kueche) {
+            return Bereich.Kueche;
+        } else if (max == wohnen) {
+            return Bereich.Wohnen;
+        } else if (max == schlafen) {
+            return Bereich.Schlafen;
+        } else {
+            return Bereich.Andere;
+        }
+    }
+
+    /**
      * Berechnet alle möglichen Kombinationen von Möbellager-Konfigurationen,
      * deren Gesamtpreis kleiner oder gleich dem angegebenen Betrag ist.
      * Es werden nur Möbellager-Konfigurationen mit unterschiedlichen Möbeln erstellt.
@@ -1076,18 +1080,28 @@ public class Lagersystem implements Serializable {
 
         for (int i = 0; i < moebelstueckeLagerArrayList.size(); i++) {
 
+            // Kopie des aktuellen Konstellationsindexes erstellen
             ArrayList<Integer> copyKonstellationIndex = new ArrayList<>();
             for (Integer j : konstellationIndex) {
                 copyKonstellationIndex.add(j);
             }
+
+            // Aktuelle Summe aktualisieren
             int tmpaktuelleSumme = aktuelleSumme + moebelstueckeLagerArrayList.get(rekursionsIndex).getPreis();
+
+            // Überprüfen, ob die aktuelle Summe den maximalen Betrag nicht überschreitet
             if (tmpaktuelleSumme <= maximalBetragInCent) {
+                // Konstellationsindex aktualisieren
                 copyKonstellationIndex.add(rekursionsIndex);
+
+                // Konstellation erstellen
                 ArrayList<Lager<? extends Moebelstueck>> konstellation = new ArrayList<>();
                 for (Integer k : copyKonstellationIndex) {
                     konstellation.add(moebelstueckeLagerArrayList.get(k));
                 }
                 konstellationen.add(konstellation);
+
+                // Weitere Konstellationen rekursiv berechnen
                 if (!(rekursionsIndex + 1 == moebelstueckeLagerArrayList.size())) {
                     for (int k = rekursionsIndex + 1; k < moebelstueckeLagerArrayList.size(); k++) {
                         ArrayList<ArrayList<Lager<? extends Moebelstueck>>> weitereKonstellationen = konstellationenBisBetrag(moebelstueckeLagerArrayList, maximalBetragInCent, k, tmpaktuelleSumme, copyKonstellationIndex);
@@ -1097,11 +1111,15 @@ public class Lagersystem implements Serializable {
                     }
                 }
             } else {
+                // Wenn die aktuelle Summe den maximalen Betrag überschreitet, wird null zurückgegeben
                 return null;
             }
+
+            // Überprüfen, ob der Rekursionsindex nicht mit dem aktuellen Index übereinstimmt
             if (!(rekursionsIndex == i)) {
                 return konstellationen;
             } else {
+                // Rekursionsindex und Konstellationsindex zurücksetzen
                 rekursionsIndex++;
                 konstellationIndex.clear();
             }
