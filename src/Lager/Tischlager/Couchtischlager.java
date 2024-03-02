@@ -5,7 +5,6 @@ package Lager.Tischlager;
  * Es repräsentiert ein Lager für Couchtische.
  * 
  * @see Tischlager
- * @author Sidney Schmidt
+ * @author Sidney Schmidt, Tom Wolf
  */
-public final class Couchtischlager extends Tischlager {
-}
+public final class Couchtischlager extends Tischlager {}

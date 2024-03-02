@@ -33,7 +33,8 @@ import static Kategorie.Lagerung.Moebelart.Beistelltisch;
  * Das Lagersystem verwaltet verschiedene Lager für Möbelstücke.
  * Jedes Lager enthält eine bestimmte Kategorie von Möbeln, wie Tische, Sitzmöbel, Lagerung und Liegemöbel.
  * Das Lagersystem ermöglicht das Hinzufügen, Entfernen und Verwalten von Möbeln in den einzelnen Lagern.
- * Es bietet auch Funktionen zur Berechnung des Verkaufspreises aller Möbel im Lager, des Verkaufspreises aller Möbel in einem bestimmten Bereich und des Verkaufspreises aller Möbel einer bestimmten Kategorie.
+ * Es bietet auch Funktionen zur Berechnung des Verkaufspreises aller Möbel im Lager,
+ * des Verkaufspreises aller Möbel in einem bestimmten Bereich und des Verkaufspreises aller Möbel einer bestimmten Kategorie.
  * Darüber hinaus kann das Lagersystem den Bereich mit dem höchsten Gesamtwert ermitteln.
  * 
  * @see Serializable
@@ -1243,7 +1244,7 @@ public class Lagersystem implements Serializable {
     }
 
     /**
-     * Liest das Liegemoebellager-Objekt aus einer Datei.
+     * Liest das Lagersystem-Objekt aus einer Datei.
      * 
      * @param file Der Dateipfad, aus dem das Objekt gelesen werden soll.
      * @throws IOException Wenn ein Fehler beim Schreiben der Datei auftritt.

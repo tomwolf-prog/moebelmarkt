@@ -17,6 +17,15 @@ import java.util.List;
 public abstract class Lagerunglager extends Lager<Lagerung> {
 
     /**
+     * Fügt eine Lagerung zum Lagerungslager hinzu.
+     *
+     * @param lagerung Die hinzuzufügende Lagerung.
+     */
+    public void addLagerung(Lagerung lagerung) {
+        moebelstueckArrayList.add(lagerung);
+    }
+
+    /**
      * Entfernt eine Lagerung mit der angegebenen Fläche aus dem Lagerungslager.
      *
      * @param flaeche Die Fläche der zu entfernenden Lagerung.
@@ -27,10 +36,8 @@ public abstract class Lagerunglager extends Lager<Lagerung> {
                 moebelstueckArrayList.remove(moebelstueck);
                 break;
             }
-            ;
         }
     }
-
 
     /**
      * Gibt eine Liste von Lagerungen zurück, die die angegebene Fläche haben.
@@ -50,16 +57,6 @@ public abstract class Lagerunglager extends Lager<Lagerung> {
     }
 
     /**
-     * Fügt eine Lagerung zum Lagerungslager hinzu.
-     *
-     * @param lagerung Die hinzuzufügende Lagerung.
-     */
-    public void addLagerung(Lagerung lagerung) {
-        moebelstueckArrayList.add(lagerung);
-    }
-
-
-    /**
      * Gibt den Bestand des Lagerungslagers für eine bestimmte Fläche zurück.
      *
      * @param flaeche Die Fläche, für die der Bestand abgerufen werden soll.
@@ -76,7 +73,7 @@ public abstract class Lagerunglager extends Lager<Lagerung> {
     }
 
     /**
-     * Schreibt das Lagerungslager-Objekt in eine Datei.
+     * Schreibt das Lagerunglager-Objekt in eine Datei.
      * 
      * @param lagerunglager Das Lagerungslager-Objekt, das geschrieben werden soll.
      * @param file Der Dateipfad, in den das Objekt geschrieben werden soll.
@@ -92,7 +89,7 @@ public abstract class Lagerunglager extends Lager<Lagerung> {
     }
 
     /**
-     * Liest das Lagerungslager-Objekt aus einer Datei.
+     * Liest das Lagerunglager-Objekt aus einer Datei.
      * 
      * @param file Der Dateipfad, aus dem das Objekt gelesen werden soll.
      * @throws IOException Wenn ein Fehler beim Schreiben der Datei auftritt.

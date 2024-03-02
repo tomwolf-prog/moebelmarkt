@@ -18,16 +18,7 @@ public abstract class Lager<K> implements Serializable {
     private boolean rabatt10;
 
     public ArrayList<K> moebelstueckArrayList = new ArrayList<K>();
-
-    /**
-     * Konstruktor für die Klasse Lager.
-     * Setzt den Preis des Möbelstücks auf 0 und deaktiviert den Rabatt.
-     */
-    public Lager() {
-        this.preis = 0;
-        this.rabatt10 = false;
-    }
-
+    
     /**
      * Konstruktor für die Klasse Lager.
      * Setzt den Preis des Möbelstücks auf den angegebenen Wert und deaktiviert den Rabatt.
@@ -38,6 +29,17 @@ public abstract class Lager<K> implements Serializable {
         this.preis = preis;
         this.rabatt10 = false;
     }
+    
+    /**
+     * Konstruktor für die Klasse Lager.
+     * Setzt den Preis des Möbelstücks auf 0 und deaktiviert den Rabatt.
+     */
+    public Lager() {
+        this.preis = 0;
+        this.rabatt10 = false;
+    }
+
+
 
     /**
      * Gibt die Liste der im Lager gespeicherten Möbelstücke zurück.

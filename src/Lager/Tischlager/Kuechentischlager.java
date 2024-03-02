@@ -7,5 +7,4 @@ package Lager.Tischlager;
  * @see Tischlager
  * @author Sidney Schmidt, Tom Wolf
  */
-public final class Kuechentischlager extends Tischlager {
-}
+public final class Kuechentischlager extends Tischlager {}
