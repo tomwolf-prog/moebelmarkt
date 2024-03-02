@@ -83,7 +83,71 @@ public class Lagersystem implements Serializable {
         balkonliegelager = new Balkonliegelager();
     }
 
+    /**
+     * Fügt ein Möbelstück zum Lager hinzu.
+     * Prüft die Kategorie des Möbelstücks und fügt es dem entsprechenden Lager hinzu.
+     * 
+     * @param moebelstueck Das hinzuzufügende Möbelstück.
+     */
+    public void addMoebelstueck(Moebelstueck moebelstueck) {
+        switch (moebelstueck.getKategorie()) {
+            case Lagerung:
+                addLagerung((Lagerung) moebelstueck);
+                break;
+            case Liegemoebel:
+                addLiegemoebel((Liegemoebel) moebelstueck);
+                break;
+            case Tische:
+                addTisch((Tische) moebelstueck);
+                break;
+            case Sitzmoebel:
+                addSitzmoebel((Sitzmoebel) moebelstueck);
+            default:
+                break;
+        }
+    }
+
     //Tische
+    /**
+     * Fügt einen Tisch zum Lager hinzu.
+     *
+     * @param tisch Der hinzuzufügende Tisch.
+     */
+    public void addTisch(Tische tisch) {
+        switch (tisch.getMoebelart()) {
+            case Buerotisch:
+                buerotischlager.addTisch(tisch);
+                break;
+            case Couchtisch:
+                couchtischlager.addTisch(tisch);
+                break;
+            case Esstisch:
+                esstischlager.addTisch(tisch);
+            default:
+                break;
+        }
+    }
+
+    /**
+     * Entfernt einen Tisch aus dem Lager.
+     *
+     * @param tisch Der zu entfernende Tisch.
+     */
+    public void removeTisch(Tische tisch) {
+        switch (tisch.getMoebelart()) {
+            case Buerotisch:
+                buerotischlager.removeTisch(tisch.getHoehe());
+                break;
+            case Couchtisch:
+                couchtischlager.removeTisch(tisch.getHoehe());
+                break;
+            case Esstisch:
+                esstischlager.removeTisch(tisch.getHoehe());
+            default:
+                break;
+        }
+    }
+
     /**
      * Gibt das Lager für Buerotische zurück.
      *
@@ -314,47 +378,49 @@ public class Lagersystem implements Serializable {
         return kuechentischlager.getTischlagerBestand(hoehe);
     }
 
-    /**
-     * Fügt einen Tisch zum Lager hinzu.
-     *
-     * @param tisch Der hinzuzufügende Tisch.
-     */
-    public void addTisch(Tische tisch) {
-        switch (tisch.getMoebelart()) {
-            case Buerotisch:
-                buerotischlager.addTisch(tisch);
-                break;
-            case Couchtisch:
-                couchtischlager.addTisch(tisch);
-                break;
-            case Esstisch:
-                esstischlager.addTisch(tisch);
-            default:
-                break;
-        }
-    }
-
-    /**
-     * Entfernt einen Tisch aus dem Lager.
-     *
-     * @param tisch Der zu entfernende Tisch.
-     */
-    public void removeTisch(Tische tisch) {
-        switch (tisch.getMoebelart()) {
-            case Buerotisch:
-                buerotischlager.removeTisch(tisch.getHoehe());
-                break;
-            case Couchtisch:
-                couchtischlager.removeTisch(tisch.getHoehe());
-                break;
-            case Esstisch:
-                esstischlager.removeTisch(tisch.getHoehe());
-            default:
-                break;
-        }
-    }
 
     //Sitzmoebel
+    /**
+     * Fügt einen Sitzmoebel zum Lager hinzu.
+     *
+     * @param sitzmoebel Der hinzuzufügende Sitzmoebel.
+     */
+    public void addSitzmoebel(Sitzmoebel sitzmoebel) {
+        switch (sitzmoebel.getMoebelart()) {
+            case Kuechenstuhl:
+                kuechenstuhllager.addSitzmoebel(sitzmoebel);
+                break;
+            case Ohrensessel:
+                ohrensessellager.addSitzmoebel(sitzmoebel);
+                break;
+            case Fernsehcouch:
+                fernsehcouchlager.addSitzmoebel(sitzmoebel);
+            default:
+                break;
+        }
+    }
+
+    /**
+     * Entfernt einen Sitzmoebel aus dem Lager.
+     *
+     * @param moebelart Die Art des Sitzmoebels, der entfernt werden soll.
+     * @param sitzplaetze Die Sitzplätze des Sitzmoebels, der entfernt werden soll.
+     */
+    public void removeSitzmoebel(Sitzmoebel.Moebelart moebelart, Sitzmoebel.Sitzplaetze sitzplaetze) {
+        switch (moebelart) {
+            case Kuechenstuhl:
+                kuechenstuhllager.removeSitzmoebel(sitzplaetze);
+                break;
+            case Ohrensessel:
+                ohrensessellager.removeSitzmoebel(sitzplaetze);
+                break;
+            case Fernsehcouch:
+                fernsehcouchlager.removeSitzmoebel(sitzplaetze);
+            default:
+                break;
+        }
+    }
+
     /**
      * Gibt das Lager für Kuechenstühle zurück.
      *
@@ -528,49 +594,46 @@ public class Lagersystem implements Serializable {
         return fernsehcouchlager.getSitzmoebellagerBestand(sitzplaetze);
     }
 
-    /**
-     * Fügt einen Sitzmoebel zum Lager hinzu.
-     *
-     * @param sitzmoebel Der hinzuzufügende Sitzmoebel.
-     */
-    public void addSitzmoebel(Sitzmoebel sitzmoebel) {
-        switch (sitzmoebel.getMoebelart()) {
-            case Kuechenstuhl:
-                kuechenstuhllager.addSitzmoebel(sitzmoebel);
-                break;
-            case Ohrensessel:
-                ohrensessellager.addSitzmoebel(sitzmoebel);
-                break;
-            case Fernsehcouch:
-                fernsehcouchlager.addSitzmoebel(sitzmoebel);
-            default:
-                break;
-        }
-    }
-
-    /**
-     * Entfernt einen Sitzmoebel aus dem Lager.
-     *
-     * @param moebelart Die Art des Sitzmoebels, der entfernt werden soll.
-     * @param sitzplaetze Die Sitzplätze des Sitzmoebels, der entfernt werden soll.
-     */
-    public void removeSitzmoebel(Sitzmoebel.Moebelart moebelart, Sitzmoebel.Sitzplaetze sitzplaetze) {
-        switch (moebelart) {
-            case Kuechenstuhl:
-                kuechenstuhllager.removeSitzmoebel(sitzplaetze);
-                break;
-            case Ohrensessel:
-                ohrensessellager.removeSitzmoebel(sitzplaetze);
-                break;
-            case Fernsehcouch:
-                fernsehcouchlager.removeSitzmoebel(sitzplaetze);
-            default:
-                break;
-        }
-    }
-
-
     //Lagerung
+    /**
+     * Fügt eine Lagerung zum Lager hinzu.
+     * 
+     * @param lagerung Die hinzuzufügende Lagerung.
+     */
+    public void addLagerung(Lagerung lagerung) {
+        switch (lagerung.getMoebelart()) {
+            case Kuechenregal:
+                kuechenregallager.addLagerung(lagerung);
+                break;
+            case Kleiderschrank:
+                kleiderschranklager.addLagerung(lagerung);
+                break;
+            case Beistelltisch:
+                beistelltischlager.addLagerung(lagerung);
+            default:
+                break;
+        }
+    }
+
+    /**
+     * Entfernt eine Lagerung aus dem Lager.
+     * 
+     * @param moebelart Die Art der Lagerung, die entfernt werden soll.
+     * @param flaeche Die Fläche der Lagerung, die entfernt werden soll.
+     */
+    public void removeLagerung(Lagerung.Moebelart moebelart, Lagerung.Flaeche flaeche) {
+        switch (moebelart) {
+            case Kuechenregal:
+                kuechenregallager.removeLagerung(flaeche);
+                break;
+            case Kleiderschrank:
+                kleiderschranklager.removeLagerung(flaeche);
+                break;
+            default:
+                break;
+        }
+    }
+
     /**
      * Gibt das Lager für Kuechenregale zurück.
      *
@@ -742,46 +805,44 @@ public class Lagersystem implements Serializable {
         return kleiderschranklager.getLagerunglagerBestand(flaeche);
     }
 
-    /**
-     * Fügt eine Lagerung zum Lager hinzu.
-     * 
-     * @param lagerung Die hinzuzufügende Lagerung.
-     */
-    public void addLagerung(Lagerung lagerung) {
-        switch (lagerung.getMoebelart()) {
-            case Kuechenregal:
-                kuechenregallager.addLagerung(lagerung);
-                break;
-            case Kleiderschrank:
-                kleiderschranklager.addLagerung(lagerung);
-                break;
-            case Beistelltisch:
-                beistelltischlager.addLagerung(lagerung);
-            default:
-                break;
-        }
-    }
-
-    /**
-     * Entfernt eine Lagerung aus dem Lager.
-     * 
-     * @param moebelart Die Art der Lagerung, die entfernt werden soll.
-     * @param flaeche Die Fläche der Lagerung, die entfernt werden soll.
-     */
-    public void removeLagerung(Lagerung.Moebelart moebelart, Lagerung.Flaeche flaeche) {
-        switch (moebelart) {
-            case Kuechenregal:
-                kuechenregallager.removeLagerung(flaeche);
-                break;
-            case Kleiderschrank:
-                kleiderschranklager.removeLagerung(flaeche);
-                break;
-            default:
-                break;
-        }
-    }
-
     //Liegemoebel
+        /**
+     * Fügt einen Liegemoebel zum Lager hinzu.
+     *
+     * @param liegemoebel Der hinzuzufügende Liegemoebel.
+     */
+    public void addLiegemoebel(Liegemoebel liegemoebel) {
+        switch (liegemoebel.getMoebelart()) {
+            case Doppelbett:
+                doppelbettlager.addLiegemoebel(liegemoebel);
+                break;
+            case Balkonliege:
+                balkonliegelager.addLiegemoebel(liegemoebel);
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
+     * Entfernt einen Liegemoebel aus dem Lager.
+     *
+     * @param moebelart Die Art des Liegemoebels, der entfernt werden soll.
+     * @param laenge Die Länge des Liegemoebels, der entfernt werden soll.
+     */
+    public void removeLiegemoebel(Liegemoebel.Moebelart moebelart, Liegemoebel.Laenge laenge) {
+        switch (moebelart) {
+            case Doppelbett:
+                doppelbettlager.removeLiegemoebel(laenge);
+                break;
+            case Balkonliege:
+                balkonliegelager.removeLiegemoebel(laenge);
+                break;
+            default:
+                break;
+        }
+    }
+    
     /**
      * Gibt das Lager für Doppelbetten zurück.
      *
@@ -897,70 +958,9 @@ public class Lagersystem implements Serializable {
     }
 
     /**
-     * Fügt einen Liegemoebel zum Lager hinzu.
+     * Gibt eine ArrayList mit den Lagern aller Möbelarten zurück.
      *
-     * @param liegemoebel Der hinzuzufügende Liegemoebel.
-     */
-    public void addLiegemoebel(Liegemoebel liegemoebel) {
-        switch (liegemoebel.getMoebelart()) {
-            case Doppelbett:
-                doppelbettlager.addLiegemoebel(liegemoebel);
-                break;
-            case Balkonliege:
-                balkonliegelager.addLiegemoebel(liegemoebel);
-                break;
-            default:
-                break;
-        }
-    }
-
-    /**
-     * Entfernt einen Liegemoebel aus dem Lager.
-     *
-     * @param moebelart Die Art des Liegemoebels, der entfernt werden soll.
-     * @param laenge Die Länge des Liegemoebels, der entfernt werden soll.
-     */
-    public void removeLiegemoebel(Liegemoebel.Moebelart moebelart, Liegemoebel.Laenge laenge) {
-        switch (moebelart) {
-            case Doppelbett:
-                doppelbettlager.removeLiegemoebel(laenge);
-                break;
-            case Balkonliege:
-                balkonliegelager.removeLiegemoebel(laenge);
-                break;
-            default:
-                break;
-        }
-    }
-
-    /**
-     * Fügt ein Möbelstück zum Lager hinzu.
-     * 
-     * @param moebelstueck Das hinzuzufügende Möbelstück.
-     */
-    public void addMoebelstueck(Moebelstueck moebelstueck) {
-        switch (moebelstueck.getKategorie()) {
-            case Lagerung:
-                addLagerung((Lagerung) moebelstueck);
-                break;
-            case Liegemoebel:
-                addLiegemoebel((Liegemoebel) moebelstueck);
-                break;
-            case Tische:
-                addTisch((Tische) moebelstueck);
-                break;
-            case Sitzmoebel:
-                addSitzmoebel((Sitzmoebel) moebelstueck);
-            default:
-                break;
-        }
-    }
-
-    /**
-     * Gibt eine ArrayList mit den Lagern zurück, die Möbelstücke enthalten.
-     * Jedes Lager kann verschiedene Arten von Möbelstücken aufnehmen.
-     *
-     * @return Eine ArrayList mit den Lagern, die Möbelstücke enthalten.
+     * @return Eine ArrayList mit den Lagern aller Möbelarten.
      */
     public ArrayList<Lager<? extends Moebelstueck>> getLager() {
         ArrayList<Lager<? extends Moebelstueck>> lager = new ArrayList<>();
@@ -1138,11 +1138,15 @@ public class Lagersystem implements Serializable {
         if (konstellationen.size() == 0) {
             return null;
         }
+        // Sortieren der Konstellationen basierend auf dem Gesamtpreis in absteigender Reihenfolge
         Collections.sort(konstellationen, (a, b) -> {
-            int sumA = a.stream().mapToInt(lager -> lager.getPreis()).sum();
-            int sumB = b.stream().mapToInt(lager -> lager.getPreis()).sum();
+            // Gesamtpreis der Konstellationen berechnen
+            int sumA = a.stream().mapToInt(Lager::getPreis).sum();
+            int sumB = b.stream().mapToInt(Lager::getPreis).sum();
+            // Sortieren in absteigender Reihenfolge
             return sumB - sumA;
         });
+        // Die beste Konstellation ist die erste in der sortierten Liste
         return konstellationen.get(0);
     }
 
@@ -1155,14 +1159,17 @@ public class Lagersystem implements Serializable {
      * Gibt null zurück, wenn keine gültigen Kombinationen gefunden werden.
      */
     public ArrayList<Lager<? extends Moebelstueck>> moebelauswahlBisBetrag(int betragInCent) {
+        // Überprüfen, ob der Betrag im gültigen Bereich liegt
         if (betragInCent < 100_00 || betragInCent > 600_00) {
-            return null; //raise some Exception?
+            return null;
         }
         ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
 
+        // Kopie des Lagers erstellen, um Elemente während der Iteration zu entfernen
         ArrayList<Lager<? extends Moebelstueck>> copyLager = lager.stream()
                 .collect(Collectors.toCollection(ArrayList::new));
 
+        // Lager mit einem Preis größer als der angegebene Betrag und Lager mit keinem Bestand entfernen
         for (Lager<? extends Moebelstueck> l : lager) {
             if (l.getPreis() > betragInCent) {
                 copyLager.remove(l);
@@ -1170,8 +1177,8 @@ public class Lagersystem implements Serializable {
                 copyLager.remove(l);
             }
         }
-        ArrayList<Integer> konstellationIndex = new ArrayList<>();
 
+        ArrayList<Integer> konstellationIndex = new ArrayList<>();
         return besteKonstellation(konstellationenBisBetrag(copyLager, betragInCent, 0, 0, konstellationIndex));
 
     }
