@@ -11,7 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class LagerbestandPanel {
-    private static final JPanel addLagerbestandPanel = new JPanel();
+    private static final JPanel aendereLagerbestandPanel = new JPanel();
 
     private static final Lagersystem lagersystem = Moebelhaus.getLagersystem();
 
@@ -77,143 +77,143 @@ public class LagerbestandPanel {
     private static void addLabels() {
         //Lagerung
 
-        addLagerbestandPanel.add(Beistelltischlager);
-        Beistelltischlager.setBounds(50, 50, 175, 30);
+        aendereLagerbestandPanel.add(Beistelltischlager);
+        Beistelltischlager.setBounds(50, 50, 215, 30);
 
-        addLagerbestandPanel.add(BeistelltischlagerS);
-        BeistelltischlagerS.setBounds(60, 70, 175, 30);
+        aendereLagerbestandPanel.add(BeistelltischlagerS);
+        BeistelltischlagerS.setBounds(60, 70, 215, 30);
 
-        addLagerbestandPanel.add(BeistelltischlagerM);
-        BeistelltischlagerM.setBounds(60, 90, 175, 30);
+        aendereLagerbestandPanel.add(BeistelltischlagerM);
+        BeistelltischlagerM.setBounds(60, 90, 215, 30);
 
-        addLagerbestandPanel.add(BeistelltischlagerL);
-        BeistelltischlagerL.setBounds(60, 110, 175, 30);
+        aendereLagerbestandPanel.add(BeistelltischlagerL);
+        BeistelltischlagerL.setBounds(60, 110, 215, 30);
 
-        addLagerbestandPanel.add(BeistelltischlagerXL);
-        BeistelltischlagerXL.setBounds(60, 130, 175, 30);
+        aendereLagerbestandPanel.add(BeistelltischlagerXL);
+        BeistelltischlagerXL.setBounds(60, 130, 215, 30);
 
-        addLagerbestandPanel.add(Kleiderschranklager);
-        Kleiderschranklager.setBounds(50, 200, 175, 30);
+        aendereLagerbestandPanel.add(Kleiderschranklager);
+        Kleiderschranklager.setBounds(50, 200, 215, 30);
 
-        addLagerbestandPanel.add(KleiderschranklagerS);
-        KleiderschranklagerS.setBounds(60, 220, 175, 30);
+        aendereLagerbestandPanel.add(KleiderschranklagerS);
+        KleiderschranklagerS.setBounds(60, 220, 215, 30);
 
-        addLagerbestandPanel.add(KleiderschranklagerM);
-        KleiderschranklagerM.setBounds(60, 240, 175, 30);
+        aendereLagerbestandPanel.add(KleiderschranklagerM);
+        KleiderschranklagerM.setBounds(60, 240, 215, 30);
 
-        addLagerbestandPanel.add(KleiderschranklagerL);
-        KleiderschranklagerL.setBounds(60, 260, 175, 30);
+        aendereLagerbestandPanel.add(KleiderschranklagerL);
+        KleiderschranklagerL.setBounds(60, 260, 215, 30);
 
-        addLagerbestandPanel.add(KleiderschranklagerXL);
-        KleiderschranklagerXL.setBounds(60, 280, 175, 30);
+        aendereLagerbestandPanel.add(KleiderschranklagerXL);
+        KleiderschranklagerXL.setBounds(60, 280, 215, 30);
 
-        addLagerbestandPanel.add(Kuechenregallager);
-        Kuechenregallager.setBounds(50, 350, 175, 30);
+        aendereLagerbestandPanel.add(Kuechenregallager);
+        Kuechenregallager.setBounds(50, 350, 215, 30);
 
-        addLagerbestandPanel.add(KuechenregallagerS);
-        KuechenregallagerS.setBounds(60, 370, 175, 30);
+        aendereLagerbestandPanel.add(KuechenregallagerS);
+        KuechenregallagerS.setBounds(60, 370, 215, 30);
 
-        addLagerbestandPanel.add(KuechenregallagerM);
-        KuechenregallagerM.setBounds(60, 390, 175, 30);
+        aendereLagerbestandPanel.add(KuechenregallagerM);
+        KuechenregallagerM.setBounds(60, 390, 215, 30);
 
-        addLagerbestandPanel.add(KuechenregallagerL);
-        KuechenregallagerL.setBounds(60, 410, 175, 30);
+        aendereLagerbestandPanel.add(KuechenregallagerL);
+        KuechenregallagerL.setBounds(60, 410, 215, 30);
 
-        addLagerbestandPanel.add(KuechenregallagerXL);
-        KuechenregallagerXL.setBounds(60, 430, 175, 30);
+        aendereLagerbestandPanel.add(KuechenregallagerXL);
+        KuechenregallagerXL.setBounds(60, 430, 215, 30);
 
-        addLagerbestandPanel.add(Balkonliegelager);
-        Balkonliegelager.setBounds(300, 50, 175, 30);
+        aendereLagerbestandPanel.add(Balkonliegelager);
+        Balkonliegelager.setBounds(400, 50, 215, 30);
 
-        addLagerbestandPanel.add(BalkonliegelagerS);
-        BalkonliegelagerS.setBounds(310, 70, 175, 30);
+        aendereLagerbestandPanel.add(BalkonliegelagerS);
+        BalkonliegelagerS.setBounds(410, 70, 215, 30);
 
-        addLagerbestandPanel.add(BalkonliegelagerM);
-        BalkonliegelagerM.setBounds(310, 90, 175, 30);
+        aendereLagerbestandPanel.add(BalkonliegelagerM);
+        BalkonliegelagerM.setBounds(410, 90, 215, 30);
 
-        addLagerbestandPanel.add(BalkonliegelagerL);
-        BalkonliegelagerL.setBounds(310, 110, 175, 30);
+        aendereLagerbestandPanel.add(BalkonliegelagerL);
+        BalkonliegelagerL.setBounds(410, 110, 215, 30);
 
-        addLagerbestandPanel.add(Doppelbettlager);
-        Doppelbettlager.setBounds(300, 200, 175, 30);
+        aendereLagerbestandPanel.add(Doppelbettlager);
+        Doppelbettlager.setBounds(400, 200, 215, 30);
 
-        addLagerbestandPanel.add(DoppelbettlagerS);
-        DoppelbettlagerS.setBounds(310, 220, 175, 30);
+        aendereLagerbestandPanel.add(DoppelbettlagerS);
+        DoppelbettlagerS.setBounds(410, 220, 215, 30);
 
-        addLagerbestandPanel.add(DoppelbettlagerM);
-        DoppelbettlagerM.setBounds(310, 240, 175, 30);
+        aendereLagerbestandPanel.add(DoppelbettlagerM);
+        DoppelbettlagerM.setBounds(410, 240, 215, 30);
 
-        addLagerbestandPanel.add(DoppelbettlagerL);
-        DoppelbettlagerL.setBounds(310, 260, 175, 30);
+        aendereLagerbestandPanel.add(DoppelbettlagerL);
+        DoppelbettlagerL.setBounds(410, 260, 215, 30);
 
-        addLagerbestandPanel.add(Fernsehcouch);
-        Fernsehcouch.setBounds(500, 50, 175, 30);
-        addLagerbestandPanel.add(FernsehcouchEins);
-        FernsehcouchEins.setBounds(510, 70, 175, 30);
-        addLagerbestandPanel.add(FernsehcouchZwei);
-        FernsehcouchZwei.setBounds(510, 90, 175, 30);
-        addLagerbestandPanel.add(FernsehcouchDrei);
-        FernsehcouchDrei.setBounds(510, 110, 175, 30);
-        addLagerbestandPanel.add(FernsehcouchVier);
-        FernsehcouchVier.setBounds(510, 130, 175, 30);
+        aendereLagerbestandPanel.add(Fernsehcouch);
+        Fernsehcouch.setBounds(750, 50, 215, 30);
+        aendereLagerbestandPanel.add(FernsehcouchEins);
+        FernsehcouchEins.setBounds(760, 70, 215, 30);
+        aendereLagerbestandPanel.add(FernsehcouchZwei);
+        FernsehcouchZwei.setBounds(760, 90, 215, 30);
+        aendereLagerbestandPanel.add(FernsehcouchDrei);
+        FernsehcouchDrei.setBounds(760, 110, 215, 30);
+        aendereLagerbestandPanel.add(FernsehcouchVier);
+        FernsehcouchVier.setBounds(760, 130, 215, 30);
 
-        addLagerbestandPanel.add(Kuechenstuhl);
-        Kuechenstuhl.setBounds(500, 200, 175, 30);
-        addLagerbestandPanel.add(KuechenstuhlEins);
-        KuechenstuhlEins.setBounds(510, 220, 175, 30);
-        addLagerbestandPanel.add(KuechenstuhlZwei);
-        KuechenstuhlZwei.setBounds(510, 240, 175, 30);
-        addLagerbestandPanel.add(KuechenstuhlDrei);
-        KuechenstuhlDrei.setBounds(510, 260, 175, 30);
-        addLagerbestandPanel.add(KuechenstuhlVier);
-        KuechenstuhlVier.setBounds(510, 280, 175, 30);
+        aendereLagerbestandPanel.add(Kuechenstuhl);
+        Kuechenstuhl.setBounds(750, 200, 215, 30);
+        aendereLagerbestandPanel.add(KuechenstuhlEins);
+        KuechenstuhlEins.setBounds(760, 220, 215, 30);
+        aendereLagerbestandPanel.add(KuechenstuhlZwei);
+        KuechenstuhlZwei.setBounds(760, 240, 215, 30);
+        aendereLagerbestandPanel.add(KuechenstuhlDrei);
+        KuechenstuhlDrei.setBounds(760, 260, 215, 30);
+        aendereLagerbestandPanel.add(KuechenstuhlVier);
+        KuechenstuhlVier.setBounds(760, 280, 215, 30);
 
-        addLagerbestandPanel.add(Ohrensessel);
-        Ohrensessel.setBounds(500, 350, 175, 30);
-        addLagerbestandPanel.add(OhrensesselEins);
-        OhrensesselEins.setBounds(510, 370, 175, 30);
-        addLagerbestandPanel.add(OhrensesselZwei);
-        OhrensesselZwei.setBounds(510, 390, 175, 30);
-        addLagerbestandPanel.add(OhrensesselDrei);
-        OhrensesselDrei.setBounds(510, 410, 175, 30);
-        addLagerbestandPanel.add(OhrensesselVier);
-        OhrensesselVier.setBounds(510, 430, 175, 30);
+        aendereLagerbestandPanel.add(Ohrensessel);
+        Ohrensessel.setBounds(750, 350, 215, 30);
+        aendereLagerbestandPanel.add(OhrensesselEins);
+        OhrensesselEins.setBounds(760, 370, 215, 30);
+        aendereLagerbestandPanel.add(OhrensesselZwei);
+        OhrensesselZwei.setBounds(760, 390, 215, 30);
+        aendereLagerbestandPanel.add(OhrensesselDrei);
+        OhrensesselDrei.setBounds(760, 410, 215, 30);
+        aendereLagerbestandPanel.add(OhrensesselVier);
+        OhrensesselVier.setBounds(760, 430, 215, 30);
 
-        addLagerbestandPanel.add(Buerotischlager);
-        Buerotischlager.setBounds(700, 50, 175, 30);
-        addLagerbestandPanel.add(BuerotischlagerS);
-        BuerotischlagerS.setBounds(710, 70, 175, 30);
-        addLagerbestandPanel.add(BuerotischlagerM);
-        BuerotischlagerM.setBounds(710, 90, 175, 30);
-        addLagerbestandPanel.add(BuerotischlagerL);
-        BuerotischlagerL.setBounds(710, 110, 175, 30);
+        aendereLagerbestandPanel.add(Buerotischlager);
+        Buerotischlager.setBounds(1100, 50, 215, 30);
+        aendereLagerbestandPanel.add(BuerotischlagerS);
+        BuerotischlagerS.setBounds(1110, 70, 215, 30);
+        aendereLagerbestandPanel.add(BuerotischlagerM);
+        BuerotischlagerM.setBounds(1110, 90, 215, 30);
+        aendereLagerbestandPanel.add(BuerotischlagerL);
+        BuerotischlagerL.setBounds(1110, 110, 215, 30);
 
-        addLagerbestandPanel.add(Couchtischlager);
-        Couchtischlager.setBounds(700, 200, 175, 30);
-        addLagerbestandPanel.add(CouchtischlagerS);
-        CouchtischlagerS.setBounds(710, 220, 175, 30);
-        addLagerbestandPanel.add(CouchtischlagerM);
-        CouchtischlagerM.setBounds(710, 240, 175, 30);
-        addLagerbestandPanel.add(CouchtischlagerL);
-        CouchtischlagerL.setBounds(710, 260, 175, 30);
+        aendereLagerbestandPanel.add(Couchtischlager);
+        Couchtischlager.setBounds(1100, 200, 215, 30);
+        aendereLagerbestandPanel.add(CouchtischlagerS);
+        CouchtischlagerS.setBounds(1110, 220, 215, 30);
+        aendereLagerbestandPanel.add(CouchtischlagerM);
+        CouchtischlagerM.setBounds(1110, 240, 215, 30);
+        aendereLagerbestandPanel.add(CouchtischlagerL);
+        CouchtischlagerL.setBounds(1110, 260, 215, 30);
 
-        addLagerbestandPanel.add(Esstischlager);
-        Esstischlager.setBounds(700, 350, 175, 30);
-        addLagerbestandPanel.add(EsstischlagerS);
-        EsstischlagerS.setBounds(710, 370, 175, 30);
-        addLagerbestandPanel.add(EsstischlagerM);
-        EsstischlagerM.setBounds(710, 390, 175, 30);
-        addLagerbestandPanel.add(EsstischlagerL);
-        EsstischlagerL.setBounds(710, 410, 175, 30);
+        aendereLagerbestandPanel.add(Esstischlager);
+        Esstischlager.setBounds(1100, 350, 215, 30);
+        aendereLagerbestandPanel.add(EsstischlagerS);
+        EsstischlagerS.setBounds(1110, 370, 215, 30);
+        aendereLagerbestandPanel.add(EsstischlagerM);
+        EsstischlagerM.setBounds(1110, 390, 215, 30);
+        aendereLagerbestandPanel.add(EsstischlagerL);
+        EsstischlagerL.setBounds(1110, 410, 215, 30);
 
-        addLagerbestandPanel.add(Kuechentischlager);
-        Kuechentischlager.setBounds(700, 500, 175, 30);
-        addLagerbestandPanel.add(KuechentischlagerS);
-        KuechentischlagerS.setBounds(710, 520, 175, 30);
-        addLagerbestandPanel.add(KuechentischlagerM);
-        KuechentischlagerM.setBounds(710, 540, 175, 30);
-        addLagerbestandPanel.add(KuechentischlagerL);
-        KuechentischlagerL.setBounds(710, 560, 175, 30);
+        aendereLagerbestandPanel.add(Kuechentischlager);
+        Kuechentischlager.setBounds(1100, 500, 215, 30);
+        aendereLagerbestandPanel.add(KuechentischlagerS);
+        KuechentischlagerS.setBounds(1110, 520, 215, 30);
+        aendereLagerbestandPanel.add(KuechentischlagerM);
+        KuechentischlagerM.setBounds(1110, 540, 215, 30);
+        aendereLagerbestandPanel.add(KuechentischlagerL);
+        KuechentischlagerL.setBounds(1110, 560, 215, 30);
 
 
     }
@@ -296,18 +296,19 @@ public class LagerbestandPanel {
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
-        back.setBounds(100, 700, 150, 30);
+        back.setBounds(50, 750, 150, 30);
         back.addActionListener(e -> {
-            MyFrame.lagerbestandPanel.setVisible(false);
-
+            Frame.setAllPanelsInvisible();
+            Frame.setAllHomeButtonsVisible();
         });
-        addLagerbestandPanel.add(back);
-        addLagerbestandPanel.setLayout(null);
-        addLagerbestandPanel.setBackground(Color.WHITE);
-        addLagerbestandPanel.setBounds(105, 0, 1600, 900);
-        addLagerbestandPanel.setVisible(false);
+        aendereLagerbestandPanel.add(back);
 
-        return addLagerbestandPanel;
+        aendereLagerbestandPanel.setLayout(null);
+        aendereLagerbestandPanel.setBackground(Color.WHITE);
+        aendereLagerbestandPanel.setBounds(105, 0, 1600, 900);
+        aendereLagerbestandPanel.setVisible(false);
+
+        return aendereLagerbestandPanel;
     }
 
 }

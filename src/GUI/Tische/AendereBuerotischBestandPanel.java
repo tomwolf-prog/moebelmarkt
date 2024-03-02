@@ -1,6 +1,6 @@
 package GUI.Tische;
 
-import GUI.MyFrame;
+import GUI.Frame;
 import Kategorie.Tische;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
@@ -10,20 +10,20 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AddBuerotischPanel {
+public class AendereBuerotischBestandPanel {
 
-    private static final JPanel changeBuerotischPanel = new JPanel();
+    private static final JPanel aendereBuerotischBestandPanel = new JPanel();
     private static final Lagersystem lagersystem = Moebelhaus.getLagersystem();
     //Erstellen des Frame
 
     public static JPanel Panel() {
 
         JTextField t1 = new JTextField("1");
-        t1.setBounds(400, 50, 30, 30);
-        changeBuerotischPanel.add(t1);
+        t1.setBounds(500, 50, 215, 30);
+        aendereBuerotischBestandPanel.add(t1);
         //Erstellen von AddItem Button
-        JButton addBuerotischS = new JButton("Add Buerotisch S");
-        addBuerotischS.setBounds(150, 50, 175, 30);
+        JButton addBuerotischS = new JButton("Ändere Buerotisch Bestand S");
+        addBuerotischS.setBounds(150, 50, 250, 30);
         addBuerotischS.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t1.getText();
@@ -41,14 +41,14 @@ public class AddBuerotischPanel {
 
             }
         });
-        changeBuerotischPanel.add(addBuerotischS);
+        aendereBuerotischBestandPanel.add(addBuerotischS);
 
         JTextField t2 = new JTextField("1");
-        t2.setBounds(400, 100, 30, 30);
-        changeBuerotischPanel.add(t2);
+        t2.setBounds(500, 100, 215, 30);
+        aendereBuerotischBestandPanel.add(t2);
         //Erstellen von AddItem Button
-        JButton addBuerotischM = new JButton("Add Buerotisch M");
-        addBuerotischM.setBounds(150, 100, 175, 30);
+        JButton addBuerotischM = new JButton("Ändere Buerotisch Bestand M");
+        addBuerotischM.setBounds(150, 100, 250, 30);
         addBuerotischM.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t2.getText();
@@ -66,14 +66,14 @@ public class AddBuerotischPanel {
 
             }
         });
-        changeBuerotischPanel.add(addBuerotischM);
+        aendereBuerotischBestandPanel.add(addBuerotischM);
 
         JTextField t3 = new JTextField("1");
-        t3.setBounds(400, 150, 30, 30);
-        changeBuerotischPanel.add(t3);
+        t3.setBounds(500, 150, 215, 30);
+        aendereBuerotischBestandPanel.add(t3);
         //Erstellen von AddItem Button
-        JButton addBuerotischL = new JButton("Add Buerotisch L");
-        addBuerotischL.setBounds(150, 150, 175, 30);
+        JButton addBuerotischL = new JButton("Ändere Buerotisch Bestand L");
+        addBuerotischL.setBounds(150, 150, 250, 30);
         addBuerotischL.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String text = t3.getText();
@@ -91,26 +91,26 @@ public class AddBuerotischPanel {
 
             }
         });
-        changeBuerotischPanel.add(addBuerotischL);
+        aendereBuerotischBestandPanel.add(addBuerotischL);
 
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
-        back.setBounds(150, 200, 175, 30);
+        back.setBounds(150, 200, 250, 30);
         back.addActionListener(e -> {
-            MyFrame.changeBuerotischPanel.setVisible(false);
-            MyFrame.changeTischePanel.setVisible(true);
+            Frame.aendereBuerotischBestandPanel.setVisible(false);
+            Frame.aendereTischeBestandPanel.setVisible(true);
         });
-        changeBuerotischPanel.add(back);
+        aendereBuerotischBestandPanel.add(back);
 
-        changeBuerotischPanel.add(back);
-        changeBuerotischPanel.setLayout(null);
-        changeBuerotischPanel.setBackground(Color.GRAY);
-        changeBuerotischPanel.setBounds(105, 0, 1600, 900);
-        changeBuerotischPanel.setVisible(false);
+        aendereBuerotischBestandPanel.add(back);
+        aendereBuerotischBestandPanel.setLayout(null);
+        aendereBuerotischBestandPanel.setBackground(Color.white);
+        aendereBuerotischBestandPanel.setBounds(105, 0, 1600, 900);
+        aendereBuerotischBestandPanel.setVisible(false);
 
 
-        return changeBuerotischPanel;
+        return aendereBuerotischBestandPanel;
 
     }
 }

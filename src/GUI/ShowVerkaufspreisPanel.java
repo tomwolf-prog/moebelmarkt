@@ -6,8 +6,8 @@ import Moebelhaus.Moebelhaus;
 import javax.swing.*;
 import java.awt.*;
 
-public class VerkaufspreisPanel {
-    private static final JPanel verkaufspreisPanel = new JPanel();
+public class ShowVerkaufspreisPanel {
+    private static final JPanel showVerkaufspreisPanel = new JPanel();
 
     private static final Lagersystem lagersystem = Moebelhaus.getLagersystem();
 
@@ -27,32 +27,32 @@ public class VerkaufspreisPanel {
 
     private static void addLabels() {
 
-        verkaufspreisPanel.add(Bereich);
-        Bereich.setBounds(50, 50, 175, 30);
-        verkaufspreisPanel.add(Kueche);
-        Kueche.setBounds(50, 100, 175, 30);
-        verkaufspreisPanel.add(Wohnen);
-        Wohnen.setBounds(50, 150, 175, 30);
-        verkaufspreisPanel.add(Schlafen);
-        Schlafen.setBounds(50, 200, 175, 30);
-        verkaufspreisPanel.add(Andere);
-        Andere.setBounds(50, 250, 175, 30);
+        showVerkaufspreisPanel.add(Bereich);
+        Bereich.setBounds(50, 50, 275, 30);
+        showVerkaufspreisPanel.add(Kueche);
+        Kueche.setBounds(50, 100, 275, 30);
+        showVerkaufspreisPanel.add(Wohnen);
+        Wohnen.setBounds(50, 150, 275, 30);
+        showVerkaufspreisPanel.add(Schlafen);
+        Schlafen.setBounds(50, 200, 275, 30);
+        showVerkaufspreisPanel.add(Andere);
+        Andere.setBounds(50, 250, 275, 30);
 
-        verkaufspreisPanel.add(Kategorie);
-        Kategorie.setBounds(300, 50, 175, 30);
-        verkaufspreisPanel.add(Lagerung);
-        Lagerung.setBounds(300, 100, 175, 30);
-        verkaufspreisPanel.add(Liegemoebel);
-        Liegemoebel.setBounds(300, 150, 175, 30);
-        verkaufspreisPanel.add(Sitzmoebel);
-        Sitzmoebel.setBounds(300, 200, 175, 30);
-        verkaufspreisPanel.add(Tische);
-        Tische.setBounds(300, 250, 175, 30);
+        showVerkaufspreisPanel.add(Kategorie);
+        Kategorie.setBounds(800, 50, 275, 30);
+        showVerkaufspreisPanel.add(Lagerung);
+        Lagerung.setBounds(800, 100, 275, 30);
+        showVerkaufspreisPanel.add(Liegemoebel);
+        Liegemoebel.setBounds(800, 150, 275, 30);
+        showVerkaufspreisPanel.add(Sitzmoebel);
+        Sitzmoebel.setBounds(800, 200, 275, 30);
+        showVerkaufspreisPanel.add(Tische);
+        Tische.setBounds(800, 250, 275, 30);
 
-        verkaufspreisPanel.add(GesamtVerkaufspreis);
-        GesamtVerkaufspreis.setBounds(200, 350, 175, 30);
-        verkaufspreisPanel.add(GroessterBereich);
-        GroessterBereich.setBounds(200, 400, 175, 30);
+        showVerkaufspreisPanel.add(GesamtVerkaufspreis);
+        GesamtVerkaufspreis.setBounds(400, 350, 275, 30);
+        showVerkaufspreisPanel.add(GroessterBereich);
+        GroessterBereich.setBounds(400, 400, 275, 30);
 
     }
 
@@ -134,15 +134,16 @@ public class VerkaufspreisPanel {
         JButton back = new JButton("Back");
         back.setBounds(100, 700, 150, 30);
         back.addActionListener(e -> {
-            MyFrame.lagerbestandPanel.setVisible(false);
+            Frame.setAllPanelsInvisible();
+            Frame.setAllHomeButtonsVisible();
 
         });
-        verkaufspreisPanel.add(back);
-        verkaufspreisPanel.setLayout(null);
-        verkaufspreisPanel.setBackground(Color.WHITE);
-        verkaufspreisPanel.setBounds(105, 0, 1600, 900);
-        verkaufspreisPanel.setVisible(false);
+        showVerkaufspreisPanel.add(back);
+        showVerkaufspreisPanel.setLayout(null);
+        showVerkaufspreisPanel.setBackground(Color.WHITE);
+        showVerkaufspreisPanel.setBounds(105, 0, 1600, 900);
+        showVerkaufspreisPanel.setVisible(false);
 
-        return verkaufspreisPanel;
+        return showVerkaufspreisPanel;
     }
 }

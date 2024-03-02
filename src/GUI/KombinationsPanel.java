@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Kombi {
+public class KombinationsPanel {
 
     private static JPanel kombiPanel = new JPanel();
     private static JTextArea ta;
@@ -31,7 +31,6 @@ public class Kombi {
 
     public static JPanel Panel() {
         addLabels();
-
 
 
         ta = new JTextArea("Bitte geben Sie einen Betrag ein und drücken auf 'Kombi'");
@@ -67,7 +66,8 @@ public class Kombi {
         JButton back = new JButton("Back");
         back.setBounds(100, 700, 150, 30);
         back.addActionListener(e -> {
-            MyFrame.kombiPanel.setVisible(false);
+            Frame.setAllPanelsInvisible();
+            Frame.setAllHomeButtonsVisible();
 
         });
         kombiPanel.add(back);
