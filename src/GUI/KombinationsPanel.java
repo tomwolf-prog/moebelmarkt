@@ -35,9 +35,6 @@ public class KombinationsPanel {
 
         ta.setText(ausgabe);
     }
-    private static void updateLabels(String txt) {
-        ta.setText(txt);
-    }
 
     public static JPanel Panel() {
         addLabels();
@@ -73,9 +70,6 @@ public class KombinationsPanel {
                     zwischenAusgabe = zwischenAusgabe + lager.getMoebel().get(0).toString() + " | Preis: "+ (float) lager.getPreis() / 100+"€\n";
                 }
                 updateLabels(zwischenAusgabe, gesamtpreis);
-
-
-                //updateLabels(String.valueOf(lagersystem.moebelauswahlBisBetrag(i1)));
 
             }
         });
