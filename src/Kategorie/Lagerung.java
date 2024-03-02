@@ -99,9 +99,6 @@ public class Lagerung extends Moebelstueck {
      */
     @Override
     public String toString() {
-        return "Lagerung{" +
-                "flaeche=" + flaeche +
-                ", moebelart=" + moebelart +
-                '}';
+        return moebelart+" (Kategorie: Lagerung)";
     }
 }

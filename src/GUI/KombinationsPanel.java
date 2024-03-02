@@ -1,12 +1,15 @@
 package GUI;
 
+import Lager.Lager;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
+import Moebelstueck.Moebelstueck;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class KombinationsPanel {
 
@@ -25,6 +28,13 @@ public class KombinationsPanel {
         KombiFeld.setBounds(50, 100, 175, 30);
     }
 
+    private static void updateLabels(String txt, int preis) {
+        String ausgabe = "Kombination: \n";
+        ausgabe = ausgabe + txt;
+        ausgabe = ausgabe + "=Gesamtpreis: "+(float) preis / 100+"€";
+
+        ta.setText(ausgabe);
+    }
     private static void updateLabels(String txt) {
         ta.setText(txt);
     }
@@ -56,7 +66,16 @@ public class KombinationsPanel {
                     i1 = 0;
                 }
 
-                updateLabels(String.valueOf(lagersystem.moebelauswahlBisBetrag(i1)));
+                ArrayList<Lager<? extends Moebelstueck>> konstellation = lagersystem.moebelauswahlBisBetrag(i1);
+                int gesamtpreis = konstellation.stream().mapToInt(Lager::getPreis).sum();
+                String zwischenAusgabe = "";
+                for (Lager<? extends Moebelstueck> lager : konstellation) {
+                    zwischenAusgabe = zwischenAusgabe + lager.getMoebel().get(0).toString() + " | Preis: "+ (float) lager.getPreis() / 100+"€\n";
+                }
+                updateLabels(zwischenAusgabe, gesamtpreis);
+
+
+                //updateLabels(String.valueOf(lagersystem.moebelauswahlBisBetrag(i1)));
 
             }
         });

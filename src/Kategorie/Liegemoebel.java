@@ -92,9 +92,6 @@ public class Liegemoebel extends Moebelstueck {
      */
     @Override
     public String toString() {
-        return "Liegemoebel{" +
-                "laenge=" + laenge +
-                ", moebelart=" + moebelart +
-                '}';
+        return moebelart+" (Kategorie: Liegemöbel)";
     }
 }

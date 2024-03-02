@@ -91,6 +91,7 @@ public abstract class Moebelstueck implements Serializable {
         this.bereich = bereich;
     }
 
+
     /**
      * Gibt eine String-Repräsentation des Möbelstücks zurück.
      *

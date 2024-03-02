@@ -95,9 +95,6 @@ public class Tische extends Moebelstueck {
      */
     @Override
     public String toString() {
-        return "Tische{" +
-                "moebelart=" + moebelart +
-                ", hoehe=" + hoehe +
-                '}';
+        return moebelart+" (Kategorie: Tische)";
     }
 }

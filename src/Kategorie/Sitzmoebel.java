@@ -93,9 +93,6 @@ public class Sitzmoebel extends Moebelstueck {
      */
     @Override
     public String toString() {
-        return "Sitzmoebel{" +
-                "sitzplaetze=" + sitzplaetze +
-                ", moebelart=" + moebelart +
-                '}';
+        return moebelart+" (Kategorie: Sitzmöbel)";
     }
 }

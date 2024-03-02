@@ -1166,6 +1166,8 @@ public class Lagersystem implements Serializable {
         for (Lager<? extends Moebelstueck> l : lager) {
             if (l.getPreis() > betragInCent) {
                 copyLager.remove(l);
+            } else if(l.getMoebel().size()==0){
+                copyLager.remove(l);
             }
         }
         ArrayList<Integer> konstellationIndex = new ArrayList<>();
