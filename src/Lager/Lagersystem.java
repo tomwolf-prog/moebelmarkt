@@ -31,11 +31,13 @@ import static Kategorie.Lagerung.Moebelart.Beistelltisch;
 
 /**
  * Das Lagersystem verwaltet verschiedene Lager für Möbelstücke.
- * Jedes Lager enthält eine bestimmte Kategorie von Möbeln, wie Tische, Sitzmöbel, Lagerung und Liegemöbel.
+ * Für jede Möbelart gibt es ein eigenes Lager.
  * Das Lagersystem ermöglicht das Hinzufügen, Entfernen und Verwalten von Möbeln in den einzelnen Lagern.
  * Es bietet auch Funktionen zur Berechnung des Verkaufspreises aller Möbel im Lager,
  * des Verkaufspreises aller Möbel in einem bestimmten Bereich und des Verkaufspreises aller Möbel einer bestimmten Kategorie.
- * Darüber hinaus kann das Lagersystem den Bereich mit dem höchsten Gesamtwert ermitteln.
+ * Darüber hinaus kann das Lagersystem den Bereich mit dem höchsten Gesamtwert ermitteln, eine Möbelauswahl zwischen 100 und 600 Euro zurückgeben
+ * und Möbel mit ihrer Sondereigenschaft suchen.
+ * Des weiteren wird das Speichern und Laden des Lagersystems in eine Datei ermöglicht.
  * 
  * @see Serializable
  * @author Sidney Schmidt, Tom Wolf
@@ -63,7 +65,7 @@ public class Lagersystem implements Serializable {
 
     /**
      * Konstruktor für die Klasse Lagersystem.
-     * Erzeugt ein neues Lagersystem mit Lagern für alle Möbelarten.
+     * Initialisiert die Lager für die verschiedenen Möbelarten.
      */
     public Lagersystem() {
         buerotischlager = new Buerotischlager();
@@ -110,6 +112,7 @@ public class Lagersystem implements Serializable {
     //Tische
     /**
      * Fügt einen Tisch zum Lager hinzu.
+     * Prüft die Möbelart des Tisches und fügt ihn dem entsprechenden Lager hinzu.
      *
      * @param tisch Der hinzuzufügende Tisch.
      */
@@ -130,6 +133,7 @@ public class Lagersystem implements Serializable {
 
     /**
      * Entfernt einen Tisch aus dem Lager.
+     * Prüft die Möbelart des Tisches und entfernt ihn aus dem entsprechenden Lager.
      *
      * @param tisch Der zu entfernende Tisch.
      */
@@ -178,11 +182,12 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Buerotische um den angegebenen Betrag.
      *
-     * @see Stream<T> 
+     * @see IntStream 
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param hoehe Die Höhe der Buerotische, die hinzugefügt werden sollen.
      */
     public void erhoeheBuerotischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
+        // Für die Anzahl der hinzuzufügenden Buerotische wird ein Stream erzeugt, der für jeden Wert im Stream ein Buerotisch zum Lager hinzufügt
         IntStream.range(0, quantitativerBetrag)
         .forEach(i -> buerotischlager.addTisch(new Tische(Moebelart.Buerotisch, hoehe, Moebelstueck.Kategorie.Tische, Bereich.Andere)));
     }
@@ -190,10 +195,12 @@ public class Lagersystem implements Serializable {
     /**
      * Mindert den Lagerbestand für Buerotische um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param hoehe Die Höhe der Buerotische, die entfernt werden sollen.
      */
     public void mindereBuerotischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
+        // Für die Anzahl der zu entfernenden Buerotische wird ein Stream erzeugt, der für jeden Wert im Stream einen Buerotisch aus dem Lager entfernt
         IntStream.range(0, quantitativerBetrag).forEach(i -> buerotischlager.removeTisch(hoehe));
     }
 
@@ -237,20 +244,25 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Couchtische um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param hoehe Die Höhe der Couchtische, die hinzugefügt werden sollen.
      */
     public void erhoeheCouchtischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> couchtischlager.addTisch(new Tische(Moebelart.Couchtisch, hoehe, Moebelstueck.Kategorie.Tische, Bereich.Wohnen)));
+        // Für die Anzahl der hinzuzufügenden Couchtische wird ein Stream erzeugt, der für jeden Wert im Stream einen Couchtisch zum Lager hinzufügt
+        IntStream.range(0, quantitativerBetrag)
+        .forEach(i -> couchtischlager.addTisch(new Tische(Moebelart.Couchtisch, hoehe, Moebelstueck.Kategorie.Tische, Bereich.Wohnen)));
     }
 
     /**
      * Mindert den Lagerbestand für Couchtische um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param hoehe Die Höhe der Couchtische, die entfernt werden sollen.
      */
     public void mindereCouchtischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
+        // Für die Anzahl der zu entfernenden Couchtische wird ein Stream erzeugt, der für jeden Wert im Stream einen Couchtisch aus dem Lager entfernt
         IntStream.range(0, quantitativerBetrag).forEach(i -> couchtischlager.removeTisch(hoehe));
     }
 
@@ -294,20 +306,25 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Esstische um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param hoehe Die Höhe der Esstische, die hinzugefügt werden sollen.
      */
     public void erhoeheEsstischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> esstischlager.addTisch(new Tische(Moebelart.Esstisch, hoehe, Moebelstueck.Kategorie.Tische, Bereich.Andere)));
+        // Für die Anzahl der hinzuzufügenden Esstische wird ein Stream erzeugt, der für jeden Wert im Stream einen Esstisch zum Lager hinzufügt
+        IntStream.range(0, quantitativerBetrag)
+        .forEach(i -> esstischlager.addTisch(new Tische(Moebelart.Esstisch, hoehe, Moebelstueck.Kategorie.Tische, Bereich.Andere)));
     }
 
     /**
      * Mindert den Lagerbestand für Esstische um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param hoehe Die Höhe der Esstische, die entfernt werden sollen.
      */
     public void mindereEsstischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
+        // Für die Anzahl der zu entfernenden Esstische wird ein Stream erzeugt, der für jeden Wert im Stream einen Esstisch aus dem Lager entfernt
         IntStream.range(0, quantitativerBetrag).forEach(i -> esstischlager.removeTisch(hoehe));
     }
 
@@ -351,20 +368,25 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Kuechentische um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param hoehe Die Höhe der Kuechentische, die hinzugefügt werden sollen.
      */
     public void erhoeheKuechentischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> kuechentischlager.addTisch(new Tische(Moebelart.Kuechentisch, hoehe, Moebelstueck.Kategorie.Tische, Bereich.Kueche)));
+        // Für die Anzahl der hinzuzufügenden Kuechentische wird ein Stream erzeugt, der für jeden Wert im Stream einen Kuechentisch zum Lager hinzufügt
+        IntStream.range(0, quantitativerBetrag)
+        .forEach(i -> kuechentischlager.addTisch(new Tische(Moebelart.Kuechentisch, hoehe, Moebelstueck.Kategorie.Tische, Bereich.Kueche)));
     }
 
     /**
      * Mindert den Lagerbestand für Kuechentische um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param hoehe Die Höhe der Kuechentische, die entfernt werden sollen.
      */
     public void mindereKuechentischlagerLagerbestand(int quantitativerBetrag, Tische.Hoehe hoehe) {
+        // Für die Anzahl der zu entfernenden Kuechentische wird ein Stream erzeugt, der für jeden Wert im Stream einen Kuechentisch aus dem Lager entfernt
         IntStream.range(0, quantitativerBetrag).forEach(i -> kuechentischlager.removeTisch(hoehe));
     }
 
@@ -383,7 +405,7 @@ public class Lagersystem implements Serializable {
     /**
      * Fügt einen Sitzmoebel zum Lager hinzu.
      *
-     * @param sitzmoebel Der hinzuzufügende Sitzmoebel.
+     * @param sitzmoebel Das hinzuzufügende Sitzmoebel.
      */
     public void addSitzmoebel(Sitzmoebel sitzmoebel) {
         switch (sitzmoebel.getMoebelart()) {
@@ -403,8 +425,8 @@ public class Lagersystem implements Serializable {
     /**
      * Entfernt einen Sitzmoebel aus dem Lager.
      *
-     * @param moebelart Die Art des Sitzmoebels, der entfernt werden soll.
-     * @param sitzplaetze Die Sitzplätze des Sitzmoebels, der entfernt werden soll.
+     * @param moebelart Die Art des Sitzmoebels, das entfernt werden soll.
+     * @param sitzplaetze Die Sitzplätze des Sitzmoebels, das entfernt werden soll.
      */
     public void removeSitzmoebel(Sitzmoebel.Moebelart moebelart, Sitzmoebel.Sitzplaetze sitzplaetze) {
         switch (moebelart) {
@@ -451,23 +473,26 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Kuechenstühle um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param sitzplaetze Die Sitzplätze der Kuechenstühle, die hinzugefügt werden sollen.
      */
     public void erhoeheKuechenstuhllagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> kuechenstuhllager.addSitzmoebel(new Sitzmoebel(Sitzmoebel.Moebelart.Kuechenstuhl, sitzplaetze, Moebelstueck.Kategorie.Sitzmoebel, Bereich.Kueche)));
+        // Für die Anzahl der hinzuzufügenden Kuechenstühle wird ein Stream erzeugt, der für jeden Wert im Stream einen Kuechenstuhl zum Lager hinzufügt
+        IntStream.range(0, quantitativerBetrag)
+        .forEach(i -> kuechenstuhllager.addSitzmoebel(new Sitzmoebel(Sitzmoebel.Moebelart.Kuechenstuhl, sitzplaetze, Moebelstueck.Kategorie.Sitzmoebel, Bereich.Kueche)));
     }
 
     /**
      * Mindert den Lagerbestand für Kuechenstühle um den angegebenen Betrag.
      *
-     * @see Stream<T>
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param sitzplaetze Die Sitzplätze der Kuechenstühle, die entfernt werden sollen.
      */
     public void mindereKuechenstuhllagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze) {
-        IntStream.range(0, quantitativerBetrag)
-        .forEach(i -> kuechenstuhllager.removeSitzmoebel(sitzplaetze));
+        // Für die Anzahl der zu entfernenden Kuechenstühle wird ein Stream erzeugt, der für jeden Wert im Stream einen Kuechenstuhl aus dem Lager entfernt
+        IntStream.range(0, quantitativerBetrag).forEach(i -> kuechenstuhllager.removeSitzmoebel(sitzplaetze));
     }
 
     /**
@@ -510,20 +535,25 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Ohrensessel um den angegebenen Betrag.
      *
+     * @see IntStream   
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param sitzplaetze Die Sitzplätze der Ohrensessel, die hinzugefügt werden sollen.
      */
     public void erhoeheOhrensessellagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> ohrensessellager.addSitzmoebel(new Sitzmoebel(Sitzmoebel.Moebelart.Ohrensessel, sitzplaetze, Moebelstueck.Kategorie.Sitzmoebel, Bereich.Wohnen)));
+        // Für die Anzahl der hinzuzufügenden Ohrensessel wird ein Stream erzeugt, der für jeden Wert im Stream einen Ohrensessel zum Lager hinzufügt
+        IntStream.range(0, quantitativerBetrag)
+        .forEach(i -> ohrensessellager.addSitzmoebel(new Sitzmoebel(Sitzmoebel.Moebelart.Ohrensessel, sitzplaetze, Moebelstueck.Kategorie.Sitzmoebel, Bereich.Wohnen)));
     }
 
     /**
      * Mindert den Lagerbestand für Ohrensessel um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param sitzplaetze Die Sitzplätze der Ohrensessel, die entfernt werden sollen.
      */
     public void mindereOhrensessellagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze) {
+        // Für die Anzahl der zu entfernenden Ohrensessel wird ein Stream erzeugt, der für jeden Wert im Stream einen Ohrensessel aus dem Lager entfernt
         IntStream.range(0, quantitativerBetrag).forEach(i -> ohrensessellager.removeSitzmoebel(sitzplaetze));
     }
 
@@ -567,20 +597,25 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Fernsehcouches um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param sitzplaetze Die Sitzplätze der Fernsehcouches, die hinzugefügt werden sollen.
      */
     public void erhoeheFernsehcouchlagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> fernsehcouchlager.addSitzmoebel(new Sitzmoebel(Sitzmoebel.Moebelart.Fernsehcouch, sitzplaetze, Moebelstueck.Kategorie.Sitzmoebel, Bereich.Wohnen)));
+        // Für die Anzahl der hinzuzufügenden Fernsehcouches wird ein Stream erzeugt, der für jeden Wert im Stream einen Fernsehcouch zum Lager hinzufügt
+        IntStream.range(0, quantitativerBetrag)
+        .forEach(i -> fernsehcouchlager.addSitzmoebel(new Sitzmoebel(Sitzmoebel.Moebelart.Fernsehcouch, sitzplaetze, Moebelstueck.Kategorie.Sitzmoebel, Bereich.Wohnen)));
     }
 
     /**
      * Mindert den Lagerbestand für Fernsehcouches um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param sitzplaetze Die Sitzplätze der Fernsehcouches, die entfernt werden sollen.
      */
     public void mindereFernsehcouchlagerLagerbestand(int quantitativerBetrag, Sitzmoebel.Sitzplaetze sitzplaetze) {
+        // Für die Anzahl der zu entfernenden Fernsehcouches wird ein Stream erzeugt, der für jeden Wert im Stream einen Fernsehcouch aus dem Lager entfernt
         IntStream.range(0, quantitativerBetrag).forEach(i -> fernsehcouchlager.removeSitzmoebel(sitzplaetze));
     }
 
@@ -597,6 +632,7 @@ public class Lagersystem implements Serializable {
     //Lagerung
     /**
      * Fügt eine Lagerung zum Lager hinzu.
+     * Prüft die Möbelart der Lagerung und fügt sie dem entsprechenden Lager hinzu.
      * 
      * @param lagerung Die hinzuzufügende Lagerung.
      */
@@ -617,6 +653,7 @@ public class Lagersystem implements Serializable {
 
     /**
      * Entfernt eine Lagerung aus dem Lager.
+     * Prüft die Möbelart der Lagerung und entfernt sie aus dem entsprechenden Lager.
      * 
      * @param moebelart Die Art der Lagerung, die entfernt werden soll.
      * @param flaeche Die Fläche der Lagerung, die entfernt werden soll.
@@ -664,20 +701,25 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Kuechenregale um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param flaeche Die Fläche der Kuechenregale, die hinzugefügt werden sollen.
      */
     public void erhoeheKuechenregallagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> kuechenregallager.addLagerung(new Lagerung(Lagerung.Moebelart.Kuechenregal, flaeche, Moebelstueck.Kategorie.Lagerung, Bereich.Kueche)));
+        // Für die Anzahl der hinzuzufügenden Kuechenregale wird ein Stream erzeugt, der für jeden Wert im Stream ein Kuechenregal zum Lager hinzufügt
+        IntStream.range(0, quantitativerBetrag)
+        .forEach(i -> kuechenregallager.addLagerung(new Lagerung(Lagerung.Moebelart.Kuechenregal, flaeche, Moebelstueck.Kategorie.Lagerung, Bereich.Kueche)));
     }
 
     /**
      * Mindert den Lagerbestand für Kuechenregale um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param flaeche Die Fläche der Kuechenregale, die entfernt werden sollen.
      */
     public void mindereKuechenregallagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
+        // Für die Anzahl der zu entfernenden Kuechenregale wird ein Stream erzeugt, der für jeden Wert im Stream ein Kuechenregal aus dem Lager entfernt
         IntStream.range(0, quantitativerBetrag).forEach(i -> kuechenregallager.removeLagerung(flaeche));
     }
 
@@ -721,20 +763,25 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Beistelltische um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param flaeche Die Fläche der Beistelltische, die hinzugefügt werden sollen.
      */
     public void erhoeheBeistelltischlagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> beistelltischlager.addLagerung(new Lagerung(Beistelltisch, flaeche, Moebelstueck.Kategorie.Lagerung, Bereich.Schlafen)));
+        // Für die Anzahl der hinzuzufügenden Beistelltische wird ein Stream erzeugt, der für jeden Wert im Stream ein Beistelltisch zum Lager hinzufügt
+        IntStream.range(0, quantitativerBetrag)
+        .forEach(i -> beistelltischlager.addLagerung(new Lagerung(Beistelltisch, flaeche, Moebelstueck.Kategorie.Lagerung, Bereich.Schlafen)));
     }
 
     /**
      * Mindert den Lagerbestand für Beistelltische um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param flaeche Die Fläche der Beistelltische, die entfernt werden sollen.
      */
     public void mindereBeistelltischlagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
+        // Für die Anzahl der zu entfernenden Beistelltische wird ein Stream erzeugt, der für jeden Wert im Stream ein Beistelltisch aus dem Lager entfernt
         IntStream.range(0, quantitativerBetrag).forEach(i -> beistelltischlager.removeLagerung(flaeche));
     }
 
@@ -778,20 +825,25 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Kleiderschraenke um den angegebenen Betrag.
      * 
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param flaeche Die Fläche der Kleiderschraenke, die hinzugefügt werden sollen.
      */
     public void erhoeheKleiderschranklagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> kleiderschranklager.addLagerung(new Lagerung(Lagerung.Moebelart.Kleiderschrank, flaeche, Moebelstueck.Kategorie.Lagerung, Bereich.Schlafen)));
+        // Für die Anzahl der hinzuzufügenden Kleiderschraenke wird ein Stream erzeugt, der für jeden Wert im Stream einen Kleiderschrank zum Lager hinzufügt
+        IntStream.range(0, quantitativerBetrag)
+        .forEach(i -> kleiderschranklager.addLagerung(new Lagerung(Lagerung.Moebelart.Kleiderschrank, flaeche, Moebelstueck.Kategorie.Lagerung, Bereich.Schlafen)));
     }
 
     /**
      * Mindert den Lagerbestand für Kleiderschraenke um den angegebenen Betrag.
      * 
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param flaeche Die Fläche der Kleiderschraenke, die entfernt werden sollen.
      */
     public void mindereKleiderschranklagerLagerbestand(int quantitativerBetrag, Lagerung.Flaeche flaeche) {
+        // Für die Anzahl der zu entfernenden Kleiderschraenke wird ein Stream erzeugt, der für jeden Wert im Stream einen Kleiderschrank aus dem Lager entfernt
         IntStream.range(0, quantitativerBetrag).forEach(i -> kleiderschranklager.removeLagerung(flaeche));
     }
 
@@ -806,8 +858,9 @@ public class Lagersystem implements Serializable {
     }
 
     //Liegemoebel
-        /**
+    /**
      * Fügt einen Liegemoebel zum Lager hinzu.
+     * Prüft die Möbelart des Liegemoebels und fügt ihn dem entsprechenden Lager hinzu.
      *
      * @param liegemoebel Der hinzuzufügende Liegemoebel.
      */
@@ -826,6 +879,7 @@ public class Lagersystem implements Serializable {
 
     /**
      * Entfernt einen Liegemoebel aus dem Lager.
+     * Prüft die Möbelart des Liegemoebels und entfernt ihn aus dem entsprechenden Lager.
      *
      * @param moebelart Die Art des Liegemoebels, der entfernt werden soll.
      * @param laenge Die Länge des Liegemoebels, der entfernt werden soll.
@@ -873,20 +927,25 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Doppelbetten um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param laenge Die Länge der Doppelbetten, die hinzugefügt werden sollen.
      */
     public void erhoeheDoppelbettlagerLagerbestand(int quantitativerBetrag, Liegemoebel.Laenge laenge) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> doppelbettlager.addLiegemoebel(new Liegemoebel(Liegemoebel.Moebelart.Doppelbett, laenge, Moebelstueck.Kategorie.Liegemoebel, Bereich.Schlafen)));
+        // Für die Anzahl der hinzuzufügenden Doppelbetten wird ein Stream erzeugt, der für jeden Wert im Stream ein Doppelbett zum Lager hinzufügt
+        IntStream.range(0, quantitativerBetrag)
+        .forEach(i -> doppelbettlager.addLiegemoebel(new Liegemoebel(Liegemoebel.Moebelart.Doppelbett, laenge, Moebelstueck.Kategorie.Liegemoebel, Bereich.Schlafen)));
     }
 
     /**
      * Mindert den Lagerbestand für Doppelbetten um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param laenge Die Länge der Doppelbetten, die entfernt werden sollen.
      */
     public void mindereDoppelbettlagerLagerbestand(int quantitativerBetrag, Liegemoebel.Laenge laenge) {
+        // Für die Anzahl der zu entfernenden Doppelbetten wird ein Stream erzeugt, der für jeden Wert im Stream ein Doppelbett aus dem Lager entfernt
         IntStream.range(0, quantitativerBetrag).forEach(i -> doppelbettlager.removeLiegemoebel(laenge));
     }
 
@@ -930,20 +989,25 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Balkonliegen um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param laenge Die Länge der Balkonliegen, die hinzugefügt werden sollen.
      */
     public void erhoeheBalkonliegelagerLagerbestand(int quantitativerBetrag, Liegemoebel.Laenge laenge) {
-        IntStream.range(0, quantitativerBetrag).forEach(i -> balkonliegelager.addLiegemoebel(new Liegemoebel(Liegemoebel.Moebelart.Balkonliege, laenge, Moebelstueck.Kategorie.Liegemoebel, Bereich.Andere)));
+        // Für die Anzahl der hinzuzufügenden Balkonliegen wird ein Stream erzeugt, der für jeden Wert im Stream eine Balkonliege zum Lager hinzufügt
+        IntStream.range(0, quantitativerBetrag)
+        .forEach(i -> balkonliegelager.addLiegemoebel(new Liegemoebel(Liegemoebel.Moebelart.Balkonliege, laenge, Moebelstueck.Kategorie.Liegemoebel, Bereich.Andere)));
     }
 
     /**
      * Mindert den Lagerbestand für Balkonliegen um den angegebenen Betrag.
      *
+     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param laenge Die Länge der Balkonliegen, die entfernt werden sollen.
      */
     public void mindereBalkonliegelagerLagerbestand(int quantitativerBetrag, Liegemoebel.Laenge laenge) {
+        // Für die Anzahl der zu entfernenden Balkonliegen wird ein Stream erzeugt, der für jeden Wert im Stream eine Balkonliege aus dem Lager entfernt
         IntStream.range(0, quantitativerBetrag).forEach(i -> balkonliegelager.removeLiegemoebel(laenge));
     }
 
@@ -981,7 +1045,7 @@ public class Lagersystem implements Serializable {
 
     /**
      * Berechnet den Gesamtverkaufspreis aller Möbelstücke im Lager.
-     *
+     * 
      * @return Der Gesamtverkaufspreis aller Möbelstücke im Lager.
      */
     public int berechenVerkaufspreisAllerMoebelImLager() {
@@ -1061,97 +1125,6 @@ public class Lagersystem implements Serializable {
     }
 
     /**
-     * Berechnet alle möglichen Kombinationen von Möbellager-Konfigurationen,
-     * deren Gesamtpreis kleiner oder gleich dem angegebenen Betrag ist.
-     * Es werden nur Möbellager-Konfigurationen mit unterschiedlichen Möbeln erstellt.
-     *
-     * @param moebelstueckeLagerArrayList Die Liste der Möbellagerbereiche.
-     * @param maximalBetragInCent         Der maximale Gesamtpreis in Cent.
-     * @param rekursionsIndex             Der Startindex für die Berechnung der Kombinationen.
-     * @param aktuelleSumme               Der aktuelle Gesamtpreis.
-     * @param konstellationIndex          Die Liste der Indizes, die die aktuelle Kombination repräsentieren.
-     * @return Eine Liste von Listen, wobei jede innere Liste eine gültige Kombination von Möbellagerbereichen darstellt.
-     * Gibt null zurück, wenn keine gültigen Kombinationen gefunden werden.
-     */
-    public ArrayList<ArrayList<Lager<? extends Moebelstueck>>> konstellationenBisBetrag(ArrayList<Lager<? extends Moebelstueck>> moebelstueckeLagerArrayList,
-                                                                                        int maximalBetragInCent, int rekursionsIndex, int aktuelleSumme, ArrayList<Integer> konstellationIndex) {
-        // Alle möglichen Kombinationen von Möbellager-Konfigurationen, deren Gesamtpreis kleiner oder gleich dem angegebenen Betrag ist.
-        ArrayList<ArrayList<Lager<? extends Moebelstueck>>> konstellationen = new ArrayList<ArrayList<Lager<? extends Moebelstueck>>>();
-
-        for (int i = 0; i < moebelstueckeLagerArrayList.size(); i++) {
-
-            // Kopie des aktuellen Konstellationsindexes erstellen
-            ArrayList<Integer> copyKonstellationIndex = new ArrayList<>();
-            for (Integer j : konstellationIndex) {
-                copyKonstellationIndex.add(j);
-            }
-
-            // Aktuelle Summe aktualisieren
-            int tmpaktuelleSumme = aktuelleSumme + moebelstueckeLagerArrayList.get(rekursionsIndex).getPreis();
-
-            // Überprüfen, ob die aktuelle Summe den maximalen Betrag nicht überschreitet
-            if (tmpaktuelleSumme <= maximalBetragInCent) {
-                // Konstellationsindex aktualisieren
-                copyKonstellationIndex.add(rekursionsIndex);
-
-                // Konstellation erstellen
-                ArrayList<Lager<? extends Moebelstueck>> konstellation = new ArrayList<>();
-                for (Integer k : copyKonstellationIndex) {
-                    konstellation.add(moebelstueckeLagerArrayList.get(k));
-                }
-                konstellationen.add(konstellation);
-
-                // Weitere Konstellationen rekursiv berechnen
-                if (!(rekursionsIndex + 1 == moebelstueckeLagerArrayList.size())) {
-                    for (int k = rekursionsIndex + 1; k < moebelstueckeLagerArrayList.size(); k++) {
-                        ArrayList<ArrayList<Lager<? extends Moebelstueck>>> weitereKonstellationen = konstellationenBisBetrag(moebelstueckeLagerArrayList, maximalBetragInCent, k, tmpaktuelleSumme, copyKonstellationIndex);
-                        if (weitereKonstellationen != null) {
-                            konstellationen.addAll(weitereKonstellationen);
-                        }
-                    }
-                }
-            } else {
-                // Wenn die aktuelle Summe den maximalen Betrag überschreitet, wird null zurückgegeben
-                return null;
-            }
-
-            // Überprüfen, ob der Rekursionsindex nicht mit dem aktuellen Index übereinstimmt
-            if (!(rekursionsIndex == i)) {
-                return konstellationen;
-            } else {
-                // Rekursionsindex und Konstellationsindex zurücksetzen
-                rekursionsIndex++;
-                konstellationIndex.clear();
-            }
-        }
-        return konstellationen;
-    }
-
-
-    /**
-     * Ermittelt die beste Konstellation von Lagern basierend auf dem Gesamtpreis.
-     *
-     * @param konstellationen Eine Liste von Listen von Lagern, die verschiedene Konstellationen darstellen.
-     * @return Die beste Konstellation von Lagern basierend auf dem Gesamtpreis.
-     */
-    private ArrayList<Lager<? extends Moebelstueck>> besteKonstellation(ArrayList<ArrayList<Lager<? extends Moebelstueck>>> konstellationen) {
-        if (konstellationen.size() == 0) {
-            return null;
-        }
-        // Sortieren der Konstellationen basierend auf dem Gesamtpreis in absteigender Reihenfolge
-        Collections.sort(konstellationen, (a, b) -> {
-            // Gesamtpreis der Konstellationen berechnen
-            int sumA = a.stream().mapToInt(Lager::getPreis).sum();
-            int sumB = b.stream().mapToInt(Lager::getPreis).sum();
-            // Sortieren in absteigender Reihenfolge
-            return sumB - sumA;
-        });
-        // Die beste Konstellation ist die erste in der sortierten Liste
-        return konstellationen.get(0);
-    }
-
-
-    /**
      * Gibt eine Liste von Möbellagerbereichen zurück, deren Gesamtpreis kleiner oder gleich dem angegebenen Betrag ist.
      *
      * @param betragInCent Der maximale Gesamtpreis in Cent.
@@ -1183,9 +1156,101 @@ public class Lagersystem implements Serializable {
 
     }
 
+    /**
+     * Berechnet alle möglichen Kombinationen von Möbellager-Konfigurationen,
+     * deren Gesamtpreis kleiner oder gleich dem angegebenen Betrag ist.
+     * Es werden nur Möbellager-Konfigurationen mit unterschiedlichen Möbeln erstellt.
+     *
+     * @param moebelstueckeLagerArrayList Die Liste der Möbellagerbereiche.
+     * @param maximalBetragInCent         Der maximale Gesamtpreis in Cent.
+     * @param rekursionsIndex             Der Startindex für die Berechnung der Kombinationen.
+     * @param aktuelleSumme               Der aktuelle Gesamtpreis.
+     * @param konstellationIndex          Die Liste der Indizes, die die aktuelle Kombination repräsentieren.
+     * @return Eine Liste von Listen, wobei jede innere Liste eine gültige Kombination von Möbellagerbereichen darstellt.
+     * Gibt null zurück, wenn keine gültigen Kombinationen gefunden werden.
+     */
+    public ArrayList<ArrayList<Lager<? extends Moebelstueck>>> konstellationenBisBetrag(ArrayList<Lager<? extends Moebelstueck>> moebelstueckeLagerArrayList,
+                                                                                        int maximalBetragInCent, int rekursionsIndex, int aktuelleSumme,
+                                                                                        ArrayList<Integer> konstellationIndex) {
+        // Alle möglichen Kombinationen von Möbellager-Konfigurationen, deren Gesamtpreis kleiner oder gleich dem angegebenen Betrag ist.
+        ArrayList<ArrayList<Lager<? extends Moebelstueck>>> konstellationen = new ArrayList<ArrayList<Lager<? extends Moebelstueck>>>();
+
+        for (int i = 0; i < moebelstueckeLagerArrayList.size(); i++) {
+
+            // Kopie des aktuellen Konstellationsindexes erstellen
+            ArrayList<Integer> copyKonstellationIndex = new ArrayList<>();
+            for (Integer j : konstellationIndex) {
+                copyKonstellationIndex.add(j);
+            }
+
+            // Aktuelle Summe aktualisieren
+            int tmpaktuelleSumme = aktuelleSumme + moebelstueckeLagerArrayList.get(rekursionsIndex).getPreis();
+
+            // Überprüfen, ob die aktuelle Summe den maximalen Betrag nicht überschreitet
+            if (tmpaktuelleSumme <= maximalBetragInCent) {
+                // Konstellationsindex aktualisieren
+                copyKonstellationIndex.add(rekursionsIndex);
+
+                // Konstellation erstellen
+                ArrayList<Lager<? extends Moebelstueck>> konstellation = new ArrayList<>();
+                for (Integer k : copyKonstellationIndex) {
+                    konstellation.add(moebelstueckeLagerArrayList.get(k));
+                }
+                konstellationen.add(konstellation);
+
+                // Weitere Konstellationen, die aktuelle Konstellation beinhalten, rekursiv berechnen
+                if (!(rekursionsIndex + 1 == moebelstueckeLagerArrayList.size())) {
+                    for (int k = rekursionsIndex + 1; k < moebelstueckeLagerArrayList.size(); k++) {
+                        ArrayList<ArrayList<Lager<? extends Moebelstueck>>> weitereKonstellationen = konstellationenBisBetrag(moebelstueckeLagerArrayList, maximalBetragInCent, k, tmpaktuelleSumme, copyKonstellationIndex);
+                        // Wenn weitere Konstellationen gefunden werden, werden sie zur Liste der Konstellationen hinzugefügt
+                        if (weitereKonstellationen != null) {
+                            konstellationen.addAll(weitereKonstellationen);
+                        }
+                    }
+                }
+            } else {
+                // Wenn die aktuelle Summe den maximalen Betrag überschreitet, wird null zurückgegeben
+                return null;
+            }
+
+            // Überprüfen, ob der Rekursionsindex nicht mit dem aktuellen Index übereinstimmt
+            if (!(rekursionsIndex == i)) {
+                return konstellationen;
+            } else {
+                // Rekursionsindex erhöhen, da alle Kombinationen mit Möbelarten an Rekursionsindex i bereits berechnet wurden
+                rekursionsIndex++;
+                konstellationIndex.clear();
+            }
+        }
+        return konstellationen;
+    }
+
+    /**
+     * Ermittelt die beste Konstellation von Lagern basierend auf dem Gesamtpreis.
+     *
+     * @param konstellationen Eine Liste von Listen von Lagern, die verschiedene Konstellationen darstellen.
+     * @return Die beste Konstellation von Lagern basierend auf dem Gesamtpreis.
+     */
+    private ArrayList<Lager<? extends Moebelstueck>> besteKonstellation(ArrayList<ArrayList<Lager<? extends Moebelstueck>>> konstellationen) {
+        if (konstellationen.size() == 0) {
+            return null;
+        }
+        // Sortieren der Konstellationen basierend auf dem Gesamtpreis in absteigender Reihenfolge
+        Collections.sort(konstellationen, (a, b) -> {
+            // Gesamtpreis der Konstellationen berechnen
+            int sumA = a.stream().mapToInt(Lager::getPreis).sum();
+            int sumB = b.stream().mapToInt(Lager::getPreis).sum();
+            // Sortieren in absteigender Reihenfolge
+            return sumB - sumA;
+        });
+        // Die beste Konstellation ist die erste in der sortierten Liste
+        return konstellationen.get(0);
+    }
+
 
     /**
      * Zeigt alle Möbelstücke mit ihren Eigenschaften an.
+     * Konsolenausgabe.
      */
     public void displayMoebelMitEigenschaft() {
         ArrayList<Lager<? extends Moebelstueck>> lager = getLager();
@@ -1212,10 +1277,10 @@ public class Lagersystem implements Serializable {
     }
 
     /**
-     * Sucht nach Liegemoebeln mit einer bestimmten Laenge im Lagersystem.
+     * Sucht nach Liegemöbeln mit einer bestimmten Länge im Lagersystem.
      *
-     * @param laenge Die Laenge der gesuchten Liegemoebel.
-     * @return Eine Liste von Liegemoebeln mit der angegebenen Laenge.
+     * @param laenge Die Länge der gesuchten Liegemöbel.
+     * @return Eine Liste von Liegemöbeln mit der angegebenen Länge.
      */
     public List<Liegemoebel> searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge laenge) {
         List liegemoebelList = new ArrayList<>();
