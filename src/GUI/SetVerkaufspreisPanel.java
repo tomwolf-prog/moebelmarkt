@@ -196,7 +196,7 @@ public class SetVerkaufspreisPanel {
                 String text = beistelltischlagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
+                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
                     lagersystem.getBeistelltischlager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -212,7 +212,7 @@ public class SetVerkaufspreisPanel {
                 String text = kleiderschranklagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
+                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
                     lagersystem.getKleiderschranklager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -229,7 +229,7 @@ public class SetVerkaufspreisPanel {
                 String text = kuechenregallagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
+                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
                     lagersystem.getKuechenregallager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -246,7 +246,7 @@ public class SetVerkaufspreisPanel {
                 String text = balkonliegelagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
+                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
                     lagersystem.getBalkonliegelager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -262,7 +262,7 @@ public class SetVerkaufspreisPanel {
                 String text = doppelbettlagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
+                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
                     lagersystem.getDoppelbettlager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -278,7 +278,7 @@ public class SetVerkaufspreisPanel {
                 String text = fernsehcouchFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
+                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
                     lagersystem.getFernsehcouchlager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -294,7 +294,7 @@ public class SetVerkaufspreisPanel {
                 String text = KuechenstuhlFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
+                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
                     lagersystem.getKuechenstuhllager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -310,7 +310,7 @@ public class SetVerkaufspreisPanel {
                 String text = ohrensesselFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
+                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
                     lagersystem.getOhrensessellager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -326,7 +326,7 @@ public class SetVerkaufspreisPanel {
                 String text = buerotischlagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
+                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
                     lagersystem.getBuerotischlager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -342,7 +342,7 @@ public class SetVerkaufspreisPanel {
                 String text = couchtischlagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
+                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
                     lagersystem.getCouchtischlager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -358,7 +358,7 @@ public class SetVerkaufspreisPanel {
                 String text = esstischlagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
+                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
                     lagersystem.getEsstischlager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -374,7 +374,7 @@ public class SetVerkaufspreisPanel {
                 String text = kuechentischlagerFeld.getText();
                 int i1;
                 try {
-                    i1 = Integer.parseInt(String.valueOf(text)) * 100;
+                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
                     lagersystem.getKuechentischlager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
