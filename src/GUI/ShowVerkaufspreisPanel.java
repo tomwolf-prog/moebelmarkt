@@ -105,7 +105,7 @@ public class ShowVerkaufspreisPanel {
         grossterBereichName = "Andere";
 
 
-        GroessterBereich.setText("Größter Gesamtpreis: " + grossterBereichName);
+        GroessterBereich.setText("Größter Gesamtpreis: " + grossterBereichName + " " + ((double) grossterBereichValue) / 100 + " €");
 
 
     }
