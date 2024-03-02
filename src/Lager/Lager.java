@@ -8,17 +8,17 @@ import java.util.ArrayList;
  * Sie speichert die Preis- und Rabattinformationen für die Möbelstücke.
  * Die Klasse bietet Methoden zum Abrufen und Festlegen des Preises und Rabatts,
  * sowie zum Abrufen der Liste der im Lager gespeicherten Möbelstücke.
- * 
+ *
  * @param <K> Die Kategorie des Möbelstücks, das im Lager gespeichert wird.
- * @see Serializable
  * @author Sidney Schmidt, Tom Wolf
+ * @see Serializable
  */
 public abstract class Lager<K> implements Serializable {
     private int preis;
     private boolean rabatt10;
 
     public ArrayList<K> moebelstueckArrayList = new ArrayList<K>();
-    
+
     /**
      * Konstruktor für die Klasse Lager.
      * Setzt den Preis des Möbelstücks auf den angegebenen Wert und deaktiviert den Rabatt.
@@ -29,7 +29,7 @@ public abstract class Lager<K> implements Serializable {
         this.preis = preis;
         this.rabatt10 = false;
     }
-    
+
     /**
      * Konstruktor für die Klasse Lager.
      * Setzt den Preis des Möbelstücks auf 0 und deaktiviert den Rabatt.
@@ -38,7 +38,6 @@ public abstract class Lager<K> implements Serializable {
         this.preis = 0;
         this.rabatt10 = false;
     }
-
 
 
     /**
@@ -105,9 +104,6 @@ public abstract class Lager<K> implements Serializable {
      */
     @Override
     public String toString() {
-        return "Lager{" +
-                "preis=" + preis +
-                ", rabatt10=" + rabatt10 +
-                '}';
+        return moebelstueckArrayList.toString();
     }
 }
