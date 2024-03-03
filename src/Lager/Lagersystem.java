@@ -182,7 +182,6 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Buerotische um den angegebenen Betrag.
      *
-     * @see IntStream 
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param hoehe Die Höhe der Buerotische, die hinzugefügt werden sollen.
      */
@@ -195,7 +194,6 @@ public class Lagersystem implements Serializable {
     /**
      * Mindert den Lagerbestand für Buerotische um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param hoehe Die Höhe der Buerotische, die entfernt werden sollen.
      */
@@ -244,7 +242,6 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Couchtische um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param hoehe Die Höhe der Couchtische, die hinzugefügt werden sollen.
      */
@@ -257,7 +254,6 @@ public class Lagersystem implements Serializable {
     /**
      * Mindert den Lagerbestand für Couchtische um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param hoehe Die Höhe der Couchtische, die entfernt werden sollen.
      */
@@ -306,7 +302,6 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Esstische um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param hoehe Die Höhe der Esstische, die hinzugefügt werden sollen.
      */
@@ -319,7 +314,6 @@ public class Lagersystem implements Serializable {
     /**
      * Mindert den Lagerbestand für Esstische um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param hoehe Die Höhe der Esstische, die entfernt werden sollen.
      */
@@ -368,7 +362,6 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Kuechentische um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param hoehe Die Höhe der Kuechentische, die hinzugefügt werden sollen.
      */
@@ -381,7 +374,6 @@ public class Lagersystem implements Serializable {
     /**
      * Mindert den Lagerbestand für Kuechentische um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param hoehe Die Höhe der Kuechentische, die entfernt werden sollen.
      */
@@ -473,7 +465,6 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Kuechenstühle um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param sitzplaetze Die Sitzplätze der Kuechenstühle, die hinzugefügt werden sollen.
      */
@@ -486,7 +477,6 @@ public class Lagersystem implements Serializable {
     /**
      * Mindert den Lagerbestand für Kuechenstühle um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param sitzplaetze Die Sitzplätze der Kuechenstühle, die entfernt werden sollen.
      */
@@ -535,7 +525,6 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Ohrensessel um den angegebenen Betrag.
      *
-     * @see IntStream   
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param sitzplaetze Die Sitzplätze der Ohrensessel, die hinzugefügt werden sollen.
      */
@@ -548,7 +537,6 @@ public class Lagersystem implements Serializable {
     /**
      * Mindert den Lagerbestand für Ohrensessel um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param sitzplaetze Die Sitzplätze der Ohrensessel, die entfernt werden sollen.
      */
@@ -597,7 +585,6 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Fernsehcouches um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param sitzplaetze Die Sitzplätze der Fernsehcouches, die hinzugefügt werden sollen.
      */
@@ -610,7 +597,6 @@ public class Lagersystem implements Serializable {
     /**
      * Mindert den Lagerbestand für Fernsehcouches um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param sitzplaetze Die Sitzplätze der Fernsehcouches, die entfernt werden sollen.
      */
@@ -701,7 +687,6 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Kuechenregale um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param flaeche Die Fläche der Kuechenregale, die hinzugefügt werden sollen.
      */
@@ -714,7 +699,6 @@ public class Lagersystem implements Serializable {
     /**
      * Mindert den Lagerbestand für Kuechenregale um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param flaeche Die Fläche der Kuechenregale, die entfernt werden sollen.
      */
@@ -763,7 +747,6 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Beistelltische um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param flaeche Die Fläche der Beistelltische, die hinzugefügt werden sollen.
      */
@@ -776,7 +759,6 @@ public class Lagersystem implements Serializable {
     /**
      * Mindert den Lagerbestand für Beistelltische um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param flaeche Die Fläche der Beistelltische, die entfernt werden sollen.
      */
@@ -825,7 +807,6 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Kleiderschraenke um den angegebenen Betrag.
      * 
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param flaeche Die Fläche der Kleiderschraenke, die hinzugefügt werden sollen.
      */
@@ -838,7 +819,6 @@ public class Lagersystem implements Serializable {
     /**
      * Mindert den Lagerbestand für Kleiderschraenke um den angegebenen Betrag.
      * 
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param flaeche Die Fläche der Kleiderschraenke, die entfernt werden sollen.
      */
@@ -927,7 +907,6 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Doppelbetten um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param laenge Die Länge der Doppelbetten, die hinzugefügt werden sollen.
      */
@@ -940,7 +919,6 @@ public class Lagersystem implements Serializable {
     /**
      * Mindert den Lagerbestand für Doppelbetten um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param laenge Die Länge der Doppelbetten, die entfernt werden sollen.
      */
@@ -989,7 +967,6 @@ public class Lagersystem implements Serializable {
     /**
      * Erhöht den Lagerbestand für Balkonliegen um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand erhöht werden soll.
      * @param laenge Die Länge der Balkonliegen, die hinzugefügt werden sollen.
      */
@@ -1002,7 +979,6 @@ public class Lagersystem implements Serializable {
     /**
      * Mindert den Lagerbestand für Balkonliegen um den angegebenen Betrag.
      *
-     * @see IntStream
      * @param quantitativerBetrag Der Betrag, um den der Lagerbestand gemindert werden soll.
      * @param laenge Die Länge der Balkonliegen, die entfernt werden sollen.
      */
