@@ -78,7 +78,7 @@ public abstract class Lagerunglager extends Lager<Lagerung> {
      * @param file Der Dateipfad, in den das Objekt geschrieben werden soll.
      * @throws IOException Wenn ein Fehler beim Schreiben der Datei auftritt.
      */
-    public void writeToFile(Lagerunglager lagerunglager, String file) throws IOException {
+    public void schreibeInDatei(Lagerunglager lagerunglager, String file) throws IOException {
         FileOutputStream f = new FileOutputStream(new File(file));
         ObjectOutputStream o = new ObjectOutputStream(f);
 
@@ -94,11 +94,11 @@ public abstract class Lagerunglager extends Lager<Lagerung> {
      * @throws IOException Wenn ein Fehler beim Schreiben der Datei auftritt.
      * @throws ClassNotFoundException Wenn die Klasse nicht gefunden wird.
      */
-    public Lagerunglager readFromFile(String file) throws IOException, ClassNotFoundException {
+    public Lagerunglager leseAusDatei(String file) throws IOException, ClassNotFoundException {
         FileInputStream fi = new FileInputStream(new File(file));
         ObjectInputStream oi = new ObjectInputStream(fi);
 
-        // Read objects
+        // Lese Objekte
         return (Lagerunglager) oi.readObject();
     }
 

@@ -259,7 +259,7 @@ public class Frame {
                 JOptionPane.YES_NO_OPTION);
         if (confirmed == JOptionPane.YES_OPTION) {
             try {
-                lagersystem.writeToFile(lagersystem, "Moebelhaus.txt");
+                lagersystem.schreibeInDatei(lagersystem, "Moebelhaus.txt");
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }

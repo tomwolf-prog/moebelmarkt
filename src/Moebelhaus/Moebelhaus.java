@@ -15,9 +15,9 @@ public class Moebelhaus extends JFrame {
     public static void main(String[] args) {
 
         try {
-            lagersystem = lagersystem.readFromFile("Moebelhaus.txt");
+            lagersystem = lagersystem.leseAusDatei("Moebelhaus.txt");
         } catch (Exception e) {
-            System.out.println("File wasn't loaded");
+            System.out.println("Datei wurde nicht geladen.");
         }
 
         Frame.baseFrame();

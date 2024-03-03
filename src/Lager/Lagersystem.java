@@ -1326,7 +1326,7 @@ public class Lagersystem implements Serializable {
      * @param file Der Dateipfad, in den das Lagersystem-Objekt geschrieben werden soll.
      * @throws IOException Wenn ein Fehler beim Schreiben in die Datei auftritt.
      */
-    public void writeToFile(Lagersystem lagersystem, String file) throws IOException {
+    public void schreibeInDatei(Lagersystem lagersystem, String file) throws IOException {
         FileOutputStream f = new FileOutputStream(new File(file));
         ObjectOutputStream o = new ObjectOutputStream(f);
 
@@ -1342,11 +1342,11 @@ public class Lagersystem implements Serializable {
      * @throws IOException Wenn ein Fehler beim Schreiben der Datei auftritt.
      * @throws ClassNotFoundException Wenn die Klasse nicht gefunden wird
      */
-    public Lagersystem readFromFile(String file) throws IOException, ClassNotFoundException {
+    public Lagersystem leseAusDatei(String file) throws IOException, ClassNotFoundException {
         FileInputStream fi = new FileInputStream(new File(file));
         ObjectInputStream oi = new ObjectInputStream(fi);
 
-        // Read objects
+        // Lese Objekte
         return (Lagersystem) oi.readObject();
 
     }

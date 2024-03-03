@@ -79,7 +79,7 @@ public abstract class Sitzmoebellager extends Lager<Sitzmoebel> {
      * @param file Der Dateipfad, in den das Objekt geschrieben werden soll.
      * @throws IOException Wenn ein Fehler beim Schreiben in die Datei auftritt.
      */
-    public void writeToFile(Sitzmoebellager sitzmoebellager, String file) throws IOException {
+    public void schreibeInDatei(Sitzmoebellager sitzmoebellager, String file) throws IOException {
         FileOutputStream f = new FileOutputStream(new File(file));
         ObjectOutputStream o = new ObjectOutputStream(f);
 
@@ -95,11 +95,11 @@ public abstract class Sitzmoebellager extends Lager<Sitzmoebel> {
      * @throws IOException Wenn ein Fehler beim Schreiben der Datei auftritt.
      * @throws ClassNotFoundException Wenn die Klasse nicht gefunden wird.
      */
-    public Sitzmoebellager readFromFile(String file) throws IOException, ClassNotFoundException {
+    public Sitzmoebellager leseAusDatei(String file) throws IOException, ClassNotFoundException {
         FileInputStream fi = new FileInputStream(new File(file));
         ObjectInputStream oi = new ObjectInputStream(fi);
 
-        // Read objects
+        // Lese Objekte
         return (Sitzmoebellager) oi.readObject();
     }
 

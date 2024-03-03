@@ -39,7 +39,7 @@ public class MoebelhausTest {
 
 	        Lagersystem lagersystem = new Lagersystem();
 
-	        lagersystem.setBuerotischlager((Buerotischlager) lagersystem.getBuerotischlager().readFromFile("myObject.txt"));
+	        lagersystem.setBuerotischlager((Buerotischlager) lagersystem.getBuerotischlager().leseAusDatei("myObject.txt"));
 	        lagersystem.addTisch(tisch);
 	        lagersystem.addTisch(tisch2);
 	        lagersystem.addTisch(tisch3);
@@ -56,7 +56,7 @@ public class MoebelhausTest {
 	        System.out.println(lagersystem.getCouchtischlager().getPreis());
 	        System.out.println(lagersystem.searchTischMitEigenschaft(Tische.Hoehe.s));
 
-	        lagersystem.getBuerotischlager().writeToFile(lagersystem.getBuerotischlager(), "myObject.txt");
+	        lagersystem.getBuerotischlager().schreibeInDatei(lagersystem.getBuerotischlager(), "myObject.txt");
 	        // Couchtischlager couchtischlager = lagersystem.getCouchtischlager();
 	        // couchtischlager.setPreis(100);
 	        // System.out.println(couchtischlager.getPreis());

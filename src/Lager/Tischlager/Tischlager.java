@@ -73,7 +73,7 @@ public abstract class Tischlager extends Lager<Tische> {
         return bestand;
     }
 
-    public void writeToFile(Tischlager tischlager, String file) throws IOException {
+    public void schreibeInDatei(Tischlager tischlager, String file) throws IOException {
         FileOutputStream f = new FileOutputStream(new File(file));
         ObjectOutputStream o = new ObjectOutputStream(f);
 
@@ -82,11 +82,11 @@ public abstract class Tischlager extends Lager<Tische> {
         f.close();
     }
 
-    public Tischlager readFromFile(String file) throws IOException, ClassNotFoundException {
+    public Tischlager leseAusDatei(String file) throws IOException, ClassNotFoundException {
         FileInputStream fi = new FileInputStream(new File(file));
         ObjectInputStream oi = new ObjectInputStream(fi);
 
-        // Read objects
+        // Lese Objekte
         return (Tischlager) oi.readObject();
 
     }
