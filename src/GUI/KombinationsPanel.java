@@ -64,13 +64,17 @@ public class KombinationsPanel {
                 }
 
                 ArrayList<Lager<? extends Moebelstueck>> konstellation = lagersystem.moebelauswahlBisBetrag(i1);
-                int gesamtpreis = konstellation.stream().mapToInt(Lager::getPreis).sum();
                 StringBuilder zwischenAusgabe = new StringBuilder();
-                for (Lager<? extends Moebelstueck> lager : konstellation) {
-                    zwischenAusgabe.append(lager.getMoebel().getFirst().toString()).append(" | Preis: ").append((double) lager.getPreis() / 100).append("€\n");
+                if (konstellation == null) {
+                    zwischenAusgabe.append("Keine Kombination gefunden\n");
+                    updateLabels(zwischenAusgabe.toString(), 0);
+                } else {
+                    int gesamtpreis = konstellation.stream().mapToInt(Lager::getPreis).sum();
+                    for (Lager<? extends Moebelstueck> lager : konstellation) {
+                        zwischenAusgabe.append(lager.getMoebel().get(0).toString()).append(" | Preis: ").append((double) lager.getPreis() / 100).append("€\n");
+                    }
+                    updateLabels(zwischenAusgabe.toString(), gesamtpreis);
                 }
-                updateLabels(zwischenAusgabe.toString(), gesamtpreis);
-
             }
         });
         kombiPanel.add(getKombiB);
