@@ -299,7 +299,7 @@ public class RabattPanel {
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
-        back.setBounds(100, 701, 150, 30);
+        back.setBounds(50, 701, 215, 30);
         back.addActionListener(e -> {
             Frame.setAllPanelsInvisible();
             Frame.setAllHomeButtonsVisible();

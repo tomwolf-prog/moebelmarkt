@@ -7,6 +7,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class SetVerkaufspreisPanel {
     private static final JPanel setPreisPanel = new JPanel();
@@ -130,55 +134,56 @@ public class SetVerkaufspreisPanel {
     }
 
     public static void updateLabels() {
-        //Lagerung
+        DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.GERMAN);
+        formatter.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.GERMAN));
 
-        beistelltischlager.setText("Beistelltischlager: " + String.valueOf((double) lagersystem.getBeistelltischlager().getPreis() / 100) + "\n"
+        beistelltischlager.setText("Beistelltischlager: " + formatter.format(((double) lagersystem.getBeistelltischlager().getPreis() / 100)) + "\n"
                 + "Rabatt: " + lagersystem.getBeistelltischlager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (double) lagersystem.getBeistelltischlager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + formatter.format(((double) lagersystem.getBeistelltischlager().getPreisOhneRabatt() / 100)) + "€");
 
-        kleiderschranklager.setText("Kleiderschranklager: " + String.valueOf((double) lagersystem.getKleiderschranklager().getPreis() / 100) + "\n"
+        kleiderschranklager.setText("Kleiderschranklager: " + formatter.format(((double) lagersystem.getKleiderschranklager().getPreis() / 100)) + "\n"
                 + "Rabatt: " + lagersystem.getKleiderschranklager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (double) lagersystem.getKleiderschranklager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + formatter.format(((double) lagersystem.getKleiderschranklager().getPreisOhneRabatt() / 100)) + "€");
 
-        kuechenregallager.setText("Kuechenregallagerlager: " + String.valueOf((double) lagersystem.getKuechenregallager().getPreis() / 100) + "\n"
+        kuechenregallager.setText("Kuechenregallagerlager: " + formatter.format(((double) lagersystem.getKuechenregallager().getPreis() / 100)) + "\n"
                 + "Rabatt: " + lagersystem.getKuechenregallager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (double) lagersystem.getKuechenregallager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + formatter.format(((double) lagersystem.getKuechenregallager().getPreisOhneRabatt() / 100)) + "€");
 
-        balkonliegelager.setText("Balkonliegelager: " + String.valueOf((double) lagersystem.getBalkonliegelager().getPreis() / 100) + "\n"
+        balkonliegelager.setText("Balkonliegelager: " + formatter.format(((double) lagersystem.getBalkonliegelager().getPreis() / 100)) + "\n"
                 + "Rabatt: " + lagersystem.getBalkonliegelager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (double) lagersystem.getBalkonliegelager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + formatter.format(((double) lagersystem.getBalkonliegelager().getPreisOhneRabatt() / 100)) + "€");
 
-        doppelbettlager.setText("Doppelbettlager: " + String.valueOf((double) lagersystem.getDoppelbettlager().getPreis() / 100) + "\n"
+        doppelbettlager.setText("Doppelbettlager: " + formatter.format(((double) lagersystem.getDoppelbettlager().getPreis() / 100)) + "\n"
                 + "Rabatt: " + lagersystem.getDoppelbettlager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (double) lagersystem.getDoppelbettlager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + formatter.format(((double) lagersystem.getDoppelbettlager().getPreisOhneRabatt() / 100)) + "€");
 
-        fernsehcouch.setText("Fernsehcouch: " + String.valueOf((double) lagersystem.getFernsehcouchlager().getPreis() / 100) + "\n"
+        fernsehcouch.setText("Fernsehcouch: " + formatter.format(((double) lagersystem.getFernsehcouchlager().getPreis() / 100)) + "\n"
                 + "Rabatt: " + lagersystem.getFernsehcouchlager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (double) lagersystem.getFernsehcouchlager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + formatter.format(((double) lagersystem.getFernsehcouchlager().getPreisOhneRabatt() / 100)) + "€");
 
-        Kuechenstuhl.setText("Kuechenstuhl: " + String.valueOf((double) lagersystem.getKuechenstuhllager().getPreis() / 100) + "\n"
+        Kuechenstuhl.setText("Kuechenstuhl: " + formatter.format(((double) lagersystem.getKuechenstuhllager().getPreis() / 100)) + "\n"
                 + "Rabatt: " + lagersystem.getKuechenstuhllager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (double) lagersystem.getKuechenstuhllager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + formatter.format(((double) lagersystem.getKuechenstuhllager().getPreisOhneRabatt() / 100)) + "€");
 
-        ohrensessel.setText("Ohrensessel: " + String.valueOf((double) lagersystem.getOhrensessellager().getPreis() / 100) + "\n"
+        ohrensessel.setText("Ohrensessel: " + formatter.format(((double) lagersystem.getOhrensessellager().getPreis() / 100)) + "\n"
                 + "Rabatt: " + lagersystem.getOhrensessellager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (double) lagersystem.getOhrensessellager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + formatter.format(((double) lagersystem.getOhrensessellager().getPreisOhneRabatt() / 100)) + "€");
 
-        buerotischlager.setText("Buerotischlager: " + String.valueOf((double) lagersystem.getBuerotischlager().getPreis() / 100) + "\n"
+        buerotischlager.setText("Buerotischlager: " + formatter.format(((double) lagersystem.getBuerotischlager().getPreis() / 100)) + "\n"
                 + "Rabatt: " + lagersystem.getBuerotischlager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (double) lagersystem.getBuerotischlager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + formatter.format(((double) lagersystem.getBuerotischlager().getPreisOhneRabatt() / 100)) + "€");
 
-        couchtischlager.setText("Couchtischlager: " + String.valueOf((double) lagersystem.getCouchtischlager().getPreis() / 100) + "\n"
+        couchtischlager.setText("Couchtischlager: " + formatter.format(((double) lagersystem.getCouchtischlager().getPreis() / 100)) + "\n"
                 + "Rabatt: " + lagersystem.getCouchtischlager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (double) lagersystem.getCouchtischlager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + formatter.format(((double) lagersystem.getCouchtischlager().getPreisOhneRabatt() / 100)) + "€");
 
-        esstischlager.setText("Esstischlager: " + String.valueOf((double) lagersystem.getEsstischlager().getPreis() / 100) + "\n"
+        esstischlager.setText("Esstischlager: " + formatter.format(((double) lagersystem.getEsstischlager().getPreis() / 100)) + "\n"
                 + "Rabatt: " + lagersystem.getEsstischlager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (double) lagersystem.getEsstischlager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + formatter.format(((double) lagersystem.getEsstischlager().getPreisOhneRabatt() / 100)) + "€");
 
-        kuechentischlager.setText("Kuechentischlager: " + String.valueOf((double) lagersystem.getKuechentischlager().getPreis() / 100) + "\n"
+        kuechentischlager.setText("Kuechentischlager: " + formatter.format(((double) lagersystem.getKuechentischlager().getPreis() / 100)) + "\n"
                 + "Rabatt: " + lagersystem.getKuechentischlager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (double) lagersystem.getKuechentischlager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + formatter.format(((double) lagersystem.getKuechentischlager().getPreisOhneRabatt() / 100)) + "€");
 
     }
 
@@ -188,15 +193,20 @@ public class SetVerkaufspreisPanel {
 
     public static JPanel Panel() {
         addLabels();
+        DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);
+        DecimalFormatSymbols symbols = formatter.getDecimalFormatSymbols();
+
+        formatter.setDecimalFormatSymbols(symbols);
 
         JButton setBeistelltischPreis = new JButton("Set Beistelltisch Preis");
         setBeistelltischPreis.setBounds(50, 150, 175, 30);
         setBeistelltischPreis.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String text = beistelltischlagerFeld.getText();
+                String text = beistelltischlagerFeld.getText().replace(',', '.');
+                ;
                 int i1;
                 try {
-                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
+                    i1 = (int) ((Double.parseDouble(text)) * 100);
                     lagersystem.getBeistelltischlager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -209,10 +219,10 @@ public class SetVerkaufspreisPanel {
         setKleiderschranklagerFeld.setBounds(50, 300, 175, 30);
         setKleiderschranklagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String text = kleiderschranklagerFeld.getText();
+                String text = kleiderschranklagerFeld.getText().replace(',', '.');
                 int i1;
                 try {
-                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
+                    i1 = (int) ((Double.parseDouble(text)) * 100);
                     lagersystem.getKleiderschranklager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -226,10 +236,10 @@ public class SetVerkaufspreisPanel {
         setKuechenregallagerFeld.setBounds(50, 450, 175, 30);
         setKuechenregallagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String text = kuechenregallagerFeld.getText();
+                String text = kuechenregallagerFeld.getText().replace(',', '.');
                 int i1;
                 try {
-                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
+                    i1 = (int) ((Double.parseDouble(text)) * 100);
                     lagersystem.getKuechenregallager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -243,10 +253,10 @@ public class SetVerkaufspreisPanel {
         setBalkonliegelagerFeld.setBounds(400, 150, 175, 30);
         setBalkonliegelagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String text = balkonliegelagerFeld.getText();
+                String text = balkonliegelagerFeld.getText().replace(',', '.');
                 int i1;
                 try {
-                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
+                    i1 = (int) ((Double.parseDouble(text)) * 100);
                     lagersystem.getBalkonliegelager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -259,10 +269,10 @@ public class SetVerkaufspreisPanel {
         setDoppelbettlagerFeld.setBounds(400, 300, 175, 30);
         setDoppelbettlagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String text = doppelbettlagerFeld.getText();
+                String text = doppelbettlagerFeld.getText().replace(',', '.');
                 int i1;
                 try {
-                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
+                    i1 = (int) ((Double.parseDouble(text)) * 100);
                     lagersystem.getDoppelbettlager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -275,10 +285,10 @@ public class SetVerkaufspreisPanel {
         setFernsehcouchFeld.setBounds(750, 150, 175, 30);
         setFernsehcouchFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String text = fernsehcouchFeld.getText();
+                String text = fernsehcouchFeld.getText().replace(',', '.');
                 int i1;
                 try {
-                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
+                    i1 = (int) ((Double.parseDouble(text)) * 100);
                     lagersystem.getFernsehcouchlager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -291,10 +301,10 @@ public class SetVerkaufspreisPanel {
         setKuechenstuhlFeld.setBounds(750, 300, 175, 30);
         setKuechenstuhlFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String text = KuechenstuhlFeld.getText();
+                String text = KuechenstuhlFeld.getText().replace(',', '.');
                 int i1;
                 try {
-                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
+                    i1 = (int) ((Double.parseDouble(text)) * 100);
                     lagersystem.getKuechenstuhllager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -307,10 +317,10 @@ public class SetVerkaufspreisPanel {
         setOhrensesselFeld.setBounds(750, 450, 175, 30);
         setOhrensesselFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String text = ohrensesselFeld.getText();
+                String text = ohrensesselFeld.getText().replace(',', '.');
                 int i1;
                 try {
-                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
+                    i1 = (int) ((Double.parseDouble(text)) * 100);
                     lagersystem.getOhrensessellager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -323,10 +333,10 @@ public class SetVerkaufspreisPanel {
         setBuerotischlagerFeld.setBounds(1100, 150, 175, 30);
         setBuerotischlagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String text = buerotischlagerFeld.getText();
+                String text = buerotischlagerFeld.getText().replace(',', '.');
                 int i1;
                 try {
-                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
+                    i1 = (int) ((Double.parseDouble(text)) * 100);
                     lagersystem.getBuerotischlager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -339,10 +349,10 @@ public class SetVerkaufspreisPanel {
         setCouchtischlagerFeld.setBounds(1100, 300, 175, 30);
         setCouchtischlagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String text = couchtischlagerFeld.getText();
+                String text = couchtischlagerFeld.getText().replace(',', '.');
                 int i1;
                 try {
-                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
+                    i1 = (int) ((Double.parseDouble(text)) * 100);
                     lagersystem.getCouchtischlager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -355,10 +365,10 @@ public class SetVerkaufspreisPanel {
         setEsstischlagerFeld.setBounds(1100, 450, 175, 30);
         setEsstischlagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String text = esstischlagerFeld.getText();
+                String text = esstischlagerFeld.getText().replace(',', '.');
                 int i1;
                 try {
-                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
+                    i1 = (int) ((Double.parseDouble(text)) * 100);
                     lagersystem.getEsstischlager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -371,10 +381,10 @@ public class SetVerkaufspreisPanel {
         setKuechentischlagerFeld.setBounds(1100, 600, 175, 30);
         setKuechentischlagerFeld.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String text = kuechentischlagerFeld.getText();
+                String text = kuechentischlagerFeld.getText().replace(',', '.');
                 int i1;
                 try {
-                    i1 = (int) (Double.parseDouble(String.valueOf(text)) * 100);
+                    i1 = (int) ((Double.parseDouble(text)) * 100);
                     lagersystem.getKuechentischlager().setPreis(i1);
                 } catch (NumberFormatException ignored) {
                 }
@@ -385,7 +395,7 @@ public class SetVerkaufspreisPanel {
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
-        back.setBounds(100, 700, 150, 30);
+        back.setBounds(50, 700, 175, 30);
         back.addActionListener(e -> {
             Frame.setAllPanelsInvisible();
             Frame.setAllHomeButtonsVisible();

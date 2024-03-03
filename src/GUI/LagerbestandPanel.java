@@ -9,6 +9,10 @@ import Moebelhaus.Moebelhaus;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class LagerbestandPanel {
     private static final JPanel aendereLagerbestandPanel = new JPanel();
@@ -220,73 +224,74 @@ public class LagerbestandPanel {
 
     public static void updateLabels() {
         //Lagerung
+        DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.GERMAN);
+        formatter.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.GERMAN));
+        Beistelltischlager.setText("Beistelltischlager: " + formatter.format((lagersystem.getBeistelltischlager().getMoebel().size())));
+        Beistelltischlager.setText("Beistelltischlager: " + formatter.format((lagersystem.getBeistelltischlager().getMoebel().size())));
+        BeistelltischlagerS.setText("Beistelltischlager S: " + formatter.format(lagersystem.getBeistelltischlagerBestand(Kategorie.Lagerung.Flaeche.s)));
+        BeistelltischlagerM.setText("Beistelltischlager M: " + formatter.format(lagersystem.getBeistelltischlagerBestand(Kategorie.Lagerung.Flaeche.m)));
+        BeistelltischlagerL.setText("Beistelltischlager L: " + formatter.format(lagersystem.getBeistelltischlagerBestand(Kategorie.Lagerung.Flaeche.l)));
+        BeistelltischlagerXL.setText("Beistelltischlager XL: " + formatter.format(lagersystem.getBeistelltischlagerBestand(Kategorie.Lagerung.Flaeche.xl)));
 
-        Beistelltischlager.setText("Beistelltischlager: " + String.valueOf((lagersystem.getBeistelltischlager().getMoebel().size())));
-        Beistelltischlager.setText("Beistelltischlager: " + String.valueOf((lagersystem.getBeistelltischlager().getMoebel().size())));
-        BeistelltischlagerS.setText("Beistelltischlager S: " + String.valueOf(lagersystem.getBeistelltischlagerBestand(Kategorie.Lagerung.Flaeche.s)));
-        BeistelltischlagerM.setText("Beistelltischlager M: " + String.valueOf(lagersystem.getBeistelltischlagerBestand(Kategorie.Lagerung.Flaeche.m)));
-        BeistelltischlagerL.setText("Beistelltischlager L: " + String.valueOf(lagersystem.getBeistelltischlagerBestand(Kategorie.Lagerung.Flaeche.l)));
-        BeistelltischlagerXL.setText("Beistelltischlager XL: " + String.valueOf(lagersystem.getBeistelltischlagerBestand(Kategorie.Lagerung.Flaeche.xl)));
+        Kleiderschranklager.setText("Kleiderschranklager: " + formatter.format(lagersystem.getKleiderschranklager().getMoebel().size()));
+        KleiderschranklagerS.setText("Kleiderschranklager S: " + formatter.format(lagersystem.getKleiderschranklagerBestand(Lagerung.Flaeche.s)));
+        KleiderschranklagerM.setText("Kleiderschranklager M: " + formatter.format(lagersystem.getKleiderschranklagerBestand(Lagerung.Flaeche.m)));
+        KleiderschranklagerL.setText("Kleiderschranklager L: " + formatter.format(lagersystem.getKleiderschranklagerBestand(Lagerung.Flaeche.l)));
+        KleiderschranklagerXL.setText("Kleiderschranklager XL: " + formatter.format(lagersystem.getKleiderschranklagerBestand(Lagerung.Flaeche.xl)));
 
-        Kleiderschranklager.setText("Kleiderschranklager: " + String.valueOf(lagersystem.getKleiderschranklager().getMoebel().size()));
-        KleiderschranklagerS.setText("Kleiderschranklager S: " + String.valueOf(lagersystem.getKleiderschranklagerBestand(Lagerung.Flaeche.s)));
-        KleiderschranklagerM.setText("Kleiderschranklager M: " + String.valueOf(lagersystem.getKleiderschranklagerBestand(Lagerung.Flaeche.m)));
-        KleiderschranklagerL.setText("Kleiderschranklager L: " + String.valueOf(lagersystem.getKleiderschranklagerBestand(Lagerung.Flaeche.l)));
-        KleiderschranklagerXL.setText("Kleiderschranklager XL: " + String.valueOf(lagersystem.getKleiderschranklagerBestand(Lagerung.Flaeche.xl)));
+        Kuechenregallager.setText("Kuechenregallagerlager: " + formatter.format(lagersystem.getKuechenregallager().getMoebel().size()));
+        KuechenregallagerS.setText("Kuechenregallagerlager S: " + formatter.format(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.s)));
+        KuechenregallagerM.setText("Kuechenregallagerlager M: " + formatter.format(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.m)));
+        KuechenregallagerL.setText("Kuechenregallagerlager L: " + formatter.format(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.l)));
+        KuechenregallagerXL.setText("Kuechenregallagerlager XL: " + formatter.format(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.xl)));
 
-        Kuechenregallager.setText("Kuechenregallagerlager: " + String.valueOf(lagersystem.getKuechenregallager().getMoebel().size()));
-        KuechenregallagerS.setText("Kuechenregallagerlager S: " + String.valueOf(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.s)));
-        KuechenregallagerM.setText("Kuechenregallagerlager M: " + String.valueOf(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.m)));
-        KuechenregallagerL.setText("Kuechenregallagerlager L: " + String.valueOf(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.l)));
-        KuechenregallagerXL.setText("Kuechenregallagerlager XL: " + String.valueOf(lagersystem.getKuechenregallagerBestand(Lagerung.Flaeche.xl)));
+        Balkonliegelager.setText("Balkonliegelager: " + formatter.format(lagersystem.getBalkonliegelager().getMoebel().size()));
+        BalkonliegelagerS.setText("Balkonliegelager S: " + formatter.format(lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.s)));
+        BalkonliegelagerM.setText("Balkonliegelager M: " + formatter.format(lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.m)));
+        BalkonliegelagerL.setText("Balkonliegelager L: " + formatter.format(lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.l)));
 
-        Balkonliegelager.setText("Balkonliegelager: " + String.valueOf(lagersystem.getBalkonliegelager().getMoebel().size()));
-        BalkonliegelagerS.setText("Balkonliegelager S: " + String.valueOf(lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.s)));
-        BalkonliegelagerM.setText("Balkonliegelager M: " + String.valueOf(lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.m)));
-        BalkonliegelagerL.setText("Balkonliegelager L: " + String.valueOf(lagersystem.getBalkonliegelagerBestand(Liegemoebel.Laenge.l)));
+        Doppelbettlager.setText("Doppelbettlager: " + formatter.format(lagersystem.getDoppelbettlager().getMoebel().size()));
+        DoppelbettlagerS.setText("Doppelbettlager S: " + formatter.format(lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.s)));
+        DoppelbettlagerM.setText("Doppelbettlager M: " + formatter.format(lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.m)));
+        DoppelbettlagerL.setText("Doppelbettlager L: " + formatter.format(lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.l)));
 
-        Doppelbettlager.setText("Doppelbettlager: " + String.valueOf(lagersystem.getDoppelbettlager().getMoebel().size()));
-        DoppelbettlagerS.setText("Doppelbettlager S: " + String.valueOf(lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.s)));
-        DoppelbettlagerM.setText("Doppelbettlager M: " + String.valueOf(lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.m)));
-        DoppelbettlagerL.setText("Doppelbettlager L: " + String.valueOf(lagersystem.getDoppelbettlagerBestand(Liegemoebel.Laenge.l)));
+        Fernsehcouch.setText("Fernsehcouch: " + formatter.format(lagersystem.getFernsehcouchlager().getMoebel().size()));
+        FernsehcouchEins.setText("Fernsehcouch Eins: " + formatter.format(lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.eins)));
+        FernsehcouchZwei.setText("Fernsehcouch Zwei: " + formatter.format(lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.zwei)));
+        FernsehcouchDrei.setText("Fernsehcouch Drei: " + formatter.format(lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.drei)));
+        FernsehcouchVier.setText("Fernsehcouch Vier: " + formatter.format(lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.vier)));
 
-        Fernsehcouch.setText("Fernsehcouch: " + String.valueOf(lagersystem.getFernsehcouchlager().getMoebel().size()));
-        FernsehcouchEins.setText("Fernsehcouch Eins: " + String.valueOf(lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.eins)));
-        FernsehcouchZwei.setText("Fernsehcouch Zwei: " + String.valueOf(lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.zwei)));
-        FernsehcouchDrei.setText("Fernsehcouch Drei: " + String.valueOf(lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.drei)));
-        FernsehcouchVier.setText("Fernsehcouch Vier: " + String.valueOf(lagersystem.getFernsehcouchlagerBestand(Sitzmoebel.Sitzplaetze.vier)));
+        Kuechenstuhl.setText("Kuechenstuhl: " + formatter.format(lagersystem.getKuechenstuhllager().getMoebel().size()));
+        KuechenstuhlEins.setText("Kuechenstuhl Eins: " + formatter.format(lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.eins)));
+        KuechenstuhlZwei.setText("Kuechenstuhl Zwei: " + formatter.format(lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.zwei)));
+        KuechenstuhlDrei.setText("Kuechenstuhl Drei: " + formatter.format(lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.drei)));
+        KuechenstuhlVier.setText("Kuechenstuhl Vier: " + formatter.format(lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.vier)));
 
-        Kuechenstuhl.setText("Kuechenstuhl: " + String.valueOf(lagersystem.getKuechenstuhllager().getMoebel().size()));
-        KuechenstuhlEins.setText("Kuechenstuhl Eins: " + String.valueOf(lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.eins)));
-        KuechenstuhlZwei.setText("Kuechenstuhl Zwei: " + String.valueOf(lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.zwei)));
-        KuechenstuhlDrei.setText("Kuechenstuhl Drei: " + String.valueOf(lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.drei)));
-        KuechenstuhlVier.setText("Kuechenstuhl Vier: " + String.valueOf(lagersystem.getKuechenstuhllagerBestand(Sitzmoebel.Sitzplaetze.vier)));
+        Ohrensessel.setText("Ohrensessel: " + formatter.format(lagersystem.getOhrensessellager().getMoebel().size()));
+        OhrensesselEins.setText("Ohrensessel Eins: " + formatter.format(lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.eins)));
+        OhrensesselZwei.setText("Ohrensessel Zwei: " + formatter.format(lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.zwei)));
+        OhrensesselDrei.setText("Ohrensessel Drei: " + formatter.format(lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.drei)));
+        OhrensesselVier.setText("Ohrensessel Vier: " + formatter.format(lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.vier)));
 
-        Ohrensessel.setText("Ohrensessel: " + String.valueOf(lagersystem.getOhrensessellager().getMoebel().size()));
-        OhrensesselEins.setText("Ohrensessel Eins: " + String.valueOf(lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.eins)));
-        OhrensesselZwei.setText("Ohrensessel Zwei: " + String.valueOf(lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.zwei)));
-        OhrensesselDrei.setText("Ohrensessel Drei: " + String.valueOf(lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.drei)));
-        OhrensesselVier.setText("Ohrensessel Vier: " + String.valueOf(lagersystem.getOhrensessellagerBestand(Sitzmoebel.Sitzplaetze.vier)));
+        Buerotischlager.setText("Buerotischlager: " + formatter.format(lagersystem.getBuerotischlager().getMoebel().size()));
+        BuerotischlagerS.setText("Buerotischlager S: " + formatter.format(lagersystem.getBuerotischlagerBestand(Tische.Hoehe.s)));
+        BuerotischlagerM.setText("Buerotischlager M: " + formatter.format(lagersystem.getBuerotischlagerBestand(Tische.Hoehe.m)));
+        BuerotischlagerL.setText("Buerotischlager L: " + formatter.format(lagersystem.getBuerotischlagerBestand(Tische.Hoehe.l)));
 
-        Buerotischlager.setText("Buerotischlager: " + String.valueOf(lagersystem.getBuerotischlager().getMoebel().size()));
-        BuerotischlagerS.setText("Buerotischlager S: " + String.valueOf(lagersystem.getBuerotischlagerBestand(Tische.Hoehe.s)));
-        BuerotischlagerM.setText("Buerotischlager M: " + String.valueOf(lagersystem.getBuerotischlagerBestand(Tische.Hoehe.m)));
-        BuerotischlagerL.setText("Buerotischlager L: " + String.valueOf(lagersystem.getBuerotischlagerBestand(Tische.Hoehe.l)));
+        Couchtischlager.setText("Couchtischlager: " + formatter.format(lagersystem.getCouchtischlager().getMoebel().size()));
+        CouchtischlagerS.setText("Couchtischlager S: " + formatter.format(lagersystem.getCouchtischlagerBestand(Tische.Hoehe.s)));
+        CouchtischlagerM.setText("Couchtischlager M: " + formatter.format(lagersystem.getCouchtischlagerBestand(Tische.Hoehe.m)));
+        CouchtischlagerL.setText("Couchtischlager L: " + formatter.format(lagersystem.getCouchtischlagerBestand(Tische.Hoehe.l)));
 
-        Couchtischlager.setText("Couchtischlager: " + String.valueOf(lagersystem.getCouchtischlager().getMoebel().size()));
-        CouchtischlagerS.setText("Couchtischlager S: " + String.valueOf(lagersystem.getCouchtischlagerBestand(Tische.Hoehe.s)));
-        CouchtischlagerM.setText("Couchtischlager M: " + String.valueOf(lagersystem.getCouchtischlagerBestand(Tische.Hoehe.m)));
-        CouchtischlagerL.setText("Couchtischlager L: " + String.valueOf(lagersystem.getCouchtischlagerBestand(Tische.Hoehe.l)));
+        Esstischlager.setText("Esstischlager: " + formatter.format(lagersystem.getEsstischlager().getMoebel().size()));
+        EsstischlagerS.setText("Esstischlager S: " + formatter.format(lagersystem.getEsstischlagerBestand(Tische.Hoehe.s)));
+        EsstischlagerM.setText("Esstischlager M: " + formatter.format(lagersystem.getEsstischlagerBestand(Tische.Hoehe.m)));
+        EsstischlagerL.setText("Esstischlager L: " + formatter.format(lagersystem.getEsstischlagerBestand(Tische.Hoehe.l)));
 
-        Esstischlager.setText("Esstischlager: " + String.valueOf(lagersystem.getEsstischlager().getMoebel().size()));
-        EsstischlagerS.setText("Esstischlager S: " + String.valueOf(lagersystem.getEsstischlagerBestand(Tische.Hoehe.s)));
-        EsstischlagerM.setText("Esstischlager M: " + String.valueOf(lagersystem.getEsstischlagerBestand(Tische.Hoehe.m)));
-        EsstischlagerL.setText("Esstischlager L: " + String.valueOf(lagersystem.getEsstischlagerBestand(Tische.Hoehe.l)));
-
-        Kuechentischlager.setText("Kuechentischlager: " + String.valueOf(lagersystem.getKuechentischlager().getMoebel().size()));
-        KuechentischlagerS.setText("Kuechentischlager S: " + String.valueOf(lagersystem.getKuechentischlagerBestand(Tische.Hoehe.s)));
-        KuechentischlagerM.setText("Kuechentischlager M: " + String.valueOf(lagersystem.getKuechentischlagerBestand(Tische.Hoehe.m)));
-        KuechentischlagerL.setText("Kuechentischlager L: " + String.valueOf(lagersystem.getKuechentischlagerBestand(Tische.Hoehe.l)));
+        Kuechentischlager.setText("Kuechentischlager: " + formatter.format(lagersystem.getKuechentischlager().getMoebel().size()));
+        KuechentischlagerS.setText("Kuechentischlager S: " + formatter.format(lagersystem.getKuechentischlagerBestand(Tische.Hoehe.s)));
+        KuechentischlagerM.setText("Kuechentischlager M: " + formatter.format(lagersystem.getKuechentischlagerBestand(Tische.Hoehe.m)));
+        KuechentischlagerL.setText("Kuechentischlager L: " + formatter.format(lagersystem.getKuechentischlagerBestand(Tische.Hoehe.l)));
 
 
     }
