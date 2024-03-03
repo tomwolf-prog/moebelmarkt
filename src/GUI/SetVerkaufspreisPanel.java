@@ -132,53 +132,53 @@ public class SetVerkaufspreisPanel {
     public static void updateLabels() {
         //Lagerung
 
-        beistelltischlager.setText("Beistelltischlager: " + String.valueOf((float) lagersystem.getBeistelltischlager().getPreis() / 100) + "\n"
+        beistelltischlager.setText("Beistelltischlager: " + String.valueOf((double) lagersystem.getBeistelltischlager().getPreis() / 100) + "\n"
                 + "Rabatt: " + lagersystem.getBeistelltischlager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (float) lagersystem.getBeistelltischlager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + (double) lagersystem.getBeistelltischlager().getPreisOhneRabatt() / 100);
 
-        kleiderschranklager.setText("Kleiderschranklager: " + String.valueOf((float) lagersystem.getKleiderschranklager().getPreis() / 100) + "\n"
+        kleiderschranklager.setText("Kleiderschranklager: " + String.valueOf((double) lagersystem.getKleiderschranklager().getPreis() / 100) + "\n"
                 + "Rabatt: " + lagersystem.getKleiderschranklager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (float) lagersystem.getKleiderschranklager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + (double) lagersystem.getKleiderschranklager().getPreisOhneRabatt() / 100);
 
-        kuechenregallager.setText("Kuechenregallagerlager: " + String.valueOf((float) lagersystem.getKuechenregallager().getPreis() / 100) + "\n"
+        kuechenregallager.setText("Kuechenregallagerlager: " + String.valueOf((double) lagersystem.getKuechenregallager().getPreis() / 100) + "\n"
                 + "Rabatt: " + lagersystem.getKuechenregallager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (float) lagersystem.getKuechenregallager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + (double) lagersystem.getKuechenregallager().getPreisOhneRabatt() / 100);
 
-        balkonliegelager.setText("Balkonliegelager: " + String.valueOf((float) lagersystem.getBalkonliegelager().getPreis() / 100) + "\n"
+        balkonliegelager.setText("Balkonliegelager: " + String.valueOf((double) lagersystem.getBalkonliegelager().getPreis() / 100) + "\n"
                 + "Rabatt: " + lagersystem.getBalkonliegelager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (float) lagersystem.getBalkonliegelager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + (double) lagersystem.getBalkonliegelager().getPreisOhneRabatt() / 100);
 
-        doppelbettlager.setText("Doppelbettlager: " + String.valueOf((float) lagersystem.getDoppelbettlager().getPreis() / 100) + "\n"
+        doppelbettlager.setText("Doppelbettlager: " + String.valueOf((double) lagersystem.getDoppelbettlager().getPreis() / 100) + "\n"
                 + "Rabatt: " + lagersystem.getDoppelbettlager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (float) lagersystem.getDoppelbettlager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + (double) lagersystem.getDoppelbettlager().getPreisOhneRabatt() / 100);
 
-        fernsehcouch.setText("Fernsehcouch: " + String.valueOf((float) lagersystem.getFernsehcouchlager().getPreis() / 100) + "\n"
+        fernsehcouch.setText("Fernsehcouch: " + String.valueOf((double) lagersystem.getFernsehcouchlager().getPreis() / 100) + "\n"
                 + "Rabatt: " + lagersystem.getFernsehcouchlager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (float) lagersystem.getFernsehcouchlager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + (double) lagersystem.getFernsehcouchlager().getPreisOhneRabatt() / 100);
 
-        Kuechenstuhl.setText("Kuechenstuhl: " + String.valueOf((float) lagersystem.getKuechenstuhllager().getPreis() / 100) + "\n"
+        Kuechenstuhl.setText("Kuechenstuhl: " + String.valueOf((double) lagersystem.getKuechenstuhllager().getPreis() / 100) + "\n"
                 + "Rabatt: " + lagersystem.getKuechenstuhllager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (float) lagersystem.getKuechenstuhllager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + (double) lagersystem.getKuechenstuhllager().getPreisOhneRabatt() / 100);
 
-        ohrensessel.setText("Ohrensessel: " + String.valueOf((float) lagersystem.getOhrensessellager().getPreis() / 100) + "\n"
+        ohrensessel.setText("Ohrensessel: " + String.valueOf((double) lagersystem.getOhrensessellager().getPreis() / 100) + "\n"
                 + "Rabatt: " + lagersystem.getOhrensessellager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (float) lagersystem.getOhrensessellager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + (double) lagersystem.getOhrensessellager().getPreisOhneRabatt() / 100);
 
-        buerotischlager.setText("Buerotischlager: " + String.valueOf((float) lagersystem.getBuerotischlager().getPreis() / 100) + "\n"
+        buerotischlager.setText("Buerotischlager: " + String.valueOf((double) lagersystem.getBuerotischlager().getPreis() / 100) + "\n"
                 + "Rabatt: " + lagersystem.getBuerotischlager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (float) lagersystem.getBuerotischlager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + (double) lagersystem.getBuerotischlager().getPreisOhneRabatt() / 100);
 
-        couchtischlager.setText("Couchtischlager: " + String.valueOf((float) lagersystem.getCouchtischlager().getPreis() / 100) + "\n"
+        couchtischlager.setText("Couchtischlager: " + String.valueOf((double) lagersystem.getCouchtischlager().getPreis() / 100) + "\n"
                 + "Rabatt: " + lagersystem.getCouchtischlager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (float) lagersystem.getCouchtischlager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + (double) lagersystem.getCouchtischlager().getPreisOhneRabatt() / 100);
 
-        esstischlager.setText("Esstischlager: " + String.valueOf((float) lagersystem.getEsstischlager().getPreis() / 100) + "\n"
+        esstischlager.setText("Esstischlager: " + String.valueOf((double) lagersystem.getEsstischlager().getPreis() / 100) + "\n"
                 + "Rabatt: " + lagersystem.getEsstischlager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (float) lagersystem.getEsstischlager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + (double) lagersystem.getEsstischlager().getPreisOhneRabatt() / 100);
 
-        kuechentischlager.setText("Kuechentischlager: " + String.valueOf((float) lagersystem.getKuechentischlager().getPreis() / 100) + "\n"
+        kuechentischlager.setText("Kuechentischlager: " + String.valueOf((double) lagersystem.getKuechentischlager().getPreis() / 100) + "\n"
                 + "Rabatt: " + lagersystem.getKuechentischlager().getRabatt10() + "\n" +
-                "ohne Rabatt: " + (float) lagersystem.getKuechentischlager().getPreisOhneRabatt() / 100);
+                "ohne Rabatt: " + (double) lagersystem.getKuechentischlager().getPreisOhneRabatt() / 100);
 
     }
 

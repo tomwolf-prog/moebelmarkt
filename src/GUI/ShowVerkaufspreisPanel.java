@@ -2,6 +2,7 @@ package GUI;
 
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
+import Moebelstueck.Moebelstueck;
 
 import javax.swing.*;
 import java.awt.*;
@@ -58,50 +59,32 @@ public class ShowVerkaufspreisPanel {
 
     public static void updateLabels() {
 
-        int kuecheGesamtPreis = lagersystem.getKuechenregallager().getMoebel().size() * lagersystem.getKuechenregallager().getPreis() +
-                lagersystem.getKuechentischlager().getMoebel().size() * lagersystem.getKuechentischlager().getPreis() +
-                lagersystem.getKuechenstuhllager().getMoebel().size() * lagersystem.getKuechenstuhllager().getPreis();
-        Kueche.setText("Küche: " + kuecheGesamtPreis);
+        int kuecheGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinesBereichs(Moebelstueck.Bereich.Kueche);
+        Kueche.setText("Küche: " + ((double) kuecheGesamtPreis) / 100 + " €");
 
-        int wohnenGesamtPreis = lagersystem.getOhrensessellager().getMoebel().size() * lagersystem.getOhrensessellager().getPreis() +
-                lagersystem.getCouchtischlager().getMoebel().size() * lagersystem.getCouchtischlager().getPreis() +
-                lagersystem.getFernsehcouchlager().getMoebel().size() * lagersystem.getFernsehcouchlager().getPreis();
-        Wohnen.setText("Wohnen: " + wohnenGesamtPreis);
+        int wohnenGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinesBereichs(Moebelstueck.Bereich.Wohnen);
+        Wohnen.setText("Wohnen: " + ((double) wohnenGesamtPreis) / 100 + " €");
 
-        int schlafenGesamtPreis = lagersystem.getBeistelltischlager().getMoebel().size() * lagersystem.getBeistelltischlager().getPreis() +
-                lagersystem.getDoppelbettlager().getMoebel().size() * lagersystem.getDoppelbettlager().getPreis() +
-                lagersystem.getKleiderschranklager().getMoebel().size() * lagersystem.getKleiderschranklager().getPreis();
-        Schlafen.setText("Schlafen: " + schlafenGesamtPreis);
+        int schlafenGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinesBereichs(Moebelstueck.Bereich.Schlafen);
+        Schlafen.setText("Schlafen: " + ((double) schlafenGesamtPreis) / 100 + " €");
 
 
-        int andereGesamtPreis = lagersystem.getBuerotischlager().getMoebel().size() * lagersystem.getBuerotischlager().getPreis() +
-                lagersystem.getEsstischlager().getMoebel().size() * lagersystem.getEsstischlager().getPreis() +
-                lagersystem.getBalkonliegelager().getMoebel().size() * lagersystem.getBalkonliegelager().getPreis();
-        Andere.setText("Andere: " + andereGesamtPreis);
+        int andereGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinesBereichs(Moebelstueck.Bereich.Andere);
+        Andere.setText("Andere: " + ((double) andereGesamtPreis) / 100 + " €");
 
-        int lagerungGesamtPreis = lagersystem.getBeistelltischlager().getMoebel().size() * lagersystem.getBeistelltischlager().getPreis() +
-                lagersystem.getKleiderschranklager().getMoebel().size() * lagersystem.getKleiderschranklager().getPreis() +
-                lagersystem.getKuechenregallager().getMoebel().size() * lagersystem.getKuechenregallager().getPreis();
-        Lagerung.setText("Lagerung: " + lagerungGesamtPreis);
+        int lagerungGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinerKategorie(Moebelstueck.Kategorie.Lagerung);
+        Lagerung.setText("Lagerung: " + ((double) lagerungGesamtPreis) / 100 + " €");
 
-        int liegemoebelGesamtPreis = lagersystem.getBalkonliegelager().getMoebel().size() * lagersystem.getBalkonliegelager().getPreis() +
-                lagersystem.getDoppelbettlager().getMoebel().size() * lagersystem.getDoppelbettlager().getPreis();
-        Liegemoebel.setText("Liegemoebel: " + liegemoebelGesamtPreis);
+        int liegemoebelGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinerKategorie(Moebelstueck.Kategorie.Liegemoebel);
+        Liegemoebel.setText("Liegemoebel: " + ((double) liegemoebelGesamtPreis) / 100 + " €");
 
-        int sitmoebelGesamtPreis = lagersystem.getFernsehcouchlager().getMoebel().size() * lagersystem.getFernsehcouchlager().getPreis() +
-                lagersystem.getKuechenstuhllager().getMoebel().size() * lagersystem.getKuechenstuhllager().getPreis() +
-                lagersystem.getOhrensessellager().getMoebel().size() * lagersystem.getOhrensessellager().getPreis();
-        Sitzmoebel.setText("Sitzmoebel: " + sitmoebelGesamtPreis);
+        int sitmoebelGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinerKategorie(Moebelstueck.Kategorie.Sitzmoebel);
+        Sitzmoebel.setText("Sitzmoebel: " + ((double) sitmoebelGesamtPreis) / 100 + " €");
 
+        int tischeGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinerKategorie(Moebelstueck.Kategorie.Tische);
+        Tische.setText("Tische:" + ((double) (tischeGesamtPreis)) / 100 + " €");
 
-        int tischeGesamtPreis = lagersystem.getBuerotischlager().getMoebel().size() * lagersystem.getBuerotischlager().getPreis() +
-                lagersystem.getCouchtischlager().getMoebel().size() * lagersystem.getCouchtischlager().getPreis() +
-                lagersystem.getEsstischlager().getMoebel().size() * lagersystem.getEsstischlager().getPreis() +
-                lagersystem.getKuechentischlager().getMoebel().size() * lagersystem.getKuechentischlager().getPreis();
-
-        Tische.setText("Tische:" + tischeGesamtPreis);
-
-        GesamtVerkaufspreis.setText("Gesamt.Verkaufspreis: " + String.valueOf(kuecheGesamtPreis + wohnenGesamtPreis + schlafenGesamtPreis + andereGesamtPreis));
+        GesamtVerkaufspreis.setText("Gesamt.Verkaufspreis: " + ((double) (kuecheGesamtPreis + wohnenGesamtPreis + schlafenGesamtPreis + andereGesamtPreis)) / 100 + " €");
 
         int grossterBereichValue = 0;
         String grossterBereichName;
@@ -122,7 +105,7 @@ public class ShowVerkaufspreisPanel {
         grossterBereichName = "Andere";
 
 
-        GroessterBereich.setText("Größter Gesamtpreis: " + grossterBereichName);
+        GroessterBereich.setText("Größter Gesamtpreis: " + grossterBereichName + " " + ((double) grossterBereichValue) / 100 + " €");
 
 
     }

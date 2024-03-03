@@ -9,6 +9,7 @@ import Moebelhaus.Moebelhaus;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 import java.util.Objects;
 
 public class FindeKategorieMitEigenschaft {
@@ -35,6 +36,18 @@ public class FindeKategorieMitEigenschaft {
         cbl.setVisible(false);
         cbt.setVisible(false);
 
+    }
+
+    private static String formatText(List<?> list) {
+        StringBuilder sb = new StringBuilder();
+        for (Object o : list) {
+            List<?> l = (List<?>) o;
+            for (Object n : l) {
+                sb.append(n.toString());
+                sb.append("\n");
+            }
+        }
+        return sb.toString();
     }
 
     public static JPanel Panel() {
@@ -100,59 +113,59 @@ public class FindeKategorieMitEigenschaft {
                 case "Sitzmoebel":
                     switch (Objects.requireNonNull(cbsm.getSelectedItem()).toString()) {
                         case "Eins":
-                            ta.setText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.eins).stream().toList().toString());
+                            ta.setText(formatText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.eins).stream().toList()));
                             break;
                         case "Zwei":
-                            ta.setText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.zwei).stream().toList().toString());
+                            ta.setText(formatText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.zwei).stream().toList()));
                             break;
                         case "Drei":
-                            ta.setText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.drei).stream().toList().toString());
+                            ta.setText(formatText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.drei).stream().toList()));
                             break;
                         case "Vier":
-                            ta.setText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.vier).stream().toList().toString());
+                            ta.setText(formatText(lagersystem.searchSitzmoebelMitEigenschaft(Sitzmoebel.Sitzplaetze.vier).stream().toList()));
                             break;
                     }
                     break;
                 case "Tische":
                     switch (Objects.requireNonNull(cbt.getSelectedItem()).toString()) {
                         case "S":
-                            ta.setText(lagersystem.searchTischMitEigenschaft(Tische.Hoehe.s).stream().toList().toString());
+                            ta.setText(formatText(lagersystem.searchTischMitEigenschaft(Tische.Hoehe.s).stream().toList()));
                             break;
                         case "M":
-                            ta.setText(lagersystem.searchTischMitEigenschaft(Tische.Hoehe.m).stream().toList().toString());
+                            ta.setText(formatText(lagersystem.searchTischMitEigenschaft(Tische.Hoehe.m).stream().toList()));
                             break;
                         case "L":
-                            ta.setText(lagersystem.searchTischMitEigenschaft(Tische.Hoehe.l).stream().toList().toString());
+                            ta.setText(formatText(lagersystem.searchTischMitEigenschaft(Tische.Hoehe.l).stream().toList()));
                             break;
                     }
                     break;
                 case "Lagerung":
                     switch (Objects.requireNonNull(cbf.getSelectedItem()).toString()) {
                         case "S":
-                            ta.setText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.s).stream().toList().toString());
+                            ta.setText(formatText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.s).stream().toList()));
                             break;
                         case "M":
-                            ta.setText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.m).stream().toList().toString());
+                            ta.setText(formatText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.m).stream().toList()));
                             break;
                         case "L":
-                            ta.setText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.l).stream().toList().toString());
+                            ta.setText(formatText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.l).stream().toList()));
                             break;
                         case "XL":
-                            ta.setText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.xl).stream().toList().toString());
+                            ta.setText(formatText(lagersystem.searchLagerungMitEigenschaft(Lagerung.Flaeche.xl).stream().toList()));
                             break;
                     }
                     break;
                 case "Liegemoebel":
                     switch (Objects.requireNonNull(cbl.getSelectedItem()).toString()) {
                         case "S":
-                            ta.setText(lagersystem.searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge.s).stream().toList().toString());
+                            ta.setText(formatText(lagersystem.searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge.s).stream().toList()));
                             break;
                         case "M":
-                            ta.setText(lagersystem.searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge.m).stream().toList().toString());
+                            ta.setText(formatText(lagersystem.searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge.m).stream().toList()));
 
                             break;
                         case "L":
-                            ta.setText(lagersystem.searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge.l).stream().toList().toString());
+                            ta.setText(formatText(lagersystem.searchLiegemoebelMitEigenschaft(Liegemoebel.Laenge.l).stream().toList()));
                             break;
                     }
                     break;

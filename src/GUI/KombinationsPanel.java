@@ -31,7 +31,7 @@ public class KombinationsPanel {
     private static void updateLabels(String txt, int preis) {
         String ausgabe = "Kombination: \n";
         ausgabe = ausgabe + txt;
-        ausgabe = ausgabe + "=Gesamtpreis: "+(float) preis / 100+"€";
+        ausgabe = ausgabe + "=Gesamtpreis: " + (float) preis / 100 + "€";
 
         ta.setText(ausgabe);
     }
@@ -65,11 +65,11 @@ public class KombinationsPanel {
 
                 ArrayList<Lager<? extends Moebelstueck>> konstellation = lagersystem.moebelauswahlBisBetrag(i1);
                 int gesamtpreis = konstellation.stream().mapToInt(Lager::getPreis).sum();
-                String zwischenAusgabe = "";
+                StringBuilder zwischenAusgabe = new StringBuilder();
                 for (Lager<? extends Moebelstueck> lager : konstellation) {
-                    zwischenAusgabe = zwischenAusgabe + lager.getMoebel().get(0).toString() + " | Preis: "+ (float) lager.getPreis() / 100+"€\n";
+                    zwischenAusgabe.append(lager.getMoebel().getFirst().toString()).append(" | Preis: ").append((double) lager.getPreis() / 100).append("€\n");
                 }
-                updateLabels(zwischenAusgabe, gesamtpreis);
+                updateLabels(zwischenAusgabe.toString(), gesamtpreis);
 
             }
         });
