@@ -84,25 +84,29 @@ public class ShowVerkaufspreisPanel {
         int tischeGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinerKategorie(Moebelstueck.Kategorie.Tische);
         Tische.setText("Tische:" + ((double) (tischeGesamtPreis)) / 100 + " €");
 
-        GesamtVerkaufspreis.setText("Gesamt.Verkaufspreis: " + ((double) (kuecheGesamtPreis + wohnenGesamtPreis + schlafenGesamtPreis + andereGesamtPreis)) / 100 + " €");
+        GesamtVerkaufspreis.setText("Gesamt Verkaufspreis: " + ((double) (kuecheGesamtPreis + wohnenGesamtPreis + schlafenGesamtPreis + andereGesamtPreis)) / 100 + " €");
 
         int grossterBereichValue = 0;
-        String grossterBereichName;
-        if (kuecheGesamtPreis > grossterBereichValue)
+        String grossterBereichName = "";
+        if (kuecheGesamtPreis > grossterBereichValue) {
             grossterBereichValue = kuecheGesamtPreis;
-        grossterBereichName = "Kueche";
+            grossterBereichName = "Kueche";
+        }
 
-        if (wohnenGesamtPreis > grossterBereichValue)
+        if (wohnenGesamtPreis > grossterBereichValue) {
             grossterBereichValue = wohnenGesamtPreis;
-        grossterBereichName = "Wohnen";
+            grossterBereichName = "Wohnen";
+        }
 
-        if (schlafenGesamtPreis > grossterBereichValue)
+        if (schlafenGesamtPreis > grossterBereichValue) {
             grossterBereichValue = schlafenGesamtPreis;
-        grossterBereichName = "Schlafen";
+            grossterBereichName = "Schlafen";
+        }
 
-        if (andereGesamtPreis > grossterBereichValue)
+        if (andereGesamtPreis > grossterBereichValue) {
             grossterBereichValue = andereGesamtPreis;
-        grossterBereichName = "Andere";
+            grossterBereichName = "Andere";
+        }
 
 
         GroessterBereich.setText("Größter Gesamtpreis: " + grossterBereichName + " " + ((double) grossterBereichValue) / 100 + " €");
