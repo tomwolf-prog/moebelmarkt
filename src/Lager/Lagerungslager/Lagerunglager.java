@@ -51,7 +51,6 @@ public abstract class Lagerunglager extends Lager<Lagerung> {
             if (moebelstueck.getFlaeche() == flaeche) {
                 lagerungList.add(moebelstueck);
             }
-            ;
         }
         return lagerungList;
     }

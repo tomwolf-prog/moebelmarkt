@@ -15,6 +15,16 @@ import java.util.List;
  * @author Sidney Schmidt, Tom Wolf
  */
 public abstract class Liegemoebellager extends Lager<Liegemoebel> {
+    
+    /**
+     * Fügt ein Liegemoebel-Objekt zum Lager hinzu.
+     *
+     * @param liegemoebel Das Liegemoebel-Objekt, das zum Lager hinzugefügt werden soll.
+     */
+    public void addLiegemoebel(Liegemoebel liegemoebel) {
+        moebelstueckArrayList.add(liegemoebel);
+    }
+
     /**
      * Entfernt ein Liegemoebel-Objekt mit der angegebenen Länge aus dem Lager.
      *
@@ -26,7 +36,6 @@ public abstract class Liegemoebellager extends Lager<Liegemoebel> {
                 moebelstueckArrayList.remove(moebelstueck);
                 break;
             }
-            ;
         }
     }
 
@@ -42,18 +51,8 @@ public abstract class Liegemoebellager extends Lager<Liegemoebel> {
             if (moebelstueck.getLaenge() == laenge) {
                 liegemoebelList.add(moebelstueck);
             }
-            ;
         }
         return liegemoebelList;
-    }
-
-    /**
-     * Fügt ein Liegemoebel-Objekt zum Lager hinzu.
-     *
-     * @param liegemoebel Das Liegemoebel-Objekt, das zum Lager hinzugefügt werden soll.
-     */
-    public void addLiegemoebel(Liegemoebel liegemoebel) {
-        moebelstueckArrayList.add(liegemoebel);
     }
 
     /**

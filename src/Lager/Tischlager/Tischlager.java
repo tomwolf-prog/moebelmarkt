@@ -18,6 +18,16 @@ import java.util.List;
 public abstract class Tischlager extends Lager<Tische> {
 
     /**
+     * Fügt einen Tisch zum Lager hinzu.
+     *
+     * @param tisch Der hinzuzufügende Tisch.
+     * @return true, wenn der Tisch erfolgreich hinzugefügt wurde, ansonsten false.
+     */
+    public boolean addTisch(Tische tisch) {
+        return moebelstueckArrayList.add(tisch);
+    }
+
+    /**
      * Entfernt einen Tisch aus dem Lager basierend auf der angegebenen Höhe.
      *
      * @param hoehe Die Höhe des zu entfernenden Tisches.
@@ -45,16 +55,6 @@ public abstract class Tischlager extends Lager<Tische> {
             }
         }
         return tischeList;
-    }
-
-    /**
-     * Fügt einen Tisch zum Lager hinzu.
-     *
-     * @param tisch Der hinzuzufügende Tisch.
-     * @return true, wenn der Tisch erfolgreich hinzugefügt wurde, ansonsten false.
-     */
-    public boolean addTisch(Tische tisch) {
-        return moebelstueckArrayList.add(tisch);
     }
 
     /**

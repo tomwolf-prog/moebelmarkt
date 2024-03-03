@@ -17,6 +17,16 @@ import java.util.List;
 public abstract class Sitzmoebellager extends Lager<Sitzmoebel> {
 
     /**
+     * Fügt ein Sitzmöbelstück zum Lager hinzu.
+     *
+     * @param sitzmoebel Das hinzuzufügende Sitzmöbelstück.
+     * @return true, wenn das Sitzmöbelstück erfolgreich hinzugefügt wurde, ansonsten false.
+     */
+    public boolean addSitzmoebel(Sitzmoebel sitzmoebel) {
+        return moebelstueckArrayList.add(sitzmoebel);
+    }
+
+    /**
      * Entfernt ein Sitzmöbelstück aus dem Lager basierend auf der Anzahl der Sitzplätze eines Sitzmöbelstücks.
      *
      * @param sitzplaetze Die Anzahl der Sitzplätze des zu entfernenden Sitzmöbelstücks.
@@ -27,7 +37,6 @@ public abstract class Sitzmoebellager extends Lager<Sitzmoebel> {
                 moebelstueckArrayList.remove(moebelstueck);
                 break;
             }
-            ;
         }
     }
 
@@ -43,19 +52,8 @@ public abstract class Sitzmoebellager extends Lager<Sitzmoebel> {
             if (moebelstueck.getSitzplaetze() == sitzplaetze) {
                 sitzmoebelList.add(moebelstueck);
             }
-            ;
         }
         return sitzmoebelList;
-    }
-
-    /**
-     * Fügt ein Sitzmöbelstück zum Lager hinzu.
-     *
-     * @param sitzmoebel Das hinzuzufügende Sitzmöbelstück.
-     * @return true, wenn das Sitzmöbelstück erfolgreich hinzugefügt wurde, ansonsten false.
-     */
-    public boolean addSitzmoebel(Sitzmoebel sitzmoebel) {
-        return moebelstueckArrayList.add(sitzmoebel);
     }
 
     /**
