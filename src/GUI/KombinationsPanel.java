@@ -54,9 +54,8 @@ public class KombinationsPanel {
         } else {
             int gesamtpreis = konstellation.stream().mapToInt(Lager::getPreis).sum();
             for (Lager<? extends Moebelstueck> lager : konstellation) {
-                zwischenAusgabe.append(lager.getMoebel().get(0).toString()).append(" | Preis: ").append(formatter.format((double) lager.getPreis() / 100)).append("€\n");
+                zwischenAusgabe.append(lager.getMoebel().getFirst().toString()).append(" | Preis: ").append(formatter.format((double) lager.getPreis() / 100)).append("€\n");
             }
-            String ausgabe = "Kombination: \n";
             updateLabels(zwischenAusgabe.toString(), gesamtpreis);
         }
     }
@@ -89,7 +88,7 @@ public class KombinationsPanel {
                     i1 = 0;
                 }
                 formatAusgabe(i1);
-                
+
             }
         });
         kombiPanel.add(getKombiB);
