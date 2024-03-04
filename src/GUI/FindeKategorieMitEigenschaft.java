@@ -56,6 +56,7 @@ public class FindeKategorieMitEigenschaft {
         ta = new JTextArea();
         ta.setLineWrap(true);
         ta.setWrapStyleWord(true);
+        ta.setEditable(false);
         ausgabeScrollPane = new JScrollPane(ta);
         ausgabeScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         ausgabeScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
@@ -178,7 +179,7 @@ public class FindeKategorieMitEigenschaft {
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
-        back.setBounds(100, 700, 150, 30);
+        back.setBounds(50, 700, 175, 30);
         back.addActionListener(e -> {
             Frame.setAllPanelsInvisible();
             Frame.setAllHomeButtonsVisible();

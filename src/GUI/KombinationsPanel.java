@@ -9,7 +9,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class KombinationsPanel {
 
@@ -23,17 +27,38 @@ public class KombinationsPanel {
     private static void addLabels() {
         kombiPanel.add(Kombi);
         Kombi.setBounds(50, 50, 175, 30);
+        Kombi.setEditable(false);
 
         kombiPanel.add(KombiFeld);
         KombiFeld.setBounds(50, 100, 175, 30);
     }
 
     private static void updateLabels(String txt, int preis) {
+        DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.GERMAN);
+        formatter.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.GERMAN));
         String ausgabe = "Kombination: \n";
         ausgabe = ausgabe + txt;
-        ausgabe = ausgabe + "=Gesamtpreis: " + (float) preis / 100 + "€";
+        ausgabe = ausgabe + "=Gesamtpreis: " + formatter.format((double) preis / 100) + "€";
 
         ta.setText(ausgabe);
+    }
+
+    private static void formatAusgabe(int i1) {
+        DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.GERMAN);
+        formatter.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.GERMAN));
+        ArrayList<Lager<? extends Moebelstueck>> konstellation = lagersystem.moebelauswahlBisBetrag(i1);
+        StringBuilder zwischenAusgabe = new StringBuilder();
+        if (konstellation == null) {
+            zwischenAusgabe.append("Keine Kombination gefunden\n");
+            updateLabels(zwischenAusgabe.toString(), 0);
+        } else {
+            int gesamtpreis = konstellation.stream().mapToInt(Lager::getPreis).sum();
+            for (Lager<? extends Moebelstueck> lager : konstellation) {
+                zwischenAusgabe.append(lager.getMoebel().get(0).toString()).append(" | Preis: ").append(formatter.format((double) lager.getPreis() / 100)).append("€\n");
+            }
+            String ausgabe = "Kombination: \n";
+            updateLabels(zwischenAusgabe.toString(), gesamtpreis);
+        }
     }
 
     public static JPanel Panel() {
@@ -45,6 +70,7 @@ public class KombinationsPanel {
 
         ta.setLineWrap(true);
         ta.setWrapStyleWord(true);
+        ta.setEditable(false);
         ausgabeScrollPane = new JScrollPane(ta);
         ausgabeScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         ausgabeScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
@@ -62,26 +88,15 @@ public class KombinationsPanel {
                 } catch (NumberFormatException a) {
                     i1 = 0;
                 }
-
-                ArrayList<Lager<? extends Moebelstueck>> konstellation = lagersystem.moebelauswahlBisBetrag(i1);
-                StringBuilder zwischenAusgabe = new StringBuilder();
-                if (konstellation == null) {
-                    zwischenAusgabe.append("Keine Kombination gefunden\n");
-                    updateLabels(zwischenAusgabe.toString(), 0);
-                } else {
-                    int gesamtpreis = konstellation.stream().mapToInt(Lager::getPreis).sum();
-                    for (Lager<? extends Moebelstueck> lager : konstellation) {
-                        zwischenAusgabe.append(lager.getMoebel().getFirst().toString()).append(" | Preis: ").append((double) lager.getPreis() / 100).append("€\n");
-                    }
-                    updateLabels(zwischenAusgabe.toString(), gesamtpreis);
-                }
+                formatAusgabe(i1);
+                
             }
         });
         kombiPanel.add(getKombiB);
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
-        back.setBounds(100, 700, 150, 30);
+        back.setBounds(50, 750, 175, 30);
         back.addActionListener(e -> {
             Frame.setAllPanelsInvisible();
             Frame.setAllHomeButtonsVisible();

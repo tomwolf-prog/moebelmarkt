@@ -6,6 +6,10 @@ import Moebelstueck.Moebelstueck;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class ShowVerkaufspreisPanel {
     private static final JPanel showVerkaufspreisPanel = new JPanel();
@@ -58,33 +62,35 @@ public class ShowVerkaufspreisPanel {
     }
 
     public static void updateLabels() {
+        DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.GERMAN);
+        formatter.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.GERMAN));
 
         int kuecheGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinesBereichs(Moebelstueck.Bereich.Kueche);
-        Kueche.setText("Küche: " + ((double) kuecheGesamtPreis) / 100 + " €");
+        Kueche.setText("Küche: " + formatter.format(((double) kuecheGesamtPreis) / 100) + " €");
 
         int wohnenGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinesBereichs(Moebelstueck.Bereich.Wohnen);
-        Wohnen.setText("Wohnen: " + ((double) wohnenGesamtPreis) / 100 + " €");
+        Wohnen.setText("Wohnen: " + formatter.format(((double) wohnenGesamtPreis) / 100) + " €");
 
         int schlafenGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinesBereichs(Moebelstueck.Bereich.Schlafen);
-        Schlafen.setText("Schlafen: " + ((double) schlafenGesamtPreis) / 100 + " €");
+        Schlafen.setText("Schlafen: " + formatter.format(((double) schlafenGesamtPreis) / 100) + " €");
 
 
         int andereGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinesBereichs(Moebelstueck.Bereich.Andere);
-        Andere.setText("Andere: " + ((double) andereGesamtPreis) / 100 + " €");
+        Andere.setText("Andere: " + formatter.format(((double) andereGesamtPreis) / 100) + " €");
 
         int lagerungGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinerKategorie(Moebelstueck.Kategorie.Lagerung);
-        Lagerung.setText("Lagerung: " + ((double) lagerungGesamtPreis) / 100 + " €");
+        Lagerung.setText("Lagerung: " + formatter.format(((double) lagerungGesamtPreis) / 100) + " €");
 
         int liegemoebelGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinerKategorie(Moebelstueck.Kategorie.Liegemoebel);
-        Liegemoebel.setText("Liegemoebel: " + ((double) liegemoebelGesamtPreis) / 100 + " €");
+        Liegemoebel.setText("Liegemoebel: " + formatter.format(((double) liegemoebelGesamtPreis) / 100) + " €");
 
         int sitmoebelGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinerKategorie(Moebelstueck.Kategorie.Sitzmoebel);
-        Sitzmoebel.setText("Sitzmoebel: " + ((double) sitmoebelGesamtPreis) / 100 + " €");
+        Sitzmoebel.setText("Sitzmoebel: " + formatter.format(((double) sitmoebelGesamtPreis) / 100) + " €");
 
         int tischeGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinerKategorie(Moebelstueck.Kategorie.Tische);
-        Tische.setText("Tische:" + ((double) (tischeGesamtPreis)) / 100 + " €");
+        Tische.setText("Tische:" + formatter.format(((double) (tischeGesamtPreis)) / 100) + " €");
 
-        GesamtVerkaufspreis.setText("Gesamt Verkaufspreis: " + ((double) (kuecheGesamtPreis + wohnenGesamtPreis + schlafenGesamtPreis + andereGesamtPreis)) / 100 + " €");
+        GesamtVerkaufspreis.setText("Gesamt Verkaufspreis: " + formatter.format(((double) (kuecheGesamtPreis + wohnenGesamtPreis + schlafenGesamtPreis + andereGesamtPreis)) / 100) + " €");
 
         int grossterBereichValue = 0;
         String grossterBereichName = "";
@@ -109,7 +115,7 @@ public class ShowVerkaufspreisPanel {
         }
 
 
-        GroessterBereich.setText("Größter Gesamtpreis: " + grossterBereichName + " " + ((double) grossterBereichValue) / 100 + " €");
+        GroessterBereich.setText("Größter Gesamtpreis: " + grossterBereichName + " " + formatter.format(((double) grossterBereichValue) / 100) + " €");
 
 
     }
@@ -119,7 +125,7 @@ public class ShowVerkaufspreisPanel {
 
         //Erstellen von Back Button
         JButton back = new JButton("Back");
-        back.setBounds(100, 700, 150, 30);
+        back.setBounds(50, 700, 175, 30);
         back.addActionListener(e -> {
             Frame.setAllPanelsInvisible();
             Frame.setAllHomeButtonsVisible();

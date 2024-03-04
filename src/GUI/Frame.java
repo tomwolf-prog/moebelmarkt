@@ -157,7 +157,7 @@ public class Frame {
 
 
         //Erstellen von Lager Button
-        findEigenschaftButton.setBounds(200, 50, 250, 30);
+        findEigenschaftButton.setBounds(250, 50, 250, 30);
         findEigenschaftButton.addActionListener(e -> {
             setAllPanelsInvisible();
             findeKategorieMitEigenschaft.setVisible(true);
@@ -165,7 +165,7 @@ public class Frame {
         frame.add(findEigenschaftButton);
 
         //Erstellen von Kombi Button
-        getKombiButton.setBounds(200, 100, 250, 30);
+        getKombiButton.setBounds(250, 100, 250, 30);
         getKombiButton.addActionListener(e -> {
             setAllPanelsInvisible();
             RabattPanel.updateLabels();
@@ -174,7 +174,7 @@ public class Frame {
         frame.add(getKombiButton);
 
         //Erstellen von Lager Button
-        setRabattButton.setBounds(200, 150, 250, 30);
+        setRabattButton.setBounds(250, 150, 250, 30);
         setRabattButton.addActionListener(e -> {
             setAllPanelsInvisible();
             RabattPanel.updateLabels();
@@ -183,7 +183,7 @@ public class Frame {
         frame.add(setRabattButton);
 
         //Erstellen von Lager Button
-        setPreisButton.setBounds(200, 200, 250, 30);
+        setPreisButton.setBounds(250, 200, 250, 30);
         setPreisButton.addActionListener(e -> {
             setAllPanelsInvisible();
             SetVerkaufspreisPanel.updateLabels();
@@ -193,7 +193,7 @@ public class Frame {
 
 
         //Erstellen von Lager Button
-        showGesamtverkaufspreisButton.setBounds(200, 250, 250, 30);
+        showGesamtverkaufspreisButton.setBounds(250, 250, 250, 30);
         showGesamtverkaufspreisButton.addActionListener(e -> {
             setAllPanelsInvisible();
             ShowVerkaufspreisPanel.updateLabels();
@@ -202,7 +202,7 @@ public class Frame {
         frame.add(showGesamtverkaufspreisButton);
 
         //Erstellen von Lager Button
-        showLagerBestandPanel.setBounds(200, 300, 250, 30);
+        showLagerBestandPanel.setBounds(250, 300, 250, 30);
         showLagerBestandPanel.addActionListener(e -> {
             setAllPanelsInvisible();
             LagerbestandPanel.updateLabels();
@@ -211,7 +211,7 @@ public class Frame {
         frame.add(showLagerBestandPanel);
 
         //Erstellen von AddItem Button
-        aendereBestandButton.setBounds(200, 350, 250, 30);
+        aendereBestandButton.setBounds(250, 350, 250, 30);
         aendereBestandButton.addActionListener(e -> {
             setAllPanelsInvisible();
             aendereBestandPanel.setVisible(true);
