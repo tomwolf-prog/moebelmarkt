@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"Kategorie"},{"l":"Lager"},{"l":"Lager.Lagerungslager"},{"l":"Lager.Liegemoebellager"},{"l":"Lager.Sitzmoebellager"},{"l":"Lager.Tischlager"},{"l":"Moebelhaus"},{"l":"Moebelstueck"}];updateSearchResults();

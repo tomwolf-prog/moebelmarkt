@@ -7,3 +7,4 @@ out/*
 *.iml
 Moebelhaus.txt
 pom.xml
+/bin/
