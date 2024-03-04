@@ -71,7 +71,7 @@ public class KombinationsPanel {
                 } else {
                     int gesamtpreis = konstellation.stream().mapToInt(Lager::getPreis).sum();
                     for (Lager<? extends Moebelstueck> lager : konstellation) {
-                        zwischenAusgabe.append(lager.getMoebel().get(0).toString()).append(" | Preis: ").append((double) lager.getPreis() / 100).append("€\n");
+                        zwischenAusgabe.append(lager.getMoebel().getFirst().toString()).append(" | Preis: ").append((double) lager.getPreis() / 100).append("€\n");
                     }
                     updateLabels(zwischenAusgabe.toString(), gesamtpreis);
                 }

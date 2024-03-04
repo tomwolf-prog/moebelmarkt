@@ -1220,7 +1220,7 @@ public class Lagersystem implements Serializable {
             return sumB - sumA;
         });
         // Die beste Konstellation ist die erste in der sortierten Liste
-        return konstellationen.get(0);
+        return konstellationen.getFirst();
     }
 
 
