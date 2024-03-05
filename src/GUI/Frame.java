@@ -15,10 +15,13 @@ import GUI.Tische.*;
 import Lager.Lagersystem;
 import Moebelhaus.Moebelhaus;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 
@@ -153,7 +156,21 @@ public class Frame {
         frame.setSize(1600, 900);
         frame.setLayout(null);
         frame.setVisible(true);
-        frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+
+        File file = new File("src\\Baldheim-removebg.png");
+
+        BufferedImage bufferedImage = null;
+        try {
+            bufferedImage = ImageIO.read(file);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        ImageIcon imageIcon = new ImageIcon(bufferedImage);
+        JLabel jLabel = new JLabel();
+        jLabel.setIcon(imageIcon);
+        jLabel.setBounds(0, 10, 100, 100);
+        frame.add(jLabel);
+        frame.setVisible(true);
 
 
         //Erstellen von Lager Button

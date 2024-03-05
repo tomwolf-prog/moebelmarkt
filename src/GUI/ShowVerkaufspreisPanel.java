@@ -90,7 +90,7 @@ public class ShowVerkaufspreisPanel {
         int tischeGesamtPreis = lagersystem.berechenVerkaufspreisAllerMoebelEinerKategorie(Moebelstueck.Kategorie.Tische);
         Tische.setText("Tische:" + formatter.format(((double) (tischeGesamtPreis)) / 100) + " €");
 
-        GesamtVerkaufspreis.setText("Gesamt Verkaufspreis: " + formatter.format(((double) (kuecheGesamtPreis + wohnenGesamtPreis + schlafenGesamtPreis + andereGesamtPreis)) / 100) + " €");
+        GesamtVerkaufspreis.setText("Gesamt-Verkaufspreis: " + formatter.format(((double) (kuecheGesamtPreis + wohnenGesamtPreis + schlafenGesamtPreis + andereGesamtPreis)) / 100) + " €");
 
         int grossterBereichValue = 0;
         String grossterBereichName = "";
