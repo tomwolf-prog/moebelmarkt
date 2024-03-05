@@ -156,6 +156,7 @@ public class Frame {
         frame.setSize(1600, 900);
         frame.setLayout(null);
         frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         File file = new File("src\\Baldheim-removebg.png");
 
