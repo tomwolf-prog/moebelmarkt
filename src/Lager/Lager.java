@@ -14,10 +14,11 @@ import java.util.ArrayList;
  * @see Serializable
  */
 public abstract class Lager<K> implements Serializable {
-    private int preis;
-    private boolean rabatt10;
 
     public ArrayList<K> moebelstueckArrayList = new ArrayList<K>();
+
+    private int preis;
+    private boolean rabatt10;
 
     /**
      * Konstruktor für die Klasse Lager.

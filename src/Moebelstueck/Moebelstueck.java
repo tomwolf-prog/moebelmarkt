@@ -22,10 +22,9 @@ public abstract class Moebelstueck implements Serializable {
      */
     public enum Bereich {Kueche, Wohnen, Schlafen, Andere}
 
-    private int verkaufspreis;
     private Kategorie kategorie;
-
-    private Bereich bereich;
+    private Bereich bereich;    
+    private int verkaufspreis;
 
     /**
      * Konstruktor für die Klasse Moebelstueck.

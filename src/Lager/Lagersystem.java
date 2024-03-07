@@ -85,29 +85,6 @@ public class Lagersystem implements Serializable {
         balkonliegelager = new Balkonliegelager();
     }
 
-    /**
-     * Fügt ein Möbelstück zum Lager hinzu.
-     * Prüft die Kategorie des Möbelstücks und fügt es dem entsprechenden Lager hinzu.
-     * 
-     * @param moebelstueck Das hinzuzufügende Möbelstück.
-     */
-    public void addMoebelstueck(Moebelstueck moebelstueck) {
-        switch (moebelstueck.getKategorie()) {
-            case Lagerung:
-                addLagerung((Lagerung) moebelstueck);
-                break;
-            case Liegemoebel:
-                addLiegemoebel((Liegemoebel) moebelstueck);
-                break;
-            case Tische:
-                addTisch((Tische) moebelstueck);
-                break;
-            case Sitzmoebel:
-                addSitzmoebel((Sitzmoebel) moebelstueck);
-            default:
-                break;
-        }
-    }
 
     //Tische
     /**
@@ -995,6 +972,30 @@ public class Lagersystem implements Serializable {
      */
     public int getBalkonliegelagerBestand(Liegemoebel.Laenge laenge) {
         return balkonliegelager.getLiegemoebellagerBestand(laenge);
+    }
+
+    /**
+     * Fügt ein Möbelstück zum Lager hinzu.
+     * Prüft die Kategorie des Möbelstücks und fügt es dem entsprechenden Lager hinzu.
+     * 
+     * @param moebelstueck Das hinzuzufügende Möbelstück.
+     */
+    public void addMoebelstueck(Moebelstueck moebelstueck) {
+        switch (moebelstueck.getKategorie()) {
+            case Lagerung:
+                addLagerung((Lagerung) moebelstueck);
+                break;
+            case Liegemoebel:
+                addLiegemoebel((Liegemoebel) moebelstueck);
+                break;
+            case Tische:
+                addTisch((Tische) moebelstueck);
+                break;
+            case Sitzmoebel:
+                addSitzmoebel((Sitzmoebel) moebelstueck);
+            default:
+                break;
+        }
     }
 
     /**
